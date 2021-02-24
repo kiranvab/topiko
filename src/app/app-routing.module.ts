@@ -66,6 +66,14 @@ const routes: Routes = [
   {
     path: 'pin',
     loadChildren: () => import('./pin/pin.module').then( m => m.PinPageModule)
+  },
+  {
+    path: 'selectcategory',
+    loadChildren: () => import('./selectcategory/selectcategory.module').then( m => m.SelectcategoryPageModule)
+  },
+  {
+    path: 'selectservice',
+    loadChildren: () => import('./selectservice/selectservice.module').then( m => m.SelectservicePageModule)
   }
 ];
 

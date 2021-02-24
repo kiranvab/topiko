@@ -2,9 +2,10 @@
 ion-content {
     --background: #5e1c57;
     font-family: Comfortaa;
-}
-
-.curve {
+    padding: 10em;
+  }
+  
+  .curve {
     display: block;
     width: 150%;
     height: 180px;
@@ -16,7 +17,7 @@ ion-content {
     transform: rotate(-6deg);
     z-index: -1;
   }
-
+  
   .curve1 {
     display: block;
     width: 150%;
@@ -29,7 +30,7 @@ ion-content {
     transform: rotate(-25deg);
     z-index: -1;
   }
-
+  
   .curve2 {
     display: block;
     width: 135%;
@@ -42,34 +43,34 @@ ion-content {
     transform: rotate(-16deg);
     z-index: -1;
   }
-
-.logo 
-{
+  
+  .logo 
+  {
     margin: 0 auto;
     top:8%;
     position: absolute;
     text-align: center;
-}
-.logo img
-{
+  }
+  .logo img
+  {
     width: 30%;
     margin: 0 auto;
     text-align: center;
-}
-.login-block
-{
+  }
+  .selection-block
+  {
     position: relative;
     top: 45%;
     left: 5%;
     margin-right: 15% !important;
     color: #fff;
-}
-.signup-content
-{
+  }
+  .signup-content
+  {
     padding: 1.5rem;
-}
-.login-btn
-{
+  }
+  .login-btn
+  {
     color: purple;
     text-align: right;
     float: right;
@@ -77,30 +78,38 @@ ion-content {
     font-size: 60px;
     position:absolute;
     right:0.2em;
-}
-.login-text
-{
+  }
+  .login-text
+  {
     font-size: 1.5rem;
-}
-
-.footer-img
-{
+  }
+  
+  .footer-img
+  {
     position: absolute;
     bottom: -5px;
     z-index: -1;
-}
-ion-input{
+  }
+  ion-input{
     border-bottom: 1px solid #fff;
     color: #fff;
     margin-top: 10px;
-}
- 
-ion-item{
+  }
+  
+  ion-item{
     --inner-border-width:0;  
     --background:transparent;
   }
-.back-img
-{
+  .back-img
+  {
     position: absolute;
     top: 20%;
-}
+  }
+  .item.sc-ion-label-ios-h, .item .sc-ion-label-ios-h,
+  .item.sc-ion-label-md-h, .item .sc-ion-label-md-h,
+  .select-icon,
+  .select-text,
+  ion-select 
+  {
+    color: #fff;
+  }
