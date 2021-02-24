@@ -9,7 +9,7 @@ export class HomePage implements OnInit {
 
   slideOpts = {
     speed: 1000,
-    slidesPerView: 1.05,
+    slidesPerView: 1.10,
     loop: true,
     autoplay: true,
     centeredSlides: true,
