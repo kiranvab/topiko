@@ -1,9 +1,402 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>home</ion-title>
-  </ion-toolbar>
+<ion-header color="primary">
+<ion-toolbar color="primary">
+  <ion-row>
+    <ion-col size="2">
+      <ion-menu-button color="light"></ion-menu-button>
+    </ion-col>
+    <ion-col>
+      <img class="logo-img" src="assets/logo-inside.png" />
+    </ion-col>
+    <ion-col style="text-align: center;">
+      Hyderabad <ion-icon  name="chevron-down-outline"></ion-icon>
+    </ion-col>
+    <ion-col size="1"  id="cart-btn" ion-button icon-only routerLink="/notifications">
+      <!-- <ion-icon name="notifications-outline"><ion-badge>0</ion-badge></ion-icon> -->
+        <ion-icon name="notifications-outline"></ion-icon>
+        <ion-badge id="cart-badge" color="danger">00</ion-badge>
+    </ion-col>
+  </ion-row>
+</ion-toolbar>
 </ion-header>
+<ion-content padding>
 
-<ion-content>
 
+<ion-slides pager="true" [options]="slideOpts">
+  <ion-slide>
+    <img src="../assets/banner1.png" style="border-radius: 10px;">
+  </ion-slide>
+  <ion-slide>
+    <img src="../assets/banner2.png" style="border-radius: 10px;">
+  </ion-slide>
+  <ion-slide>
+    <img src="../assets/banner3.png" style="border-radius: 10px;">
+  </ion-slide>
+  <ion-slide>
+    <img src="../assets/banner4.png" style="border-radius: 10px;">
+  </ion-slide>
+  <ion-slide>
+    <img src="../assets/banner5.png" style="border-radius: 10px;">
+  </ion-slide>
+  <ion-slide>
+    <img src="../assets/banner6.png" style="border-radius: 10px;">
+  </ion-slide>
+</ion-slides>
+ 
+
+<ion-card>
+  <h5>Trending Offers</h5>
+  <ion-slides>
+    <ion-slide>
+      <ion-row>
+        <ion-col>
+          <ion-card>
+            <img src="../assets/offer1.png"/>
+          </ion-card>
+        </ion-col>
+        <ion-col>
+          <ion-card>
+            <img src="../assets/offer2.png"/>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-slide>
+
+    <ion-slide>
+      <ion-row>
+        <ion-col>
+          <ion-card>
+            <img src="../assets/offer3.png"/>
+          </ion-card>
+        </ion-col>
+        <ion-col>
+          <ion-card>
+            <img src="../assets/offer1.png"/>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-slide>
+
+  </ion-slides>
+</ion-card>
+
+<ion-card>
+<ion-header>
+  <ion-row>
+    <ion-col size="8"><h5>Trending Categories</h5></ion-col>
+    <ion-col style="text-align: right; padding-right: 10px;"><p>View All</p></ion-col>
+  </ion-row>
+</ion-header>
+    <ion-slides>
+      <ion-slide>
+        <ion-row>
+          <ion-col >
+              <img class="img-pad" src="assets/category/grocery.png"/>
+              <p>Grocery</p>
+          </ion-col>
+          <ion-col >
+            <img class="img-pad" src="assets/category/restaurant.png"/>
+            <p>Restaurant</p>
+        </ion-col>
+        <ion-col >
+          <img class="img-pad" src="assets/category/chicken.png"/>
+          <p>Meat</p>
+      </ion-col>
+      <ion-col >
+        <img class="img-pad" src="assets/category/milk.png"/>
+        <p>Dairy</p>
+    </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col >
+              <img class="img-pad" src="assets/category/grocery.png"/>
+              <p>Grocery</p>
+          </ion-col>
+          <ion-col >
+            <img class="img-pad" src="assets/category/restaurant.png"/>
+            <p>Restaurant</p>
+        </ion-col>
+        <ion-col >
+          <img class="img-pad" src="assets/category/pharmacy.png"/>
+          <p>Pharmacy</p>
+      </ion-col>
+      <ion-col >
+        <img class="img-pad" src="assets/category/bakery.png"/>
+        <p>Bakery</p>
+    </ion-col>
+        </ion-row>
+      </ion-slide>
+
+      <ion-slide>
+        <ion-row>
+          <ion-col >
+              <img class="img-pad" src="https://idealdesigns.in/wp-content/uploads/2017/10/hotel-branding-hyderabad-bangalore-branding-agency-hyderabad-restaurant-complete-branding-bangalore-India-dhanturi-group-of-hotels-1.jpg"/>
+          </ion-col>
+          <ion-col>
+            <img class="img-pad" src="https://www.paradisefoodcourt.in/images/side-logo.jpg">
+          </ion-col>
+          <ion-col>
+              <img class="img-pad" src="https://dw0i2gv3d32l1.cloudfront.net/uploads/stage/stage_image/37817/optimized_large_thumb_stage.jpg"/>
+          </ion-col>
+          <ion-col>
+              <img class="img-pad" src="http://idealbranding.in/wp-content/uploads/2018/04/restaurant-logo-design-hotel-shubham-palace2-300x200.jpg"/>
+          </ion-col>
+        </ion-row>
+      </ion-slide>
+
+      <ion-slide>
+        <ion-row>
+          <ion-col >
+              <img class="img-pad" src="https://www.babaibhojanam.com/wp-content/uploads/2020/09/babaibhojanam-logo.png"/>
+          </ion-col>
+          <ion-col>
+              <img class="img-pad" src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/MM/Bhojanam_Multicuisine_Restaurant_edvo_logo"/>
+          </ion-col>
+          <ion-col>
+            <img class="img-pad" src="https://image3.mouthshut.com/images/imagesp/925865276s.jpg"/>
+        </ion-col>
+        <ion-col>
+          <img class="img-pad" src="https://scontent.fhyd5-1.fna.fbcdn.net/v/t1.0-1/p720x720/76705062_116506136473811_1787817451635867648_o.png?_nc_cat=102&ccb=3&_nc_sid=dbb9e7&_nc_ohc=TSBoJ_qynmUAX_vkZ4Y&_nc_ht=scontent.fhyd5-1.fna&_nc_tp=30&oh=3c21dcac8992c38560e7af8c874d288a&oe=6056EE2B"/>
+      </ion-col>
+        </ion-row>
+      </ion-slide>
+
+    </ion-slides>
+  </ion-card>
+  <ion-card>
+    <h5>Nearby Stores</h5>
+    <ion-slides>
+      <ion-slide>
+        <ion-row>
+          <ion-col class="nearby-col" size="4" routerLink="/listing">
+            <ion-card>
+              <img src="https://cdn.britannica.com/16/204716-050-8BB76BE8/Walmart-store-Mountain-View-California.jpg"/>
+              <p>Kavya Kiranam</p>
+            </ion-card>
+          </ion-col>
+          <ion-col class="nearby-col" size="4" routerLink="/listing">
+            <ion-card>
+              <img src="https://static.parade.com/wp-content/uploads/2020/03/target-senior-hours-ftr.jpg" />
+              <p>Beyond Bakers</p>
+            </ion-card>
+          </ion-col>
+          <ion-col class="nearby-col" size="4" routerLink="/listing">
+            <ion-card>
+              <img src="https://cdn.britannica.com/16/204716-050-8BB76BE8/Walmart-store-Mountain-View-California.jpg"/>
+              <p>Kavya Kiranam</p>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+      </ion-slide>
+    <ion-slide>
+    <ion-row>
+          <ion-col  size="4">
+            <ion-card>
+              <img src="https://www.duluthtrading.com/on/demandware.static/-/Sites/default/dwec506700/images/stores/Franklin-TN-store.jpg"/>
+              <p>Kavya Kiranam</p>
+            </ion-card>
+          </ion-col>
+          <ion-col size="4">
+            <ion-card >
+              <img src="https://www.duluthtrading.com/on/demandware.static/-/Sites/default/dwec506700/images/stores/Franklin-TN-store.jpg"/>
+              <p>Kavya Kiranam</p>
+            </ion-card>
+          </ion-col>
+          <ion-col  size="4">
+            <ion-card>
+              <img src="https://www.duluthtrading.com/on/demandware.static/-/Sites/default/dwec506700/images/stores/Franklin-TN-store.jpg"/>
+              <p>Kavya Kiranam</p>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+      </ion-slide>
+    </ion-slides>
+  </ion-card>
+  
+  <ion-card>
+    <h5>Services for you</h5>
+    <ion-slides>
+      <ion-slide>
+         <ion-row>
+           <ion-col>
+             <ion-icon name="fast-food-outline"></ion-icon>
+             <div class="card-title">Food & Drinks</div>
+           </ion-col>
+           <ion-col>
+             <ion-icon name="pizza-outline"></ion-icon>
+             <div class="card-title">Food & Drinks</div>
+           </ion-col>
+           <ion-col>
+             <ion-icon name="barbell-outline"></ion-icon>
+             <div class="card-title">Fitness & GYM</div>
+           </ion-col>
+           <ion-col>
+             <ion-icon name="cart-outline"></ion-icon>
+             <div class="card-title">Grocery Store</div>
+           </ion-col>
+           <ion-col>
+             <ion-icon name="cafe-outline"></ion-icon>
+             <div class="card-title">Coffee Shop</div>
+           </ion-col>
+         </ion-row>
+       </ion-slide>
+       <ion-slide>
+         <ion-row>
+          <ion-col>
+            <ion-icon name="desktop-outline"></ion-icon>
+            <div class="card-title">Internet Cafe</div>
+          </ion-col>
+          <ion-col>
+             <ion-icon name="bicycle-outline"></ion-icon>
+             <div class="card-title">Bicycle Store</div>
+           </ion-col>
+           <ion-col>
+             <ion-icon name="car-sport-outline"></ion-icon>
+             <div class="card-title">Car Mechanic</div>
+           </ion-col>
+           <ion-col>
+             <ion-icon name="flower-outline"></ion-icon>
+             <div class="card-title">Flowers Shop</div>
+           </ion-col>
+           <ion-col>
+             <ion-icon name="paw-outline"></ion-icon>
+             <div class="card-title">Veterinary Shop</div>
+           </ion-col>
+         </ion-row>
+       </ion-slide>
+       <ion-slide>
+         <ion-row>
+          <ion-col>
+            <ion-icon name="school-outline"></ion-icon>
+            <div class="card-title">Training Center</div>
+          </ion-col>
+          <ion-col>
+            <ion-icon name="fitness-outline"></ion-icon>
+            <div class="card-title">Diagnostic Center</div>
+          </ion-col>
+         </ion-row>
+       </ion-slide>
+     </ion-slides>
+  </ion-card>
+  
+  <ion-card>
+    <h5>New on TOPIKO</h5>
+    <ion-slides>
+      <ion-slide>
+        <ion-row>
+          <ion-col size="6">
+            <ion-card>
+              <img src="https://cdn.britannica.com/16/204716-050-8BB76BE8/Walmart-store-Mountain-View-California.jpg"/>
+              <p>Kavya Kiranam</p>
+            </ion-card>
+          </ion-col>
+          <ion-col  size="6">
+            <ion-card>
+              <img src="https://static.parade.com/wp-content/uploads/2020/03/target-senior-hours-ftr.jpg" />
+              <p>Beyond Bakers</p>
+            </ion-card>
+          </ion-col>
+          <ion-col size="6">
+            <ion-card>
+              <img src="https://cdn.britannica.com/16/204716-050-8BB76BE8/Walmart-store-Mountain-View-California.jpg"/>
+              <p>Kavya Kiranam</p>
+            </ion-card>
+          </ion-col>
+		  <ion-col size="6">
+            <ion-card>
+              <img src="https://cdn.britannica.com/16/204716-050-8BB76BE8/Walmart-store-Mountain-View-California.jpg"/>
+              <p>Kavya Kiranam</p>
+            </ion-card>
+          </ion-col>
+          <ion-col  size="6">
+            <ion-card>
+              <img src="https://static.parade.com/wp-content/uploads/2020/03/target-senior-hours-ftr.jpg" />
+              <p>Beyond Bakers</p>
+            </ion-card>
+          </ion-col>
+          <ion-col size="6">
+            <ion-card>
+              <img src="https://cdn.britannica.com/16/204716-050-8BB76BE8/Walmart-store-Mountain-View-California.jpg"/>
+              <p>Kavya Kiranam</p>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+      </ion-slide>
+    <ion-slide>
+    <ion-row>
+          <ion-col  size="4">
+            <ion-card>
+              <img src="https://www.duluthtrading.com/on/demandware.static/-/Sites/default/dwec506700/images/stores/Franklin-TN-store.jpg"/>
+              <p>Kavya Kiranam</p>
+            </ion-card>
+          </ion-col>
+          <ion-col size="4">
+            <ion-card >
+              <img src="https://www.duluthtrading.com/on/demandware.static/-/Sites/default/dwec506700/images/stores/Franklin-TN-store.jpg"/>
+              <p>Kavya Kiranam</p>
+            </ion-card>
+          </ion-col>
+          <ion-col  size="4">
+            <ion-card>
+              <img src="https://www.duluthtrading.com/on/demandware.static/-/Sites/default/dwec506700/images/stores/Franklin-TN-store.jpg"/>
+              <p>Kavya Kiranam</p>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+      </ion-slide>
+    </ion-slides>
+  </ion-card>
+
+
+  
+
+  <ion-card>
+    <h5>Today's Hot Deals</h5>
+    <ion-slides>
+      <ion-slide>
+        <ion-row>
+          <ion-col>
+            <ion-card>
+              <img src="../assets/offer1.png"/>
+            </ion-card>
+          </ion-col>
+          <ion-col>
+            <ion-card>
+              <img src="../assets/offer2.png"/>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+      </ion-slide>
+
+      <ion-slide>
+        <ion-row>
+          <ion-col>
+            <ion-card>
+              <img src="../assets/offer3.png"/>
+            </ion-card>
+          </ion-col>
+          <ion-col>
+            <ion-card>
+              <img src="../assets/offer1.png"/>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+      </ion-slide>
+
+    </ion-slides>
+  </ion-card>
+
+    
 </ion-content>
+
+
+
+
+<ion-footer>
+    <ion-row>
+	<ion-col><ion-icon name="call-outline"></ion-icon></ion-col>
+      <ion-col routerLink="/message"><ion-icon  name="chatbox-ellipses-outline"></ion-icon></ion-col>
+      <ion-col><ion-icon name="home-outline"  class="home-icon"></ion-icon></ion-col>
+      <ion-col><ion-icon name="heart-outline"></ion-icon></ion-col>
+	  <ion-col><ion-icon name="person-outline"></ion-icon></ion-col>
+    </ion-row>
+</ion-footer>

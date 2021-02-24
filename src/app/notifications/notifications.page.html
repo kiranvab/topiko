@@ -1,0 +1,137 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-row>
+      <ion-col><ion-title>Notifications</ion-title></ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-segment 
+    value="alerts" 
+    color="tertiary" 
+    scrollable="true"
+    mode="ios"
+    [(ngModel)]="segmentModel" 
+    (ionChange)="segmentChanged($event)">
+
+      <ion-segment-button value="alerts">
+        <ion-label>Alerts</ion-label>
+      </ion-segment-button>
+
+      <ion-segment-button value="notifications">
+        <ion-label>Notifications</ion-label>
+      </ion-segment-button>
+
+      <ion-segment-button value="messages">
+        <ion-label>Admin Message</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+ 
+<div  *ngIf="segmentModel === 'alerts'">
+<ion-item>
+    Ganesh Super Market has Replied to your Enquiry
+</ion-item>
+
+<ion-item >
+    New pahrmacy has Opened in your neighbourhood
+</ion-item>
+
+<ion-item>
+    Topiko has Recomended latest store near buy based in your previous wishlist and products selected
+</ion-item>
+
+<ion-item>
+    Your have added Appollo Pharmacy Kukatpally to your wish list
+</ion-item>
+
+<ion-item color="light">
+  Ganesh Super Market has Replied to your Enquiry
+</ion-item>
+
+<ion-item >
+  New pahrmacy has Opened in your neighbourhood
+</ion-item>
+
+<ion-item>
+  Topiko has Recomended latest store near buy based in your previous wishlist and products selected
+</ion-item>
+
+<ion-item>
+  Your have added Appollo Pharmacy Kukatpally to your wish list
+</ion-item>
+</div>
+
+<div  *ngIf="segmentModel === 'notifications'">
+  <ion-item>
+      Ganesh Super Market has Replied to your Enquiry
+  </ion-item>
+  
+  <ion-item >
+      New pahrmacy has Opened in your neighbourhood
+  </ion-item>
+  
+  <ion-item>
+      Topiko has Recomended latest store near buy based in your previous wishlist and products selected
+  </ion-item>
+  
+  <ion-item>
+      Your have added Appollo Pharmacy Kukatpally to your wish list
+  </ion-item>
+  
+  <ion-item color="light">
+    Ganesh Super Market has Replied to your Enquiry
+  </ion-item>
+  
+  <ion-item >
+    New pahrmacy has Opened in your neighbourhood
+  </ion-item>
+  
+  <ion-item>
+    Topiko has Recomended latest store near buy based in your previous wishlist and products selected
+  </ion-item>
+  
+  <ion-item>
+    Your have added Appollo Pharmacy Kukatpally to your wish list
+  </ion-item>
+  </div>
+
+  <div  *ngIf="segmentModel === 'messages'">
+    <ion-item>
+        Ganesh Super Market has Replied to your Enquiry
+    </ion-item>
+    
+    <ion-item >
+        New pahrmacy has Opened in your neighbourhood
+    </ion-item>
+    
+    <ion-item>
+        Topiko has Recomended latest store near buy based in your previous wishlist and products selected
+    </ion-item>
+    
+    <ion-item>
+        Your have added Appollo Pharmacy Kukatpally to your wish list
+    </ion-item>
+    
+    <ion-item color="light">
+      Ganesh Super Market has Replied to your Enquiry
+    </ion-item>
+    
+    <ion-item >
+      New pahrmacy has Opened in your neighbourhood
+    </ion-item>
+    
+    <ion-item>
+      Topiko has Recomended latest store near buy based in your previous wishlist and products selected
+    </ion-item>
+    
+    <ion-item>
+      Your have added Appollo Pharmacy Kukatpally to your wish list
+    </ion-item>
+    </div>
+
+</ion-content>

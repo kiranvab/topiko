@@ -1,0 +1,106 @@
+
+
+ion-content {
+    --background: url('/assets/img/background/background.png') no-repeat 100% 100%;
+    background-color:white;
+  }
+  .login-block
+  {
+    background-color:#43063c;
+    width: 100%;
+    min-height: 160px;
+    border-radius: 0 0 2em 2em;
+    padding: 1em;
+    vertical-align: middle;
+    color: #fff;
+    top: 0;
+  }
+  .signup-content
+  {
+    padding: 1.5rem;
+  }
+  .login-btn
+  {
+    color: purple;
+    text-align: right;
+    float: right;
+    padding-top: 10px;
+    font-size: 60px;
+    position:absolute;
+    right:0.2em;
+  }
+  .login-text
+  {
+    font-size: 1.5rem;
+  }
+  
+  ion-input{
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  ion-icon{
+    font-size: 24px;
+    padding-left: 20px;
+    position: absolute;
+    top: 9px;
+    left: -15px;
+  }
+  .heading
+  {
+    color: #43063c;
+    font-weight: bold;
+  }
+  .signup-text
+  {
+    text-align: right;
+    font-size: 1.5em;
+    float: right;
+  }
+  .sm-txt
+  {
+    font-size: 12px;
+  }
+  .forgot-text
+  {
+    padding-top: 0.8em;
+    color:  purple;
+  }
+  .resend
+  {
+    text-align: right;
+    color: #43063c;
+  }
+  .signup-form
+  {
+    padding: 1rem 0;
+  }
+  .item-inner {
+    flex-direction: row-reverse !important;
+  }
+  
+  ion-item{
+    --inner-border-width:0;  
+  }
+  
+  .otp {
+      color:purple;
+      border-style: none;
+      width: 60px;
+      height: 60px;
+      font-size: 32px;
+      text-align: center;
+  
+    }
+    
+    td {
+      border: 1px solid darkgray
+    }
+    
+    table {
+      border-collapse: collapse;
+    }
+    .forgot-text
+  {
+      padding-top: 0.8em;
+      color:  purple;
+  }

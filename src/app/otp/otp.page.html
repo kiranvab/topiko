@@ -1,0 +1,47 @@
+<ion-content>
+  <ion-back-button></ion-back-button>
+  <!-- <div class="curve"></div>
+  <div class="curve1"></div>
+  <div class="curve2"></div> -->
+  <div class="back-img">
+    <img src="assets/back.png" >
+  </div>
+  
+  <div class="logo">
+    <img src="assets/logo.png"/>
+  </div>
+
+  <div class="login-block">
+    <h3>OTP</h3>
+    <ion-item>
+      <table width="100%">
+        <tr>
+          <td>
+            <ion-input type="text" #otp1 class="otp" pattern="[0-9]{6}" maxlength="1" size="1">
+            </ion-input>
+          </td>
+          <td>
+            <ion-input type="text" #otp2 class="otp" pattern="[0-9]{6}" maxlength="1" size="1">
+            </ion-input>
+          </td>
+          <td>
+            <ion-input type="text" #otp3 class="otp" pattern="[0-9]{6}" maxlength="1" size="1" >
+            </ion-input>
+          </td>
+          <td>
+            <ion-input type="text" #otp4 class="otp" pattern="[0-9]{6}" maxlength="1" size="1">
+            </ion-input>
+          </td>
+        </tr>
+      </table>
+    </ion-item>
+    <p class="resend">Resend OTP</p>
+    <ion-button expand="block">Validate Mobile No</ion-button>
+  </div>
+
+  <div class="footer-img">
+    <img src="assets/footer-img.png" />
+  </div>
+
+   
+</ion-content>
