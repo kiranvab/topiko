@@ -1,3 +1,16 @@
+
+<ion-header>
+    <ion-toolbar color="primary">
+      <ion-buttons slot="start">
+        <ion-back-button></ion-back-button>
+      </ion-buttons>
+      <ion-row>
+        <ion-col><ion-title>Kavya Kiranam</ion-title></ion-col>
+      </ion-row>
+    </ion-toolbar>
+</ion-header>
+
+
 <ion-content>
   <ion-slides autoplay="5000" loop="true" speed="500" class="slides" pager="true">
     <ion-slide>
@@ -56,7 +69,7 @@
             <ion-icon class="icons" name="call-outline"></ion-icon>
             Call
           </ion-col>
-          <ion-col>
+          <ion-col routerLink="/message">
             <ion-icon  class="icons" name="chatbox-ellipses-outline"></ion-icon>
             Chat
           </ion-col>

@@ -69,13 +69,15 @@ ion-slides
 
 ion-header ion-icon
 {
-    padding-top: 5px;
+    padding-top: 10px !important;
     font-size: 22px !important;
 }
 h5{
     padding-left: 1rem;
     margin: 0;
     padding: 10px;
+    font-weight: bold;
+    color:#5e1c57;
 }
 
 #cart-btn {
@@ -88,10 +90,22 @@ h5{
     right: 5px;
     font-size: 12px;
  }
-
+.center
+{
+    text-align: center;
+}
+.location
+{
+    line-height: 36px;
+    font-size: 1.2rem;
+    text-align: left;
+    padding-top: 5px;
+    padding: 0;
+}
  .logo-img
  {
     margin-left: -15%;
+    width: 70%;
  }
 
  .nearby-col
@@ -121,4 +135,6 @@ h5{
  {
      margin: 0 auto;
      margin-bottom: 10px;
+     width: auto;
+     height: auto;
  }

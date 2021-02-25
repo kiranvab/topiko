@@ -36,3 +36,18 @@ ion-content ion-row
 ion-button {
     font-size: 10px;
 }
+
+ion-slide ion-col 
+{
+    border-right: 1px solid #e8e8e8;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    height: 40px;
+    width: 100px;
+    background:#fdfdfd;
+}
+ion-footer
+{
+    height: 50px;
+}
