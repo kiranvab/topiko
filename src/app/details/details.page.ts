@@ -6,9 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./details.page.scss'],
 })
 export class DetailsPage implements OnInit {
+  segmentModel:string;
+  constructor() {
+    this.segmentModel = "all"
+   }
 
-  constructor() { }
-
+   
   ngOnInit() {
   }
 

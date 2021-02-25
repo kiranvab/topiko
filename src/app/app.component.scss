@@ -59,10 +59,14 @@ ion-menu.md ion-item.selected ion-icon {
 
 ion-menu.md ion-item ion-icon {
   color: #616e7e;
+  display: none;
 }
 
 ion-menu.md ion-item ion-label {
-  font-weight: 500;
+  font-weight: 600;
+  color:#43143f;
+  padding-bottom:10px;
+  border-bottom:1px solid #f1f1f1;
 }
 
 ion-menu.ios ion-content {

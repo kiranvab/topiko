@@ -6,13 +6,20 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   public appPages = [
-    { title: 'Inbox', url: '/folder/Inbox', icon: 'mail' },
-    { title: 'Outbox', url: '/folder/Outbox', icon: 'paper-plane' },
-    { title: 'Favorites', url: '/folder/Favorites', icon: 'heart' },
-    { title: 'Archived', url: '/folder/Archived', icon: 'archive' },
-    { title: 'Trash', url: '/folder/Trash', icon: 'trash' },
-    { title: 'Spam', url: '/folder/Spam', icon: 'warning' },
+    { title: 'Post Your Business', url: '#'},
+    { title: 'Change Categories', url: '#' },
+    { title: 'Create Business user', url: '#'},
+    { title: 'Business Dashboard', url: '#'},
+    { title: 'Create QR Code', url: '#'},
+    { title: 'Change PIN', url: '#'},
+    { title: 'Edit Profile', url: '#'},
+    { title: 'Add more Details', url: '#'},
+    { title: 'Skipped Items', url: '#'},
+    { title: 'List My Business', url: '#'},
+    { title: 'Share APP', url: '#'},
+    { title: 'Setting', url: '#'},
+    { title: 'logout', url: '#'},
   ];
-  public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
+  //public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
   constructor() {}
 }

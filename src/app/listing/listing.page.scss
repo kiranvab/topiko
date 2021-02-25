@@ -8,7 +8,7 @@ ion-card {
 }
 p
 {
-    margin: 5px 0;
+    margin: 3px 0;
 }
 .open
 {
@@ -42,12 +42,17 @@ ion-slide ion-col
     border-right: 1px solid #e8e8e8;
     text-align: center;
     position: relative;
-    bottom: 0;
-    height: 40px;
-    width: 100px;
-    background:#fdfdfd;
+    bottom: 5px;
+    height: 80px;
+    background: #fdfdfd;
+    font-size: 10px;
 }
 ion-footer
 {
     height: 50px;
+}
+.swiper-slide img
+{
+    width:45px;
+    padding: 1px;
 }
