@@ -7,9 +7,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DetailsPage implements OnInit {
   segmentModel:string;
+  Customer:any = false;
   constructor() {
     this.segmentModel = "all"
    }
+
+    CustClose()
+    {
+      this.Customer = false;
+    }
+
+    CustOpen()
+    {
+      this.Customer = true;
+    }
 
    
   ngOnInit() {

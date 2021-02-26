@@ -82,6 +82,18 @@ const routes: Routes = [
   {
     path: 'services',
     loadChildren: () => import('./services/services.module').then( m => m.ServicesPageModule)
+  },
+  {
+    path: 'map',
+    loadChildren: () => import('./map/map.module').then( m => m.MapPageModule)
+  },
+  {
+    path: 'calllist',
+    loadChildren: () => import('./calllist/calllist.module').then( m => m.CalllistPageModule)
+  },
+  {
+    path: 'calling',
+    loadChildren: () => import('./calling/calling.module').then( m => m.CallingPageModule)
   }
 ];
 

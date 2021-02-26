@@ -14,7 +14,7 @@
       </ion-col>
       <ion-col size="3">
         <ion-row>
-          <ion-col>
+          <ion-col  (click)="showsearch()">
             <ion-icon name="search-outline"></ion-icon>
           </ion-col>
           <ion-col id="cart-btn" ion-button icon-only routerLink="/notifications">
@@ -24,6 +24,7 @@
         </ion-row>
       </ion-col>
     </ion-row>
+    <ion-searchbar *ngIf="SearchBar"></ion-searchbar>
   </ion-toolbar>
 </ion-header>
 <ion-content padding>
@@ -565,19 +566,19 @@
 
 <ion-footer>
   <ion-row>
-    <ion-col>
+    <ion-col routerLink="/calllist">
       <ion-icon name="call-outline"></ion-icon>
     </ion-col>
     <ion-col routerLink="/message">
       <ion-icon name="chatbox-ellipses-outline"></ion-icon>
     </ion-col>
-    <ion-col>
+    <ion-col routerLink="/home">
       <ion-icon name="home-outline" class="home-icon"></ion-icon>
     </ion-col>
-    <ion-col>
+    <ion-col routerLink="/favourite">
       <ion-icon name="heart-outline"></ion-icon>
     </ion-col>
-    <ion-col>
+    <ion-col routerLink="/profile">
       <ion-icon name="person-outline"></ion-icon>
     </ion-col>
   </ion-row>

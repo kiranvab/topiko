@@ -1,0 +1,41 @@
+ion-content
+{
+    font-size: 12px;
+}
+.user-name
+{
+    padding: 3px 0;
+    margin: 0;
+    color: #5e1c57;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.user-email{
+    padding: 0;
+    margin: 0;
+    font-size: 12px;
+    color: #333;
+}
+ion-card-content
+{
+    font-size: 12px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+ion-card 
+{
+    width: 100%;
+    margin: 3%;
+}
+
+ion-card-header 
+{
+    background: #5e1c57;
+    color: #fff;
+    height: 40px;
+    padding: 10px;
+}

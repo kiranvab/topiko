@@ -15,8 +15,17 @@ export class HomePage implements OnInit {
     centeredSlides: true,
     spaceBetween: 2
   };
+  SearchBar:any = false;
   constructor() { }
 
+  showsearch(){
+    if(this.SearchBar == true){ 
+    this.SearchBar = false;
+  }
+  else{
+    this.SearchBar = true;
+  }
+  }
 
   ngOnInit() {
   }

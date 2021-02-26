@@ -1,9 +1,122 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>profile</ion-title>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Profile </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+<ion-row style="margin:10px">
+  <ion-col size="10">
+    <p class="user-name">Murali krishna</p>
+    <p class="user-email">muralikrishna@topiko.in</p>
+  </ion-col>
+  <ion-col size="2">
+    <ion-thumbnail>
+      <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+    </ion-thumbnail>
+  </ion-col>
+</ion-row>
+<ion-row>
+  <ion-card>
+    <ion-card-header>
+      <ion-row>
+        <ion-col size="1"><ion-icon name="person-outline"></ion-icon></ion-col>
+        <ion-col size="9">Profile Setting</ion-col>
+        <ion-col size="2">Edit</ion-col>
+      </ion-row>
+    </ion-card-header>
+    <ion-card-content>
+     
+         <ion-row>
+            <ion-col size="4">Fullname</ion-col>
+            <ion-col size="1">:</ion-col>
+            <ion-col size="7" class="text-right">Murali Krishna</ion-col>
+          </ion-row>
+     
+          <ion-row>
+            <ion-col size="4">Dathe of Birth</ion-col>
+            <ion-col size="1">:</ion-col>
+            <ion-col size="7" class="text-right">12-10-1983</ion-col>
+          </ion-row>
+        
+          <ion-row>
+            <ion-col size="4">Email</ion-col>
+            <ion-col size="1">:</ion-col>
+            <ion-col size="7" class="text-right">MuraliKrishna@topiko.in</ion-col>
+          </ion-row>
+        
+          <ion-row>
+            <ion-col size="4">Gender</ion-col>
+            <ion-col size="1">:</ion-col>
+            <ion-col size="7" class="text-right">Male</ion-col>
+          </ion-row>  
+             
+      
+    </ion-card-content>
+  </ion-card>
+</ion-row>
 
+<ion-row>
+  <ion-card>
+    <ion-card-header>
+      <ion-row>
+        <ion-col size="1"><ion-icon name="person-outline"></ion-icon></ion-col>
+        <ion-col size="11">Setting</ion-col>
+      </ion-row>
+    </ion-card-header>
+    <ion-card-content>
+     
+         <ion-row>
+            <ion-col size="4">Fullname</ion-col>
+            <ion-col size="1">:</ion-col>
+            <ion-col size="7" class="text-right">Murali Krishna</ion-col>
+          </ion-row>
+     
+          <ion-row>
+            <ion-col size="4">Dathe of Birth</ion-col>
+            <ion-col size="1">:</ion-col>
+            <ion-col size="7" class="text-right">12-10-1983</ion-col>
+          </ion-row>
+        
+          <ion-row>
+            <ion-col size="4">Email</ion-col>
+            <ion-col size="1">:</ion-col>
+            <ion-col size="7" class="text-right">MuraliKrishna@topiko.in</ion-col>
+          </ion-row>
+        
+          <ion-row>
+            <ion-col size="4">Gender</ion-col>
+            <ion-col size="1">:</ion-col>
+            <ion-col size="7" class="text-right">Male</ion-col>
+          </ion-row>  
+             
+      
+    </ion-card-content>
+  </ion-card>
+</ion-row>
 </ion-content>
+
+
+
+<ion-footer>
+  <ion-row>
+    <ion-col routerLink="/calllist">
+      <ion-icon name="call-outline"></ion-icon>
+    </ion-col>
+    <ion-col routerLink="/message">
+      <ion-icon name="chatbox-ellipses-outline"></ion-icon>
+    </ion-col>
+    <ion-col routerLink="/home">
+      <ion-icon name="home-outline" class="home-icon"></ion-icon>
+    </ion-col>
+    <ion-col routerLink="/favourite">
+      <ion-icon name="heart-outline"></ion-icon>
+    </ion-col>
+    <ion-col routerLink="/profile">
+      <ion-icon name="person-outline"></ion-icon>
+    </ion-col>
+  </ion-row>
+</ion-footer>

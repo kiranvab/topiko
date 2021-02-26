@@ -1,0 +1,66 @@
+.background
+{
+--background: -webkit-radial-gradient(top left, #BE09F8, #700D58) !important;
+}
+ion-row 
+{
+    text-align: center;
+    margin: 0 auto;
+}
+.accept
+{
+    background: green;
+    padding: 20px;
+    color: #fff;
+    font-size: 24px;
+    border-radius: 50%;
+    box-shadow: 4px 4px 10px #6f6d6d;
+}
+
+.decline 
+{
+    background: red;
+    padding: 20px;
+    color: #fff;
+    font-size: 24px;
+    border-radius: 50%;
+    box-shadow: 4px 4px 10px #6f6d6d;
+    transform: rotate(135deg);
+}
+
+.message
+{
+    background: #fafafa;
+    padding: 20px;
+    color: #040404;
+    font-size: 24px;
+    border-radius: 50%;
+    box-shadow: 4px 4px 10px #6f6d6d;
+}
+
+.btns-block
+{
+    position: absolute;
+    bottom: 7%;
+    width: 100%;
+}
+
+.user-block
+{
+    position: absolute;
+    top: 10%;
+    width: 100%;
+    color: #fff;
+    font-size: 32px;
+}
+
+.user-block img 
+{
+    text-align: center;
+    display: block;
+    width: 100%;
+    position: absolute;
+    padding: 10% 25%;
+    font-size: 32px;
+    
+}
