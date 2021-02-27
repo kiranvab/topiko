@@ -9,7 +9,7 @@ export class DetailsPage implements OnInit {
   segmentModel:string;
   Customer:any = false;
   constructor() {
-    this.segmentModel = "all"
+    this.segmentModel = "details"
    }
 
     CustClose()

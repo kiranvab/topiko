@@ -33,24 +33,26 @@
     mode="ios"
     [(ngModel)]="segmentModel" >
 
-      <ion-segment-button value="all">
+      <ion-segment-button value="details">
         <ion-label>Details</ion-label>
+      </ion-segment-button>
+
+      <ion-segment-button value="offers">
+        <ion-label>Offers</ion-label>
       </ion-segment-button>
 
       <ion-segment-button value="products">
         <ion-label>Products</ion-label>
       </ion-segment-button>
 
-      <ion-segment-button value="profile">
+      <ion-segment-button value="reviews">
         <ion-label>Reviews</ion-label>
       </ion-segment-button>
 
-      <ion-segment-button value="settings">
-        <ion-label>Contact</ion-label>
-      </ion-segment-button>
+      
     </ion-segment>
 
-    <div  *ngIf="segmentModel === 'all'">
+    <div  *ngIf="segmentModel === 'details'">
       <ion-card>
         <ion-row no-padding>
           <ion-col><p class="shop-name">Kavya Kiranam</p></ion-col>
@@ -85,8 +87,8 @@
         </ion-row>
       </ion-card>
         <ion-card>
+          <strong>About </strong>
           <ion-col>
-          <strong>About</strong>
           <p style="line-height: 20px;">Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero's De Finibus Bonorum et Malorum for use in a type specimen book.</p>
           </ion-col>
       </ion-card>
@@ -115,6 +117,110 @@
             </ion-avatar>
           </ion-col>
         </ion-row>
+      </ion-card>
+
+      <ion-card>
+        <strong>Store Directions</strong>
+      <ion-row>
+        <ion-col>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d60966.214446579885!2d80.11541535332768!3d17.24843419167358!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a3459d0d5cf738d%3A0xe18da4ae6d89da01!2sKhammam%2C%20Telangana!5e0!3m2!1sen!2sin!4v1614011017766!5m2!1sen!2sin" width="100%" height="150" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </ion-col>
+      </ion-row>
+    </ion-card>
+    
+      <ion-card>
+        <strong>Store Timings</strong>
+        <ion-item>
+          <ion-row>
+            <ion-col>
+              <ion-label> Monday </ion-label>
+          </ion-col>
+          <ion-col>
+            <ion-label>: </ion-label>
+        </ion-col>
+        <ion-col>
+          <ion-label> 10:00 Am to 10:00 Pm  </ion-label>
+      </ion-col>
+          </ion-row>
+        </ion-item>
+        <ion-item>
+          <ion-row>
+            <ion-col>
+              <ion-label> Tuesday </ion-label>
+          </ion-col>
+          <ion-col>
+            <ion-label>: </ion-label>
+        </ion-col>
+        <ion-col>
+          <ion-label> 10:00 Am to 10:00 Pm  </ion-label>
+      </ion-col>
+          </ion-row>
+        </ion-item>
+        <ion-item>
+          <ion-row>
+            <ion-col>
+              <ion-label> Wednesday </ion-label>
+          </ion-col>
+          <ion-col>
+            <ion-label>: </ion-label>
+        </ion-col>
+        <ion-col>
+          <ion-label> 10:00 Am to 10:00 Pm  </ion-label>
+      </ion-col>
+          </ion-row>
+        </ion-item>
+        <ion-item>
+          <ion-row>
+            <ion-col>
+              <ion-label> Thursday </ion-label>
+          </ion-col>
+          <ion-col>
+            <ion-label>: </ion-label>
+        </ion-col>
+        <ion-col>
+          <ion-label> 10:00 Am to 10:00 Pm  </ion-label>
+      </ion-col>
+          </ion-row>
+        </ion-item>
+        <ion-item>
+          <ion-row>
+            <ion-col>
+              <ion-label> Friday </ion-label>
+          </ion-col>
+          <ion-col>
+            <ion-label>: </ion-label>
+        </ion-col>
+        <ion-col>
+          <ion-label> 10:00 Am to 10:00 Pm  </ion-label>
+      </ion-col>
+          </ion-row>
+        </ion-item>
+        <ion-item>
+          <ion-row>
+            <ion-col>
+              <ion-label> Saturday </ion-label>
+          </ion-col>
+          <ion-col>
+            <ion-label>: </ion-label>
+        </ion-col>
+        <ion-col>
+          <ion-label> 10:00 Am to 10:00 Pm  </ion-label>
+      </ion-col>
+          </ion-row>
+        </ion-item>
+        <ion-item>
+          <ion-row>
+            <ion-col>
+              <ion-label> Sunday </ion-label>
+          </ion-col>
+          <ion-col>
+            <ion-label>: </ion-label>
+        </ion-col>
+        <ion-col>
+          <ion-label> 10:00 Am to 10:00 Pm  </ion-label>
+      </ion-col>
+          </ion-row>
+        </ion-item>
       </ion-card>
     
     </div>
@@ -193,7 +299,29 @@
 </ion-card>
   </div>
     
-  <div *ngIf="segmentModel === 'profile'">
+  <div *ngIf="segmentModel === 'reviews'">
+    <ion-card>
+      <strong>Add Review</strong>
+      <ion-row>
+        <ion-col class="rating">
+          <ion-icon name="star-outline"></ion-icon>
+          <ion-icon name="star-outline"></ion-icon>
+          <ion-icon name="star-outline"></ion-icon>
+          <ion-icon name="star-outline"></ion-icon>
+          <ion-icon name="star-outline"></ion-icon>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-textarea placeholder="Enter more information here..."></ion-textarea>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row class="text-right">
+        <ion-button size="small">Submit Review</ion-button>
+      </ion-row>
+    </ion-card>
     <ion-card no-padding >
      <ion-row>
        <ion-col size="3">
@@ -276,111 +404,15 @@
     
   </div>
   
-    <div  *ngIf="segmentModel === 'settings'">
-    <ion-card>
-      <ion-row >
-      <ion-col>Store Directions</ion-col>
-    </ion-row>
+    <div  *ngIf="segmentModel === 'offers'">
+  <ion-card>
     <ion-row>
-      <ion-col>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d60966.214446579885!2d80.11541535332768!3d17.24843419167358!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a3459d0d5cf738d%3A0xe18da4ae6d89da01!2sKhammam%2C%20Telangana!5e0!3m2!1sen!2sin!4v1614011017766!5m2!1sen!2sin" width="100%" height="150" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+      <ion-col>BUY ONE GET ONE FREE</ion-col>
+      <ion-col size="3">
+        <ion-button color="primary" size="small" expand="block" type="ios">Claim</ion-button>
       </ion-col>
     </ion-row>
   </ion-card>
-    <ion-card>
-      <ion-item>
-        <ion-row>
-          <ion-col>
-            <ion-label> Monday </ion-label>
-        </ion-col>
-        <ion-col>
-          <ion-label>: </ion-label>
-      </ion-col>
-      <ion-col>
-        <ion-label> 10:00 Am to 10:00 Pm  </ion-label>
-    </ion-col>
-        </ion-row>
-      </ion-item>
-      <ion-item>
-        <ion-row>
-          <ion-col>
-            <ion-label> Tuesday </ion-label>
-        </ion-col>
-        <ion-col>
-          <ion-label>: </ion-label>
-      </ion-col>
-      <ion-col>
-        <ion-label> 10:00 Am to 10:00 Pm  </ion-label>
-    </ion-col>
-        </ion-row>
-      </ion-item>
-      <ion-item>
-        <ion-row>
-          <ion-col>
-            <ion-label> Wednesday </ion-label>
-        </ion-col>
-        <ion-col>
-          <ion-label>: </ion-label>
-      </ion-col>
-      <ion-col>
-        <ion-label> 10:00 Am to 10:00 Pm  </ion-label>
-    </ion-col>
-        </ion-row>
-      </ion-item>
-      <ion-item>
-        <ion-row>
-          <ion-col>
-            <ion-label> Thursday </ion-label>
-        </ion-col>
-        <ion-col>
-          <ion-label>: </ion-label>
-      </ion-col>
-      <ion-col>
-        <ion-label> 10:00 Am to 10:00 Pm  </ion-label>
-    </ion-col>
-        </ion-row>
-      </ion-item>
-      <ion-item>
-        <ion-row>
-          <ion-col>
-            <ion-label> Friday </ion-label>
-        </ion-col>
-        <ion-col>
-          <ion-label>: </ion-label>
-      </ion-col>
-      <ion-col>
-        <ion-label> 10:00 Am to 10:00 Pm  </ion-label>
-    </ion-col>
-        </ion-row>
-      </ion-item>
-      <ion-item>
-        <ion-row>
-          <ion-col>
-            <ion-label> Saturday </ion-label>
-        </ion-col>
-        <ion-col>
-          <ion-label>: </ion-label>
-      </ion-col>
-      <ion-col>
-        <ion-label> 10:00 Am to 10:00 Pm  </ion-label>
-    </ion-col>
-        </ion-row>
-      </ion-item>
-      <ion-item>
-        <ion-row>
-          <ion-col>
-            <ion-label> Sunday </ion-label>
-        </ion-col>
-        <ion-col>
-          <ion-label>: </ion-label>
-      </ion-col>
-      <ion-col>
-        <ion-label> 10:00 Am to 10:00 Pm  </ion-label>
-    </ion-col>
-        </ion-row>
-      </ion-item>
-    </ion-card>
-
 
   </div>
 

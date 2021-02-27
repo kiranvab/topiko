@@ -65,6 +65,10 @@ line-height: 10px;
     color: #7d0670;
     padding: 0;
 }
+strong
+{
+    color: #7d0670;
+}
 .review-date
 {
 font-size: 12px;
@@ -74,7 +78,7 @@ font-size: 12px;
 font-size: 10px;
 color: #333;
 margin: 0;
-color:darkorchid;
+color:#666;
 }
 .map-holder
 {
@@ -124,4 +128,15 @@ color:darkorchid;
     top: 0;
     font-size: 32px;
     right: 5px;
+}
+
+.rating
+{
+    text-align: center;
+    font-size: 32px;
+}
+
+.text-right
+{
+    float: right;
 }

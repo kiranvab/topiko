@@ -8,11 +8,11 @@ export class AppComponent {
   public appPages = [
     { title: 'Post Your Business', url: '#'},
     { title: 'Change Categories', url: '#' },
-    { title: 'Create Business user', url: '#'},
-    { title: 'Business Dashboard', url: '#'},
+    { title: 'Create Business user', url: ''},
+    { title: 'Business Dashboard', url:'#'},
     { title: 'Create QR Code', url: '#'},
-    { title: 'Change PIN', url: '#'},
-    { title: 'Edit Profile', url: '#'},
+    { title: 'ChangePIN', url: '#'},
+    { title: 'EditProfile', url: '#'},
     { title: 'Add more Details', url: '#'},
     { title: 'Skipped Items', url: '#'},
     { title: 'List My Business', url: '#'},
@@ -20,6 +20,6 @@ export class AppComponent {
     { title: 'Setting', url: '#'},
     { title: 'logout', url: '#'},
   ];
-  //public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
+  public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
   constructor() {}
 }
