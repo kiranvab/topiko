@@ -1,0 +1,46 @@
+ion-content {
+    --background: #122959;
+    font-family: Comfortaa;
+    color: #fff;
+}
+h5 
+{
+    color: #fff;
+    text-align: center;
+}
+ion-card 
+{
+    border: 1px dotted #333;
+}
+
+ion-item 
+{
+    padding: 10px;
+}
+
+ion-label 
+{
+    padding: 10px;
+    color: #fff;
+}
+
+ion-input,
+.native-textarea.sc-ion-textarea-md
+{
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 10px 0 !important;
+    margin: 10px;
+    width: 95%;
+    color: #fff;
+}
+
+.textarea 
+{
+    border: 1px solid #ccc !important;
+    border-radius: 10px !important;
+    padding: 16px !important;
+    margin: 10px !important;
+    width: 95% !important;
+    color: #fff;
+}

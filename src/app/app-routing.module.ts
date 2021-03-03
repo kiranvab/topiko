@@ -94,6 +94,50 @@ const routes: Routes = [
   {
     path: 'calling',
     loadChildren: () => import('./calling/calling.module').then( m => m.CallingPageModule)
+  },
+  {
+    path: 'businessdetails',
+    loadChildren: () => import('./businessdetails/businessdetails.module').then( m => m.BusinessdetailsPageModule)
+  },
+  {
+    path: 'businesscategory',
+    loadChildren: () => import('./businesscategory/businesscategory.module').then( m => m.BusinesscategoryPageModule)
+  },
+  {
+    path: 'businessimages',
+    loadChildren: () => import('./businessimages/businessimages.module').then( m => m.BusinessimagesPageModule)
+  },
+  {
+    path: 'businesstime',
+    loadChildren: () => import('./businesstime/businesstime.module').then( m => m.BusinesstimePageModule)
+  },
+  {
+    path: 'dashboard',
+    loadChildren: () => import('./dashboard/dashboard.module').then( m => m.DashboardPageModule)
+  },
+  {
+    path: 'enquiries',
+    loadChildren: () => import('./enquiries/enquiries.module').then( m => m.EnquiriesPageModule)
+  },
+  {
+    path: 'callenquiry',
+    loadChildren: () => import('./callenquiry/callenquiry.module').then( m => m.CallenquiryPageModule)
+  },
+  {
+    path: 'offers',
+    loadChildren: () => import('./offers/offers.module').then( m => m.OffersPageModule)
+  },
+  {
+    path: 'postoffers',
+    loadChildren: () => import('./postoffers/postoffers.module').then( m => m.PostoffersPageModule)
+  },
+  {
+    path: 'products',
+    loadChildren: () => import('./products/products.module').then( m => m.ProductsPageModule)
+  },
+  {
+    path: 'addproducts',
+    loadChildren: () => import('./addproducts/addproducts.module').then( m => m.AddproductsPageModule)
   }
 ];
 

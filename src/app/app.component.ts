@@ -8,7 +8,7 @@ export class AppComponent {
   public appPages = [
     { title: 'Post Your Business', url: '#'},
     { title: 'Change Categories', url: '#' },
-    { title: 'Create Business user', url: ''},
+    { title: 'Create Business user', url: '#'},
     { title: 'Business Dashboard', url:'#'},
     { title: 'Create QR Code', url: '#'},
     { title: 'ChangePIN', url: '#'},

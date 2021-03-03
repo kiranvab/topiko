@@ -1,0 +1,92 @@
+<ion-content>
+  <h5>Operating Hours</h5>
+  <ion-card>
+    <ion-card-header>
+  <ion-row>
+    <ion-col size="3">Day</ion-col>
+    <ion-col>Start Time</ion-col>
+    <ion-col>End Time</ion-col>
+    <ion-col size="2">Closed</ion-col>
+  </ion-row>
+</ion-card-header>
+<ion-row>
+  <ion-col size="3"><p>Monday</p></ion-col>
+  <ion-col ><ion-datetime displayFormat="HH:mm" value="2012-12-15T13:47:20.789"></ion-datetime></ion-col>
+  <ion-col ><ion-datetime displayFormat="HH:mm" value="2012-12-15T13:47:20.789"></ion-datetime></ion-col>
+  <ion-col size="2"><ion-checkbox></ion-checkbox></ion-col>
+</ion-row>  
+<ion-row>
+    <ion-col size="3"><p>Tuesday</p></ion-col>
+    <ion-col ><ion-datetime displayFormat="HH:mm" value="2012-12-15T13:47:20.789"></ion-datetime></ion-col>
+    <ion-col ><ion-datetime displayFormat="HH:mm" value="2012-12-15T13:47:20.789"></ion-datetime></ion-col>
+    <ion-col size="2"><ion-checkbox></ion-checkbox></ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col size="3"><p>Wednesday</p></ion-col>
+    <ion-col ><ion-datetime displayFormat="HH:mm" value="2012-12-15T13:47:20.789"></ion-datetime></ion-col>
+    <ion-col ><ion-datetime displayFormat="HH:mm" value="2012-12-15T13:47:20.789"></ion-datetime></ion-col>
+    <ion-col size="2"><ion-checkbox></ion-checkbox></ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col size="3"><p>Thursday</p></ion-col>
+    <ion-col ><ion-datetime displayFormat="HH:mm" value="2012-12-15T13:47:20.789"></ion-datetime></ion-col>
+    <ion-col ><ion-datetime displayFormat="HH:mm" value="2012-12-15T13:47:20.789"></ion-datetime></ion-col>
+    <ion-col size="2"><ion-checkbox></ion-checkbox></ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col size="3"><p>Friday</p></ion-col>
+    <ion-col ><ion-datetime displayFormat="HH:mm" value="2012-12-15T13:47:20.789"></ion-datetime></ion-col>
+    <ion-col ><ion-datetime displayFormat="HH:mm" value="2012-12-15T13:47:20.789"></ion-datetime></ion-col>
+    <ion-col size="2"><ion-checkbox></ion-checkbox></ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col size="3"><p>Saturday</p></ion-col>
+    <ion-col ><ion-datetime displayFormat="HH:mm" value="2012-12-15T13:47:20.789"></ion-datetime></ion-col>
+    <ion-col ><ion-datetime displayFormat="HH:mm" value="2012-12-15T13:47:20.789"></ion-datetime></ion-col>
+    <ion-col size="2"><ion-checkbox></ion-checkbox></ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col size="3"><p>Sunday</p></ion-col>
+    <ion-col ><ion-datetime displayFormat="HH:mm" value="2012-12-15T13:47:20.789"></ion-datetime></ion-col>
+    <ion-col ><ion-datetime displayFormat="HH:mm" value="2012-12-15T13:47:20.789"></ion-datetime></ion-col>
+    <ion-col size="2"><ion-checkbox></ion-checkbox></ion-col>
+  </ion-row>
+  
+</ion-card>
+
+<h5>Employees</h5>
+<ion-card>
+  <ion-row>
+    <ion-col>
+      <ion-item>
+      <ion-label position="stacked">Employee Name</ion-label>
+      <ion-input placeholder="Employee Name"></ion-input>
+    </ion-item>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <ion-item>
+      <ion-label position="stacked">Phone No</ion-label>
+      <ion-input type="tel" placeholder="Phone No"></ion-input>
+    </ion-item>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <ion-item>
+        <ion-label>Language</ion-label>
+        <ion-select placeholder="Select One">
+          <ion-select-option value="f">English</ion-select-option>
+          <ion-select-option value="m">Telugu</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+  <ion-row style="text-align: center;">
+    <ion-button size="small">Add More</ion-button>
+  </ion-row>
+</ion-card>
+
+<ion-button color="warning" size="block" routerLink="/dashboard">Submit</ion-button>
+</ion-content>

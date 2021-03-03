@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Call Enquiry</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-segment 
+  value="all" 
+  color="tertiary" 
+  scrollable="true"
+  mode="ios"
+  [(ngModel)]="segmentModel" >
+
+    <ion-segment-button value="all">
+      <ion-label>All</ion-label>
+    </ion-segment-button>
+
+    <ion-segment-button value="missed">
+      <ion-label>Missed</ion-label>
+    </ion-segment-button>
+
+    <ion-segment-button value="recorded">
+      <ion-label>Recorded</ion-label>
+    </ion-segment-button>
+ 
+  </ion-segment>
+
+  <div  *ngIf="segmentModel === 'all'"></div>
+
+  <div  *ngIf="segmentModel === 'missed'"></div>
+
+  <div  *ngIf="segmentModel === 'recorded'"></div>
+
+</ion-content>

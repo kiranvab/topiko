@@ -1,0 +1,77 @@
+ion-content {
+    --background: #122959;
+    font-family: Comfortaa;
+    color: #fff;
+}
+strong 
+{
+    color: red;
+}
+.main
+{
+    background: #fff;
+    padding: 5px;
+    border-radius: 10px;
+    margin: 5px;
+}
+.main-div
+{
+    background: #e8e8e8;
+    padding: 0px;
+    font-size: 80%;
+    height: 25%;
+    border-radius: 0px 0px 50% 50%;
+    margin-bottom: 10px;
+    text-align: center;
+}
+.bottom-div
+{
+    background: #e8e8e8;
+    padding: 5px;
+    border-radius: 5px 5px 0 0;
+    margin-top:5px;
+    margin: 5px;
+    padding-bottom: 30px;
+}
+.card1
+{
+    background: #f2bd12;
+    text-align: center;
+    border-radius: 12px;
+    line-height: 4px;
+    height: 70px;
+    margin-right: 10px;
+}
+.card2
+{
+    background: #9f1ca9;
+    text-align: center;
+    border-radius: 12px;
+    line-height: 4px;
+    height: 70px;
+    margin-right: 10px;
+}
+.card3
+{
+    background: #e91e63;
+    text-align: center;
+    border-radius: 12px;
+    line-height: 4px;
+    height: 70px;
+    margin-right: 10px;
+}
+.card4
+{
+    background: #cddc39;
+    text-align: center;
+    border-radius: 12px;
+    line-height: 4px;
+    height: 70px;
+    margin-right: 10px;
+}
+
+ion-card 
+{
+    margin: 0;
+    text-align: center;
+}
