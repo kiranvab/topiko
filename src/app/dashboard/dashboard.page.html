@@ -3,102 +3,214 @@
 <div class="main-div">
   
   <ion-row>
-    <ion-col><img style="width:15%; text-align: center;" src="https://www.freelogodesign.org/Content/img/logo-samples/bakary.png"></ion-col>
+    <ion-col size="3"><img  src="https://www.freelogodesign.org/Content/img/logo-samples/bakary.png"></ion-col>
+    <ion-col size="9">
+      <strong>Business Name</strong><br>
+      <div class="address">
+      Business Address Line no 1 <br>
+        Business Address Line 2<br>
+        Postal code, City, State, Country
+      </div>  
+    </ion-col>
   </ion-row>
   <ion-row>
     <ion-col>
-      <strong>Business Name</strong><br>
-        Business Address Line no 1 <br>
-        Business Address Line 2<br>
-        Postal code, City, State, Country
-    
+
+<ion-button expand="block" fill="outline" size="small" color="light">Share Business Card</ion-button>
+<br>
+
+      
     </ion-col>
   </ion-row>
 
 </div>
 
 <div class="main">
-  <h5>Business Summary</h5>
+  <h6>Business Summary</h6>
   <ion-row>
-    <ion-col class="card1" routerLink="/details">
-      <p>Visits</p>
-      <p>10</p>
+   <ion-col size="3" routerLink="/offers">
+   Visits
+   <p>0</p>
+   </ion-col>
+   <ion-col size="3" routerLink="/offers">
+    Enquiries
+    <p>0</p>
     </ion-col>
-    <ion-col class="card2" routerLink="/details">
-      <p>Enquiries</p>
-      <p>10</p>
-    </ion-col>
-    <ion-col class="card3" routerLink="/message">
-      <p>Chats</p>
-      <p>10</p>
-    </ion-col>
-    <ion-col class="card4" routerLink="/enquiries">
-      <p>Calls</p>
-      <p>10</p>
+    <ion-col size="3" routerLink="/offers">
+      Reviews
+      <p>0</p>
+      </ion-col>
+    <ion-col size="3" routerLink="/offers">
+        Orders
+        <p>0</p>
     </ion-col>
   </ion-row>
 </div>
 
-<div class="bottom-div">
-  <h5>Business Actions</h5>
+<div class="daily-div">
+  <h6>Daily Actions</h6>
+  <p class="small-text">Most Frequently used actions to manage your business</p>
   <ion-row>
-    <ion-col size="4">
+   <ion-col size="3" routerLink="/offers">
+     <div class="img-div">
+    <img src="assets/icon1_1.png">
+    </div>
+    Post <br> New offers
+   </ion-col>
+   <ion-col size="3">
+    <div class="img-div">
+    <img src="assets/icon2_1.png">
+    </div>
+    Manage Exisitng Offers
+   </ion-col>
+   <ion-col size="3" routerLink="/modify">
+    <div class="img-div">
+    <img src="assets/icon3_1.png">
+    </div>
+    Modify Services
+   </ion-col>
+   <ion-col size="3" routerLink="/businesstime">
+    <div class="img-div">
+    <img src="assets/icon4_1.png">
+    </div>
+    Add Modify Employees
+   </ion-col>
+  </ion-row>
+</div>
+
+<div class="bottom-div">
+  <h5>Enagage Customer</h5>
+  <p class="small-text">View and interact with customers</p>
+  <ion-row>
+    <ion-col size="3" routerLink="/callenquiry">
       <ion-card>
-        <img src="https://img.icons8.com/bubbles/2x/product.png">
-      Products
+        <img src="assets/icon5.png">
+        Phone calls
+      </ion-card>
+      
+    </ion-col> 
+    <ion-col size="3" routerLink="/reviews">
+      <ion-card>
+        <img src="assets/icon6.png">
+        Reviews
+      </ion-card>
+      
+    </ion-col> 
+      
+  </ion-row>
+</div>
+
+<div class="middle-div">
+  <h5>Business Reports</h5>
+  <ion-row>
+    <ion-col size="6">
+      <ion-card routerLink="/products">
+        <ion-row>
+          <ion-col size="9"><h6>Products</h6></ion-col>
+          <ion-col size="3">
+            <ion-icon name="dice-outline"></ion-icon>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col class="count">
+            12
+          </ion-col>
+        </ion-row>
       </ion-card>
     </ion-col> 
-    <ion-col size="4">
+    <ion-col size="6">
       <ion-card>
-        <img src="https://img.icons8.com/bubbles/2x/product.png">
-      Services
+        <ion-row>
+          <ion-col size="9"><h6>Services</h6></ion-col>
+          <ion-col size="3">
+            <ion-icon name="aperture-outline"></ion-icon>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col class="count">
+            8
+          </ion-col>
+        </ion-row>
       </ion-card>
     </ion-col> 
-    <ion-col size="4">
+    <ion-col size="6">
       <ion-card>
-        <img src="https://img.icons8.com/bubbles/2x/product.png">
-      Offers
+        <ion-row>
+          <ion-col size="9"><h6>Offers</h6></ion-col>
+          <ion-col size="3">
+            <ion-icon name="pricetags-outline"></ion-icon>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col class="count">
+            45
+          </ion-col>
+        </ion-row>
       </ion-card>
     </ion-col> 
-    <ion-col size="4">
+    <ion-col size="6">
       <ion-card>
-        <img src="https://img.icons8.com/bubbles/2x/product.png">
-      Reviews
+        <ion-row>
+          <ion-col size="9"><h6>Reviews</h6></ion-col>
+          <ion-col size="3">
+            <ion-icon name="star-outline"></ion-icon>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col class="count">
+            127
+          </ion-col>
+        </ion-row>
       </ion-card>
     </ion-col> 
-    <ion-col size="4">
+    <ion-col size="6">
       <ion-card>
-        <img src="https://img.icons8.com/bubbles/2x/product.png">
-      Business
+        <ion-row>
+          <ion-col size="9"><h6>Business</h6></ion-col>
+          <ion-col size="3">
+            <ion-icon name="business-outline"></ion-icon>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col class="count">
+            2
+          </ion-col>
+        </ion-row>
       </ion-card>
     </ion-col> 
-    <ion-col size="4">
+    <ion-col size="6">
       <ion-card>
-        <img src="https://img.icons8.com/bubbles/2x/product.png">
-      Employees
+        <ion-row>
+          <ion-col size="9"><h6>Employees</h6></ion-col>
+          <ion-col size="3"><ion-icon name="person-add-outline"></ion-icon></ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col class="count">
+            5
+          </ion-col>
+        </ion-row>
       </ion-card>
     </ion-col>  
   </ion-row>
 </div>
+
+
 </ion-content>
 
 
 <ion-footer>
   <ion-row>
     <ion-col routerLink="/calllist">
-      <ion-icon name="call-outline"></ion-icon>
+      <ion-icon name="grid-outline"></ion-icon>
     </ion-col>
     <ion-col routerLink="/message">
       <ion-icon name="chatbox-ellipses-outline"></ion-icon>
     </ion-col>
-    <ion-col routerLink="/dashboard">
-      <ion-icon name="home-outline" class="home-icon"></ion-icon>
-    </ion-col>
-    <ion-col routerLink="/favourite">
-      <ion-icon name="heart-outline"></ion-icon>
-    </ion-col>
     <ion-col routerLink="/profile">
       <ion-icon name="person-outline"></ion-icon>
+    </ion-col>
+    <ion-col routerLink="/favourite">
+      <ion-icon name="cog-outline"></ion-icon>
     </ion-col>
   </ion-row>
 </ion-footer>

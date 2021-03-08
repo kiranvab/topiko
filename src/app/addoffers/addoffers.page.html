@@ -1,0 +1,104 @@
+<ion-header>
+  <ion-toolbar color="warning">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Add offers</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <h5>Choose Your service</h5>
+  <ion-card>
+    <ion-item>
+      <ion-label>Select Sub Category</ion-label>
+      <ion-select placeholder="Select One">
+        <ion-select-option value="f">Category</ion-select-option>
+        <ion-select-option value="m">Category</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Select Need</ion-label>
+      <ion-select placeholder="Select One">
+        <ion-select-option value="f">Select Need</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Select City</ion-label>
+      <ion-select placeholder="Select One">
+        <ion-select-option value="f">Hyderabad</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </ion-card>
+  <h5>Offer Details</h5>
+  <ion-card>
+  <ion-item>
+    <ion-label position="stacked">Offer Title</ion-label>
+    <ion-input></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="stacked">Actual Price </ion-label>
+    <ion-input></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="stacked">Offer Price</ion-label>
+    <ion-input></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">Start Date</ion-label>
+    <ion-datetime value="2021-01-01T15:43:40.394Z" display-timezone="utc"></ion-datetime>
+  </ion-item>
+  <ion-item>
+    <ion-label position="stacked">End Date</ion-label>
+    <ion-datetime value="2021-01-31T15:43:40.394Z" display-timezone="utc"></ion-datetime>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">Terms & Conditions</ion-label>
+    <ion-textarea clearOnEdit="true"></ion-textarea>
+  </ion-item>
+  <div class="addmore"><a href="#">Add more</a></div>
+  <ion-item>
+    <ion-label position="stacked">Description</ion-label>
+    <ion-textarea clearOnEdit="true"></ion-textarea>
+  </ion-item>
+</ion-card>
+
+<h5>Offer images</h5>
+  <ion-card>
+  <ion-row>
+    <ion-col size="3">
+      <img src="https://png.pngtree.com/png-vector/20191129/ourmid/pngtree-image-upload-icon-photo-upload-icon-png-image_2047546.jpg">
+    </ion-col>
+    <ion-col size="3">
+      <img src="https://png.pngtree.com/png-vector/20191129/ourmid/pngtree-image-upload-icon-photo-upload-icon-png-image_2047546.jpg">
+    </ion-col>
+    <ion-col size="3">
+      <img src="https://png.pngtree.com/png-vector/20191129/ourmid/pngtree-image-upload-icon-photo-upload-icon-png-image_2047546.jpg">
+    </ion-col>
+    <ion-col size="3">
+      <img src="https://png.pngtree.com/png-vector/20191129/ourmid/pngtree-image-upload-icon-photo-upload-icon-png-image_2047546.jpg">
+    </ion-col>
+  </ion-row>
+  <ion-row style="text-align: right;">
+    <ion-col><ion-button color="primary"  size="small">Upload Images</ion-button></ion-col>
+  </ion-row>
+  </ion-card>
+  
+    <ion-row>
+      <ion-col size="1">
+        <ion-checkbox></ion-checkbox>
+      </ion-col>
+      <ion-col style="color: #fff; font-size: 12px; padding:15px">
+        I Accept the terms and conditon of topiko 
+      </ion-col>
+    </ion-row>
+    
+  
+    
+</ion-content>
+
+<ion-footer>
+    <ion-button size="block" routerLink="/dashboard" color="warning">Submit</ion-button>
+</ion-footer>

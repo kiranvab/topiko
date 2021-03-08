@@ -138,6 +138,42 @@ const routes: Routes = [
   {
     path: 'addproducts',
     loadChildren: () => import('./addproducts/addproducts.module').then( m => m.AddproductsPageModule)
+  },
+  {
+    path: 'reviews',
+    loadChildren: () => import('./reviews/reviews.module').then( m => m.ReviewsPageModule)
+  },
+  {
+    path: 'customerenquiry',
+    loadChildren: () => import('./customerenquiry/customerenquiry.module').then( m => m.CustomerenquiryPageModule)
+  },
+  {
+    path: 'addproduct',
+    loadChildren: () => import('./addproduct/addproduct.module').then( m => m.AddproductPageModule)
+  },
+  {
+    path: 'addoffers',
+    loadChildren: () => import('./addoffers/addoffers.module').then( m => m.AddoffersPageModule)
+  },
+  {
+    path: 'socialmedia',
+    loadChildren: () => import('./socialmedia/socialmedia.module').then( m => m.SocialmediaPageModule)
+  },
+  {
+    path: 'producttype',
+    loadChildren: () => import('./producttype/producttype.module').then( m => m.ProducttypePageModule)
+  },
+  {
+    path: 'productcategory',
+    loadChildren: () => import('./productcategory/productcategory.module').then( m => m.ProductcategoryPageModule)
+  },
+  {
+    path: 'modify',
+    loadChildren: () => import('./modify/modify.module').then( m => m.ModifyPageModule)
+  },
+  {
+    path: 'editemployee',
+    loadChildren: () => import('./editemployee/editemployee.module').then( m => m.EditemployeePageModule)
   }
 ];
 

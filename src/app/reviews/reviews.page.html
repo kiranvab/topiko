@@ -1,0 +1,184 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Customer Reviews</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-segment 
+  value="all" 
+  color="tertiary" 
+  scrollable="true"
+  mode="ios"
+  [(ngModel)]="segmentModel" >
+
+    <ion-segment-button value="all">
+      <ion-label>Latest</ion-label>
+    </ion-segment-button>
+
+    <ion-segment-button value="approved">
+      <ion-label>Approved</ion-label>
+    </ion-segment-button>
+
+    <ion-segment-button value="rejected">
+      <ion-label>Rejected</ion-label>
+    </ion-segment-button>
+ 
+  </ion-segment>
+
+  <div  *ngIf="segmentModel === 'all'">
+    <ion-card>
+      <ion-card-header>
+        <ion-row>
+          <ion-col size="2">
+        <ion-avatar>
+          <img src="assets/user4.jpeg">
+        </ion-avatar>
+        </ion-col>
+        <ion-col size="10" style="padding:0px;">
+          <h6>Kalyan Yadav .D</h6>
+          20-12-2020 09:35 PM
+        </ion-col>
+        </ion-row>
+      </ion-card-header>
+      
+      <ion-card-content>
+      <div class="review-div">
+        <div>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star-half-outline"></ion-icon>
+        <ion-icon name="star-outline"></ion-icon>
+      </div>
+      <p>
+        "Author John David Anderson offers words of comfort and hope in his insightful portrayal of middle school pressures -- to be liked yet to be yourself, while weighing the risk in every interaction.""
+      </p>
+      </div> 
+      <div class="review-text">
+        Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero's De Finibus Bonorum et Malorum for use in a type specimen book.
+      </div> 
+      <ion-row>
+        <ion-col><ion-button size="block" color="danger">Reject</ion-button></ion-col>
+        <ion-col><ion-button  size="block" color="success">Approve</ion-button></ion-col>
+      </ion-row>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+      <ion-card-header>
+        <ion-row>
+          <ion-col size="2">
+        <ion-avatar>
+          <img src="assets/user4.jpeg">
+        </ion-avatar>
+        </ion-col>
+        <ion-col size="10" style="padding:0px;">
+          <h6>Kalyan Yadav .D</h6>
+          20-12-2020 09:35 PM
+        </ion-col>
+        </ion-row>
+      </ion-card-header>
+      
+      <ion-card-content>
+      <div class="review-div">
+        <div>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star-half-outline"></ion-icon>
+        <ion-icon name="star-outline"></ion-icon>
+      </div>
+      <p>
+        "Author John David Anderson offers words of comfort and hope in his insightful portrayal of middle school pressures -- to be liked yet to be yourself, while weighing the risk in every interaction.""
+      </p>
+      </div> 
+      <div class="review-text">
+        Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero's De Finibus Bonorum et Malorum for use in a type specimen book.
+      </div> 
+      <ion-row>
+        <ion-col><ion-button size="block" color="success">Reject</ion-button></ion-col>
+        <ion-col><ion-button  size="block" color="danger">Approve</ion-button></ion-col>
+      </ion-row>
+      </ion-card-content>
+      
+    </ion-card>
+  </div>
+
+  <div  *ngIf="segmentModel === 'approved'">
+    <ion-card>
+      <ion-card-header>
+        <ion-row>
+          <ion-col size="2">
+        <ion-avatar>
+          <img src="assets/user4.jpeg">
+        </ion-avatar>
+        </ion-col>
+        <ion-col size="10" style="padding:0px;">
+          <h6>Kalyan Yadav .D</h6>
+          20-12-2020 09:35 PM
+        </ion-col>
+        </ion-row>
+      </ion-card-header>
+      
+      <ion-card-content>
+      <div class="review-div">
+        <div>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star-half-outline"></ion-icon>
+        <ion-icon name="star-outline"></ion-icon>
+      </div>
+      <p>
+        "Author John David Anderson offers words of comfort and hope in his insightful portrayal of middle school pressures -- to be liked yet to be yourself, while weighing the risk in every interaction.""
+      </p>
+      </div> 
+      <div class="review-text">
+        Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero's De Finibus Bonorum et Malorum for use in a type specimen book.
+      </div> 
+      </ion-card-content>
+      
+    </ion-card>
+  </div>
+
+  <div  *ngIf="segmentModel === 'rejected'">
+
+    <ion-card>
+      <ion-card-header>
+        <ion-row>
+          <ion-col size="2">
+        <ion-avatar>
+          <img src="assets/user4.jpeg">
+        </ion-avatar>
+        </ion-col>
+        <ion-col size="10" style="padding:0px;">
+          <h6>Kalyan Yadav .D</h6>
+          20-12-2020 09:35 PM
+        </ion-col>
+        </ion-row>
+      </ion-card-header>
+      
+      <ion-card-content>
+      <div class="review-div">
+        <div>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star-half-outline"></ion-icon>
+        <ion-icon name="star-outline"></ion-icon>
+      </div>
+      <p>
+        "Author John David Anderson offers words of comfort and hope in his insightful portrayal of middle school pressures -- to be liked yet to be yourself, while weighing the risk in every interaction.""
+      </p>
+      </div> 
+      <div class="review-text">
+        Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero's De Finibus Bonorum et Malorum for use in a type specimen book.
+      </div> 
+     </ion-card-content>
+     </ion-card>
+  </div>
+</ion-content>

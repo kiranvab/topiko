@@ -1,22 +1,38 @@
 
 <ion-content padding>
-  <ion-row>
-    <ion-col>
-      <ion-label position="stacked">Business / Store Name</ion-label>
-    <ion-input></ion-input>
-    </ion-col>
-  </ion-row>
-   
-  
-   <ion-label position="stacked">Description</ion-label>
-    <ion-textarea class="textarea"></ion-textarea>
-
-    <ion-label position="stacked">Business / Store Name</ion-label>
-    <ion-input type="tel"></ion-input>
-
-    <ion-label position="stacked">Business Location</ion-label>
-    <ion-input></ion-input>
-
-    <ion-button size="block" routerLink="/businesscategory" color="warning">Add Details</ion-button>
-  
+  <h5>Business Details</h5>
+<div>
+<img src="assets/step1.png">
+</div>
+  <div class="details-div">
+    Are you Lisitng 
+    <ion-row>
+      <ion-col></ion-col>
+      <ion-col size="3">
+        <ion-card>
+          <img src="assets/shop.png">
+          Shop
+        </ion-card>
+      </ion-col>
+      <ion-col size="3">
+        <ion-card>
+          <img src="assets/service.png">
+          Service
+        </ion-card>
+      </ion-col>
+      <ion-col></ion-col>
+    </ion-row>
+    <ion-input placeholder="Business / Store Name"></ion-input>
+    <ion-textarea class="textarea" placeholder="Details"></ion-textarea>
+    <ion-input type="tel" placeholder="91 123456 7890"></ion-input>
+    <ion-input type="text" placeholder="Address"></ion-input>
+  </div>
   </ion-content>
+
+  <ion-footer>
+    <ion-row>
+      <ion-col></ion-col>
+      <ion-col><ion-button size="block" routerLink="/businesscategory" color="warning">Continue</ion-button></ion-col>
+    </ion-row>
+    
+  </ion-footer>

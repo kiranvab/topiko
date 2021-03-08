@@ -1,0 +1,55 @@
+ion-content {
+    --background: #122959;
+    font-family: Comfortaa;
+    color: #fff;
+}
+
+ion-header 
+{
+    border: 0;
+}
+h2
+{
+    color: #fff;
+    text-align: left;
+    padding: 10px;
+}
+.selction-div
+{
+    padding-top: 5%;
+}
+
+.checkbox 
+{
+    padding: 10% 0;
+}
+
+ion-badge
+{
+    padding: 10px;
+}
+.catalog-div 
+{
+    position: fixed;
+    background: #fff;
+    top: 0;
+    width: 94%;
+    margin: 3%;
+    height: 100%;
+    border-radius: 25px;
+    padding: 60px 20px;
+}
+
+.close
+{
+    position: absolute;
+    top: 20px;
+    color: #e91e63;
+    font-size: 30px;
+    background: #cacaca;
+    border-radius: 50%;
+    z-index: 999;
+    right: 5%;
+    height: 30px;
+    width: 30px;
+}

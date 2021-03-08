@@ -25,3 +25,44 @@ ion-col
 {
     font-size: 12px;
 }
+
+.day-div
+{
+    background: #f3c30e;
+    padding-top: 20px;
+    text-align: center;
+    color: #fff;
+    border-radius: 20%;
+    height: 50px;
+    margin-left: 3px;
+    margin-top: 5px;
+}
+
+.details-div
+{
+    position: absolute;
+    width: 96%;
+    bottom: 0;
+    background: #fff;
+    border-radius: 10px 10px 0 0;
+    margin: 8px;
+    margin-bottom: 0;
+}
+
+ion-card 
+{
+margin: 0;
+}
+
+h6 
+{
+    color: #122959;
+    font-weight: bold;
+    text-align: center;
+}
+
+ion-footer
+{
+    background: #eaeaea;
+    height: 60px;
+}

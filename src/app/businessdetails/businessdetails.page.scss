@@ -3,14 +3,14 @@ ion-content {
     font-family: Comfortaa;
     color: #fff;
 }
+ion-header 
+{
+    font-family: Comfortaa;
+}
 h5 
 {
     color: #fff;
     text-align: center;
-}
-ion-card 
-{
-    border: 1px dotted #333;
 }
 
 ion-item 
@@ -29,10 +29,11 @@ ion-input,
 {
     border: 1px solid #ccc;
     border-radius: 10px;
-    padding: 10px 0 !important;
     margin: 10px;
     width: 95%;
-    color: #fff;
+    padding-left: 10px !important;
+    color: #122959
+
 }
 
 .textarea 
@@ -42,5 +43,27 @@ ion-input,
     padding: 16px !important;
     margin: 10px !important;
     width: 95% !important;
-    color: #fff;
+}
+.details-div
+{
+    position: absolute;
+    width: 96%;
+    bottom: 0;
+    background: #fff;
+    border-radius: 10px 10px 0 0;
+    padding: 10px;
+    margin: 8px;
+    margin-bottom: 0;
+}
+
+ion-card 
+{
+    margin: 0;
+    text-align: center;
+    padding: 10px;
+}
+ion-footer
+{
+    background: #eaeaea;
+    height: 60px;
 }

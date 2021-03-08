@@ -1,9 +1,108 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>offers</ion-title>
+  <ion-toolbar color="secondary">
+    <ion-buttons>
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Offers</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  
+  <ion-segment 
+  value="all" 
+  color="tertiary" 
+  scrollable="true"
+  mode="ios"
+  [(ngModel)]="segmentModel" >
 
+    <ion-segment-button value="current">
+      <ion-label>Current</ion-label>
+    </ion-segment-button>
+
+    <ion-segment-button value="expired">
+      <ion-label>Expired</ion-label>
+    </ion-segment-button>
+
+ 
+  </ion-segment>
+
+  <div  *ngIf="segmentModel === 'current'">
+  <ion-card>
+    <ion-row>
+      <ion-col>
+        <img  class="offer-img" src="https://www.shopickr.com/wp-content/uploads/2019/02/netmeds-wallet-offers.jpg">
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-row>
+          <ion-col class="offer-name">BUY One GET One FREE</ion-col> 
+        </ion-row>
+        
+        <p class="offer-desc">Buy Grocery Online in Mumbai, Pune, Bangalore at Reliance Smart online grocery store. Best price on fresh fruits & vegetables, dairy & bakery</p>
+      </ion-col>
+    </ion-row>
+  <ion-row>
+    <ion-col class="start-date">12 - 12 - 2020</ion-col>
+    <ion-col class="end-date">31 - 12 - 2020</ion-col>
+  </ion-row>
+  </ion-card>
+
+
+  <ion-card>
+    <ion-row>
+      <ion-col>
+        <img  class="offer-img" src="https://www.shopickr.com/wp-content/uploads/2019/02/netmeds-wallet-offers.jpg">
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-row>
+          <ion-col class="offer-name">BUY One GET One FREE</ion-col> 
+        </ion-row>
+        
+        <p class="offer-desc">Buy Grocery Online in Mumbai, Pune, Bangalore at Reliance Smart online grocery store. Best price on fresh fruits & vegetables, dairy & bakery</p>
+      </ion-col>
+    </ion-row>
+  <ion-row>
+    <ion-col class="start-date">12 - 12 - 2020</ion-col>
+    <ion-col class="end-date">31 - 12 - 2020</ion-col>
+  </ion-row>
+  </ion-card>
+</div>
+
+
+
+<div  *ngIf="segmentModel === 'expired'">
+  <ion-card>
+    <ion-row>
+      <ion-col>
+        <img  class="offer-img" src="https://www.shopickr.com/wp-content/uploads/2019/02/netmeds-wallet-offers.jpg">
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-row>
+          <ion-col class="offer-name">BUY One GET One FREE</ion-col> 
+        </ion-row>
+        
+        <p class="offer-desc">Buy Grocery Online in Mumbai, Pune, Bangalore at Reliance Smart online grocery store. Best price on fresh fruits & vegetables, dairy & bakery</p>
+      </ion-col>
+    </ion-row>
+  <ion-row>
+    <ion-col class="start-date">12 - 12 - 2020</ion-col>
+    <ion-col class="end-date">31 - 12 - 2020</ion-col>
+  </ion-row>
+  </ion-card>
+
+</div>
+
+  
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button routerLink="/addoffers">
+      <ion-icon name="add-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 </ion-content>

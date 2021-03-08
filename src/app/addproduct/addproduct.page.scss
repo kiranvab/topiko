@@ -1,0 +1,51 @@
+ion-content {
+    --background: #122959;
+    font-family: Comfortaa;
+    color: #fff;
+}
+
+ion-header 
+{
+    border: 0;
+}
+
+ion-input, ion-textarea
+{
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin: 10px;
+    width: 95%;
+    padding-left: 10px !important;
+    color: #122959
+
+}
+
+ion-label 
+{
+    padding: 10px;
+    color: #122959;
+}
+
+ion-footer
+{
+    background: #eaeaea;
+    height: 60px;
+}
+
+.details-div
+{
+    position: absolute;
+    width: 96%;
+    bottom: 0;
+    background: #fff;
+    border-radius: 10px 10px 0 0;
+    padding: 10px;
+    margin: 8px;
+    margin-bottom: 0;
+}
+
+ion-card
+{
+    margin:5px 0;
+    padding: 5px;
+}

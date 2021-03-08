@@ -5,32 +5,89 @@ ion-content {
 }
 strong 
 {
-    color: red;
+    color: #fff;
+}
+
+.daily-div
+{
+    background: #e1e1e1;
+    padding: 2%;
+    padding-bottom: 8%;
+    font-size: 10px;
+    margin-bottom: -5px;
+}
+.daily-div img 
+{
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background: #fff;
+}
+.daily-div ion-col 
+{
+    text-align: center;
+}
+.daily-div ion-col  p
+{
+    color:red;
 }
 .main
 {
     background: #fff;
-    padding: 5px;
-    border-radius: 10px;
-    margin: 5px;
+    padding: 1% 2% 4% 4%;
+    border-radius: 10px 10px 0 0px;
+    font-size: 12px;
+}
+.main ion-col 
+{
+    text-align: center;
+    font-size: 12px;
+}
+.main ion-col p
+{
+    color: #122959;
+    font-size: 20px;
+    line-height: 0;
+    font-weight: bold;
 }
 .main-div
 {
-    background: #e8e8e8;
-    padding: 0px;
-    font-size: 80%;
-    height: 25%;
-    border-radius: 0px 0px 50% 50%;
-    margin-bottom: 10px;
-    text-align: center;
+    background: #ffc107;
+    padding: 5% 0  0 0;
+    margin-bottom:-15px;
+
 }
-.bottom-div
+.middle-div
 {
     background: #e8e8e8;
     padding: 5px;
     border-radius: 5px 5px 0 0;
-    margin-top:5px;
-    margin: 5px;
+    margin-top:-10px;
+    padding-bottom: 30px;
+}
+
+.middle-div ion-card 
+{
+    height: 100px;
+}
+.middle-div h6 
+{
+    padding: 10px;
+    text-align: left;
+    margin: 0;
+}
+.middle-div ion-icon 
+{
+    font-size: 32px;
+    padding: 5px 0;
+    color: #efefef;
+}
+.bottom-div
+{
+    background: #fafafa;
+    padding: 5px;
+    border-radius: 5px 5px 0 0;
+    margin-top:-10px;
     padding-bottom: 30px;
 }
 .card1
@@ -74,4 +131,29 @@ ion-card
 {
     margin: 0;
     text-align: center;
+    padding-bottom: 10px;
+    font-size: 12px;
+}
+
+.address
+{
+    font-size: 12px;
+}
+
+.small-text
+{
+    font-size: 11px;
+    line-height: 0;
+    text-align: left;
+}
+
+
+.count
+{
+    text-align: left;
+    font-size: 40px;
+    padding: 0;
+    margin: 0;
+    padding-left: 12px;
+    color: #2d3091;
 }

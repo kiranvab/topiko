@@ -1,0 +1,43 @@
+.review-div
+{
+    background-image: linear-gradient(#673ab7, #3f51b5);
+}
+.review-div ion-icon 
+{
+    padding: 10px 0 10px 10px;
+    color: #ffc107;
+    font-size: 24px;
+}
+.review-div p 
+{
+    color: #fff;
+    padding: 0 10% 15px 10%;
+    font-size: 12px;
+}
+.review-text 
+{
+    font-size: 12px;
+    padding: 14px;
+    color: #122959;
+}
+ion-card-header 
+{
+    padding: 0;
+    font-size: 12px;
+    text-align: left;
+    border-bottom: 1px solid #f4f4f4;
+    background: #eaeaea;
+}
+
+ion-card-content 
+{
+    padding: 0;
+}
+
+h6 
+{
+    font-size: 16px;
+    color: #122959;
+    font-weight: bold;
+    line-height: 10px;
+}
