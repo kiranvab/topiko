@@ -1,0 +1,7 @@
+{
+  "name": "topiko",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

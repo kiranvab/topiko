@@ -1,0 +1,58 @@
+ion-title
+{
+    text-align: center;
+}
+.upload-icon
+{
+    position: absolute;
+    bottom: 10%;
+    right: 30%;
+    font-size: 24px;
+    border-radius: 50%;
+    padding: 5px;
+    background: #fff;
+    color: #871178;
+}
+
+
+
+.pin
+{
+    color: #871178;
+font-size: 24px;
+padding: 10px 0;
+}
+
+.pin-location
+{
+    padding: 10%;
+}
+h3{
+    line-height: 28px;
+}
+ion-content
+{
+    padding: 0 2em;
+}
+ion-item,
+ion-row
+{
+ padding: 2% 10% 0 7%;
+}
+ion-icon
+{
+    text-align: center;
+    font-size: 32px;
+    color: #9f9f9f;
+}
+ion-label
+{
+    font-size: 18px !important;
+    color: #22272A !important;
+}
+textarea
+{
+    width: 99%;
+    border: 1px solid #cecece;
+    min-height: 200px;
+}
