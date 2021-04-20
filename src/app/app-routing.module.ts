@@ -30,6 +30,14 @@ const routes: Routes = [
   {
     path: 'home',
     loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
+  },
+  {
+    path: 'digitalvcard',
+    loadChildren: () => import('./digitalvcard/digitalvcard.module').then( m => m.DigitalvcardPageModule)
+  },
+  {
+    path: 'terms',
+    loadChildren: () => import('./terms/terms.module').then( m => m.TermsPageModule)
   }
 ];
 

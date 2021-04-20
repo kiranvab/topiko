@@ -1,0 +1,27 @@
+ion-content {
+    --padding-bottom: 10px;
+    --padding-end: 20px;
+    --padding-start: 20px;
+    --padding-top: 20px;
+    --ion-background-color:#fff;
+  }
+.title {
+    text-align: center;
+}
+h3 {
+    color: #22272a;
+    font-weight: bold;
+    font-size: 16px;
+}
+p {
+    color: #22272a;
+    font-size: 14px;
+    line-height:20px;
+}
+.agree {
+    text-align: center;
+    --background: linear-gradient(#871178, #44093c);
+    margin-top: 30px;
+    margin-left: 110px;
+    margin-bottom: 19px;
+}
