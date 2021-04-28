@@ -1,0 +1,90 @@
+<ion-header>
+  <ion-toolbar color="custom">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Red Bus Chennai</ion-title>
+    <ion-icon slot="end" style="font-size: 24px;" name="ellipsis-vertical-outline"></ion-icon>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content>
+
+  <ion-segment 
+  value="all" 
+  color="tertiary" 
+  scrollable="true"
+  mode="ios"
+  [(ngModel)]="segmentModel" >
+
+    <ion-segment-button value="details">
+    <ion-label>Topiko</ion-label>
+    </ion-segment-button>
+
+    <ion-segment-button value="offers">
+    <ion-label>Overview</ion-label>
+    </ion-segment-button>
+
+    <ion-segment-button value="products">
+    <ion-label>Services</ion-label>
+    </ion-segment-button>
+
+    <ion-segment-button value="reviews">
+    <ion-label>Careers</ion-label>
+    </ion-segment-button>    
+  </ion-segment>
+<div style="padding: 5%;">
+  <ion-row>
+    <ion-col routerLink="/business">
+      <img src="https://pbs.twimg.com/media/EFvAU2mU4AAtwHv.jpg">
+    </ion-col>
+  </ion-row>
+  <ion-row>
+   <h6>Red Bus Chennai</h6>
+   <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, </p>
+  </ion-row>
+  <ion-row style="background-color:gainsboro; color: #7f1073; font-size: 10px;">
+    <ion-col style="text-align: center;">
+      <ion-icon class="icons" name="share-social-outline"></ion-icon>
+      Share
+    </ion-col>
+    <ion-col style="text-align: center;">
+      <ion-icon class="icons" name="compass-outline"></ion-icon>
+      Direction
+    </ion-col>
+    <ion-col style="text-align: center;">
+      <ion-icon class="icons" name="heart-outline"></ion-icon>
+      Favourites
+    </ion-col>
+    <ion-col  style="text-align: center;">
+      <ion-icon class="icons" name="chatbubble-ellipses-outline"></ion-icon>
+      Comments
+    </ion-col>
+  </ion-row>
+  <ion-card style="margin: 10px 0; padding: 10px 5px 0 10px;">
+    <h6>Time</h6>
+    <p><span style="color: purple;">Opened</span> Opens 10 AM Mon <ion-icon name="chevron-down-outline"></ion-icon></p>
+  </ion-card>
+  <ion-row style="font-size: 16px;">
+    <ion-col>Similar products</ion-col>
+    <ion-col size="3" style="color: purple;">View All</ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <img src="https://www.englandforever.org/images/london-bus.jpg">
+    </ion-col>
+    <ion-col>
+      <img src="https://www.englandforever.org/images/london-bus.jpg">
+    </ion-col>
+    <ion-col>
+      <img src="https://www.englandforever.org/images/london-bus.jpg">
+    </ion-col>
+  </ion-row>
+  </div>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button color="primary">
+      <img class="link-icon" src="assets/link.svg" />
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

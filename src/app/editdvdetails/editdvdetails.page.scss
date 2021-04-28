@@ -81,3 +81,20 @@ ion-content {
       text-decoration: underline;
       color: #871178;
   }
+  h3
+  {
+      color: #22272A;
+  }
+
+  ion-input,
+  ion-select
+  {
+    border-bottom:1px solid #ccc
+  }
+  textarea
+  {
+    width: 100%;
+    min-height: 150px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }

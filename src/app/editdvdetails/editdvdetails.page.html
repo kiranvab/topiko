@@ -3,9 +3,9 @@
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
-    <ion-title>DV Details</ion-title>
+    <ion-title>Edit DV Details</ion-title>
     <ion-buttons slot="end" class="create-icon" routerLink="/editdvdetails">
-     <ion-icon name="create-outline" style="color: #fff;"></ion-icon>
+     <ion-icon name="checkmark-outline" style="color: #fff;"></ion-icon>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
@@ -25,26 +25,65 @@
 
   <p>&nbsp;</p>
   <p class="title">Proffesional</p>
-  <p class="text">UI/UX Designer</p>
+  <p class="text">
+    <ion-input placeholder="UI/UX Designer"></ion-input>
+  </p>
 
   <p class="title">Working In</p>
-  <p class="text">Topiko Private Limited</p>
+  <p class="text">
+    <ion-input placeholder="Topiko Private Limited"></ion-input>
+  </p>
 
   <p class="title">Myself</p>
-  <p class="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+  <p class="text">
+    <textarea placeholder="About My Self"></textarea>
+  </p>
 
   <p class="title">Business Tags</p>
-  <p class="text">Business Analyst Property Seller Retail Car Property Seller</p>
+  <p class="text">
+    <textarea placeholder="Business Tags"></textarea>
+  </p>
 
   <p class="title">Address</p>
-  <p class="text">1/38 Bhathiyar street moovarasanpet madipakkam <br>Chennai-600091<br> Tamilnadu<br> India</p>
+  <p class="text">
+    <textarea placeholder="Address"></textarea>
+  </p>
+
+  <p class="title">City</p>
+  <p class="text">
+    <ion-select placeholder="Chennai">
+      <ion-select-option value="f">Female</ion-select-option>
+      <ion-select-option value="m">Male</ion-select-option>
+    </ion-select>
+  </p>
+
+  <p class="title">Pincode</p>
+  <p class="text">
+    <ion-input placeholder="600192"></ion-input>
+  </p>
+
+  <p class="title">State</p>
+  <p class="text">
+    <ion-select placeholder="Tamilnadu">
+      <ion-select-option value="f">Female</ion-select-option>
+      <ion-select-option value="m">Male</ion-select-option>
+    </ion-select>
+  </p>
+
+  <p class="title">Country</p>
+  <p class="text">
+    <ion-select placeholder="INDIA">
+      <ion-select-option value="f">Female</ion-select-option>
+      <ion-select-option value="m">Male</ion-select-option>
+    </ion-select>
+  </p>
 
   <p class="title">Location</p>
   <p>
     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31104.7622723018!2d80.18158297154328!3d12.965754365011714!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a525de9463abdc1%3A0x71f82075882963d!2sMadipakkam%2C%20Chennai%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1619527713588!5m2!1sen!2sin" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
   </p>
 
-  <h3 class="text-center">Build your Connections</h3>
+  <h3 class="text-center">Edit your Connection</h3>
 <ion-row>
   <ion-col>
     <ion-icon name="logo-whatsapp"></ion-icon>
@@ -67,24 +106,5 @@
 </ion-row>
 
 <br>
-
-<div class="view-more" routerLink="/morevcards">
-  View More
 </div>
-
-<div class="text-center" class="pb-15">
-<ion-checkbox color="success" checked></ion-checkbox> I Agree for the <span>Terms and Conditions</span>
-</div>
-<br>
-<ion-row>
-  <ion-col>
-    <ion-button expand="full"  class="purple-bdr-btn"  color="custom">Later</ion-button>
-  </ion-col>
-  <ion-col>
-    <ion-button expand="block" class="purple-btn" color="custom" routerLink="/digitalcard">Share</ion-button>
-  </ion-col>
-</ion-row>
-</div>
-
-
 </ion-content>

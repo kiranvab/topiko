@@ -2,7 +2,7 @@ ion-content
 {
     --padding-bottom: 20px;
     --padding-end: 30px;
-    --padding-start: 30px;
+    --padding-start: 15px;
     --padding-top: 20px;
 }
 ion-title
@@ -32,14 +32,14 @@ padding: 10px 0;
 
 .pin-location
 {
-    padding: 10%;
+    padding: 5%;
 }
 h3{
     line-height: 28px;
 }
 ion-content
 {
-    padding: 0 2em;
+    padding: 0 1em;
 }
 
 ion-icon
@@ -52,10 +52,12 @@ ion-label
 {
     font-size: 18px !important;
     color: #22272A !important;
+    padding-bottom: 10px;
 }
 textarea
 {
-    width: 99%;
+    width: 96%;
     border: 1px solid #cecece;
+    margin-left: 4%;
     min-height: 200px;
 }

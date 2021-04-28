@@ -1,0 +1,88 @@
+ion-content {
+    --padding-bottom: 10px;
+    --padding-end: 15px;
+    --padding-start: 15px;
+    --padding-top: 30px;
+    --ion-background-color:#fff;
+  }
+
+  .price
+  {
+      text-align: center;
+      color: #871178;
+      font-size: 32px;
+    padding-bottom: 10%;
+  }
+  span
+  {
+      text-decoration: underline;
+      color: #871178;
+  }
+
+  .pb-15
+  {
+      padding-bottom: 15%;
+      font-size: 16px;
+      text-align: center;
+  }
+
+h5
+{
+    color: #fff;
+    line-height: 10px;
+}
+
+.bdr
+{
+  border: 1px solid #871178;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  padding: 2px 3px;
+  position: absolute;
+}
+.content-text
+{
+   font-size: 10px;
+    margin-left: 25px;
+    color: #871178;
+    padding-top: 3px;
+}
+
+ion-icon
+{
+  color: #871178;
+  text-align: right;
+  padding-left: 20%;
+  margin-top: 50%;
+}
+.name
+{
+  font-size: 24px;
+  color: #871178;
+  line-height: 20px;
+}
+.phone
+{
+  font-size: 16px;
+  color: #707070;
+  line-height: 30px;
+}
+
+.comp-title
+{
+  color:#871178;
+  padding: 5%;
+}
+
+.horizontal-comp-title
+{
+  color:#871178;
+  padding: 20% 0 0 5%;
+}
+
+.horizontal
+{
+  width: 80%;
+  margin: 0 auto; 
+}

@@ -236,6 +236,15 @@
 }
 
 
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+ion-content {
+  margin-bottom: 20px;
+  --ion-font-family: 'Poppins', sans-serif;
+}
+
 .text-center
 {
   text-align: center;
