@@ -1,0 +1,87 @@
+<ion-header color="custom">
+  <ion-toolbar color="custom" class="toolbar">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>QR Scanner</ion-title>
+    <ion-buttons slot="end" (click)="openMenu()">
+      <ion-icon name="ellipsis-vertical"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-grid class="container">
+    <ion-row class="icon">
+      <ion-icon name="flash-off"></ion-icon>
+    </ion-row>
+    <ion-row class="main">
+      <ion-row class="big">
+        <ion-row class="first">
+          <ion-col size="3.5" class="box1">
+          </ion-col>
+          <ion-col size="5">
+          </ion-col>
+          <ion-col size="3.5" class="box2">
+          </ion-col>
+        </ion-row>
+        <ion-row class="second">
+          <ion-col size="3.5" class="box3">
+          </ion-col>
+          <ion-col size="5">
+          </ion-col>
+          <ion-col size="3.5" class="box4">
+          </ion-col>
+        </ion-row>
+      </ion-row>
+      <ion-row class="text">
+        <ion-col size="12">
+          <p>scan to reach the belongers</p>
+        </ion-col>
+      </ion-row>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid class="last">
+    <ion-row>
+      <span class="line">_________ &nbsp;</span>
+      <span class="or">&nbsp; OR &nbsp;</span>
+      <span class="line"> &nbsp;_________</span>
+    </ion-row>
+    <ion-row>
+      <ion-item>
+        <ion-input placeholder="Enter ID Number/Vehicle Number"></ion-input>
+      </ion-item>
+    </ion-row>
+    <ion-row class="btn">
+      <ion-button routerLink="/person-connect">Submit</ion-button>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>
+
+<ion-footer mode="md" class="home-footer">
+  <ion-row>
+    <ion-col routerLink="/home">
+      <ion-icon name="home-outline"></ion-icon>
+      <p>Home</p>
+    </ion-col>
+    <ion-col routerLink="/profile">
+      <ion-icon name="person-outline"></ion-icon>
+      <p>Profile</p>
+    </ion-col>
+    <ion-col>
+      <ion-icon name="scan" class="click-footer"></ion-icon>
+      <p class="click-footer">Scan</p>
+    </ion-col>
+    <ion-col routerLink="/favourites">
+      <ion-icon name="heart-outline"></ion-icon>
+      <p>Favourites</p>
+    </ion-col>
+    <ion-col routerLink="/calls">
+      <ion-icon name="call-outline"></ion-icon>
+      <p>Call</p>
+    </ion-col>
+  </ion-row>
+</ion-footer>

@@ -1,0 +1,390 @@
+<ion-header color="custom">
+  <ion-toolbar color="custom" class="toolbar">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Verification</ion-title>
+    <ion-buttons slot="end">
+      <ion-icon name="ellipsis-vertical"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-segment value="all" scrollable="true" mode="md" color="secondary" [(ngModel)]="segmentModel">
+    <ion-segment-button value="label">
+      <ion-icon name="star-outline"></ion-icon>
+      <ion-label>Label</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="park">
+      <ion-icon name="star-outline"></ion-icon>
+      <ion-label>Park</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="genuine">
+      <ion-icon name="key-outline"></ion-icon>
+      <ion-label>Genuine</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
+  <!-- Label div start-->
+  <div *ngIf="segmentModel === 'label'">
+    <ion-row>
+      <ion-col>
+        <h5>Online Verification</h5>
+      </ion-col>
+      <ion-col size="2" class="play">
+        <ion-icon name="play-outline"></ion-icon>
+      </ion-col>
+    </ion-row>
+    <ion-card class="second">
+      <ion-row class="first-row">
+        <ion-col class="feat" size="8">
+          <p>Verification</p>
+        </ion-col>
+        <ion-col class="status" size="4">
+          <p>Status</p>
+        </ion-col>
+      </ion-row>
+      <ion-row class="second-row">
+        <ion-col class="left" size="8">
+          <p><span>Two Months Free Trial</span></p>
+        </ion-col>
+        <ion-col class="right" size="4">
+          <ion-icon name="checkmark-circle-outline"></ion-icon>
+        </ion-col>
+      </ion-row>
+      <ion-row class="second-row">
+        <ion-col class="left" size="8">
+          <p><span>100/-</span> In & Bound Call Benefits After Trail</p>
+        </ion-col>
+        <ion-col class="right" size="4">
+          <ion-icon name="checkmark-circle-outline"></ion-icon>
+        </ion-col>
+      </ion-row>
+      <ion-row class="second-row">
+        <ion-col class="left" size="8">
+          <p>Default <span>1GB</span> space Operational Purpose</p>
+        </ion-col>
+        <ion-col class="right" size="4">
+          <ion-icon name="checkmark-circle-outline"></ion-icon>
+        </ion-col>
+      </ion-row>
+      <ion-row class="second-row">
+        <ion-col class="left" size="8">
+          <p>Create A Business</p>
+        </ion-col>
+        <ion-col class="right" size="4">
+          <ion-icon name="checkmark-circle-outline"></ion-icon>
+        </ion-col>
+      </ion-row>
+      <ion-row class="second-row">
+        <ion-col class="left" size="8">
+          <p>Products / Services / Branches</p>
+        </ion-col>
+        <ion-col class="right" size="4">
+          <ion-icon name="checkmark-circle-outline"></ion-icon>
+        </ion-col>
+      </ion-row>
+      <ion-row class="second-row">
+        <ion-col class="left" size="8">
+          <p><span>Reach</span></p>
+        </ion-col>
+        <ion-col class="right" size="4">
+          <ion-icon name="checkmark-circle-outline"></ion-icon>
+        </ion-col>
+      </ion-row>
+      <ion-row class="second-row">
+        <ion-col class="left" size="8">
+          <p>Topiko Listing & <span>Web listing 1year</span> update</p>
+        </ion-col>
+        <ion-col class="right" size="4">
+          <ion-icon name="checkmark-circle-outline"></ion-icon>
+        </ion-col>
+      </ion-row>
+      <ion-row class="second-row">
+        <ion-col class="left" size="8">
+          <p>Verification <span>(Excluded Chargeable)</span></p>
+        </ion-col>
+        <ion-col class="right" size="4">
+          <ion-icon name="checkmark-circle-outline"></ion-icon>
+        </ion-col>
+      </ion-row>
+      <ion-row class="second-row">
+        <ion-col class="left" size="8">
+          <p>Promotion / Showcase</p>
+        </ion-col>
+        <ion-col class="right" size="4">
+          <ion-icon name="checkmark-circle-outline"></ion-icon>
+        </ion-col>
+      </ion-row>
+      <ion-row class="second-row">
+        <ion-col class="left" size="8">
+          <p>Customize <span>(Private URL"S Not Permitted)</span></p>
+        </ion-col>
+        <ion-col class="right" size="4">
+          <ion-icon name="checkmark-circle-outline"></ion-icon>
+        </ion-col>
+      </ion-row>
+    </ion-card>
+
+    <ion-row class="labe">
+      <p>Label Verification with GST <span>2999/-</span></p>
+    </ion-row>
+    <ion-row class="chec">
+      <ion-col size="1">
+        <ion-checkbox checked></ion-checkbox>
+      </ion-col>
+      <ion-col size="9">
+        <p class="confirm">I agree for the <span>Terms and Conditions</span></p>
+      </ion-col>
+    </ion-row>
+    <div class="button">
+      <ion-button>Buy</ion-button>
+    </div>
+
+  </div>
+
+  <!-- label div end-->
+
+  <!-- park start-->
+  <div *ngIf="segmentModel === 'park'">
+    <ion-row>
+      <ion-col>
+        <h5>Online Verification</h5>
+      </ion-col>
+      <ion-col size="2" class="play">
+        <ion-icon name="play-outline"></ion-icon>
+      </ion-col>
+    </ion-row>
+    <ion-card class="second">
+      <ion-row class="first-row">
+        <ion-col class="feat" size="8">
+          <p>Verification</p>
+        </ion-col>
+        <ion-col class="status" size="4">
+          <p>Status</p>
+        </ion-col>
+      </ion-row>
+      <ion-row class="second-row">
+        <ion-col class="left" size="8">
+          <p><span>Two Months Free Trial</span></p>
+        </ion-col>
+        <ion-col class="right" size="4">
+          <ion-icon name="checkmark-circle-outline"></ion-icon>
+        </ion-col>
+      </ion-row>
+      <ion-row class="second-row">
+        <ion-col class="left" size="8">
+          <p><span>100/-</span> In & Bound Call Benefits After Trail</p>
+        </ion-col>
+        <ion-col class="right" size="4">
+          <ion-icon name="checkmark-circle-outline"></ion-icon>
+        </ion-col>
+      </ion-row>
+      <ion-row class="second-row">
+        <ion-col class="left" size="8">
+          <p>Default <span>1GB</span> space Operational Purpose</p>
+        </ion-col>
+        <ion-col class="right" size="4">
+          <ion-icon name="checkmark-circle-outline"></ion-icon>
+        </ion-col>
+      </ion-row>
+      <ion-row class="second-row">
+        <ion-col class="left" size="8">
+          <p>Create A Business</p>
+        </ion-col>
+        <ion-col class="right" size="4">
+          <ion-icon name="checkmark-circle-outline"></ion-icon>
+        </ion-col>
+      </ion-row>
+      <ion-row class="second-row">
+        <ion-col class="left" size="8">
+          <p>Products / Services / Branches</p>
+        </ion-col>
+        <ion-col class="right" size="4">
+          <ion-icon name="checkmark-circle-outline"></ion-icon>
+        </ion-col>
+      </ion-row>
+      <ion-row class="second-row">
+        <ion-col class="left" size="8">
+          <p><span>Reach</span></p>
+        </ion-col>
+        <ion-col class="right" size="4">
+          <ion-icon name="checkmark-circle-outline"></ion-icon>
+        </ion-col>
+      </ion-row>
+      <ion-row class="second-row">
+        <ion-col class="left" size="8">
+          <p>Topiko Listing & <span>Web listing 1year</span> update</p>
+        </ion-col>
+        <ion-col class="right" size="4">
+          <ion-icon name="checkmark-circle-outline"></ion-icon>
+        </ion-col>
+      </ion-row>
+      <ion-row class="second-row">
+        <ion-col class="left" size="8">
+          <p>Verification <span>(Excluded Chargeable)</span></p>
+        </ion-col>
+        <ion-col class="right" size="4">
+          <ion-icon name="checkmark-circle-outline"></ion-icon>
+        </ion-col>
+      </ion-row>
+      <ion-row class="second-row">
+        <ion-col class="left" size="8">
+          <p>Promotion / Showcase</p>
+        </ion-col>
+        <ion-col class="right" size="4">
+          <ion-icon name="checkmark-circle-outline"></ion-icon>
+        </ion-col>
+      </ion-row>
+      <ion-row class="second-row">
+        <ion-col class="left" size="8">
+          <p>Customize <span>(Private URL"S Not Permitted)</span></p>
+        </ion-col>
+        <ion-col class="right" size="4">
+          <ion-icon name="checkmark-circle-outline"></ion-icon>
+        </ion-col>
+      </ion-row>
+    </ion-card>
+
+    <ion-row class="labe">
+      <p>Label Verification with GST <span>6999/-</span></p>
+    </ion-row>
+    <ion-row class="chec">
+      <ion-col size="7.7" class="text-overflow last-col">
+        <p class="expiry">Expiry Date - 10/29/2021</p>
+      </ion-col>
+      <ion-col size="4.3" class="lastcol">
+        <div class="button">
+          <ion-button>Renewal</ion-button>
+        </div>
+      </ion-col>
+    </ion-row>
+
+  </div>
+
+  <!--park end-->
+
+  <!-- genuine start -->
+  <div *ngIf="segmentModel === 'genuine'">
+    <ion-row>
+      <ion-col>
+        <h5>Online with Topiko Executive verification</h5>
+      </ion-col>
+      <ion-col size="2" class="play">
+        <ion-icon name="play-outline"></ion-icon>
+      </ion-col>
+    </ion-row>
+    <ion-card class="second">
+      <ion-row class="first-row">
+        <ion-col class="feat" size="8">
+          <p>Verification</p>
+        </ion-col>
+        <ion-col class="status" size="4">
+          <p>Status</p>
+        </ion-col>
+      </ion-row>
+      <ion-row class="second-row">
+        <ion-col class="left" size="8">
+          <p><span>Two Months Free Trial</span></p>
+        </ion-col>
+        <ion-col class="right" size="4">
+          <ion-icon name="checkmark-circle-outline"></ion-icon>
+        </ion-col>
+      </ion-row>
+      <ion-row class="second-row">
+        <ion-col class="left" size="8">
+          <p><span>100/-</span> In & Bound Call Benefits After Trail</p>
+        </ion-col>
+        <ion-col class="right" size="4">
+          <ion-icon name="checkmark-circle-outline"></ion-icon>
+        </ion-col>
+      </ion-row>
+      <ion-row class="second-row">
+        <ion-col class="left" size="8">
+          <p>Default <span>1GB</span> space Operational Purpose</p>
+        </ion-col>
+        <ion-col class="right" size="4">
+          <ion-icon name="checkmark-circle-outline"></ion-icon>
+        </ion-col>
+      </ion-row>
+      <ion-row class="second-row">
+        <ion-col class="left" size="8">
+          <p>Create A Business</p>
+        </ion-col>
+        <ion-col class="right" size="4">
+          <ion-icon name="checkmark-circle-outline"></ion-icon>
+        </ion-col>
+      </ion-row>
+      <ion-row class="second-row">
+        <ion-col class="left" size="8">
+          <p>Products / Services / Branches</p>
+        </ion-col>
+        <ion-col class="right" size="4">
+          <ion-icon name="checkmark-circle-outline"></ion-icon>
+        </ion-col>
+      </ion-row>
+      <ion-row class="second-row">
+        <ion-col class="left" size="8">
+          <p><span>Reach</span></p>
+        </ion-col>
+        <ion-col class="right" size="4">
+          <ion-icon name="checkmark-circle-outline"></ion-icon>
+        </ion-col>
+      </ion-row>
+      <ion-row class="second-row">
+        <ion-col class="left" size="8">
+          <p>Topiko Listing & <span>Web listing 1year</span> update</p>
+        </ion-col>
+        <ion-col class="right" size="4">
+          <ion-icon name="checkmark-circle-outline"></ion-icon>
+        </ion-col>
+      </ion-row>
+      <ion-row class="second-row">
+        <ion-col class="left" size="8">
+          <p>Verification <span>(Excluded Chargeable)</span></p>
+        </ion-col>
+        <ion-col class="right" size="4">
+          <ion-icon name="checkmark-circle-outline"></ion-icon>
+        </ion-col>
+      </ion-row>
+      <ion-row class="second-row">
+        <ion-col class="left" size="8">
+          <p>Promotion / Showcase</p>
+        </ion-col>
+        <ion-col class="right" size="4">
+          <ion-icon name="checkmark-circle-outline"></ion-icon>
+        </ion-col>
+      </ion-row>
+      <ion-row class="second-row">
+        <ion-col class="left" size="8">
+          <p>Customize <span>(Private URL"S Not Permitted)</span></p>
+        </ion-col>
+        <ion-col class="right" size="4">
+          <ion-icon name="checkmark-circle-outline"></ion-icon>
+        </ion-col>
+      </ion-row>
+    </ion-card>
+
+    <ion-row class="labe">
+      <p>Label Verification with GST <span>9999/-</span></p>
+    </ion-row>
+    <ion-row class="chec">
+      <ion-col size="7.7" class="text-overflow lastcol">
+        <p class="expiry">Expiry Date - 10/29/2021</p>
+      </ion-col>
+      <ion-col size="4.3" class="lastcol">
+        <div class="button">
+          <ion-button>Renewal</ion-button>
+        </div>
+      </ion-col>
+    </ion-row>
+
+  </div>
+  <!--genuine end -->
+
+
+
+</ion-content>

@@ -1,0 +1,108 @@
+<ion-header color="custom" mode="md">
+  <ion-toolbar color="custom" class="toolbar">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Add QR Payments</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-card class="first">
+    <ion-row>
+      <ion-col>
+        <img src="https://appmirror.net/wp-content/uploads/2020/10/paytm-icon.png" alt="">
+      </ion-col>
+      <ion-col>
+        <img src="https://safe2exchange.com/wp-content/uploads/2019/12/Google-Pay-Logo-safe2exchange.png" alt="">
+      </ion-col>
+      <ion-col>
+        <img src="https://img.91mb-cdn.com/articleImages/1553164674_all-you-need-to-know-about-upi" alt="">
+      </ion-col>
+      <ion-col>
+        <img src="https://lh3.googleusercontent.com/2BK0IgFXryM4fRvyr1GbuNqVEFDK-_fQGu97Gojm2DBmmfB_Jdo6tqUhSi49rPSGqLM"
+          alt="">
+      </ion-col>
+      <ion-col>
+        <img
+          src="https://mpng.subpng.com/20180528/lyk/kisspng-jio-4g-tower-money-payment-customer-service-5b0c1994660266.2233406215275196364178.jpg"
+          alt="">
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <img src="https://cdn6.aptoide.com/imgs/d/7/f/d7f8dd1aa4a0c6865a54e89ee59039f7_icon.png" alt="">
+      </ion-col>
+      <ion-col>
+        <img src="https://www.searchpng.com/wp-content/uploads/2019/12/FreeCharge-icon-715x715.jpg" alt="">
+      </ion-col>
+      <ion-col>
+        <img src="https://www.searchpng.com/wp-content/uploads/2018/11/phone-pe-715x715.png" alt="">
+      </ion-col>
+      <ion-col>
+        <img src="https://cdn0.iconfinder.com/data/icons/most-usable-logos/120/Amazon-512.png" alt="">
+      </ion-col>
+      <ion-col>
+        <img src="https://paymentweek.com/wp-content/uploads/2015/01/MobiKwik-Logo1.png" alt="">
+      </ion-col>
+    </ion-row>
+  </ion-card>
+
+  <ion-row class="info">
+    <div class="select">
+      <ion-select placeholder="Select UPI" value="gpay" interface="popover" mode="ios" [(ngModel)]="upi">
+        <ion-select-option value="gpay" selected>Gpay</ion-select-option>
+        <ion-select-option value="phonepe">Phonepe</ion-select-option>
+        <ion-select-option value="favourites">Paytm</ion-select-option>
+      </ion-select>
+    </div>
+  </ion-row>
+
+  
+  <ion-card class="second">
+    <ion-row class="anypay">
+      <p>Upload Any QR Payment Code</p>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-input placeholder="Payee Contact No" [(ngModel)]="upi_numner"></ion-input>
+      </ion-col>
+      <ion-col class="icons" size="1.5">
+        <ion-icon name="camera-outline" (click)="getPicture()"></ion-icon>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+  
+  <ion-row class="info">
+    <div class="select">
+      <ion-select placeholder="Select Branch" interface="popover" mode="ios" [(ngModel)]="branch">
+        <ion-select-option *ngFor="let br of branches" value="{{br.id}}">{{br.branch_title}}</ion-select-option>
+      </ion-select>
+    </div>
+  </ion-row>
+
+  <ion-card class="third">
+    <ion-row>
+      <ion-input class="bank-info" placeholder="Bank Name"  [(ngModel)]="bank_name" ></ion-input>
+    </ion-row>
+    <ion-row>
+      <ion-input class="bank-info" placeholder="Branch Name" [(ngModel)]="branch_name"></ion-input>
+    </ion-row>
+    <ion-row>
+      <ion-input class="bank-info" placeholder="Ifsc Code" [(ngModel)]="ifsc"></ion-input>
+    </ion-row>
+    <ion-row>
+      <ion-input class="bank-info" placeholder="Account Number" [(ngModel)]="acc_no"></ion-input>
+    </ion-row>
+    <ion-row>
+      <ion-input class="bank-info" placeholder="Account Type" [(ngModel)]="acc_type"></ion-input>
+    </ion-row>
+    <ion-row>
+      <ion-input class="bank-info" placeholder="Account Holder Name" [(ngModel)]="acc_name"></ion-input>
+    </ion-row>
+  </ion-card>
+
+  <div class="buttn">
+    <ion-button (click)="submit()">Submit</ion-button>
+  </div>
+</ion-content>

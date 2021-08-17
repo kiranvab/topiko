@@ -1,0 +1,20 @@
+<ion-header color="custom">
+  <ion-toolbar color="custom" class="toolbar">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Shop Categories</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-row>
+    <ion-col size="4" *ngFor="let cat of categories; let i = index;">
+      <div  class="service-icons">
+      <img src="https://topiko.com/app/icons/{{cat.image}}">
+      <div>{{cat.category}}</div>
+      </div>
+    </ion-col>
+  </ion-row>
+</ion-content>

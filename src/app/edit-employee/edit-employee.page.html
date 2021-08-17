@@ -1,0 +1,151 @@
+<ion-header color="custom" mode="md">
+  <ion-toolbar color="custom" class="toolbar">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Edit Employee</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card class="first">
+    <ion-row class="row">
+      <ion-col class="bg">
+        <ion-avatar>
+          <img
+            src="https://images.pexels.com/photos/1704488/pexels-photo-1704488.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+            alt="">
+        </ion-avatar>
+        <img class="position-cam" src="assets/camera.svg" alt="">
+      </ion-col>
+    </ion-row>
+  </ion-card>
+
+  <ion-grid>
+    <p>
+      <ion-item>
+        <ion-input placeholder="Employee name"></ion-input>
+      </ion-item>
+    </p>
+    <p>
+      <ion-item>
+        <ion-input placeholder="Employee number"></ion-input>
+      </ion-item>
+    </p>
+    <p>
+      Designation Tags
+      <ion-row>
+        <ion-textarea>
+          <ion-chip>
+            <ion-label>Tele Caller</ion-label>
+            <ion-icon name="close-circle"></ion-icon>
+          </ion-chip>
+          <ion-chip>
+            <ion-label>Delivery support</ion-label>
+            <ion-icon name="close-circle"></ion-icon>
+          </ion-chip>
+        </ion-textarea>
+      </ion-row>
+    </p>
+    <p>
+      Language Support
+      <ion-row>
+        <ion-textarea>
+          <ion-chip>
+            <ion-label>Tamil</ion-label>
+            <ion-icon name="close-circle"></ion-icon>
+          </ion-chip>
+          <ion-chip>
+            <ion-label>English</ion-label>
+            <ion-icon name="close-circle"></ion-icon>
+          </ion-chip>
+        </ion-textarea>
+      </ion-row>
+    </p>
+    <p>
+      Online Tele Support
+      <ion-row class="check">
+        <ion-col>
+          <ion-checkbox checked></ion-checkbox>
+          <ion-label> Chat</ion-label>
+        </ion-col>
+        <ion-col>
+          <ion-checkbox checked></ion-checkbox>
+          <ion-label> Video</ion-label>
+        </ion-col>
+        <ion-col>
+          <ion-checkbox></ion-checkbox>
+          <ion-label> Call</ion-label>
+        </ion-col>
+      </ion-row>
+    </p>
+    <p>
+      Delivery Support
+      <ion-row class="check">
+        <ion-col>
+          <ion-checkbox checked></ion-checkbox>
+          <ion-label> Delivery</ion-label>
+        </ion-col>
+      </ion-row>
+    </p>
+    <p>
+      <ion-row class="toggle">
+        <p>Call Record Access</p>
+        <ion-toggle checked></ion-toggle>
+      </ion-row>
+      <ion-row class="toggle">
+        <p>Create Invoice</p>
+        <ion-toggle checked></ion-toggle>
+      </ion-row>
+    </p>
+    <h6>Work Hour Settings</h6>
+    <p>
+      <ion-item>
+        <ion-select placeholder="Working Hours"></ion-select>
+      </ion-item>
+    </p>
+    <ion-row class="branches">
+      <ion-col>
+        <div class="select">
+          <ion-select placeholder="Select One" value="recent" interface="popover" mode="ios">
+            <ion-select-option value="recent" selected>Branches</ion-select-option>
+            <ion-select-option value="like">Orders</ion-select-option>
+            <ion-select-option value="favourites">Enquiry</ion-select-option>
+            <ion-select-option value="comments">Customer</ion-select-option>
+          </ion-select>
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-card class="card">
+      <ion-row>
+        <ion-col class="address">
+          <p>Address</p>
+          <ion-row class="add">
+            <p>No-1/38 Parathiyar street moovara pet madipkkam Chennai-600091 TamilNadu - India</p>
+          </ion-row>
+        </ion-col>
+        <ion-col size="4">
+          <img
+            src="https://play-lh.googleusercontent.com/0uRNRSe4iS6nhvfbBcoScHcBTx1PMmxkCx8rrEsI2UQcQeZ5ByKz8fkhwRqR3vttOg"
+            alt="">
+        </ion-col>
+      </ion-row>
+    </ion-card>
+    <p class="sun">Sun water group payment QR</p>
+    <p class="qr">
+      <ion-icon name="qr-code-outline"></ion-icon>
+    </p>
+    <ion-row class="check">
+      <ion-col size="1">
+        <ion-checkbox checked></ion-checkbox>
+      </ion-col>
+      <ion-col size="9">
+        <p class="confirm">I agree for the <span>Terms and Conditions</span></p>
+      </ion-col>
+    </ion-row>
+    <ion-row class="btn">
+      <ion-button>Submit</ion-button>
+    </ion-row>
+  </ion-grid>
+</ion-content>

@@ -1,0 +1,252 @@
+<ion-header color="custom" mode="md">
+  <ion-toolbar color="custom" class="toolbar">
+    <ion-buttons slot="start" mode="md">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Profile</ion-title>
+    <ion-buttons slot="end" (click)="openMenu()">
+      <ion-icon name="ellipsis-vertical"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-input placeholder="Search friends"></ion-input>
+          <ion-icon name="search-outline" routerLink="/careerview"></ion-icon>
+        </ion-item>
+      </ion-col>
+      <div class="notif">
+        <img src="assets/notification.svg" alt="">
+        <sup>
+          <ion-badge color="primary">1</ion-badge>
+        </sup>
+      </div>
+    </ion-row>
+
+    <ion-card class="first-card">
+      <ion-row>
+        <div class="avatar">
+          <ion-avatar>
+            <img src="https://i.pinimg.com/474x/cf/f7/01/cff70187101797139589c8afa04e4053.jpg" alt="">
+          </ion-avatar>
+        </div>
+        <ion-col class="text-overflow">
+          <ion-row class="title text-overflow">
+            <p>Jagan Karthik</p>
+          </ion-row>
+          <ion-row class="analyst text-overflow">
+            <p>Business Analyst</p>
+          </ion-row>
+          <ion-row class="analyst text-overflow">
+            <p>Chennai</p>
+          </ion-row>
+        </ion-col>
+      </ion-row>
+    </ion-card>
+
+    <ion-row class="date">
+      <ion-col>
+        <p>Friends</p>
+      </ion-col>
+      <ion-col>
+        <p>Posts</p>
+      </ion-col>
+      <ion-col>
+        <p>Photos</p>
+      </ion-col>
+    </ion-row>
+
+    <ion-card class="inp-box">
+      <ion-row class="inp">
+        <div class="avatar">
+          <ion-avatar>
+            <img src="https://i.pinimg.com/474x/cf/f7/01/cff70187101797139589c8afa04e4053.jpg" alt="">
+          </ion-avatar>
+        </div>
+        <ion-col>
+          <ion-grid class="grid">
+            <ion-row>
+              <ion-col class="msg">
+                <ion-input placeholder="Expose Yourself"></ion-input>
+              </ion-col>
+              <ion-col class="icn" size="1.2">
+                <ion-icon name="mic-outline"></ion-icon>
+              </ion-col>
+              <ion-col class="icn" size="1.2">
+                <ion-icon name="camera-outline"></ion-icon>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-col>
+      </ion-row>
+    </ion-card>
+
+    <ion-card class="img-box">
+      <ion-row class="view">
+        <p>View All</p>
+      </ion-row>
+      <div class="scroll text-overflow">
+        <div class="column">
+          <div class="round-img">
+            <img src="https://i.pinimg.com/474x/cf/f7/01/cff70187101797139589c8afa04e4053.jpg" alt="">
+          </div>
+          <img class="main-img"
+            src="https://uhdwallpapers.org/uploads/converted/18/03/11/dj-let-the-music-play-1080x1920_66494-mm-90.jpg"
+            alt="">
+          <p class="name">Murali Kumar</p>
+        </div>
+
+        <div class="column">
+          <div class="round-img">
+            <img src="https://i.pinimg.com/474x/cf/f7/01/cff70187101797139589c8afa04e4053.jpg" alt="">
+          </div>
+          <img class="main-img" src="https://images.wallpaperscraft.com/image/guitar_art_vector_132958_1080x1920.jpg"
+            alt="">
+          <p class="name">Kiran</p>
+        </div>
+
+        <div class="column">
+          <div class="round-img">
+            <img src="https://i.pinimg.com/474x/cf/f7/01/cff70187101797139589c8afa04e4053.jpg" alt="">
+          </div>
+          <img class="main-img"
+            src="https://images.wallpaperscraft.com/image/dj_headphones_installation_122020_1080x1920.jpg" alt="">
+          <p class="name">Kalyan</p>
+        </div>
+
+
+        <div class="column">
+          <div class="round-img">
+            <img src="https://i.pinimg.com/474x/cf/f7/01/cff70187101797139589c8afa04e4053.jpg" alt="">
+          </div>
+          <img class="main-img"
+            src="https://uhdwallpapers.org/uploads/converted/18/03/11/dj-let-the-music-play-1080x1920_66494-mm-90.jpg"
+            alt="">
+          <p class="name">Murali Kumar</p>
+        </div>
+
+        <div class="column">
+          <div class="round-img">
+            <img src="https://i.pinimg.com/474x/cf/f7/01/cff70187101797139589c8afa04e4053.jpg" alt="">
+          </div>
+          <img class="main-img" src="https://images.wallpaperscraft.com/image/guitar_art_vector_132958_1080x1920.jpg"
+            alt="">
+          <p class="name">Kiran</p>
+        </div>
+
+        <div class="column">
+          <div class="round-img">
+            <img src="https://i.pinimg.com/474x/cf/f7/01/cff70187101797139589c8afa04e4053.jpg" alt="">
+          </div>
+          <img class="main-img"
+            src="https://images.wallpaperscraft.com/image/dj_headphones_installation_122020_1080x1920.jpg" alt="">
+          <p class="name">Kalyan</p>
+        </div>
+      </div>
+    </ion-card>
+
+    <ion-card class="profile-box">
+      <ion-grid class="padding-class">
+        <ion-row class="inp">
+          <div class="avatar">
+            <ion-avatar>
+              <img src="https://i.pinimg.com/474x/cf/f7/01/cff70187101797139589c8afa04e4053.jpg" alt="">
+            </ion-avatar>
+          </div>
+          <ion-col class="text-overflow">
+            <ion-row class="nam text-overflow">
+              <p>Murali</p>
+            </ion-row>
+            <ion-row class="hrs text-overflow">
+              <p>6Hrs Before</p>
+            </ion-row>
+          </ion-col>
+          <ion-col class="ellipsis" size="1">
+            <ion-icon name="ellipsis-vertical" (click)="openProfile()" mode="md"></ion-icon>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <ion-row>
+        <img src="https://storage.googleapis.com/www-reallysimple/shutterstock_670797415.jpg" alt="">
+      </ion-row>
+    </ion-card>
+    <ion-row class="likes">
+      <ion-col class="like">
+        <p>Like</p>
+      </ion-col>
+      <ion-col style="text-align:center" class="like">
+        <p>Share</p>
+      </ion-col>
+      <ion-col style="text-align:right" class="like">
+        <p>Comments</p>
+      </ion-col>
+    </ion-row>
+
+    <ion-card class="profile-box">
+      <ion-grid class="padding-class">
+        <ion-row class="inp">
+          <div class="avatar">
+            <ion-avatar>
+              <img src="https://i.pinimg.com/474x/cf/f7/01/cff70187101797139589c8afa04e4053.jpg" alt="">
+            </ion-avatar>
+          </div>
+          <ion-col class="text-overflow">
+            <ion-row class="nam text-overflow">
+              <p>Murali</p>
+            </ion-row>
+            <ion-row class="hrs text-overflow">
+              <p>6Hrs Before</p>
+            </ion-row>
+          </ion-col>
+          <ion-col class="ellipsis" size="1">
+            <ion-icon name="ellipsis-vertical" (click)="openProfile()" mode="md"></ion-icon>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <ion-row>
+        <img src="https://storage.googleapis.com/www-reallysimple/shutterstock_670797415.jpg" alt="">
+      </ion-row>
+    </ion-card>
+    <ion-row>
+      <ion-col class="like">
+        <p>Like</p>
+      </ion-col>
+      <ion-col style="text-align:center" class="like">
+        <p>Share</p>
+      </ion-col>
+      <ion-col style="text-align:right" class="like">
+        <p>Comments</p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>
+
+<ion-footer mode="md" class="home-footer">
+  <ion-row>
+    <ion-col routerLink="/home">
+      <ion-icon name="home-outline"></ion-icon>
+      <p>Home</p>
+    </ion-col>
+    <ion-col>
+      <ion-icon name="person" class="click-footer"></ion-icon>
+      <p class="click-footer">Profile</p>
+    </ion-col>
+    <ion-col routerLink="/qr-scanner">
+      <ion-icon name="scan-outline"></ion-icon>
+      <p>Scan</p>
+    </ion-col>
+    <ion-col routerLink="/favourites">
+      <ion-icon name="heart-outline"></ion-icon>
+      <p>Favourites</p>
+    </ion-col>
+    <ion-col routerLink="/calls">
+      <ion-icon name="call-outline"></ion-icon>
+      <p>Call</p>
+    </ion-col>
+  </ion-row>
+</ion-footer>

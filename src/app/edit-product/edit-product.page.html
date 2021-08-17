@@ -1,0 +1,139 @@
+<ion-header color="custom">
+  <ion-toolbar color="custom" class="toolbar">
+    <ion-buttons slot="start">
+      <ion-back-button mode="md"></ion-back-button>
+      <ion-menu-button mode="ios"></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="title">Edit Product</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <h5>Red Bus Chennai</h5>
+  <ion-grid>
+    <ion-row>
+      <ion-col class="left">
+        <ion-card class="first-card">
+          <img
+            src="https://image.freepik.com/free-vector/colorful-menu-fast-food-restaurant-with-burgers-pizza-desserts-drinks-black-background-illustration_1284-27167.jpg"
+            alt="">
+        </ion-card>
+      </ion-col>
+      <ion-col class="right">
+        <ion-card class="second-card">
+          <ion-row>
+            <ion-icon name="cloud-upload-outline"></ion-icon>
+          </ion-row>
+          <ion-row>
+            <p>Upload Service video, gif or URL</p>
+          </ion-row>
+        </ion-card>
+        <ion-row class="pad">
+          <ion-col class="left">
+            <ion-card class="third-card">
+              <ion-row>
+                <ion-icon name="cloud-upload-outline"></ion-icon>
+              </ion-row>
+              <ion-row>
+                <p>Upload Image</p>
+              </ion-row>
+            </ion-card>
+          </ion-col>
+          <ion-col class="right">
+            <ion-card class="third-card">
+              <ion-row>
+                <ion-icon name="cloud-upload-outline"></ion-icon>
+              </ion-row>
+              <ion-row>
+                <p>Upload Image</p>
+              </ion-row>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="3" class="left">
+        <ion-card class="third-card">
+          <ion-row>
+            <ion-icon name="cloud-upload-outline"></ion-icon>
+          </ion-row>
+          <ion-row>
+            <p>Upload Image</p>
+          </ion-row>
+        </ion-card>
+      </ion-col>
+      <ion-col class="right">
+        <ion-card class="third-card">
+          <ion-row>
+            <ion-icon name="cloud-upload-outline"></ion-icon>
+          </ion-row>
+          <ion-row>
+            <p>Upload Banner</p>
+          </ion-row>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid class="second-grid">
+    <p>
+      <ion-item>
+        <ion-input placeholder="Product Title" [(ngModel)]="producttitle"></ion-input>
+      </ion-item>
+    </p>
+    <p>
+      Product Tags
+      <ion-row>
+        <ion-textarea [(ngModel)]="producttags">
+        </ion-textarea>
+      </ion-row>
+    </p>
+    <p>
+      <ion-item>
+        <ion-input placeholder="Measuring Type" [(ngModel)]="measuringtype"></ion-input>
+      </ion-item>
+    </p>
+    <ion-row>
+      <ion-textarea placeholder="Measuring Details" [(ngModel)]="measuringdetails">
+      </ion-textarea>
+    </ion-row>
+    <p>
+      Description
+      <ion-row>
+        <ion-textarea [(ngModel)]="description"></ion-textarea>
+      </ion-row>
+    </p>
+    <p>
+      <ion-item>
+        <ion-input placeholder="Actual Price" [(ngModel)]="actualprice"></ion-input>
+      </ion-item>
+    </p>
+    <p>
+      <ion-item>
+        <ion-input placeholder="Discount" [(ngModel)]="discount_price"></ion-input>
+      </ion-item>
+    </p>
+    <p>
+      <ion-row class="toggle">
+        <ion-col>
+          <p>Cash on Delivery</p>
+        </ion-col>
+        <ion-col size="2.5">
+          <ion-toggle checked></ion-toggle>
+        </ion-col>
+      </ion-row>
+    </p>
+    <ion-row class="check">
+      <ion-col size="1">
+        <ion-checkbox checked></ion-checkbox>
+      </ion-col>
+      <ion-col size="9">
+        <p class="confirm">I agree for the <span>Terms and Conditions</span></p>
+      </ion-col>
+    </ion-row>
+    <ion-row class="btn">
+      <ion-button (click)="submit()">Submit</ion-button>
+    </ion-row>
+  </ion-grid>
+</ion-content>

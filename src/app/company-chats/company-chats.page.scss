@@ -1,0 +1,70 @@
+ion-header ion-icon {
+    color: #ffffff;
+    font-size: 21px;
+}
+ion-title {
+    font-size: 16px;
+    color: #ffffff;
+    padding: 0px;
+    letter-spacing: 0.6px;
+}
+
+.select {
+    float: right;
+    color: #871178;
+}
+
+ion-content {
+    --padding-bottom: 80px;
+    --padding-start: 18px;
+    --padding-end: 18px;
+}
+ion-card {
+    margin: 0.75em 0px;
+    padding: 7px;
+    box-shadow: 0px 3px 6px #00000029;
+}
+.avatar ion-avatar {
+    width: 56px;
+    height: 56px;
+}
+.user-name {
+    color: #22272a;
+    font-size: 18px;
+    margin: 0px;
+}
+.time {
+    color: #9f9f9f;
+    font-size: 12px;
+    margin: 0px;
+}
+.first .time {
+    color: #22272a;
+}
+
+ion-card {
+    box-shadow: #00000029 0px 3px 6px;
+}
+ion-avatar {
+    width: 4em;
+    height: 4em;
+}
+
+.tim p {
+    color: #9f9f9f;
+    font-size: 0.75em;
+    margin: 0.3125em 0px;
+    text-align: right;
+}
+.tim ion-row {
+    float: right;
+}
+ion-badge {
+    background-color: #d93131;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

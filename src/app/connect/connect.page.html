@@ -1,0 +1,98 @@
+<ion-header color="custom" mode="md">
+  <ion-toolbar color="custom" class="toolbar">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Connect</ion-title>
+    <ion-buttons slot="end">
+      <ion-icon name="ellipsis-vertical"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card class="firstbox" *ngFor="let bu of business">
+    <ion-row>
+      <div class="avatar">
+        <ion-avatar>
+          <img class="border" src="{{bu.logo}}" alt="">
+        </ion-avatar>
+      </div>
+      <ion-col class="bgcolor text-overflow" size="7.5">
+        <p>{{bu.business_name}} <ion-icon class="tick" name="shield-checkmark"></ion-icon>
+        </p>
+        <ion-row class="star">
+          <ion-icon name="star"></ion-icon>
+          <ion-icon name="star"></ion-icon>
+          <ion-icon name="star"></ion-icon>
+          <ion-icon name="star"></ion-icon>
+          <ion-icon name="star"></ion-icon>
+          <span>4.1 Ratings</span>
+        </ion-row>
+        <ion-row class="ceo text-overflow">
+          <p>CEO-{{bu.owner_name}}</p>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="8" class="address">
+        <p>Address</p>
+        <ion-row class="addres">
+          <p>
+            {{bu.business_address}}, <br>
+            {{bu.city}}-{{bu.pincode}},<br>
+            {{bu.state}},
+            {{bu.country}}.
+          </p>
+        </ion-row>
+      </ion-col>
+      <ion-col size="4" class="map">
+        <img
+          src="https://res.cloudinary.com/springboard-images/image/upload/q_auto,f_auto,fl_lossy/wordpress-india/2019/10/google-maps.jpg">
+      </ion-col>
+    </ion-row>
+  </ion-card>
+
+  <ion-grid class="branches">
+    <ion-row class="branch">
+      <ion-select placeholder="Branches">
+        <ion-select-option value="branches">Branches</ion-select-option>
+        <ion-select-option value="branch">Branch</ion-select-option>
+      </ion-select>
+    </ion-row>
+  </ion-grid>
+
+  <ion-card class="secondbox" *ngFor="let emp of employees; let i = index">
+    <ion-row>
+      <ion-col class="title">
+        <p>{{emp.name}}</p>
+        <ion-row class="delivery">
+          <p>{{emp.designation}}</p>
+        </ion-row>
+        <ion-row class="lang">
+          <p>{{emp.language}}</p>
+        </ion-row>
+        <ion-row class="icon">
+          <ion-col class="ico">
+            <ion-fab-button color="light" (click)="chat(i)">
+              <ion-icon name="chatbubbles-outline"></ion-icon>
+            </ion-fab-button>
+          </ion-col>
+          <ion-col class="icons">
+            <ion-fab-button color="light" (click)="video(i)">
+              <ion-icon name="videocam-outline"></ion-icon>
+            </ion-fab-button>
+          </ion-col>
+          <ion-col class="icn">
+            <ion-fab-button color="light" (click)=" audio(i)">
+              <ion-icon name="call-outline"></ion-icon>
+            </ion-fab-button>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+
+</ion-content>

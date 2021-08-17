@@ -1,0 +1,57 @@
+.background
+{
+    --ion-background-color:linear-gradient(#871178, #3C1378) !important;
+}
+.logo
+{
+    text-align: center;
+    padding-top: 35%;
+    padding-bottom: 10px;
+}
+
+.item-native
+{
+    background: transparent !important;
+}
+.ion-item-cust
+{
+    --ion-background-color:transparent;
+    margin:0 15% 0 15%;
+    text-align: center;
+    color: #fff;
+    font-size: 18px;
+}
+ion-item
+{
+    --ion-background-color:transparent;
+    text-align: center;
+    color: #fff;
+    font-size: 18px;
+    --padding-start:10; 
+    border-bottom: 1px solid #fff;
+}
+
+.select-margin
+{
+    margin:0 0 0 45%;
+    font-size:16px;
+}
+
+.col-margin
+{
+    margin:0 14% 0 0
+}
+
+.mt-4
+{
+    margin-top: 4%;
+}
+.mt-20
+{
+    margin-top: 20%;
+}
+
+#name::placeholder{
+    font-size: 10px;
+    text-align: left;
+}

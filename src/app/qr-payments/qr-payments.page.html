@@ -1,0 +1,47 @@
+<ion-header color="custom" mode="md">
+  <ion-toolbar color="custom" class="toolbar">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>QR Payments</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card *ngFor="let upi of businessupi; let i = index;">
+    <ion-row>
+      <div class="avatar" (click)="qrdetails(i)">
+        <ion-avatar>
+          <img class="border"
+            src="https://einsteinmarketer.ams3.digitaloceanspaces.com/em/uploads/2018/01/ben-sweet-456320-unsplash.jpg"
+            alt="">
+        </ion-avatar>
+      </div>
+      <ion-col class="text-overflow" routerLink="/company-qrpayment">
+        <p class="user-name pclass">{{upi.account_name}}</p>
+        <ion-row class="number">
+          <p class="time pclass">{{upi.upi_number}}</p>
+        </ion-row>
+      </ion-col>
+      <ion-col class="time" size="2">
+        <ion-row class="qr">
+          <ion-icon name="qr-code-outline"></ion-icon>
+          {{upi.upi_name}}
+        </ion-row>
+       
+      </ion-col>
+    </ion-row>
+  </ion-card>
+
+  
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button routerLink="/add-qr-payments">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+
+</ion-content>

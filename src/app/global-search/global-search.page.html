@@ -1,0 +1,448 @@
+<ion-header color="custom">
+  <ion-toolbar color="custom" class="toolbar">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-row>
+      <ion-col>
+        <ion-card class="head-card">
+          <ion-row>
+            <div class="avatar">
+              <ion-icon name="location-outline"></ion-icon>
+            </div>
+            <ion-col class="seperator" size="0.1">
+              <p></p>
+            </ion-col>
+            <ion-col>
+              <ion-input type="text" placeholder="Chennai Designer"></ion-input>
+            </ion-col>
+            <div class="avatar">
+              <ion-icon name="search-outline"></ion-icon>
+            </div>
+          </ion-row>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-buttons slot="end" routerLink="/notification">
+      <ion-icon name="notifications-outline"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-segment value="all" scrollable="true" mode="md" color="secondary" [(ngModel)]="segmentModel">
+    <ion-segment-button value="designer">
+      <ion-label>Designer</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="restaurant">
+      <ion-label>Restaurant</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="uiux">
+      <ion-label>UI&UX designer</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="topup">
+      <ion-label>Top Up</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
+  <div *ngIf="segmentModel === 'designer'">
+    <ion-card class="box">
+      <ion-row>
+        <div class="avatar">
+          <img
+            src="https://image.freepik.com/free-vector/business-infographic-template-with-eight-realistic-hexagonal-elements-with-thin-line-icons-black-background-modern-diagram-with-geometric-holes-paper-visualisation-presentations_129460-1409.jpg"
+            alt="">
+        </div>
+        <ion-col class="title">
+          <p>Shiva Designs <ion-icon name="shield-checkmark"></ion-icon>
+          </p>
+          <ion-row class="star">
+            <ion-icon name="star"></ion-icon>
+            <ion-icon name="star"></ion-icon>
+            <ion-icon name="star"></ion-icon>
+            <ion-icon name="star"></ion-icon>
+            <ion-icon name="star"></ion-icon>
+            <p>4.1 Ratings</p>
+          </ion-row>
+        </ion-col>
+        <ion-col size="1" class="last">
+          <ion-icon class="btn" name="ellipsis-vertical"></ion-icon>
+        </ion-col>
+      </ion-row>
+      <ion-row class="address">
+        <p>No-53 L.R Nagar 5th main road street adyar chennai -07</p>
+      </ion-row>
+
+      <div class="scroll">
+        <p class="design">Designer</p>
+        <div class="border" size="0.1">
+          <p></p>
+        </div>
+        <p class="design">Banner Design</p>
+        <div class="border" size="0.1">
+          <p></p>
+        </div>
+        <p class="design">Logo Design</p>
+        <div class="border" size="0.1">
+          <p></p>
+        </div>
+        <p class="design">Poster Designer</p>
+        <div class="border" size="0.1">
+          <p></p>
+        </div>
+        <p class="design">Image Design</p>
+        <div class="border" size="0.1">
+          <p></p>
+        </div>
+        <p class="design">Website Design</p>
+      </div>
+    </ion-card>
+
+    <ion-card class="box">
+      <ion-row>
+        <div class="avatar">
+          <img
+            src="https://image.freepik.com/free-vector/business-infographic-template-with-eight-realistic-hexagonal-elements-with-thin-line-icons-black-background-modern-diagram-with-geometric-holes-paper-visualisation-presentations_129460-1409.jpg"
+            alt="">
+        </div>
+        <ion-col class="title">
+          <p>Shiva Designs <ion-icon name="shield-checkmark"></ion-icon>
+          </p>
+          <ion-row class="star">
+            <ion-icon name="star"></ion-icon>
+            <ion-icon name="star"></ion-icon>
+            <ion-icon name="star"></ion-icon>
+            <ion-icon name="star"></ion-icon>
+            <ion-icon name="star"></ion-icon>
+            <p>4.1 Ratings</p>
+          </ion-row>
+        </ion-col>
+        <ion-col size="1" class="last">
+          <ion-icon class="btn" name="ellipsis-vertical"></ion-icon>
+        </ion-col>
+      </ion-row>
+      <ion-row class="address">
+        <p>No-53 L.R Nagar 5th main road street adyar chennai -07</p>
+      </ion-row>
+
+      <div class="scroll">
+        <p class="design">Designer</p>
+        <div class="border" size="0.1">
+          <p></p>
+        </div>
+        <p class="design">Banner Design</p>
+        <div class="border" size="0.1">
+          <p></p>
+        </div>
+        <p class="design">Logo Design</p>
+        <div class="border" size="0.1">
+          <p></p>
+        </div>
+        <p class="design">Poster Designer</p>
+        <div class="border" size="0.1">
+          <p></p>
+        </div>
+        <p class="design">Image Design</p>
+        <div class="border" size="0.1">
+          <p></p>
+        </div>
+        <p class="design">Website Design</p>
+      </div>
+    </ion-card>
+  </div>
+
+  <div *ngIf="segmentModel === 'restaurant'">
+    <ion-card class="box">
+      <ion-row>
+        <div class="avatar">
+          <img
+            src="https://image.freepik.com/free-vector/business-infographic-template-with-eight-realistic-hexagonal-elements-with-thin-line-icons-black-background-modern-diagram-with-geometric-holes-paper-visualisation-presentations_129460-1409.jpg"
+            alt="">
+        </div>
+        <ion-col class="title">
+          <p>Shiva Designs <ion-icon name="shield-checkmark"></ion-icon>
+          </p>
+          <ion-row class="star">
+            <ion-icon name="star"></ion-icon>
+            <ion-icon name="star"></ion-icon>
+            <ion-icon name="star"></ion-icon>
+            <ion-icon name="star"></ion-icon>
+            <ion-icon name="star"></ion-icon>
+            <p>4.1 Ratings</p>
+          </ion-row>
+        </ion-col>
+        <ion-col size="1" class="last">
+          <ion-icon class="btn" name="ellipsis-vertical"></ion-icon>
+        </ion-col>
+      </ion-row>
+      <ion-row class="address">
+        <p>No-53 L.R Nagar 5th main road street adyar chennai -07</p>
+      </ion-row>
+
+      <div class="scroll">
+        <p class="design">Designer</p>
+        <div class="border" size="0.1">
+          <p></p>
+        </div>
+        <p class="design">Banner Design</p>
+        <div class="border" size="0.1">
+          <p></p>
+        </div>
+        <p class="design">Logo Design</p>
+        <div class="border" size="0.1">
+          <p></p>
+        </div>
+        <p class="design">Poster Designer</p>
+        <div class="border" size="0.1">
+          <p></p>
+        </div>
+        <p class="design">Image Design</p>
+        <div class="border" size="0.1">
+          <p></p>
+        </div>
+        <p class="design">Website Design</p>
+      </div>
+    </ion-card>
+
+    <ion-card class="box">
+      <ion-row>
+        <div class="avatar">
+          <img
+            src="https://image.freepik.com/free-vector/business-infographic-template-with-eight-realistic-hexagonal-elements-with-thin-line-icons-black-background-modern-diagram-with-geometric-holes-paper-visualisation-presentations_129460-1409.jpg"
+            alt="">
+        </div>
+        <ion-col class="title">
+          <p>Shiva Designs <ion-icon name="shield-checkmark"></ion-icon>
+          </p>
+          <ion-row class="star">
+            <ion-icon name="star"></ion-icon>
+            <ion-icon name="star"></ion-icon>
+            <ion-icon name="star"></ion-icon>
+            <ion-icon name="star"></ion-icon>
+            <ion-icon name="star"></ion-icon>
+            <p>4.1 Ratings</p>
+          </ion-row>
+        </ion-col>
+        <ion-col size="1" class="last">
+          <ion-icon class="btn" name="ellipsis-vertical"></ion-icon>
+        </ion-col>
+      </ion-row>
+      <ion-row class="address">
+        <p>No-53 L.R Nagar 5th main road street adyar chennai -07</p>
+      </ion-row>
+
+      <div class="scroll">
+        <p class="design">Designer</p>
+        <div class="border" size="0.1">
+          <p></p>
+        </div>
+        <p class="design">Banner Design</p>
+        <div class="border" size="0.1">
+          <p></p>
+        </div>
+        <p class="design">Logo Design</p>
+        <div class="border" size="0.1">
+          <p></p>
+        </div>
+        <p class="design">Poster Designer</p>
+        <div class="border" size="0.1">
+          <p></p>
+        </div>
+        <p class="design">Image Design</p>
+        <div class="border" size="0.1">
+          <p></p>
+        </div>
+        <p class="design">Website Design</p>
+      </div>
+    </ion-card>
+  </div>
+
+  <div *ngIf="segmentModel === 'uiux'">
+    <ion-card class="box">
+      <ion-row>
+        <div class="avatar">
+          <img
+            src="https://image.freepik.com/free-vector/business-infographic-template-with-eight-realistic-hexagonal-elements-with-thin-line-icons-black-background-modern-diagram-with-geometric-holes-paper-visualisation-presentations_129460-1409.jpg"
+            alt="">
+        </div>
+        <ion-col class="title">
+          <p>Shiva Designs <ion-icon name="shield-checkmark"></ion-icon>
+          </p>
+          <ion-row class="star">
+            <ion-icon name="star"></ion-icon>
+            <ion-icon name="star"></ion-icon>
+            <ion-icon name="star"></ion-icon>
+            <ion-icon name="star"></ion-icon>
+            <ion-icon name="star"></ion-icon>
+            <p>4.1 Ratings</p>
+          </ion-row>
+        </ion-col>
+        <ion-col size="1" class="last">
+          <ion-icon class="btn" name="ellipsis-vertical"></ion-icon>
+        </ion-col>
+      </ion-row>
+      <ion-row class="address">
+        <p>No-53 L.R Nagar 5th main road street adyar chennai -07</p>
+      </ion-row>
+
+      <div class="scroll">
+        <p class="design">Designer</p>
+        <div class="border" size="0.1">
+          <p></p>
+        </div>
+        <p class="design">Banner Design</p>
+        <div class="border" size="0.1">
+          <p></p>
+        </div>
+        <p class="design">Logo Design</p>
+        <div class="border" size="0.1">
+          <p></p>
+        </div>
+        <p class="design">Poster Designer</p>
+        <div class="border" size="0.1">
+          <p></p>
+        </div>
+        <p class="design">Image Design</p>
+        <div class="border" size="0.1">
+          <p></p>
+        </div>
+        <p class="design">Website Design</p>
+      </div>
+    </ion-card>
+
+    <ion-card class="box">
+      <ion-row>
+        <div class="avatar">
+          <img
+            src="https://image.freepik.com/free-vector/business-infographic-template-with-eight-realistic-hexagonal-elements-with-thin-line-icons-black-background-modern-diagram-with-geometric-holes-paper-visualisation-presentations_129460-1409.jpg"
+            alt="">
+        </div>
+        <ion-col class="title">
+          <p>Shiva Designs <ion-icon name="shield-checkmark"></ion-icon>
+          </p>
+          <ion-row class="star">
+            <ion-icon name="star"></ion-icon>
+            <ion-icon name="star"></ion-icon>
+            <ion-icon name="star"></ion-icon>
+            <ion-icon name="star"></ion-icon>
+            <ion-icon name="star"></ion-icon>
+            <p>4.1 Ratings</p>
+          </ion-row>
+        </ion-col>
+        <ion-col size="1" class="last">
+          <ion-icon class="btn" name="ellipsis-vertical"></ion-icon>
+        </ion-col>
+      </ion-row>
+      <ion-row class="address">
+        <p>No-53 L.R Nagar 5th main road street adyar chennai -07</p>
+      </ion-row>
+
+      <div class="scroll">
+        <p class="design">Designer</p>
+        <div class="border" size="0.1">
+          <p></p>
+        </div>
+        <p class="design">Banner Design</p>
+        <div class="border" size="0.1">
+          <p></p>
+        </div>
+        <p class="design">Logo Design</p>
+        <div class="border" size="0.1">
+          <p></p>
+        </div>
+        <p class="design">Poster Designer</p>
+        <div class="border" size="0.1">
+          <p></p>
+        </div>
+        <p class="design">Image Design</p>
+        <div class="border" size="0.1">
+          <p></p>
+        </div>
+        <p class="design">Website Design</p>
+      </div>
+    </ion-card>
+  </div>
+
+  <div *ngIf="segmentModel === 'topup'">
+    <ion-card class="box">
+      <ion-row>
+        <div class="avatar">
+          <img
+            src="https://image.freepik.com/free-vector/business-infographic-template-with-eight-realistic-hexagonal-elements-with-thin-line-icons-black-background-modern-diagram-with-geometric-holes-paper-visualisation-presentations_129460-1409.jpg"
+            alt="">
+        </div>
+        <ion-col class="title">
+          <p>Shiva Designs <ion-icon name="shield-checkmark"></ion-icon>
+          </p>
+          <ion-row class="star">
+            <ion-icon name="star"></ion-icon>
+            <ion-icon name="star"></ion-icon>
+            <ion-icon name="star"></ion-icon>
+            <ion-icon name="star"></ion-icon>
+            <ion-icon name="star"></ion-icon>
+            <p>4.1 Ratings</p>
+          </ion-row>
+        </ion-col>
+        <ion-col size="1" class="last">
+          <ion-icon class="btn" name="ellipsis-vertical"></ion-icon>
+        </ion-col>
+      </ion-row>
+      <ion-row class="address">
+        <p>No-53 L.R Nagar 5th main road street adyar chennai -07</p>
+      </ion-row>
+
+      <div class="scroll">
+        <p class="design">Designer</p>
+        <div class="border" size="0.1">
+          <p></p>
+        </div>
+        <p class="design">Banner Design</p>
+        <div class="border" size="0.1">
+          <p></p>
+        </div>
+        <p class="design">Logo Design</p>
+        <div class="border" size="0.1">
+          <p></p>
+        </div>
+        <p class="design">Poster Designer</p>
+        <div class="border" size="0.1">
+          <p></p>
+        </div>
+        <p class="design">Image Design</p>
+        <div class="border" size="0.1">
+          <p></p>
+        </div>
+        <p class="design">Website Design</p>
+      </div>
+    </ion-card>
+
+  </div>
+
+</ion-content>
+
+<ion-footer>
+  <ion-row>
+    <ion-col routerLink="/home" (click)="footerIconColor()">
+      <ion-icon [style.color]="iconcolor" name="home"></ion-icon>
+      <p [style.color]="iconcolor">Home</p>
+    </ion-col>
+    <ion-col routerLink="/profile" (click)="footerIconColor()">
+      <ion-icon [style.color]="iconcolor" name="person-outline"></ion-icon>
+      <p [style.color]="iconcolor">Profile</p>
+    </ion-col>
+    <ion-col routerLink="/qr-scanner" (click)="footerIconColor()">
+      <ion-icon [style.color]="iconcolor" name="scan-outline"></ion-icon>
+      <p [style.color]="iconcolor">Scan</p>
+    </ion-col>
+    <ion-col routerLink="/favourites" (click)="footerIconColor()">
+      <ion-icon [style.color]="iconcolor" name="heart-outline"></ion-icon>
+      <p [style.color]="iconcolor">Favourites</p>
+    </ion-col>
+    <ion-col routerLink="/calls" (click)="footerIconColor()">
+      <ion-icon [style.color]="iconcolor" name="call-outline"></ion-icon>
+      <p [style.color]="iconcolor">Call</p>
+    </ion-col>
+  </ion-row>
+</ion-footer>

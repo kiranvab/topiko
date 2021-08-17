@@ -1,0 +1,126 @@
+<ion-header>
+  <ion-toolbar color="custom" class="toolbar">
+    <ion-buttons slot="start">
+      <ion-back-button mode="md"></ion-back-button>
+      <ion-menu-button mode=ios></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Choose</ion-title>
+    <ion-buttons slot="end">
+      <ion-icon name="ellipsis-vertical" (click)="openMenu()"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-row class="select-row">
+    <div class="select">
+      <ion-select placeholder="Vehicle" value="vehicle" interface="popover" mode="ios">
+        <ion-select-option value="vehicle">Vehicle</ion-select-option>
+        <ion-select-option value="phonepe">Car</ion-select-option>
+        <ion-select-option value="favourites">Bicycle</ion-select-option>
+      </ion-select>
+    </div>
+  </ion-row>
+
+  <h4>Sticker</h4>
+
+  <ion-card class="fourth">
+    <ion-row class="gpay">
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Google_Pay_%28GPay%29_Logo_%282018-2020%29.svg/1280px-Google_Pay_%28GPay%29_Logo_%282018-2020%29.svg.png"
+        alt="">
+
+      <ion-row class="second">
+        <ion-col>
+          <p class="reach">Refer ID</p>
+        </ion-col>
+        <ion-col class="aligncol">
+          <p class="id">{{this.rand}}</p>
+        </ion-col>
+      </ion-row>
+
+      <img class="qr"
+        src="https://images.vexels.com/media/users/3/143626/isolated/preview/c3603b5d39ceda0f4dd261db2300e9bb-qr-bar-code-illustration-by-vexels.png"
+        alt="">
+      <p class="phone">TN 22 DH 9354</p>
+      <span class="note">Note: <span>Scan to reach belongers in case of emergency. don't misuse</span></span>
+    </ion-row>
+  </ion-card>
+
+  <h4>Tag</h4>
+
+  <ion-card class="fifth">
+    <ion-card>
+      <ion-row class="rowa">
+        <ion-row class="rowb">
+          <ion-col class="bground">
+            <ion-row class="thick-border">
+            </ion-row>
+            <ion-avatar>
+              <img src="http://www.eurocarnews.com/media/pictorials/1445/6905.jpg" alt="">
+            </ion-avatar>
+            <ion-row class="nam text-overflow">
+              <p>Murali</p>
+            </ion-row>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-row class="refer text-overflow">
+              <ion-col size="5.2">
+                <p class="reach">Refer ID</p>
+              </ion-col>
+              <ion-col>
+                <span class="aligncol text-overflow">
+                  <p class="id">{{this.rand}}</p>
+                </span>
+              </ion-col>
+            </ion-row>
+            <ion-row class="vehic text-overflow">
+              <ion-col size="5.2">
+                <p>Vechile</p>
+              </ion-col>
+              <ion-col class="text-overflow">
+                <p class="vehicno">TN 22 DH 9133</p>
+              </ion-col>
+            </ion-row>
+            <ion-row class="noteclas">
+              <span class="noteclass">Note: <span>Scan to reach belongers in case of emergency. don't
+                  misuse</span></span>
+            </ion-row>
+          </ion-col>
+          <ion-col size="4" class="qrclas">
+            <img class="qrr"
+              src="https://www.freepnglogos.com/uploads/qr-code-png/qr-code-code-sticker-transparent-png-svg-vector-19.png"
+              alt="">
+          </ion-col>
+        </ion-row>
+      </ion-row>
+    </ion-card>
+  </ion-card>
+
+  <ion-grid class="choose">
+    <ion-row class="rupees">
+      <p>Rs 1500<span>+18% GST</span></p>
+    </ion-row>
+    <ion-row class="stickers">
+      <p>Two stickers with key tag</p>
+    </ion-row>
+  </ion-grid>
+
+  <ion-slides pager="true" [options]="slideOpts">
+    <ion-slide></ion-slide>
+    <ion-slide></ion-slide>
+    <ion-slide></ion-slide>
+  </ion-slides>
+
+  <ion-grid class="last-grid">
+    <ion-row class="button">
+      <ion-col class="righ">
+        <ion-button>Buy</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

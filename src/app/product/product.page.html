@@ -1,0 +1,62 @@
+<ion-header color="custom">
+  <ion-toolbar color="custom" class="toolbar">
+    <ion-buttons slot="start">
+      <ion-back-button mode="md"></ion-back-button>
+      <ion-menu-button mode="ios"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Product</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <p class="title">Red Bus Chennai (Regional Plan)</p>
+
+  <ion-card *ngFor="let product of products; let i = index;">
+    <ion-row>
+      <div class="avatar">
+        <ion-avatar>
+          <img class="product-img"
+            src="{{product.product_image}}">
+        </ion-avatar>
+      </div>
+      <ion-col class="text-overflow">
+        <p class="user-name pclass">{{product.title}}</p>
+        <p class="time pclass">04/26/2021</p>
+        <p class="price-div pclass">Price - <span class="price">{{product.discount_price}}</span> <span class="ori_price">{{product.mrp}}</span> <span
+            class="discount">{{product.discount / product.mrp * 100 | number:'2.1-2'}}%off</span></p>
+      </ion-col>
+      <ion-col size="1" class="ellipsis" (click)="openMenu(i)">
+        <ion-icon name="ellipsis-vertical"></ion-icon>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="chats scroll" routerLink="/product-views">
+      <ion-col>
+        <p class="text">Shares</p>
+        <p class="number">3</p>
+      </ion-col>
+      <ion-col class="sep" size="0.1"></ion-col>
+      <ion-col>
+        <p class="text">Likes</p>
+        <p class="number">12</p>
+      </ion-col>
+      <ion-col class="sep" size="0.1"></ion-col>
+      <ion-col>
+        <p class="text">Favourites</p>
+        <p class="number">09</p>
+      </ion-col>
+      <ion-col class="sep" size="0.1"></ion-col>
+      <ion-col class="calls">
+        <p class="text">Comments</p>
+        <p class="number">06</p>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+
+  
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button class="fab" routerLink="/add-product">
+      <ion-icon name="add-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar color="custom">
+    <ion-buttons slot="start">
+      <ion-back-button mode="md"></ion-back-button>
+      <ion-menu-button mode="ios"></ion-menu-button>
+     
+    </ion-buttons>
+    <ion-title>Branches</ion-title>
+
+    <ion-buttons slot="end">
+      <ion-icon name="ellipsis-vertical"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card *ngFor="let branch of branches; let i = index;">
+    <ion-row>
+      <ion-col size="8" class="address">
+        {{branch.branch_title}}
+        <p><b>Address :</b><br>
+          {{branch.branch_address}}
+          {{branch.branch_area}}
+          {{branch.branch_city}}
+          {{branch.branch_state}}
+          {{branch.branch_pincode}}
+          {{branch.branch_country}}
+        </p>
+      </ion-col>
+      <ion-col>
+        <img src="https://localsearchforum.com/attachments/maps-embed-api-example-png.3469/" class="img">
+          
+      </ion-col>
+    </ion-row>
+  </ion-card>
+
+  
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed" routerLink="/addbranches">
+    <ion-fab-button>
+      <ion-icon name="add-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+</ion-content>

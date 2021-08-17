@@ -1,0 +1,197 @@
+<ion-header>
+  <ion-toolbar color="custom">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Create Business</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- <div class="bcard-head">
+    <div><img src="assets/profile.svg" class="mt-20"></div>
+  </div>
+
+  <div class="bcard-body">
+    <div class="business-dyn">
+      <ion-row>
+        <ion-col size="4">Business ID</ion-col>
+        <ion-col>{{bid}}</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="4">Pin No</ion-col>
+        <ion-col>{{bpin}}</ion-col>
+      </ion-row>
+    </div> -->
+
+  <ion-card class="first">
+    <ion-row class="row">
+      <ion-col class="bg">
+        <ion-avatar>
+          <img src="https://i.pinimg.com/474x/bc/d4/ac/bcd4ac32cc7d3f98b5e54bde37d6b09e.jpg"> 
+        </ion-avatar>
+        <img class="position-cam" src="assets/camera.svg" alt="" (click)="getPicture();">
+      </ion-col>
+    </ion-row>
+  </ion-card>
+
+  <div class="bcard-body">
+    <div class="business-dyn">
+      <ion-row>
+        <ion-col size="5">Business ID</ion-col>
+        <ion-col class="id-color">{{bid}}</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="5">Pin No</ion-col>
+        <ion-col class="id-color">{{bpin}}</ion-col>
+      </ion-row>
+    </div>
+
+    <p class="text">
+      <ion-input placeholder="Business Name" [(ngModel)]="businessname"></ion-input>
+    </p>
+
+
+    <p class="text">
+      <ion-select placeholder="Business Type" [(ngModel)]="type">
+        <ion-select-option value="proprietorship">Proprietorship</ion-select-option>
+        <ion-select-option value="partnership">Partnership</ion-select-option>
+        <ion-select-option value="opc">OPC</ion-select-option>
+        <ion-select-option value="llp">LLP</ion-select-option>
+        <ion-select-option value="private">Private Limited</ion-select-option>
+        <ion-select-option value="public">Public Limited</ion-select-option>
+      </ion-select>
+    </p>
+
+    <p class="text">
+      <ion-input placeholder="Business Contact No" [(ngModel)]="number"></ion-input>
+    </p>
+
+    <p class="text">
+      <ion-input placeholder="Owner Name" [(ngModel)]="ownername"></ion-input>
+    </p>
+
+    <p class="text">
+      <ion-select placeholder="Business based on" [(ngModel)]="basis">
+        <ion-select-option *ngFor="let cat of categoreis; let i=index;" value="{{cat.category}}">{{cat.category}}</ion-select-option>
+        <ion-select-option *ngFor="let ser of services; let i=index;" value="{{ser.service}}">{{ser.service}}</ion-select-option>
+      </ion-select>
+    </p>
+
+    <p class="text">
+      <ion-select placeholder="Business mode" [(ngModel)]="mode" (ionChange)="getserccat()">
+        <ion-select-option value="services">Services </ion-select-option>
+        <ion-select-option value="category">Category</ion-select-option>
+      </ion-select>
+    </p>
+
+    <p class="text">
+      <ion-select  [(ngModel)]="option">
+        <ion-select-option  *ngFor ="let opt of options; let i = index;" value="{{opt.id}}">{{opt.service}}</ion-select-option>
+      </ion-select>
+    </p>
+
+    <p class="title">Select Business Tags</p>
+    <p class="text">
+      <textarea placeholder="Select Business Tags" [(ngModel)]="tag1"></textarea>
+    </p>
+
+    <p>
+      <ion-label position="floating">Address</ion-label>
+      <ion-input [(ngModel)]="add1"></ion-input>
+      <ion-input [(ngModel)]="add2"></ion-input>
+      <ion-input [(ngModel)]="add3"></ion-input>
+    </p>
+    <p class="text">
+      <ion-select placeholder="Country" [(ngModel)]="country">
+        <ion-select-option value="ind">India</ion-select-option>
+        <ion-select-option value="usa">USA</ion-select-option>
+      </ion-select>
+    </p>
+    <p class="text">
+      <ion-select placeholder="State" [(ngModel)]="state">
+        <ion-select-option value="andhra pradesh">Andhra Pradesh</ion-select-option> -->
+        <ion-select-option value="andaman and Nicobar Islands">Andaman and Nicobar Islands</ion-select-option>
+        <ion-select-option value="assam">Assam</ion-select-option>
+        <ion-select-option value="bihar">Bihar</ion-select-option>
+        <ion-select-option value="chandigarh">Chandigarh</ion-select-option>
+        <ion-select-option value="chhattisgarh">chhattisgarh</ion-select-option>
+        <ion-select-option value="dadar and Nagarhaveli">Dadar and Nagarhaveli</ion-select-option>
+        <ion-select-option value="daman and Diu">Daman and Diu</ion-select-option>
+        <ion-select-option value="delhi">Delhi</ion-select-option>
+        <ion-select-option value="lakshadweep">Lakshadweep</ion-select-option>
+        <ion-select-option value="puducherry">Puducherry</ion-select-option>
+        <ion-select-option value="goa">Goa</ion-select-option>
+        <ion-select-option value="gujarat">Gujarat</ion-select-option>
+        <ion-select-option value="haryana">Haryana</ion-select-option>
+        <ion-select-option value="himachal Pradesh">Himachal Pradesh</ion-select-option>
+        <ion-select-option value="jammu and Kashmir">Jammu and Kashmir</ion-select-option>
+        <ion-select-option value="jharkhand">Jharkhand</ion-select-option>
+        <ion-select-option value="karnataka">Karnataka</ion-select-option>
+        <ion-select-option value="kerala">Kerala</ion-select-option>
+        <ion-select-option value="madhya Pradesh">Madhya Pradesh</ion-select-option>
+        <ion-select-option value="maharashtra">Maharashtra</ion-select-option>
+        <ion-select-option value="manipur">Manipur</ion-select-option>
+        <ion-select-option value="meghalaya">Meghalaya</ion-select-option>
+        <ion-select-option value="mizoram">Mizoram</ion-select-option>
+        <ion-select-option value="nagaland">Nagaland</ion-select-option>
+        <ion-select-option value="odisha">Odisha</ion-select-option>
+        <ion-select-option value="punjab">Punjab</ion-select-option>
+        <ion-select-option value="rajasthan">Rajasthan</ion-select-option>
+        <ion-select-option value="sikkim">Sikkim</ion-select-option>
+        <ion-select-option value="tamilnadu">Tamilnadu</ion-select-option>
+        <ion-select-option value="telangana">Telangana</ion-select-option>
+        <ion-select-option value="tripura">Tripura</ion-select-option>
+        <ion-select-option value="uttar Pradesh">Uttar Pradesh</ion-select-option>
+        <ion-select-option value="uttarakhand">Uttarakhand</ion-select-option>
+        <ion-select-option value="westbengal">Westbengal</ion-select-option>
+      </ion-select>
+    </p>
+    <p class="text">
+      <ion-input type="mobile" [(ngModel)]="pincode" placeholder="Pin Code" [(ngModel)]="pincode"></ion-input>
+    </p>
+
+    <ion-row class="pin-location">
+      <ion-col size="2">
+        <img src="assets/location.svg">
+      </ion-col>
+      <ion-col class="pin">
+        Business location
+      </ion-col>
+    </ion-row>
+
+    <p class="title">View on your Businesss (Optional)</p>
+    <p class="text">
+      <textarea placeholder="Select Business Tags" [(ngModel)]="tag2"></textarea>
+    </p>
+
+    <p class="title">Your Business Story (optional)</p>
+    <p class="text">
+      <textarea placeholder="Select Business Tags" [(ngModel)]="tag3"></textarea>
+    </p>
+    <br>
+
+    <!-- <div class="text-center" class="pb-15">
+      <ion-checkbox color="success" checked></ion-checkbox> I Agree for the <span>Terms and Conditions</span>
+    </div>
+
+    <ion-row>
+      <ion-col>
+        <ion-button expand="block" class="purple-btn" color="custom" routerLink="/my-business">Submit</ion-button>
+      </ion-col>
+    </ion-row> -->
+
+    <ion-row class="check">
+      <ion-col class="flex">
+        <ion-checkbox (ionChange)="checkbox()"></ion-checkbox>
+        <ion-label class="agree">I agree for the <span>Terms and Conditions</span></ion-label>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="buton">
+      <ion-button [disabled]="!accept" (click)="submit()">Submit</ion-button>
+    </ion-row>
+
+  </div>
+</ion-content>

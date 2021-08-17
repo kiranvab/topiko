@@ -1,0 +1,74 @@
+ion-title {
+    font-size: 16px;
+    color: #ffffff;
+    padding: 0px;
+    padding-top: 1px;
+    letter-spacing: 0.6px;
+    text-align: left;
+}
+
+ion-content {
+    --padding-bottom: 80px;
+    --padding-start: 18px;
+    --padding-end: 18px;
+}
+
+ion-card {
+    margin: 0.75em 0px;
+    padding: 7px;
+    box-shadow: 0px 3px 6px #00000029;
+}
+.avatar ion-avatar {
+    width: 64px;
+    height: 64px;
+}
+.user-name {
+    color: #22272a;
+    font-size: 18px;
+    margin: 0px;
+}
+.time {
+    color: #9f9f9f;
+    font-size: 12px;
+    margin: 0px;
+}
+.pclass {
+    margin: 0%;
+    line-height: 18px;
+}
+.ellipsis {
+    font-size: 24px;
+}
+.scroll {
+    height: 26px;
+}
+.scroll p {
+    color: #707070;
+}
+.design {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0%;
+    min-width: max-content;
+    font-size: 12px !important;
+    margin: 0%;
+    margin-right: 24px;
+}
+
+.nominee p {
+    color: #871178;
+    font-size: 18px;
+    margin: 4px 0px;
+    margin-top: 6px;
+}
+.nominee-name {
+    color: #707070;
+    font-size: 12px;
+    line-height: 20px;
+    padding: 3px;
+    padding-top: 0px;
+}
+ion-fab-button ion-icon {
+    font-size: 40px;
+}

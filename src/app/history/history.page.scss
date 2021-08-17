@@ -1,0 +1,58 @@
+ion-title {
+    font-size: 18px;
+    color: #ffffff;
+    text-align: center;
+}
+ion-content {
+    --padding-top: 10px;
+    --padding-start: 8px;
+    --padding-end: 8px;
+    --padding-bottom: 18px;
+}
+ion-card {
+    border-radius: 0%;
+    box-shadow: 0px 3px 6px #00000029;
+    padding: 1px 10px 10px 10px;
+}
+.img ion-col {
+    padding-top: 0%;
+}
+.image .avatar {
+    width: 65px;
+    height: 65px;
+}
+.title {
+    text-align: left;
+}
+h5 {
+    padding-top: 3px;
+    font-size: 1.125em;
+    color: #22272a;
+    margin: 0%;
+    font-weight: 40%;
+    line-height: 22px;
+}
+p {
+    font-size: 12px;
+    color: #9f9f9f;
+    margin: 0%;
+    line-height: 18px;
+}
+.inline {
+    text-align: right;
+}
+.inline ion-col {
+    padding: 0%;
+}
+.inline span {
+    font-size: 10px;
+    color: #871178;
+    letter-spacing: 0.0375em;
+    padding-right: 0.8rem;
+}
+.inline .date {
+    margin-right: 0.75em;
+}
+.inline .time {
+    padding-right: 0%;
+}

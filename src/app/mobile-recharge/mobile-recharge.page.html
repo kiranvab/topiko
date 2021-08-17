@@ -1,0 +1,48 @@
+<ion-header color="custom" mode="md">
+  <ion-toolbar color="custom" class="toolbar">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Mobile Recharge</ion-title>
+    <ion-buttons slot="end">
+      <ion-icon name="ellipsis-vertical"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-segment>
+    <ion-segment-button value="prepaid">
+      <ion-label>Prepaid</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="postpaid">
+      <ion-label>Postpaid</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
+  <ion-card class="first">
+    <ion-row>
+      <ion-col class="left">
+        <p>Payment</p>
+      </ion-col>
+      <ion-col class="right">
+        <p>05/26/2021 <span>11:30AM</span></p>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-item>
+        <ion-input placeholder="Prepaid mobile number"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input placeholder="Service Operator"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input placeholder="Recharge Amount"></ion-input>
+      </ion-item>
+    </ion-row>
+    <ion-row class="btn">
+      <ion-button>Proceed</ion-button>
+    </ion-row>
+  </ion-card>
+</ion-content>

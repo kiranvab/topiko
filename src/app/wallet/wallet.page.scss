@@ -1,0 +1,181 @@
+// head
+ion-title {
+    font-size: 1.125em;
+    color: #ffffff;
+    padding: 0px;
+    text-align: left;
+}
+ion-header ion-icon {
+    color: #ffffff;
+    font-size: 1.3125em;
+    float: right;
+}
+
+ion-content {
+    --padding-bottom: 80px;
+    --padding-start: 8px;
+    --padding-end: 8px;
+}
+
+//card
+.first-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 0.1875em 0.375em #00000029;
+    border-radius: 0.3125em;
+    margin: 0.3125em;
+    margin-top: 1.5625em;
+    margin-bottom: 2.125em;
+    text-align: center;
+}
+.cards ion-icon {
+    height: 2.625em;
+    width: 2.625em;
+    color: #871178;
+    padding-top: 1em;
+}
+.cards p {
+    font-size: 1em;
+    color: #22272a;
+    margin: 0.5em 0px;
+}
+.second-card {
+    box-shadow: 0px 0.1875em 0.375em #00000029;
+    border-radius: 0.1875em;
+    padding: 7px;
+}
+.rs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 5px;
+}
+.rs ion-icon {
+    color: #871178;
+    height: 2.90625em;
+    width: 2.90625em;
+    font-size: 20px;
+}
+.value {
+    color: #22272a;
+    font-size: 1em;
+    margin-top: 0.625em;
+    margin-bottom: 0.375em;
+}
+.cost {
+    color: #871178;
+    font-size: 1em;
+    margin: 0%;
+    margin-bottom: 0.6875em;
+}
+.forward {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.forward ion-icon {
+    color: #707070;
+}
+
+//third-card
+.third-card {
+    box-shadow: 0px 0.1875em 0.375em #00000029;
+    border-radius: 0.1875em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1.5625em;
+    padding: 10px;
+}
+.third-card p {
+    color: #22272a;
+    font-size: 1em;
+}
+.third-card .icon {
+    height: 4.375em;
+    width: 4.375em;
+    color: #871178;
+}
+.points {
+    color: #707070;
+    font-size: 1em;
+}
+.points ion-icon {
+    color: #22272a;
+}
+.points span {
+    color: #871178;
+    font-size: 1em;
+}
+
+//fourth-card
+
+.avatar ion-avatar {
+    width: 62px;
+    height: 62px;
+}
+.border {
+    border: 0.2px solid #707070;
+}
+.user-name {
+    color: #22272a;
+    font-size: 18px;
+    margin: 0px;
+}
+.time {
+    color: #9f9f9f;
+    font-size: 12px;
+    margin: 0px;
+}
+.pts {
+    font-size: 0.75em;
+    color: #871178;
+    margin: 0px;
+}
+p {
+    margin: 0%;
+    line-height: 18px;
+}
+
+.claim-values {
+    margin: 1em 0.625em;
+    font-size: 1em;
+    color: #22272a;
+}
+.fourth-card {
+    padding: 10px;
+    padding-bottom: 7px;
+    margin: 10px 8px;
+    box-shadow: 0px 3px 6px #00000029;
+}
+
+.claim {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.claim ion-button {
+    --background: linear-gradient(#871178, #3c1378);
+    --color: #ffffff;
+    text-transform: capitalize;
+    width: 4.625em;
+    height: 2em;
+    font-size: 16px;
+    font-weight: normal;
+}
+
+// fab
+ion-fab-button {
+    --background: linear-gradient(#871178, #3c1378);
+    --color: #ffffff;
+    height: 4.375em;
+    width: 4.375em;
+}
+.fab ion-icon {
+    color: #ffffff;
+    height: 36px;
+    width: 36px;
+}

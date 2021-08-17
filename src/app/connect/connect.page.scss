@@ -1,0 +1,143 @@
+ion-header ion-icon {
+    color: #ffffff;
+    font-size: 21px;
+}
+ion-title {
+    font-size: 16px;
+    color: #ffffff;
+    padding: 0px;
+    padding-top: 1px;
+    letter-spacing: 0.6px;
+    text-align: left;
+}
+
+ion-content {
+    --padding-start: 8px;
+    --padding-end: 8px;
+    --padding-top: 10px;
+    --padding-bottom: 10px;
+}
+.firstbox {
+    box-shadow: 0px 3px 6px #00000029;
+    padding: 10px;
+    padding-bottom: 3px;
+    padding-right: 5px;
+}
+.firstbox .bgcolor {
+    padding: 0px;
+}
+.avatar ion-avatar {
+    width: 61px;
+    height: 61px;
+}
+.bgcolor p {
+    font-size: 1.125em;
+    color: #22272a;
+    margin: 2px 0px;
+}
+.bgcolor p ion-icon {
+    color: #39ac00;
+    font-size: 11px;
+}
+.firstbox .star ion-icon {
+    color: #fcb900;
+}
+.star span {
+    font-size: 8px;
+    color: #22272a;
+    margin: 0px;
+    padding-top: 3px;
+    padding-left: 3px;
+    padding-bottom: 2px;
+}
+.ceo p {
+    font-size: 12px;
+    color: #9f9f9f;
+    margin: 3px 0px;
+}
+.address {
+    padding-left: 0%;
+}
+.address p {
+    font-size: 12px;
+    color: #707070;
+    margin: 5px 0px;
+}
+.addres p {
+    font-size: 10px;
+    color: #22272a;
+    text-align: left;
+    line-height: 14px;
+}
+.map {
+    text-align: right;
+}
+.map img {
+    width: 84px;
+    height: 57px;
+}
+
+.branch {
+    display: flex;
+    flex-direction: row-reverse;
+    padding: 0%;
+}
+ion-select {
+    color: #871178 !important;
+}
+
+.secondbox {
+    box-shadow: 0px 3px 6px #00000029;
+    padding: 10px;
+    padding-left: 5px;
+    padding-bottom: 3px;
+    padding-right: 5px;
+    margin-top: 0%;
+}
+.title p {
+    font-size: 18px;
+    color: #22272a;
+    margin: 3px 0px;
+}
+.delivery p {
+    color: #9f9f9f;
+    font-size: 12px;
+    margin: 0%;
+}
+.lang p {
+    font-size: 14px;
+    color: #871178;
+    margin: 10px 0px;
+    margin-right: 20px;
+}
+ion-fab-button {
+    --ion-color-base: #ebebeb !important;
+    --box-shadow: none;
+    width: 55px;
+    height: 55px;
+}
+ion-fab-button ion-icon {
+    color: #22272a;
+    font-size: 25px;
+}
+.secondbox .icon .ico {
+    display: flex;
+    flex-direction: row;
+}
+.secondbox .icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.secondbox .icon .icn {
+    display: flex;
+    flex-direction: row-reverse;
+}
+.icons ion-icon {
+    color: #22272a;
+    height: 25px;
+    width: 25px;
+    background: #ebebeb;
+    background-size: 55px 55px;
+    border-radius: 50%;
+}

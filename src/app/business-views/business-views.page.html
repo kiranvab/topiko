@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar color="custom">
+    <ion-buttons slot="start">
+      <ion-back-button mode="md"></ion-back-button>
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Business Views</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-row>
+    <ion-col>
+      <div class="select">
+        <ion-select placeholder="Select One" value="viewed" interface="popover">
+          <ion-select-option value="viewed" selected>Viewed</ion-select-option>
+          <ion-select-option value="order">Orders</ion-select-option>
+          <ion-select-option value="enquiry">Enquiries</ion-select-option>
+          <ion-select-option value="favourite">Favourites</ion-select-option>
+        </ion-select>
+      </div>
+    </ion-col>
+  </ion-row>
+  
+
+  <ion-card>
+    <ion-row>
+      <ion-col size="2.2">
+        <ion-avatar>
+          <img src="https://i.pinimg.com/474x/bc/d4/ac/bcd4ac32cc7d3f98b5e54bde37d6b09e.jpg" alt="">
+        </ion-avatar>
+      </ion-col>
+      <ion-col>
+        <p class="user-name">Sarah Walker</p>
+        <p class="time">Lorem Ipsum is Simple</p>
+      </ion-col>
+      <ion-col size="2.2" class="chat-time">
+        12:04 pm
+      </ion-col>
+    </ion-row>
+  </ion-card>
+
+</ion-content>

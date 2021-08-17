@@ -1,0 +1,141 @@
+ion-title {
+    font-size: 1.125em;
+    color: #ffffff;
+    padding: 0px;
+    text-align: left;
+    height: 56px;
+}
+
+// first-card
+.first {
+    margin: 1em 1.125em;
+}
+.row {
+    height: 14.4em;
+}
+ion-card {
+    border: none;
+    box-shadow: none;
+}
+.bg {
+    width: 100%;
+    height: 9.375em;
+    background: linear-gradient(#871178, #44093c);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+ion-avatar {
+    width: 146px;
+    height: 146px;
+}
+ion-avatar img {
+    max-width: 100%;
+    border: 0;
+    margin-top: 50%;
+}
+.position-cam {
+    position: relative;
+    left: 52px;
+    top: 37px;
+}
+
+.input {
+    font-size: 1em;
+    color: #9f9f9f;
+}
+ion-item {
+    margin-top: 2.24625em;
+    padding: 0em 2.1875em;
+}
+h5 {
+    margin-left: 1.75em;
+    margin-top: 1em;
+}
+.dob {
+    margin-top: 0.99625em;
+    margin-left: 1.75em;
+}
+.gender {
+    margin: 0px 18px;
+}
+.border {
+    border-bottom: 1px solid #9f9f9f;
+    margin: 0px 15px;
+    padding-left: 0%;
+}
+ion-textarea {
+    border: 1px solid #707070;
+    width: 100%;
+    margin: 0% 2.1875em 0% 1.75em;
+    opacity: 70%;
+    border-radius: 0.3125em;
+}
+ion-chip {
+    font-size: 0.75em;
+}
+.edu {
+    margin-top: 1.4375em;
+    margin-left: 1.75em;
+    margin-right: 2.1875em;
+}
+.title {
+    font-size: 1.125em;
+}
+.add {
+    float: right;
+    font-size: 1em;
+}
+.plus {
+    font-size: 1.5125em;
+}
+.color {
+    color: #871178;
+}
+.resume {
+    margin-left: 28px;
+    padding: 0.625em;
+}
+.upload {
+    width: 5.625em;
+    height: 5.625em;
+    background-color: #ffffff;
+    box-shadow: 0 0.1875em 0.375em #00000029;
+    margin-top: 21px;
+    margin-left: 0%;
+    color: #9f9f9f;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+p {
+    font-size: 1.125em;
+}
+.pdf {
+    font-size: 0.5em;
+    margin-top: 0%;
+}
+.agree {
+    margin-top: 1.5625em;
+}
+.terms {
+    color: #871178;
+    text-decoration: underline;
+}
+label {
+    font-size: 0.875em;
+}
+.button {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0.625em;
+}
+.button ion-button {
+    --background: linear-gradient(#871178, #3c1378);
+    --color: #ffffff;
+    text-transform: capitalize;
+    font-size: 0.75em;
+}

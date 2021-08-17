@@ -1,0 +1,50 @@
+.record {
+    text-align: center;
+    font-size: 1.125em;
+    letter-spacing: 0.0375em;
+    line-height: 1em;
+}
+.record ion-col {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.record ion-icon {
+    font-size: 21px;
+}
+.first {
+    box-shadow: none;
+    background-color: #f5f5f5;
+}
+ion-card {
+    box-shadow: #00000029 0px 3px 6px;
+}
+ion-avatar {
+    width: 4em;
+    height: 4em;
+}
+.top p {
+    margin: 0.6875em 1.875em;
+    color: #707070;
+}
+.name {
+    padding-left: 0%;
+}
+.name p {
+    font-size: 1.125em;
+    color: #22272a;
+    padding-top: 0.375em;
+    margin: 0px;
+}
+.text p {
+    font-size: 0.875em;
+    color: #9f9f9f;
+    margin: 0px;
+    padding-top: 0.375em;
+}
+.time p {
+    color: #871178;
+    font-size: 0.75em;
+    font-weight: bold;
+}

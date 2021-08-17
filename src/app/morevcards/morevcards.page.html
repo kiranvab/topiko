@@ -13,7 +13,7 @@
 <ion-content>
   <ion-row style="width: 90%; margin: 0 auto;">
     <ion-col>
-      <img src="assets/rotate.svg" >
+      <img src="assets/rotate.svg" (click)="rotate()" >
     </ion-col>
     <ion-col style="font-size: 18px; text-align: center;" size="8">Default</ion-col>
     <ion-col style="text-align: right;">
@@ -21,9 +21,9 @@
     </ion-col>
   </ion-row>
   
-  
-  <div class="vertical" id="vertical">
-  <ion-card  style="background:url(assets/vertical-front.jpg); background-position: cover; background-size: 100%;">
+  <div *ngIf="vdiv">
+  <div class="vertical" id="vertical" *ngFor="let card of carddata">
+  <ion-card  style="background:url(assets/vertical-front.jpg); background-position: top; background-size: cover;">
     <ion-row class="text-center">
       <ion-col style="text-align: left; padding-top: 10px;" size="4">
         <img src="assets/logo.png" width="50%">
@@ -34,38 +34,38 @@
             <img src="assets/profile.png" width="45%">
           </ion-col>
           <ion-col size="12" class="name">
-            JAGAN KARTHI.G
+            {{card.name}}
           </ion-col>
           <ion-col size="12" class="phone">
-            +91 988134832
+            {{card.mobile}}
           </ion-col>
         </ion-row>
       </ion-col>
     </ion-row>
   </ion-card>
 
-  <ion-card  style="background:url(assets/vertical-back.jpg); background-position: cover; background-size: 100%;">
+  <ion-card  style="background:url(assets/vertical-back.jpg); background-position: top; background-size: cover;">
     <ion-row>
       <ion-col>
-        <div class="comp-title">CMSSWIFI PVT LTD</div>
+        <div class="comp-title">{{card.workingin}}</div>
         <ion-row>
           <ion-col>
             <img class="bdr" src="assets/map-marker.svg">
             <div class="content-text">
-              No-13 iyangar nagar 3rd cr st madipakkam chennai-600088
+              {{card.address}}
             </div>
             </ion-col>
         </ion-row>
         <ion-row>
           <ion-col>
             <img class="bdr" src="assets/call.svg">
-            <div class="content-text">+91 988134832</div>
+            <div class="content-text">{{card.mobile}}</div>
             </ion-col>
         </ion-row>
         <ion-row>
           <ion-col>
             <img class="bdr" src="assets/email.svg">
-            <div class="content-text">Someone@example.com</div>
+            <div class="content-text">{{card.mail}}</div>
           </ion-col>
         </ion-row>
         <ion-row>
@@ -92,8 +92,8 @@
       <ion-col  style="text-align: right;">
         <ion-row>
           <ion-col>
-            <h5>Business Analyst</h5>
-            <h5>CEO</h5>
+            <h5>{{card.profession}}</h5>
+            <h5>{{card.designation}}</h5>
           </ion-col>
         </ion-row>
         <ion-row style="padding-top: 32%;">
@@ -106,11 +106,12 @@
     </ion-row>
     </ion-card>
   </div>
+</div>
 
  
-
-  <div class="horizontal" id="horizontal">
-    <ion-card  style="background:url(assets/horizontal-front.jpg); background-position: cover; background-size: 100%;">
+  <div *ngIf="hdiv">
+  <div class="horizontal" id="horizontal" *ngFor="let hcard of carddata">
+    <ion-card  style="background:url(assets/horizontal-front.jpg); background-position: top; background-size: cover;">
       <ion-row class="text-center">
         <ion-col style="text-align: right; padding-top: 10px;" size="12">
           <img src="assets/logo.png" width="20%">
@@ -121,17 +122,17 @@
               <img src="assets/profile.png" width="45%">
             </ion-col>
             <ion-col size="12" class="name">
-              JAGAN KARTHI.G
+              {{hcard.name}}
             </ion-col>
             <ion-col size="12" class="phone">
-              +91 988134832
+              {{hcard.mobile}}
             </ion-col>
           </ion-row>
         </ion-col>
       </ion-row>
     </ion-card>
   
-    <ion-card  style="background:url(assets/horizontal-back.jpg); background-position: cover; background-size: 100%; padding: 0 5% 16% 5%; ">
+    <ion-card  style="background:url(assets/horizontal-back.jpg); background-position: top; background-size: cover; padding: 0 5% 16% 5%; ">
       <ion-row>
         
         <ion-col>
@@ -142,35 +143,35 @@
           </ion-row>
           <ion-row>
             <ion-col>
-              <h5>Business Analyst</h5>
-              <h5>CEO</h5>
+              <h5>{{hcard.profession}}</h5>
+              <h5>{{hcard.designation}}</h5>
             </ion-col>
           </ion-row>
         </ion-col>
       </ion-row>
       <ion-row>
         <ion-col>
-          <div class="horizontal-comp-title">CMSSWIFI PVT LTD</div>
+          <div class="horizontal-comp-title">{{hcard.workingin}}</div>
         </ion-col>
       </ion-row>
       <ion-row>
         <ion-col>
           <img class="bdr" src="assets/map-marker.svg">
           <div class="content-text">
-            No-13 iyangar nagar 3rd cr st madipakkam chennai-600088
+            {{hcard.address}}
           </div>
           </ion-col>
       </ion-row>
       <ion-row>
         <ion-col>
           <img class="bdr" src="assets/call.svg">
-          <div class="content-text">+91 988134832</div>
+          <div class="content-text">{{hcard.mobile}}</div>
           </ion-col>
       </ion-row>
       <ion-row>
         <ion-col>
           <img class="bdr" src="assets/email.svg">
-          <div class="content-text">Someone@example.com</div>
+          <div class="content-text">{{hcard.mail}}</div>
         </ion-col>
       </ion-row>
       <ion-row>
@@ -195,7 +196,7 @@
       </ion-row>
       </ion-card>
     </div>
-  
+  </div>
     <div class="price">
       250 /-
     </div>

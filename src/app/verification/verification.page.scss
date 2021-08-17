@@ -1,0 +1,162 @@
+ion-header ion-icon {
+    color: #ffffff;
+    font-size: 21px;
+}
+ion-title {
+    font-size: 16px;
+    color: #ffffff;
+    padding: 0px;
+    padding-top: 1px;
+    letter-spacing: 0.6px;
+    text-align: left;
+}
+ion-content {
+    --padding-bottom: 25px;
+}
+
+.first {
+    box-shadow: 0px 0.1875em 0.375em #00000029;
+    margin: 1.125em 1em;
+}
+.star {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.star ion-icon {
+    height: 3.125em;
+    width: 3.125em;
+    color: #871178;
+}
+.annual p {
+    font-size: 0.875em;
+    color: #707070;
+    margin: 0.5em 0px;
+}
+.fwd {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.fwd ion-icon {
+    height: 25px;
+    width: 25px;
+    color: #707070;
+}
+
+h5 {
+    font-size: 1em;
+    color: #871178;
+    text-align: left;
+    padding-left: 8%;
+    line-height: 1;
+}
+.play {
+    font-size: 24px;
+    line-height: 0;
+    margin-top: 10px;
+}
+
+.second {
+    box-shadow: none;
+    border-radius: 0%;
+    margin: 1.125em 1em;
+}
+.first-row {
+    background-color: #871178;
+    color: #ffffff;
+}
+.feat p {
+    margin-left: 3.125em;
+}
+.status p {
+    text-align: right;
+    margin-right: 2.5em;
+}
+.left {
+    text-align: left;
+    color: #707070;
+    font-size: 0.875em;
+    padding-left: 0.8125em;
+    border: 0.0625em solid #00000029;
+    border-top: none;
+}
+.right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 0.0625em solid #00000029;
+    border-left: none;
+    border-top: none;
+}
+.right ion-icon {
+    height: 1.625em;
+    width: 1.625em;
+    color: #008d0e;
+}
+.second-row span {
+    color: #871178;
+}
+
+.labe {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.labe p {
+    color: #9f9f9f;
+    font-size: 12px;
+    margin: 10px;
+}
+.labe span {
+    color: #871178;
+    font-size: 12px;
+    margin: 0px;
+}
+.expiry {
+    color: #9f9f9f;
+    font-size: 12px;
+    margin: 10px;
+}
+.lastcol {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.chec {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 18px;
+    margin-right: 18px;
+}
+ion-checkbox {
+    --border-color-checked: #707070;
+    opacity: 70%;
+    --checkmark-color: #871178;
+    --checkmark-width: 4;
+    --background: transparent;
+    --background-checked: transparent;
+}
+ion-col .confirm {
+    font-size: 0.75em;
+    color: #22272a;
+    margin-top: 0%;
+    line-height: 1.3em;
+    letter-spacing: 0.025em;
+}
+.confirm span {
+    color: #871178;
+    text-decoration: underline;
+}
+.button {
+    display: flex;
+    justify-content: center;
+}
+.button ion-button {
+    --background: linear-gradient(#871178, #3c1378);
+    --color: #ffffff;
+    text-transform: capitalize;
+    font-size: 1em;
+    height: 36px;
+    width: 100px;
+}

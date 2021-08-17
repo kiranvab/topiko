@@ -1,0 +1,79 @@
+<ion-header color="custom" mode="md">
+  <ion-toolbar color="custom" class="toolbar">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Employee</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card>
+    <ion-row>
+      <div class="avatar">
+        <ion-avatar>
+          <img class="border"
+            src="https://content3.jdmagicbox.com/comp/chennai/w1/044pxx44.xx44.121221101633.y3w1/catalogue/velavan-concrete-poonamallee-chennai-ht0zkb-250.jpg"
+            alt="">
+        </ion-avatar>
+      </div>
+      <ion-col class="text-overflow">
+        <p class="user-name">Velavan Concrete <ion-icon name="qr-code-outline"></ion-icon>
+        </p>
+        <p class="time">Maha Lakshmi</p>
+        <p class="time">Tele caller/ Delivery</p>
+      </ion-col>
+      <ion-col size="1" class="ellipsis" (click)="openMenu()">
+        <ion-icon name="ellipsis-vertical"></ion-icon>
+      </ion-col>
+    </ion-row>
+
+    <div class="scrol">
+      <p class="lang">Telugu</p>
+      <p class="lang">Hindi</p>
+      <p class="lang">English</p>
+      <p class="lang">Tamil</p>
+      <p class="lang">Kannada</p>
+    </div>
+
+    <ion-row class="chats scroll">
+      <ion-col>
+        <p class="text">Chat</p>
+        <p class="number">0</p>
+      </ion-col>
+      <ion-col class="seperator" size="0.1"></ion-col>
+      <ion-col>
+        <p class="text">Video</p>
+        <p class="number">0</p>
+      </ion-col>
+      <ion-col class="seperator" size="0.1"></ion-col>
+      <ion-col>
+        <p class="text">Call</p>
+        <p class="number">0</p>
+      </ion-col>
+      <ion-col class="seperator" size="0.1"></ion-col>
+      <ion-col class="calls">
+        <p class="text">Branches</p>
+        <p class="number">02</p>
+      </ion-col>
+    </ion-row>
+    <ion-row class="tog">
+      <p class="gps">Support Active</p>
+      <ion-toggle checked mode="md"></ion-toggle>
+    </ion-row>
+    <ion-row>
+      <div>
+        <ion-checkbox checked></ion-checkbox>
+      </div>
+      <ion-col class="conf">
+        <p class="confirm">Confirm your acceptance and click call during call you will get OTP (SMS) and procced with
+          your owner</p>
+      </ion-col>
+    </ion-row>
+    <div class="button">
+      <ion-button>Agree & Call</ion-button>
+    </div>
+  </ion-card>
+</ion-content>

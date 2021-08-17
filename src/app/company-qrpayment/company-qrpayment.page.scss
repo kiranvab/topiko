@@ -1,0 +1,155 @@
+ion-title {
+    font-size: 16px;
+    color: #ffffff;
+    padding: 0px;
+    padding-top: 1px;
+    letter-spacing: 0.6px;
+    text-align: left;
+}
+ion-header ion-icon {
+    color: #ffffff;
+    font-size: 21px;
+}
+ion-content {
+    --padding-top: 8px;
+    --padding-bottom: 80px;
+    --padding-start: 18px;
+    --padding-end: 18px;
+    --background: #f5f5f5;
+}
+ion-card {
+    margin: 0.75em 0px;
+    padding: 7px;
+    box-shadow: 0px 3px 6px #00000029;
+}
+.avatar ion-avatar {
+    width: 61px;
+    height: 61px;
+}
+.border {
+    border: 0.2px solid #707070;
+}
+.user-name {
+    color: #22272a;
+    font-size: 18px;
+    margin: 0px;
+}
+.user-name ion-icon {
+    color: #39ac00;
+}
+.star {
+    margin-top: 5px;
+}
+.star ion-icon {
+    color: #fcb900;
+}
+.star span p {
+    font-size: 0.5em;
+    padding-left: 5px;
+    color: #22272a;
+}
+.time {
+    color: #9f9f9f;
+    font-size: 12px;
+    margin: 0px;
+}
+.pclass {
+    margin: 0%;
+    line-height: 18px;
+}
+
+// .box {
+//     padding: 0.625em;
+//     padding-bottom: 1.25em;
+// }
+// .box ion-avatar {
+//     margin-top: 5px;
+// }
+// ion-avatar {
+//     width: 61px;
+//     height: 61px;
+// }
+// ion-avatar .border {
+//     border: 0.0125em solid #707070;
+// }
+// .title {
+//     margin-top: 0.5em;
+//     padding-left: 0%;
+// }
+// .title p {
+//     font-size: 1.125em;
+//     color: #22272a;
+//     letter-spacing: 0.0375em;
+//     line-height: 1em;
+//     margin: 3px 0px;
+// }
+// .title ion-icon {
+//     color: #39ac00;
+// }
+// .director p {
+//     color: #9f9f9f;
+//     font-size: 0.75em;
+//     margin: 4px 0px;
+// }
+// .star ion-icon {
+//     color: #fcb900;
+// }
+// .star p {
+//     font-size: 0.5em;
+//     padding-left: 5px;
+// }
+
+.gpay {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1.78125em;
+}
+.gpay img {
+    width: 4em;
+    height: 1.53125em;
+}
+.gpay .qr {
+    height: 15.8125em;
+    width: 15.8125em;
+}
+.gpay .phone {
+    color: #871178;
+    font-size: 1.125em;
+}
+.note {
+    color: #871178;
+    font-size: 0.875em;
+}
+span {
+    color: #707070;
+    font-size: 0.875em;
+}
+.transaction p {
+    font-size: 1.125em;
+    color: #22272a;
+    margin: 0.125em 0px;
+}
+.date {
+    text-align: right;
+}
+.date p {
+    font-size: 0.625em;
+    color: #9f9f9f;
+    padding-top: 0.3125em;
+}
+.second {
+    padding: 0.625em;
+    padding-bottom: 1.25em;
+}
+.buttn {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0.625em;
+}
+.buttn ion-button {
+    --background: linear-gradient(#871178, #3c1378);
+    --color: #ffffff;
+    text-transform: capitalize;
+}

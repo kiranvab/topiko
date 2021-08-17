@@ -1,0 +1,134 @@
+<ion-header color="custom" mode="md">
+  <ion-toolbar color="custom" class="toolbar">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Add Resume</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card class="first">
+    <ion-row class="row">
+      <ion-col class="bg">
+        <ion-avatar>
+          <img src="https://i.pinimg.com/474x/bc/d4/ac/bcd4ac32cc7d3f98b5e54bde37d6b09e.jpg" alt="">
+        </ion-avatar>
+        <img class="position-cam" src="assets/camera.svg" alt="">
+      </ion-col>
+    </ion-row>
+  </ion-card>
+
+  <ion-item>
+    <ion-label></ion-label>
+    <ion-input type="text" placeholder="Name" class="input"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label></ion-label>
+    <ion-input type="number" placeholder="Contact No" class="input"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label></ion-label>
+    <ion-input type="text" placeholder="Email Id" class="input"></ion-input>
+  </ion-item>
+
+  <h5>DOB</h5>
+  <ion-grid class="dob">
+    <ion-row>
+      <ion-col class="border">
+        <ion-input type="number" placeholder="Date" class="input"></ion-input>
+      </ion-col>
+      <ion-col class="border">
+        <ion-input type="number" placeholder="Month" class="input"></ion-input>
+      </ion-col>
+      <ion-col class="border">
+        <ion-input type="number" placeholder="Year" class="input"></ion-input>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-list>
+    <ion-radio-group value="gender">
+      <h5>Gender</h5>
+      <ion-grid class="gender">
+        <ion-row>
+          <ion-col>
+            <ion-radio value="male"></ion-radio>
+            <ion-label>Male</ion-label>
+          </ion-col>
+
+          <ion-col>
+            <ion-radio value="female"></ion-radio>
+            <ion-label>Female</ion-label>
+          </ion-col>
+
+          <ion-col>
+            <ion-radio value="other"></ion-radio>
+            <ion-label>Other</ion-label>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-radio-group>
+  </ion-list>
+
+  <h5>Designation For</h5>
+  <ion-item class="dob">
+    <ion-label></ion-label>
+    <ion-input type="text" placeholder="Enter Your Designation" class="input"></ion-input>
+  </ion-item>
+  <h5>Job Tags</h5>
+
+  <ion-row>
+    <ion-textarea>
+      <ion-chip>
+        <ion-label>UI&UX Designer</ion-label>
+        <ion-icon name="close-circle"></ion-icon>
+      </ion-chip>
+      <ion-chip>
+        <ion-label>Designer</ion-label>
+        <ion-icon name="close-circle"></ion-icon>
+      </ion-chip>
+    </ion-textarea>
+  </ion-row>
+
+  <ion-grid class="edu">
+    <ion-row>
+      <ion-col>
+        <span class="title">Education</span>
+      </ion-col>
+      <ion-col class="color">
+        <span class="add"><span class="plus">+</span>Add</span>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <span class="title">Experience</span>
+      </ion-col>
+      <ion-col class="color">
+        <span class="add"><span class="plus">+</span>Add</span>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <span class="title">Portfolio URL</span>
+      </ion-col>
+      <ion-col class="color">
+        <span class="add"><span class="plus">+</span>Add</span>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <div class="resume">
+    <p>Upload Resume</p>
+    <ion-card class="upload">
+      <ion-icon name="cloud-upload-outline"></ion-icon>
+      <p class="pdf">Upload PDF</p>
+    </ion-card>
+
+    <input type="checkbox" class="agree" name="agree">
+    <label for="agree"> I agree to the <span class="terms">Terms and Conditions</span></label>
+  </div>
+  <div class="button">
+    <ion-button>Submit</ion-button>
+  </div>
+</ion-content>

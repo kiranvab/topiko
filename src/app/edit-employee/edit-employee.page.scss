@@ -1,0 +1,170 @@
+ion-header ion-icon {
+    color: #ffffff;
+    font-size: 21px;
+}
+ion-title {
+    font-size: 16px;
+    color: #ffffff;
+    padding: 0px;
+    padding-top: 1px;
+    letter-spacing: 0.6px;
+    text-align: center;
+}
+
+// first-card
+.first {
+    margin: 1em 1.125em;
+}
+.row {
+    height: 14.4em;
+}
+ion-card {
+    border: none;
+    box-shadow: none;
+}
+.bg {
+    width: 100%;
+    height: 9.375em;
+    background: linear-gradient(#871178, #44093c);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+ion-avatar {
+    width: 146px;
+    height: 146px;
+}
+ion-avatar img {
+    max-width: 100%;
+    border: 0;
+    margin-top: 50%;
+}
+.position-cam {
+    position: relative;
+    left: 52px;
+    top: 37px;
+}
+
+ion-grid {
+    margin: 14px 18px;
+    padding: 0px;
+}
+ion-grid p {
+    margin: 30px 0px;
+}
+ion-textarea {
+    border: 1px solid #707070;
+    width: 100%;
+    opacity: 70%;
+    border-radius: 0.3125em;
+}
+ion-chip {
+    font-size: 0.75em;
+    margin: 10px;
+}
+.toggle {
+    display: flex;
+    justify-content: space-between;
+}
+.toggle p {
+    font-size: 1em;
+    color: #22272a;
+    margin: 1em 0px;
+}
+.toggle ion-col {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+ion-row ion-toggle {
+    --width: 34px;
+    --height: 14px;
+    --background-checked: linear-gradient(#871178, #3c1378);
+    --handle-background-checked: #9f9f9f;
+    padding-top: 0.71875em;
+}
+
+h6 {
+    color: #871178;
+    text-decoration: underline;
+}
+.select {
+    float: right;
+    color: #871178;
+}
+.branches {
+    display: flex;
+    flex-direction: row-reverse;
+}
+.branches p {
+    color: #871178;
+    font-size: 1em;
+    margin-top: 1em;
+    margin-bottom: 0px;
+}
+.card {
+    box-shadow: 0px 0.1875em 0.375em #00000029;
+    margin: 0px;
+    padding: 0px;
+}
+.address p {
+    margin: 0.3125em;
+    font-size: 1em;
+    color: #707070;
+}
+.add p {
+    margin: 0.3125em;
+    font-size: 0.875em;
+    color: #22272a;
+    line-height: 2em;
+}
+.sun {
+    text-align: center;
+    font-size: 1em;
+    color: #22272a;
+}
+.qr {
+    text-align: center;
+}
+.qr ion-icon {
+    color: #871178;
+    width: 110px;
+    height: 110px;
+}
+.check {
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+ion-checkbox {
+    --border-color-checked: #707070;
+    opacity: 70%;
+    --checkmark-color: #871178;
+    --checkmark-width: 4;
+    --background: transparent;
+    --background-checked: transparent;
+}
+ion-col .confirm {
+    font-size: 0.75em;
+    color: #22272a;
+    margin-top: 0%;
+    line-height: 1.3em;
+    letter-spacing: 0.025em;
+}
+.confirm span {
+    color: #871178;
+    text-decoration: underline;
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+}
+.btn ion-button {
+    --background: linear-gradient(#871178, #3c1378);
+    --color: #ffffff;
+    text-transform: capitalize;
+    font-size: 0.75em;
+    width: 7.6875em;
+    height: 3.125em;
+}

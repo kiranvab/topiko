@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar color="custom">
+    <ion-buttons slot="start">
+      <ion-back-button mode="md"></ion-back-button>
+      <ion-menu-button mode="ios"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Product Views</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-row>
+    <ion-col>
+      <div class="select">
+        <ion-select placeholder="Select One" value="share" interface="popover" mode="ios">
+          <ion-select-option value="share" selected>Share</ion-select-option>
+          <ion-select-option value="like">Likes</ion-select-option>
+          <ion-select-option value="favourites">Favourites</ion-select-option>
+          <ion-select-option value="comments">Comments</ion-select-option>
+        </ion-select>
+      </div>
+    </ion-col>
+  </ion-row>
+
+  <ion-card>
+    <ion-row class="chat-time">
+      12:04 pm
+    </ion-row>
+    <ion-row>
+      <div class="avatar" routerLink="/company-qrpayment">
+        <ion-avatar>
+          <img class="border"
+            src="https://einsteinmarketer.ams3.digitaloceanspaces.com/em/uploads/2018/01/ben-sweet-456320-unsplash.jpg"
+            alt="">
+        </ion-avatar>
+      </div>
+      <ion-col class="text-overflow" routerLink="/company-qrpayment">
+        <p class="user-name pclass">Gopinath Saravanan</p>
+        <ion-row class="number">
+          <p class="time pclass">9881531485</p>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+
+</ion-content>

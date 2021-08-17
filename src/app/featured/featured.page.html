@@ -1,0 +1,21 @@
+<ion-header color="custom">
+  <ion-toolbar color="custom" class="toolbar">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Featured</ion-title>
+    <ion-buttons slot="end">
+      <ion-icon class="search" name=search-outline></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-row class="featured-img">
+    <ion-col  *ngFor="let fet of featured let i=index" size="2">
+      <img  src="{{fet.logo}}">
+    </ion-col>
+  </ion-row>
+
+</ion-content>

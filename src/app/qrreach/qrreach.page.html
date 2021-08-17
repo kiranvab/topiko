@@ -1,0 +1,46 @@
+<ion-header color="custom" mode="md">
+  <ion-toolbar color="custom" class="toolbar">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>QR Reach</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card routerLink="/qr-reach-view">
+    <ion-row>
+      <div class="avatar">
+        <ion-avatar>
+          <img src="https://i.pinimg.com/474x/bc/d4/ac/bcd4ac32cc7d3f98b5e54bde37d6b09e.jpg" alt="">
+        </ion-avatar>
+      </div>
+      <ion-col>
+        <p class="user-name pclass">Murali</p>
+        <p class="time pclass">Vehicle</p>
+        <p class="time pclass">TN 22 DH 9133</p>
+      </ion-col>
+      <ion-col size="1" class="ellipsis">
+        <ion-icon name="ellipsis-vertical"></ion-icon>
+      </ion-col>
+    </ion-row>
+    <ion-row class="nominee">
+      <p>Nominee</p>
+    </ion-row>
+    <div class="scroll">
+      <p class="design">Jagan karthik</p>
+      <p class="design">Govind</p>
+      <p class="design">Babji</p>
+    </div>
+
+  </ion-card>
+
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button routerLink="/add-qr-reach">
+      <ion-icon name="add-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

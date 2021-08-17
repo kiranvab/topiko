@@ -1,0 +1,89 @@
+// head
+ion-title {
+    font-size: 1.125em;
+    color: #ffffff;
+    padding: 0px;
+    text-align: center;
+}
+ion-header ion-icon {
+    color: #ffffff;
+    font-size: 1.3125em;
+    float: right;
+}
+
+.first {
+    box-shadow: 0px 0.1875em 0.375em #00000029;
+    margin: 1.125em;
+}
+.star {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.star ion-icon {
+    height: 3.125em;
+    width: 3.125em;
+    color: #871178;
+}
+.annual p {
+    font-size: 0.875em;
+    color: #707070;
+    margin: 0.5em 0px;
+}
+.fwd {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.fwd ion-icon {
+    height: 25px;
+    width: 25px;
+    color: #707070;
+}
+
+h5 {
+    font-size: 1em;
+    color: #871178;
+    text-align: center;
+}
+
+.second {
+    box-shadow: none;
+    border-radius: 0%;
+    margin: 1.125em;
+}
+.first-row {
+    background-color: #871178;
+    color: #ffffff;
+}
+.feat p {
+    margin-left: 3.125em;
+}
+.status p {
+    text-align: right;
+    margin-right: 2.5em;
+}
+.left {
+    text-align: left;
+    color: #707070;
+    font-size: 0.875em;
+    padding-left: 0.8125em;
+    border: 0.0625em solid #00000029;
+    border-top: none;
+}
+.right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 0.0625em solid #00000029;
+    border-left: none;
+    border-top: none;
+}
+.right ion-icon {
+    height: 1.625em;
+    width: 1.625em;
+    color: #008d0e;
+}
+.second-row span {
+    color: #871178;
+}

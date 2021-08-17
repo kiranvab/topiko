@@ -1,0 +1,93 @@
+// head
+ion-title {
+    font-size: 16px;
+    color: #ffffff;
+    padding: 0px;
+    padding-top: 1px;
+    letter-spacing: 0.6px;
+    text-align: left;
+}
+
+ion-content {
+    --background: #f5f5f5;
+    margin: 16px;
+    --padding-start: 8px;
+    --padding-end: 8px;
+}
+.first {
+    --background: transparent;
+    box-shadow: none;
+}
+.first ion-col {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.first img {
+    height: 30px;
+}
+
+.anypay {
+    display: flex;
+    justify-content: center;
+}
+.second {
+    padding: 1.5625em;
+}
+.second p {
+    color: #871178;
+    font-size: 0.875em;
+    font-weight: bold;
+    margin: auto;
+    margin-bottom: 0.9375em;
+}
+.second ion-input {
+    width: 85%;
+    border-bottom: 1px solid #9f9f9f;
+}
+.icons {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+.second ion-icon {
+    font-size: 21px;
+}
+
+.info {
+    display: flex;
+    flex-direction: row-reverse;
+}
+.select {
+    float: right;
+    color: #871178;
+}
+div p {
+    color: #871178;
+    font-size: 1em;
+    margin-right: 0.875em;
+    margin-bottom: 0.3125em;
+}
+.third {
+    padding: 1.5625em;
+    padding-bottom: 1.875em;
+    margin-top: 10px;
+}
+.third .bank-info {
+    color: #9f9f9f;
+    font-size: 0.875em;
+}
+.third ion-input {
+    border-bottom: 1px solid #9f9f9f;
+}
+
+.buttn {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0.625em;
+}
+.buttn ion-button {
+    --background: linear-gradient(#871178, #3c1378);
+    --color: #ffffff;
+    text-transform: capitalize;
+}

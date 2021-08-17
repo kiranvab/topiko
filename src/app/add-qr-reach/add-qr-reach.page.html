@@ -1,0 +1,127 @@
+<ion-header color="custom">
+  <ion-toolbar color="custom" class="toolbar">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Add QR Reach</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card class="first">
+    <ion-row class="row">
+      <ion-col class="bg">
+        <ion-avatar>
+          <img src="https://i.pinimg.com/474x/bc/d4/ac/bcd4ac32cc7d3f98b5e54bde37d6b09e.jpg" alt="">
+        </ion-avatar>
+        <img class="position-cam" src="assets/camera.svg" alt="">
+      </ion-col>
+    </ion-row>
+  </ion-card>
+
+  <ion-card class="second">
+    <ion-row>
+      <ion-col size="4">
+        <p class="reach">Reach ID</p>
+      </ion-col>
+      <ion-col>
+        <p class="id">{{this.rand}}</p>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+
+  <ion-card class="third">
+    <ion-row>
+      <p>Upload Image</p>
+    </ion-row>
+    <div class="scroll">
+      <ion-card class="upload-card" (click)="image1">
+        <ion-icon name="cloud-upload-outline"></ion-icon>
+        <p>upload image</p>
+      </ion-card>
+
+      <ion-card class="upload-card" (click)="image2">
+        <ion-icon name="cloud-upload-outline"></ion-icon>
+        <p>upload image</p>
+      </ion-card>
+
+      <ion-card class="upload-card" (click)="image3">
+        <ion-icon name="cloud-upload-outline"></ion-icon>
+        <p>upload image</p>
+      </ion-card>
+
+      <ion-card class="upload-card" (click)="image4">
+        <ion-icon name="cloud-upload-outline"></ion-icon>
+        <p>upload image</p>
+      </ion-card>
+    </div>
+  </ion-card>
+
+  <ion-list>
+    <ion-item>
+      <ion-input placeholder="User Name" #name></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input placeholder="User Number" #mobile></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input placeholder="User Mail ID" #email></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-select placeholder="Purpose (vehicle)" #purpose></ion-select>
+    </ion-item>
+
+    <ion-radio-group>
+      <ion-row class="cycle">
+        <ion-row class="full">
+          <ion-col>
+            <ion-radio value="cycle" checked (click)="cycle()"></ion-radio>
+            <ion-label>By Cycle</ion-label>
+          </ion-col>
+          <ion-col>
+            <ion-radio value="fourwheel" (click)="fourwheel()"></ion-radio>
+            <ion-label>Four Wheeler</ion-label>
+          </ion-col>
+        </ion-row>
+        <ion-row class="full">
+          <ion-col>
+            <ion-radio value="wheel" (click)="twowheel()"></ion-radio>
+            <ion-label>Two Wheeler</ion-label>
+          </ion-col>
+          <ion-col>
+            <ion-radio value="more" (click)="more()"></ion-radio>
+            <ion-label>More than 4</ion-label>
+          </ion-col>
+        </ion-row>
+      </ion-row>
+    </ion-radio-group>
+
+    <textarea class="text" placeholder="Enter Reg No.(TN 22 DH 0000)" #reg_number></textarea>
+
+    <ion-row>
+      <ion-col class="nominee">
+        <p>Nominee</p>
+      </ion-col>
+      <ion-col class="add">
+        <p>
+          <ion-icon name="add"></ion-icon> Add
+        </p>
+      </ion-col>
+    </ion-row>
+    <ion-input placeholder="Nominee Name" #nominee_name></ion-input>
+    <hr>
+    <ion-input placeholder="Contact no" #nomineecontact></ion-input>
+    <hr>
+  </ion-list>
+
+  <ion-row>
+    <ion-col>&nbsp;</ion-col>
+    <ion-col>
+      <ion-button expand="block" class="purple-btn" color="custom" (click)="Submit()">Submit</ion-button>
+    </ion-col>
+    <ion-col>&nbsp;</ion-col>
+  </ion-row>
+
+</ion-content>

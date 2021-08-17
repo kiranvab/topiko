@@ -1,0 +1,124 @@
+<ion-header color="custom">
+  <ion-toolbar color="custom" class="toolbar">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Add Employee</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card class="firstcard" (click)="adduserImage()">
+    <ion-row class="row">
+      <ion-col class="bg">
+        <ion-avatar>
+          <img src="https://banner2.cleanpng.com/20180319/sue/kisspng-camera-computer-icons-android-camera-icon-android-camera-shutter-icon-5ab02d20a19642.3023672915214953286619.jpg" alt="">
+        </ion-avatar>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+
+  <ion-grid>
+    <p>
+      <ion-item>
+        <ion-input placeholder="Employee name" [(ngModel)]="name"></ion-input>
+      </ion-item>
+    </p>
+    <p>
+      <ion-item>
+        <ion-input placeholder="Employee number"  [(ngModel)]="mobile"></ion-input>
+      </ion-item>
+    </p>
+    <p>
+      Designation Tags
+      <ion-row>
+        <ion-textarea [(ngModel)]="tags" placeholder="add designations with comma seperated">
+         
+        </ion-textarea>
+      </ion-row>
+    </p>
+    <p>
+      Language Support
+      <ion-row>
+        <ion-textarea [(ngModel)]="language" placeholder="add languages with comma seperated">
+        </ion-textarea>
+      </ion-row>
+    </p>
+    <p>
+      Online Tele Support
+      <ion-row class="check">
+        <ion-col>
+          <ion-checkbox   [(ngModel)]="chat" (ionChange)="Chatstatus(chat)" ></ion-checkbox>
+          <ion-label> Chat</ion-label>
+        </ion-col>
+        <ion-col>
+          <ion-checkbox [(ngModel)]="video" (ionChange)="VideoStatus(video)" ></ion-checkbox>
+          <ion-label> Video</ion-label>
+        </ion-col>
+        <ion-col>
+          <ion-checkbox [(ngModel)]="call" (ionChange)="Callstatus(call)"></ion-checkbox>
+          <ion-label> Call</ion-label>
+        </ion-col>
+      </ion-row>
+    </p>
+    <p>
+      Delivery Support
+      <ion-row class="check">
+        <ion-col>
+          <ion-checkbox [(ngModel)]="delivery" (ionChange)="Deliverystatus(delivery)"></ion-checkbox>
+          <ion-label> Delivery</ion-label>
+        </ion-col>
+      </ion-row>
+    </p>
+
+    <ion-row class="tog">
+      <p class="gps">Call Record Access</p>
+      <ion-toggle checked [(ngModel)]="callrecord" (ionChange)="Recordstatus(callrecord)" mode="md"></ion-toggle>
+    </ion-row>
+    <ion-row class="tog">
+      <p class="gps">Create Invoice</p>
+      <ion-toggle checked mode="md" [(ngModel)]="invoice" (ionChange)="Invoicestatus(invoice)"></ion-toggle>
+    </ion-row>
+
+    <h6>Work Hour Settings</h6>
+    <p>
+      <ion-item>
+        <ion-select placeholder="Working Hours"></ion-select>
+      </ion-item>
+    </p>
+    <ion-row class="branches">
+      <p>Branches <ion-icon name="chevron-down"></ion-icon>
+      </p>
+    </ion-row>
+    <ion-card class="card">
+      <ion-row>
+        <ion-col class="address">
+          <p>Address</p>
+          <ion-row class="add">
+            <p>{{address}}</p>
+          </ion-row>
+        </ion-col>
+        <ion-col size="4">
+          <img
+            src="https://play-lh.googleusercontent.com/0uRNRSe4iS6nhvfbBcoScHcBTx1PMmxkCx8rrEsI2UQcQeZ5ByKz8fkhwRqR3vttOg"
+            alt="">
+        </ion-col>
+      </ion-row>
+    </ion-card>
+    <p class="sun">{{busines_name}} QR</p>
+    <p class="qr">
+      <ion-icon name="qr-code-outline" (click)="Qrimage()"></ion-icon>
+    </p>
+    <ion-row class="check">
+      <ion-col size="1">
+        <ion-checkbox checked></ion-checkbox>
+      </ion-col>
+      <ion-col size="9">
+        <p class="confirm">I agree for the <span>Terms and Conditions</span></p>
+      </ion-col>
+    </ion-row>
+    <ion-row class="btn">
+      <ion-button (click)="submit()">Submit</ion-button>
+    </ion-row>
+  </ion-grid>
+</ion-content>

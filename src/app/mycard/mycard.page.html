@@ -1,0 +1,215 @@
+<ion-header>
+  <ion-toolbar color="custom">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>My Visiting Card</ion-title>
+    <ion-buttons slot="end" class="create-icon">
+      <ion-icon name="ellipsis-vertical" color="custom"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-row style="width: 90%; margin: 0 auto;">
+    <ion-col>
+      <img src="assets/rotate.svg" (click)="rotate()" >
+    </ion-col>
+    <ion-col style="font-size: 18px; text-align: center;" size="8">Default</ion-col>
+    <ion-col style="text-align: right;">
+      <img src="assets/docs.svg" >
+    </ion-col>
+  </ion-row>
+  <div *ngIf="vdiv" >
+  <div class="vertical" id="vertical" *ngFor="let card of carddata">
+  <ion-card  style="background:url(assets/vertical-front.jpg); background-position: top; background-size: cover;">
+    <ion-row class="text-center">
+      <ion-col style="text-align: left; padding-top: 10px;" size="4">
+        <img src="assets/logo.png" width="50%">
+      </ion-col>
+      <ion-col>
+        <ion-row>
+          <ion-col size="12">
+            <img src="{{card.image}}" width="45%">
+          </ion-col>
+          <ion-col size="12" class="name">
+            {{card.name}}
+          </ion-col>
+          <ion-col size="12" class="phone">
+            {{card.mobile}}
+          </ion-col>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+
+  <ion-card  style="background:url(assets/vertical-back.jpg); background-position: top; background-size: cover;">
+    <ion-row>
+      <ion-col>
+        <div class="comp-title">{{card.workingin}}</div>
+        <ion-row>
+          <ion-col>
+            <img class="bdr" src="assets/map-marker.svg">
+            <div class="content-text">
+              {{card.address}}
+            </div>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <img class="bdr" src="assets/call.svg">
+            <div class="content-text">{{card.mobile}}</div>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <img class="bdr" src="assets/email.svg">
+            <div class="content-text">{{card.mail}}</div>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-icon name="logo-whatsapp"></ion-icon>
+          </ion-col>
+          <ion-col>
+            <ion-icon name="logo-facebook"></ion-icon>
+          </ion-col>
+          <ion-col>
+            <ion-icon name="logo-linkedin"></ion-icon>
+          </ion-col>
+          <ion-col>
+            <ion-icon name="logo-twitter"></ion-icon>
+          </ion-col>
+          <ion-col>
+            <ion-icon name="globe-outline"></ion-icon>
+          </ion-col>
+          <ion-col>
+            <ion-icon name="logo-youtube"></ion-icon>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+      <ion-col  style="text-align: right;">
+        <ion-row>
+          <ion-col>
+            <h5>{{card.profession}}</h5>
+            <h5>{{card.designation}}</h5>
+          </ion-col>
+        </ion-row>
+        <ion-row style="padding-top: 32%;">
+          <ion-col>
+            <img src="assets/logo.png" width="30%">
+          </ion-col>
+        </ion-row>
+      </ion-col>
+     
+    </ion-row>
+    </ion-card>
+  </div>
+  </div>
+
+
+<div *ngIf="hdiv">
+  <div class="horizontal" id="horizontal" *ngFor="let hcard of carddata" >
+    <ion-card  style="background:url(assets/horizontal-front.jpg); background-position: top; background-size: cover;">
+      <ion-row class="text-center">
+        <ion-col style="text-align: right; padding-top: 10px;" size="12">
+          <img src="assets/logo.png" width="20%">
+        </ion-col>
+        <ion-col>
+          <ion-row style="margin-top: 20%; margin-bottom:37% ;">
+            <ion-col size="12">
+              <img src="assets/profile.png" width="45%">
+            </ion-col>
+            <ion-col size="12" class="name">
+              {{hcard.name}}
+            </ion-col>
+            <ion-col size="12" class="phone">
+              {{hcard.mobile}}
+            </ion-col>
+          </ion-row>
+        </ion-col>
+      </ion-row>
+    </ion-card>
+  
+    <ion-card  style="background:url(assets/horizontal-back.jpg); background-position: top; background-size: cover; padding: 0 5% 16% 5%; ">
+      <ion-row>
+        
+        <ion-col>
+          <ion-row style="text-align: right;">
+            <ion-col>
+              <img src="assets/logo.png" width="30%">
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <h5>{{hcard.profession}}</h5>
+              <h5>{{hcard.designation}}</h5>
+            </ion-col>
+          </ion-row>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <div class="horizontal-comp-title">{{hcard.workingin}}</div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <img class="bdr" src="assets/map-marker.svg">
+          <div class="content-text">
+            {{hcard.address}}
+          </div>
+          </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <img class="bdr" src="assets/call.svg">
+          <div class="content-text">{{hcard.mobile}}</div>
+          </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <img class="bdr" src="assets/email.svg">
+          <div class="content-text">{{hcard.mail}}</div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-icon name="logo-whatsapp"></ion-icon>
+        </ion-col>
+        <ion-col>
+          <ion-icon name="logo-facebook"></ion-icon>
+        </ion-col>
+        <ion-col>
+          <ion-icon name="logo-linkedin"></ion-icon>
+        </ion-col>
+        <ion-col>
+          <ion-icon name="logo-twitter"></ion-icon>
+        </ion-col>
+        <ion-col>
+          <ion-icon name="globe-outline"></ion-icon>
+        </ion-col>
+        <ion-col>
+          <ion-icon name="logo-youtube"></ion-icon>
+        </ion-col>
+      </ion-row>
+      </ion-card>
+    </div>
+    </div>
+    <div class="view-more" (click)="morecards()">
+      View More
+    </div>
+
+  <div class="text-center" class="pb-15">
+  <ion-checkbox color="success" checked></ion-checkbox> I Agree for the <span>Terms and Conditions</span>
+</div>
+ 
+<ion-row>
+  <ion-col>
+    <ion-button expand="full"  class="purple-bdr-btn"  color="custom" routerLink="/home">Later</ion-button>
+  </ion-col>
+  <ion-col>
+    <ion-button expand="block" class="purple-btn" color="custom" routerLink="/digitalcard">Share</ion-button>
+  </ion-col>
+</ion-row>
+</ion-content>

@@ -1,0 +1,109 @@
+<ion-header color="custom" mode="md">
+  <ion-toolbar color="custom" class="toolbar">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-row class="head-row">
+      <ion-col><img src="assets/text-logo.png"></ion-col>
+    </ion-row>
+    <ion-buttons slot="end">
+      <ion-icon name="search-outline"></ion-icon>
+      <ion-icon name="ellipsis-vertical"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-segment value="all" color="secondary" mode="md" [(ngModel)]="segmentModel">
+
+  <ion-segment-button value="calls">
+    Calls
+  </ion-segment-button>
+
+  <ion-segment-button value="chats">
+    Chats
+  </ion-segment-button>
+</ion-segment>
+
+<ion-content>
+
+  <div *ngIf="segmentModel === 'calls'" class="margin">
+    <ion-card class="first-card" *ngFor="let cnt of contacts; let i= index">
+      <ion-row>
+        <div class="avatar">
+          <ion-avatar>
+            <img src="https://i.pinimg.com/474x/bc/d4/ac/bcd4ac32cc7d3f98b5e54bde37d6b09e.jpg" alt="">
+          </ion-avatar>
+        </div>
+        <ion-col class="text-overflow">
+          <p class="user-name">{{cnt.name}}</p>
+          <p class="time">{{cnt.city}}</p>
+        </ion-col>
+        <ion-col size="2.2">
+          <ion-icon name="call" class="icons" routerLink="/calling"></ion-icon>
+        </ion-col>
+      </ion-row>
+    </ion-card>
+
+ 
+
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed" routerLink="/calls-contact" mode="md">
+      <ion-fab-button>
+        <ion-icon name="call"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+  </div>
+
+  <div *ngIf="segmentModel === 'chats'" class="margin">
+    <ion-card  *ngFor="let ccnt of contacts; let i= index">
+      <ion-row>
+        <div class="avatar">
+          <ion-avatar>
+            <img src="https://i.pinimg.com/474x/bc/d4/ac/bcd4ac32cc7d3f98b5e54bde37d6b09e.jpg" alt="">
+          </ion-avatar>
+        </div>
+        <ion-col class="text-overflow" (click)="chat(i)">
+          <p class="user-name">{{ccnt.name}}</p>
+          <p class="time">{{ccnt.city}}</p>
+        </ion-col>
+        <ion-col size="3" class="chat-time">
+         
+        </ion-col>
+      </ion-row>
+    </ion-card>
+
+  
+
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed" routerLink="/chats-contact">
+      <ion-fab-button>
+        <ion-icon name="chatbox-ellipses-outline"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+  </div>
+
+</ion-content>
+
+<ion-footer mode="md" class="home-footer">
+  <ion-row>
+    <ion-col routerLink="/home">
+      <ion-icon name="home-outline"></ion-icon>
+      <p>Home</p>
+    </ion-col>
+    <ion-col routerLink="/profile">
+      <ion-icon name="person-outline"></ion-icon>
+      <p>Profile</p>
+    </ion-col>
+    <ion-col routerLink="/qr-scanner">
+      <ion-icon name="scan-outline"></ion-icon>
+      <p>Scan</p>
+    </ion-col>
+    <ion-col routerLink="/favourites">
+      <ion-icon name="heart-outline"></ion-icon>
+      <p>Favourites</p>
+    </ion-col>
+    <ion-col>
+      <ion-icon name="call" class="click-footer"></ion-icon>
+      <p class="click-footer">Call</p>
+    </ion-col>
+  </ion-row>
+</ion-footer>

@@ -1,0 +1,140 @@
+<ion-header color="custom">
+  <ion-toolbar color="custom" class="toolbar">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Favourites</ion-title>
+    <ion-buttons slot="end" (click)="openMenu()">
+      <ion-icon name="ellipsis-vertical"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card>
+    <ion-row>
+      <div class="avatar">
+        <ion-avatar>
+          <img class="border"
+            src="https://einsteinmarketer.ams3.digitaloceanspaces.com/em/uploads/2018/01/ben-sweet-456320-unsplash.jpg"
+            alt="">
+        </ion-avatar>
+      </div>
+      <ion-col class="text-overflow" routerLink="/favourite-details">
+        <p class="user-name">Sun Group water <ion-icon name="shield-checkmark"></ion-icon>
+        </p>
+        <ion-row class="star">
+          <ion-icon name="star"></ion-icon>
+          <ion-icon name="star"></ion-icon>
+          <ion-icon name="star"></ion-icon>
+          <ion-icon name="star"></ion-icon>
+          <ion-icon name="star"></ion-icon>
+          <span>
+            <p>4.1 Ratings</p>
+          </span>
+        </ion-row>
+        <p class="time">CEO-Murali</p>
+      </ion-col>
+      <ion-col size="1" class="ellipsis" (click)="openMenu()">
+        <ion-icon class="btn" name="ellipsis-vertical"></ion-icon>
+      </ion-col>
+    </ion-row>
+    <ion-row class="select-branch">
+      <ion-select placeholder="Select One" value="branches" interface="popover" mode="ios">
+        <ion-select-option value="branches" selected>Branches</ion-select-option>
+        <ion-select-option value="unread">Branch</ion-select-option>
+      </ion-select>
+    </ion-row>
+    <ion-row>
+      <ion-col size="8" class="address">
+        <p class="addr">Address</p>
+        <p class="street">No-1/38 Parathiyar street moovara pet madipkkam Chennai-600091 TamilNadu</p>
+      </ion-col>
+      <ion-col size="4" class="map">
+        <img src="https://localsearchforum.com/attachments/maps-embed-api-example-png.3469/" width="95%" height="70px">
+      </ion-col>
+    </ion-row>
+  </ion-card>
+
+  <ion-segment value="all" scrollable="true" mode="md" color="secondary" [(ngModel)]="segmentModel">
+    <ion-segment-button value="order">
+      <ion-label>My Order</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="delivery">
+      <ion-label>Delivery</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="offers">
+      <ion-label>Offers</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="returns">
+      <ion-label>Returns</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
+  <!-- post Div Start-->
+  <div *ngIf="segmentModel === 'order'">
+    <ion-grid>
+      <ion-row class="select-branch">
+        <ion-select placeholder="Select One" value="details" interface="popover" mode="ios">
+          <ion-select-option value="details" selected>Details</ion-select-option>
+          <ion-select-option value="unread">Branch</ion-select-option>
+        </ion-select>
+      </ion-row>
+
+      <ion-card class="pdf-card">
+        <ion-row>
+          <div class="pdf-img">
+            <img src="https://m.media-amazon.com/images/I/41gr3r3FSWL.jpg">
+          </div>
+          <ion-col>
+            <p class="des">Description</p>
+            <p class="lorem">Lorem ipsum is simply dummy text
+              of the printing and type Setting
+              industry.Lorem ipsum is simply
+              of the printing and type Setting</p>
+          </ion-col>
+        </ion-row>
+        <ion-row class="dat">
+          <p class="date">11:43AM</p>
+        </ion-row>
+      </ion-card>
+
+      <ion-row class="select-branch">
+        <ion-select placeholder="Select One" value="details" interface="popover" mode="ios">
+          <ion-select-option value="details" selected>Details</ion-select-option>
+          <ion-select-option value="unread">Branch</ion-select-option>
+        </ion-select>
+      </ion-row>
+
+      <ion-card class="pdf-card">
+        <ion-row>
+          <div class="pdf-img">
+            <img src="https://m.media-amazon.com/images/I/41gr3r3FSWL.jpg">
+          </div>
+          <ion-col>
+            <p class="des">Description</p>
+            <p class="lorem">Lorem ipsum is simply dummy text
+              of the printing and type Setting
+              industry.Lorem ipsum is simply
+              of the printing and type Setting</p>
+          </ion-col>
+        </ion-row>
+        <ion-row class="dat">
+          <p class="date">11:43AM</p>
+        </ion-row>
+      </ion-card>
+    </ion-grid>
+
+  </div>
+  <div *ngIf="segmentModel === 'delivery'">
+    Deliery
+  </div>
+  <div *ngIf="segmentModel === 'offers'">
+    Offers
+  </div>
+  <div *ngIf="segmentModel === 'returns'">
+    Returns
+  </div>
+</ion-content>

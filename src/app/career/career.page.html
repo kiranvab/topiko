@@ -1,0 +1,89 @@
+<ion-header color="custom">
+  <ion-toolbar color="custom" class="toolbar">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-grid>
+      <ion-row>
+        <ion-col class="cont">
+          <ion-title>Career</ion-title>
+        </ion-col>
+        <ion-col size="1">
+          <ion-icon class="notif" name="notifications-outline"></ion-icon>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-segment class="segment">
+            <ion-segment class="job" value="job">
+              <input type="text" placeholder="Job Title">
+            </ion-segment>
+            <ion-segment class="location" value="location">
+              <input type="text" placeholder="Location">
+              <ion-icon name="location"></ion-icon>
+            </ion-segment>
+          </ion-segment>
+        </ion-col>
+        <ion-col size="2">
+          <div class="search">
+            <ion-icon name="search-outline"></ion-icon>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card class="firstcard">
+    <ion-row class="row">
+      <ion-col class="bg">
+        <ion-avatar>
+          <img src="https://i.pinimg.com/474x/bc/d4/ac/bcd4ac32cc7d3f98b5e54bde37d6b09e.jpg" alt="">
+        </ion-avatar>
+      </ion-col>
+    </ion-row>
+    <ion-row class="details">
+      <P class="name">JAGANKATHIK.G</P>
+    </ion-row>
+    <ion-row class="details">
+      <P class="number">+91 988134832</P>
+    </ion-row>
+  </ion-card>
+
+  <p class="dashboard">Dashboard</p>
+  <ion-card>
+    <ion-row>
+      <ion-col size="4" class="icons">
+        <ion-fab-button color="light">
+          <ion-icon name="briefcase-outline"></ion-icon>
+        </ion-fab-button>
+        <p>Resume</p>
+      </ion-col>
+      <ion-col size="4" class="icons">
+        <ion-fab-button color="light">
+          <ion-icon name="headset-outline"></ion-icon>
+          <sup>
+            <ion-badge size="small" color="danger">1</ion-badge>
+          </sup>
+        </ion-fab-button>
+        <p>Employee</p>
+      </ion-col>
+      <ion-col size="4" class="icons">
+        <ion-fab-button color="light">
+          <ion-icon name="person-circle-outline"></ion-icon>
+        </ion-fab-button>
+        <p>Employer</p>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+
+  <div>
+    <div class="date">
+      <p>04/23/2021</p>
+    </div>
+  </div>
+
+  <img class="image" src="https://guy-gweth.com/wp-content/uploads/2020/10/1.jpg" alt="">
+
+</ion-content>

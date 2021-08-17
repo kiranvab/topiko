@@ -1,0 +1,141 @@
+// image
+.knife {
+    margin: 1em 1.125em;
+    background: transparent;
+    box-shadow: none;
+}
+.knife img {
+    border-radius: 0.5em;
+}
+
+// grid
+ion-grid {
+    margin: 0px 0.8125em;
+}
+
+// first-row
+.title {
+    margin-top: 0.5em;
+    padding-left: 0%;
+}
+.title p {
+    font-size: 1.125em;
+    font-weight: bold;
+    color: #22272a;
+    letter-spacing: 0.0375em;
+    line-height: 1em;
+    margin: 3px 0px;
+}
+.title ion-icon {
+    color: #39ac00;
+}
+.star ion-icon {
+    color: #fcb900;
+}
+.star p {
+    font-size: 0.5em;
+    padding-left: 5px;
+}
+
+// second-row
+.second-row ion-col {
+    margin: 0.25em 0px;
+    padding-left: 0%;
+}
+.second-row p {
+    font-size: 1em;
+    font-weight: bold;
+    color: #22272a;
+    margin: 0%;
+}
+.second-row .rt {
+    text-align: right;
+}
+span {
+    padding-left: 0.375em;
+    color: #22272a;
+    font-size: 0.875em;
+    margin: 8px 0px;
+}
+.rs {
+    color: #871178;
+}
+.real-price {
+    text-decoration: line-through;
+    color: #9f9f9f;
+}
+.off {
+    color: #39ac00;
+    font-size: 0.625em;
+}
+
+// third-row
+.third-row p {
+    font-weight: bold;
+    margin: 0.3125em 0em;
+}
+
+// fourth-row
+.fourth-row p {
+    font-weight: normal;
+    margin: 0.3125em 0em;
+}
+.fourth-row span {
+    font-size: 0.75em;
+    color: #39ac00;
+}
+
+// fifth-row
+.fifth-row h6 {
+    color: #22272a;
+    font-weight: bold;
+}
+.fifth-row p {
+    color: #707070;
+    line-height: 1.375em;
+    letter-spacing: 0.11px;
+    margin: 0%;
+}
+
+// card
+.first {
+    background: #ebebeb;
+    margin: 1em 1.125em;
+    box-shadow: none;
+    border-radius: 0%;
+}
+.icons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 1.125em;
+}
+.icons p {
+    margin: 8px 0px;
+    color: #871178;
+}
+.head {
+    font-size: 1em;
+}
+ion-fab-button {
+    --ion-color-base: #ffffff !important;
+    --box-shadow: none;
+}
+ion-fab-button ion-icon {
+    color: #707070;
+    font-size: 30px;
+}
+
+// fab
+ion-fab-button {
+    --background: linear-gradient(#871178, #3c1378);
+    --color: #ffffff;
+    height: 4.375em;
+    width: 4.375em;
+}
+.fab ion-icon {
+    color: #ffffff;
+    height: 36px;
+    width: 36px;
+}

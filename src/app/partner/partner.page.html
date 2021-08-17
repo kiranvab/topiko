@@ -1,0 +1,108 @@
+<ion-header color="custom" mode="md">
+  <ion-toolbar color="custom" class="toolbar">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Partner</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<div class="avatar">
+  <ion-avatar>
+    <img class="border"
+      src="https://content3.jdmagicbox.com/comp/chennai/w1/044pxx44.xx44.121221101633.y3w1/catalogue/velavan-concrete-poonamallee-chennai-ht0zkb-250.jpg"
+      alt="">
+  </ion-avatar>
+</div>
+<ion-col class="text-overflow">
+  <p class="user-name">Velavan Concrete <ion-icon name="qr-code-outline"></ion-icon>
+  </p>
+  <p class="time">Maha Lakshmi</p>
+  <p class="time">Tele caller/ Delivery</p>
+</ion-col>
+<ion-col size="1" class="ellipsis" (click)="openMenu()">
+  <ion-icon name="ellipsis-vertical"></ion-icon>
+</ion-col>
+</ion-row> -->
+
+<ion-content>
+  <ion-card>
+    <ion-row>
+      <div class="avatar">
+        <ion-avatar>
+          <img class="border"
+            src="https://content3.jdmagicbox.com/comp/chennai/w1/044pxx44.xx44.121221101633.y3w1/catalogue/velavan-concrete-poonamallee-chennai-ht0zkb-250.jpg"
+            alt="">
+        </ion-avatar>
+      </div>
+      <ion-col class="text-overflow">
+        <p class="user-name">Velavan Concrete</p>
+        <ion-row class="officer">
+          <p class="time">Gopinath Sarvanan</p>
+        </ion-row>
+        <ion-row class="officer">
+          <p class="time">Dispatch Officer</p>
+        </ion-row>
+      </ion-col>
+      <ion-col size="1" class="ellipsis" (click)="openMenu()">
+        <ion-icon class="btn" name="ellipsis-vertical"></ion-icon>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="upload">
+      <p class="desc">Upload Profile Image</p>
+    </ion-row>
+    <ion-row class="upload">
+      <ion-col size="4">
+        <ion-card class="up-img">
+          <ion-icon name="cloud-upload-outline"></ion-icon>
+          <p>upload image</p>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row class="des desp">
+      <p class="desc">Description</p>
+      <textarea class="text" placeholder="write something about you"></textarea>
+    </ion-row>
+
+    <ion-row class="chec">
+      <ion-col size="1">
+        <ion-checkbox checked></ion-checkbox>
+      </ion-col>
+      <ion-col size="9">
+        <p class="confirm">Confirm your acceptance and click call during call you will get OTP (SMS) and procced with
+          your owner</p>
+      </ion-col>
+    </ion-row>
+    <div class="button">
+      <ion-button>Agree & Call</ion-button>
+    </div>
+  </ion-card>
+
+  <ion-card class="second">
+    <ion-row>
+      <div class="avatar">
+        <ion-avatar>
+          <img
+            src="https://einsteinmarketer.ams3.digitaloceanspaces.com/em/uploads/2018/01/ben-sweet-456320-unsplash.jpg"
+            alt="">
+        </ion-avatar>
+      </div>
+      <ion-col class="text-overflow">
+        <p class="user-name">Gopinath Sarvanan</p>
+        <ion-row class="officer">
+          <p class="time">Dispatch Officer</p>
+        </ion-row>
+      </ion-col>
+      <ion-col size="1" class="ellipsis" (click)="hideDelete()">
+        <ion-icon class="btn" name="ellipsis-vertical"></ion-icon>
+      </ion-col>
+    </ion-row>
+    <ion-row class="lorem">
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis voluptate iusto explicabo reprehenderit dicta
+        non unde, esse amet porro, dolore, odit corporis placeat animi velit.</p>
+    </ion-row>
+  </ion-card>
+
+</ion-content>

@@ -1,0 +1,183 @@
+<ion-header>
+  <ion-toolbar color="custom">
+    <ion-buttons slot="start">
+      <ion-back-button mode="md"></ion-back-button>
+      <ion-menu-button mode="ios"></ion-menu-button>
+    </ion-buttons>
+    <ion-col class="title-center">
+      <ion-title>Show Case</ion-title>
+    </ion-col>
+    <ion-buttons slot="end" (click)="openMenu()">
+      <ion-icon name="ellipsis-vertical"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card class="firstcard">
+    <ion-row class="row">
+      <ion-col class="bg">
+        <ion-avatar>
+          <img src="https://i.pinimg.com/474x/bc/d4/ac/bcd4ac32cc7d3f98b5e54bde37d6b09e.jpg" alt="">
+        </ion-avatar>
+        <img class="position-cam" src="assets/camera.svg" alt="">
+      </ion-col>
+    </ion-row>
+    <ion-row class="details">
+      <P class="name">{{busines_name}} <ion-icon name="shield-checkmark"></ion-icon>
+      </P>
+    </ion-row>
+    <ion-row class="star">
+      <ion-icon name="star"></ion-icon>
+      <ion-icon name="star"></ion-icon>
+      <ion-icon name="star"></ion-icon>
+      <ion-icon name="star"></ion-icon>
+      <ion-icon name="star"></ion-icon>
+      <p>4.1 Ratings</p>
+    </ion-row>
+    <ion-row class="details">
+      <p class="ceo">CEO-{{owner}}</p>
+    </ion-row>
+  </ion-card>
+
+  <ion-row size="11" class="select">
+    <ion-select placeholder="Select One" value="branches" interface="popover">
+      <ion-select-option *ngFor="let br of branches; let i= index" value="{{br.id}}" selected>{{br.branch_title}}</ion-select-option>
+      
+    </ion-select>
+  </ion-row>
+
+  <ion-row class="second-card">
+    <ion-card class="card-box">
+      <ion-row>
+        <ion-col size="8" class="address">
+          <p><b>Address :</b></p>
+          <p>{{address}}</p>
+        </ion-col>
+        <ion-col size="4" class="img">
+          <img src="https://localsearchforum.com/attachments/maps-embed-api-example-png.3469/">
+
+        </ion-col>
+      </ion-row>
+    </ion-card>
+  </ion-row>
+
+  <ion-card class="card-box">
+    <ion-row class="radius">
+      <ion-col>
+        <b> Radius </b>
+      </ion-col>
+      <ion-col class="red-text" size="1.5">
+        <ion-icon name="help-outline"></ion-icon>
+      </ion-col>
+    </ion-row>
+    <ion-row class="number">
+      <ion-range min="-200" max="200" pin="true">
+      </ion-range>
+    </ion-row>
+  </ion-card>
+
+  <ion-card class="card-box">
+    <ion-col class="text">
+      <b> Period </b>
+    </ion-col>
+    <ion-row>
+      <ion-segment>
+        <ion-segment-button value="Day">
+          <ion-label>Day</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="week">
+          <ion-label>week</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="Month">
+          <ion-label>Month</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="Custom">
+          <ion-label>Custom</ion-label>
+        </ion-segment-button>
+      </ion-segment>
+    </ion-row>
+    <ion-row class="reduce-space">
+      <ion-col size="6">
+        <ion-item>
+          <ion-label position="floating">From
+            <ion-icon name="calendar-outline" size="20"></ion-icon>
+          </ion-label>
+          <ion-input type="date"  [(ngModel)]="start"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col size="6">
+        <ion-item>
+          <ion-label position="floating">To
+            <ion-icon name="calendar-outline" size="20"></ion-icon>
+          </ion-label>
+          <ion-input type="date" min="1990-03-14" max="2040-12-09"  [(ngModel)]="end"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+
+  <ion-col class="upload">
+    Upload
+  </ion-col>
+
+  <ion-card class="banner-card" (click)="image()">
+    <ion-row>
+      <ion-icon name="cloud-upload-outline"></ion-icon>
+    </ion-row>
+    <ion-row>
+      <p>Upload your Banner JPG,PNG,GIF & video or URL</p>
+    </ion-row>
+  </ion-card>
+
+  <ion-row size="11" class="select">
+    <ion-select placeholder="Select One" value="positions" [(ngModel)]="position" interface="popover">
+      <ion-select-option value="1" selected>Positon 1</ion-select-option>
+      <ion-select-option value="2" >Positon 2</ion-select-option>
+      <ion-select-option value="3" >Positon 3</ion-select-option>
+      <ion-select-option value="4" >Positon 4</ion-select-option>
+      <ion-select-option value="5" >Positon 5</ion-select-option>
+      
+    </ion-select>
+  </ion-row>
+  <ion-col class="text-underline">
+    <div class="ion-text-center">
+      Position
+    </div>
+  </ion-col>
+  <ion-row>
+    <ion-col size="9">
+      <div class="ion-text-start">
+        Global
+      </div>
+    </ion-col>
+    <ion-col>
+      <div class="ion-text-end">
+
+        <ion-toggle checked></ion-toggle>
+
+      </div>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col Style="color:purple;">
+      <div class="ion-text-center">
+        RS:4999 +18% GST
+      </div>
+    </ion-col>
+  </ion-row>
+
+  <ion-row class="check">
+    <ion-col size="1">
+      <ion-checkbox checked></ion-checkbox>
+    </ion-col>
+    <ion-col size="9">
+      <p class="confirm">I agree for the <span>Terms and Conditions</span></p>
+    </ion-col>
+  </ion-row>
+  <ion-row class="button">
+    <ion-button (click)="submit()">Pay</ion-button>
+  </ion-row>
+
+
+</ion-content>

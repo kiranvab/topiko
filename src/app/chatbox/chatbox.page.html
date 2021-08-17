@@ -1,0 +1,158 @@
+<ion-header color="custom">
+  <ion-toolbar color="custom" class="toolbar">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-row>
+      <div class="avatar">
+        <ion-avatar>
+          <img src="https://i.pinimg.com/474x/bc/d4/ac/bcd4ac32cc7d3f98b5e54bde37d6b09e.jpg" alt="">
+        </ion-avatar>
+      </div>
+      <ion-col class="text-overflow">
+        <ion-title>{{partner_name}}</ion-title>
+        <ion-row class="dat">
+          <ion-title>Last Seen 11:15AM</ion-title>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+    <ion-buttons slot="end">
+      <ion-icon name="videocam"></ion-icon>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-icon name="call"></ion-icon>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-icon name="search"></ion-icon>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-icon name="ellipsis-vertical"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content #content style="margin-bottom:10%">
+  <div class="div-date">
+    <div class="date">
+      <p>04/23/2021</p>
+    </div>
+  </div>
+<div *ngFor="let chat of chatmessages; let i-index" id="condiv" >
+  <ion-card class="chat-lbox"  *ngIf="chat.posted_by === user_id" (mouseup)="diSable()">
+    <ion-row *ngIf="chat.type==='text'">
+      <ion-col class="left-chat">
+        <p class="title">{{chat.name}}</p>
+        <p class="subtitle">{{chat.message}}</p>
+      </ion-col>
+    </ion-row>
+    <ion-row *ngIf="chat.type === 'image'">
+      <ion-col>
+        <img src="{{fileurl}}{{chat.file_path}}"/>
+      </ion-col>
+    </ion-row>
+    <ion-row *ngIf="chat.type === 'video'">
+      <ion-col>
+        <video width="100%" height="auto" controls (play)="diSable()" (pause)="ReActivate()" (ended)="ReActivate()">
+          <source src="{{fileurl}}{{chat.file_path}}" type="video/mp4">
+        </video>
+      </ion-col>
+    </ion-row>
+    <ion-row *ngIf="chat.type === 'audio'">
+      <ion-col>
+        <audio style="width: 100%;" controls (play)="diSable()" (pause)="ReActivate()" (ended)="ReActivate()">
+          <source src="{{fileurl}}{{chat.file_path}}" type="audio/mpeg">
+        </audio>
+      </ion-col>
+    </ion-row>
+    <ion-row *ngIf="chat.type === 'doc1'">
+      <ion-col>
+        <object data="{{fileurl}}{{chat.file_path}}" type="application/pdf" width="220" height="160">
+          alt : <a href="{{fileurl}}{{chat.file_path}}">{{chat.file_path}}</a>
+      </object>
+      <iframe src="{{fileurl}}{{chat.file_path}}" style="width:100%;height:700px;"></iframe>
+      </ion-col>
+    </ion-row>
+    <ion-row class="time">
+      <p>{{chat.created_date}}</p>
+    </ion-row>
+  </ion-card>
+  <ion-row class="rt"  *ngIf="chat.posted_by !== user_id" >
+    <ion-card class="chat-rbox">
+      <ion-row>
+        <ion-col class="right-chat">
+          <p class="title">{{chat.name}}</p>
+          <p class="subtitle">{{chat.message}}</p>
+        </ion-col>
+      </ion-row>
+      <ion-row class="time">
+        <p>{{chat.created_date}}</p>
+      </ion-row>
+    </ion-card>
+  </ion-row>
+  </div>
+  <div style="min-height: 220px; text-align: center; background:#fff; padding:5%;width:100%; position: fixed; bottom:0px; z-index:9999; border-radius: 20px;" *ngIf="bottomdiv">
+    <ion-row >
+      <ion-col size="4" style="text-align: center;">
+        <input class="ion-hide" #f type="file" [(ngModel)]="docfile" (change)="UploadDocument($event)" id="file-input"
+        accept="application/msword, application/vnd.ms-excel, application/vnd.ms-powerpoint,text/plain, application/pdf">
+        <div style="background: rgb(153, 3, 78); border-radius: 50%; height:50px; width:50px;" (click)="f.click()"><ion-icon name="document-outline" color="light" style="font-size:2em; margin-top: 15%;"></ion-icon></div></ion-col>
+    
+      <ion-col size="4" style="text-align: center;">
+        <div style="background: rgb(6, 94, 28); border-radius: 50%; height:50px; width:50px;" (click)="takePicture()"><ion-icon name="camera-outline" color="light" style="font-size:2em; margin-top: 15%;"></ion-icon></div></ion-col>
+   
+      <ion-col size="4" style="text-align: center;">
+        <input class="ion-hide" [(ngModel)]="imagefile" #g type="file" (change)="pickGallery($event)" id="file-input"
+        accept="image/*">
+        <div style="background: rgb(18, 3, 153); border-radius: 50%; height:50px; width:50px;" (click)="g.click()"><ion-icon name="image-outline" color="light" style="font-size:2em; margin-top: 15%;"></ion-icon></div></ion-col>
+  
+    </ion-row>
+    <br>
+    <ion-row>
+      <ion-col size="4" style="text-align: center;">
+        <input class="ion-hide" [(ngModel)]="audfile" #a type="file" (change)="UploadAudio($event)" id="file-input"
+        accept="audio/*">
+        <div style="background: rgb(141, 190, 5); border-radius: 50%; height:50px; width:50px;" (click)="a.click()"><ion-icon name="mic-outline" color="light" style="font-size:2em; margin-top: 15%;"></ion-icon></div></ion-col>
+     
+      <ion-col size="4" style="text-align: center;">
+        <input class="ion-hide" [(ngModel)]="vidfile" #v type="file" (change)="UploadVideo($event)" id="file-input"
+        accept="video/*">
+        <div style="background: rgb(4, 76, 104); border-radius: 50%; height:50px; width:50px;" (click)="v.click()"><ion-icon name="videocam-outline" color="light" style="font-size:2em; margin-top: 15%;"></ion-icon></div></ion-col>
+      
+      <ion-col size="4" style="text-align: center;"><div style="background: rgb(119, 0, 16); border-radius: 50%; height:50px; width:50px;" (click)="UploadLoction()"><ion-icon name="location-outline" color="light" style="font-size:2em; margin-top: 15%;"></ion-icon></div></ion-col>
+     
+    </ion-row>
+  </div>
+</ion-content>
+<ion-footer mode="md" color="primary">
+  <ion-toolbar>
+    <ion-grid class="bottom">
+      <ion-row class="inp">
+        <ion-col size="10.5">
+          <ion-grid class="grid">
+            <ion-row>
+              <ion-col class="icn" size="1">
+                <ion-icon name="happy-outline"></ion-icon>
+              </ion-col>
+              <ion-col class="msg" size="9">
+                <ion-input class="ioninput" placeholder="Send a message..." #message (keydown.enter)="SendMessage()"></ion-input>
+              </ion-col>
+              <ion-col class="icn" size="1">
+                <ion-icon name="attach-outline" (click)="attachments()"></ion-icon>
+              </ion-col>
+              <ion-col class="icn" size="1">
+                <ion-icon name="mic-outline"></ion-icon>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-col>
+        <ion-col class="fabb" size="1.5">
+          <ion-fab>
+            <ion-fab-button class="fab" (click)="SendMessage()">
+              <ion-icon name="paper-plane"></ion-icon>
+            </ion-fab-button>
+          </ion-fab>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-footer>

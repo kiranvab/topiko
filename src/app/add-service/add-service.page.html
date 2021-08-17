@@ -1,0 +1,149 @@
+<ion-header color="custom">
+  <ion-toolbar color="custom" class="toolbar">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+      <ion-menu-button mode="ios"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Add Service</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <h5>Red Bus Chennai</h5>
+  <ion-grid>
+    <ion-row>
+      <ion-col class="left">
+        <ion-card class="first-card" (click)="getPicture()">
+          <ion-row>
+            <ion-icon name="cloud-upload-outline"></ion-icon>
+          </ion-row>
+          <ion-row>
+            <p>Upload Service Banner</p>
+          </ion-row>
+        </ion-card>
+      </ion-col>
+      <ion-col class="right">
+        <ion-card class="second-card">
+          <ion-row>
+            <ion-icon name="cloud-upload-outline"></ion-icon>
+          </ion-row>
+          <ion-row>
+            <p>Upload Service video, gif or URL</p>
+          </ion-row>
+        </ion-card>
+        <ion-row class="pad">
+          <ion-col class="left">
+            <ion-card class="third-card">
+              <ion-row>
+                <ion-icon name="cloud-upload-outline"></ion-icon>
+              </ion-row>
+              <ion-row>
+                <p>Upload Image</p>
+              </ion-row>
+            </ion-card>
+          </ion-col>
+          <ion-col class="right">
+            <ion-card class="third-card">
+              <ion-row>
+                <ion-icon name="cloud-upload-outline"></ion-icon>
+              </ion-row>
+              <ion-row>
+                <p>Upload Image</p>
+              </ion-row>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="3" class="left">
+        <ion-card class="third-card">
+          <ion-row>
+            <ion-icon name="cloud-upload-outline"></ion-icon>
+          </ion-row>
+          <ion-row>
+            <p>Upload Image</p>
+          </ion-row>
+        </ion-card>
+      </ion-col>
+      <ion-col class="right">
+        <ion-card class="third-card">
+          <ion-row>
+            <ion-icon name="cloud-upload-outline"></ion-icon>
+          </ion-row>
+          <ion-row>
+            <p>Upload Banner</p>
+          </ion-row>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid class="second-grid">
+    
+      <ion-item>
+        <ion-input placeholder="Service Title" [(ngModel)]="servicetitle"></ion-input>
+      </ion-item>
+    
+      Service Tags
+      <ion-row>
+        <ion-textarea  [(ngModel)]="servicetags">
+          <ion-chip>
+            <ion-label>Real Estate</ion-label>
+            <ion-icon name="close-circle"></ion-icon>
+          </ion-chip>
+          <ion-chip>
+            <ion-label>Pre Own seller</ion-label>
+            <ion-icon name="close-circle"></ion-icon>
+          </ion-chip>
+        </ion-textarea>
+      </ion-row>
+    
+    <!-- <p>
+      <ion-item>
+        <ion-input placeholder="Measuring Type"></ion-input>
+      </ion-item>
+    </p>
+    <ion-row>
+      <ion-textarea placeholder="Measuring Details">
+      </ion-textarea>
+    </ion-row>
+    <p> -->
+      Description
+      <ion-row>
+        <ion-textarea  [(ngModel)]="description"></ion-textarea>
+      </ion-row>
+    
+    <p>
+      <ion-item>
+        <ion-input placeholder="Actual Price" [(ngModel)]="actualprice"></ion-input>
+      </ion-item>
+    </p>
+    <p>
+      <ion-item>
+        <ion-input placeholder="Discount" [(ngModel)]="discount"></ion-input>
+      </ion-item>
+    </p>
+    <!-- <p>
+      <ion-row class="toggle">
+        <ion-col>
+          <p>Cash on Delivery</p>
+        </ion-col>
+        <ion-col size="4" class="textflow">
+          <ion-toggle checked mode="md"></ion-toggle>
+        </ion-col>
+      </ion-row>
+    </p> -->
+    <ion-row class="check">
+      <ion-col size="1">
+        <ion-checkbox checked></ion-checkbox>
+      </ion-col>
+      <ion-col size="9">
+        <p class="confirm">I agree for the <span>Terms and Conditions</span></p>
+      </ion-col>
+    </ion-row>
+    <ion-row class="btn">
+      <ion-button (click)="submit()">Submit</ion-button>
+    </ion-row>
+  </ion-grid>
+</ion-content>

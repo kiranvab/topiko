@@ -1,0 +1,128 @@
+ion-header ion-icon {
+    color: #ffffff;
+    font-size: 21px;
+}
+ion-title {
+    font-size: 16px;
+    color: #ffffff;
+    padding: 0px;
+    padding-top: 1px;
+    letter-spacing: 0.6px;
+    text-align: left;
+}
+
+ion-content {
+    --padding-bottom: 80px;
+    --padding-start: 18px;
+    --padding-end: 18px;
+}
+ion-card {
+    margin: 8px 0px;
+    padding: 10px 0px 10px 8px;
+    box-shadow: 0px 3px 6px #00000029;
+}
+.avatar ion-avatar {
+    width: 74px;
+    height: 74px;
+}
+.user-name {
+    color: #22272a;
+    font-size: 18px;
+    margin: 0px;
+}
+.lorem {
+    color: #707070;
+    font-size: 12px;
+    margin: 0px;
+}
+.time {
+    color: #871178;
+    font-size: 10px;
+}
+.pclass {
+    font-size: 12px;
+    color: #9f9f9f;
+    margin: 0%;
+    line-height: 18px;
+    margin-right: 7px;
+}
+.ellipsis {
+    font-size: 18px;
+    padding: 0px;
+}
+.star-row {
+    display: flex;
+    justify-content: space-between;
+}
+.star-row ion-icon {
+    color: #fcb900;
+    font-size: 20px;
+}
+.star-row p {
+    color: #871178;
+    font-size: 10px;
+}
+.inline {
+    width: 100%;
+    font-size: 0.625em;
+    color: #871178;
+    letter-spacing: 0.0375em;
+    text-align: right;
+    display: flex;
+    justify-content: flex-end;
+}
+.date {
+    margin-right: 0.75em;
+}
+.dat {
+    margin: 0%;
+}
+
+// fab
+ion-fab-button {
+    --background: linear-gradient(#871178, #3c1378);
+    --color: #ffffff;
+    height: 65px;
+    width: 65px;
+}
+ion-fab-button ion-icon {
+    color: #ffffff;
+    font-size: 46px;
+}
+
+.text-color {
+    font-size: 25px;
+}
+.star {
+    color: #fcb900;
+}
+
+.elipsis {
+    color: #871178;
+    font-size: 1.5em;
+}
+
+.elipsis-head {
+    color: #fff;
+    font-size: 1.5em;
+}
+
+.select {
+    color: #871178;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.select-text {
+    color: #871178;
+}
+label {
+    color: #871178;
+}
+
+.select-icon {
+    width: 20px !important;
+    height: 20px !important;
+    color: #871187 !important;
+}

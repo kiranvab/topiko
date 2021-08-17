@@ -1,0 +1,81 @@
+<ion-header color="custom" mode="md">
+  <ion-toolbar color="custom" class="toolbar">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Connect</ion-title>
+    <ion-buttons slot="end">
+      <ion-icon name="help-circle-outline"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card class="first">
+    <ion-row class="row">
+      <ion-col class="bg">
+        <ion-avatar>
+          <img src="https://i.pinimg.com/474x/bc/d4/ac/bcd4ac32cc7d3f98b5e54bde37d6b09e.jpg" alt="">
+        </ion-avatar>
+        <img class="position-cam" src="assets/camera.svg" alt="">
+      </ion-col>
+    </ion-row>
+  </ion-card>
+
+  <ion-card class="second">
+    <ion-row>
+      <ion-col>
+        <p>Murali</p>
+      </ion-col>
+      <ion-col>
+        <ion-icon name="call"></ion-icon>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+
+  <ion-card class="third">
+    <ion-row>
+      <p>Image</p>
+    </ion-row>
+    <div class="scroll">
+      <img src="https://5.imimg.com/data5/OV/ZZ/EF/SELLER-12251084/rear-view-car-side-mirror-beat-500x500.jpg" alt="">
+      <img
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ67pkHOVMFxVKt0tzGDIQcm2eMng_7ro_0D3T-hrujo2_hFGU9w2uPE3P7IBiGrL5UtJM&usqp=CAU"
+        alt="">
+      <img src="https://amainsider.com/wp-content/uploads/2017/06/auto-glass-insurance-windshield.jpg" alt="">
+      <img src="https://5.imimg.com/data5/OV/ZZ/EF/SELLER-12251084/rear-view-car-side-mirror-beat-500x500.jpg" alt="">
+      <img src="https://amainsider.com/wp-content/uploads/2017/06/auto-glass-insurance-windshield.jpg" alt="">
+    </div>
+  </ion-card>
+
+  <p class="connect">Connect</p>
+  <ion-card class="fourth">
+    <ion-row>
+      <ion-col>
+        <p>Jagan Karthik</p>
+      </ion-col>
+      <ion-col>
+        <ion-icon name="call" (click)="openMenu()" mode="md"></ion-icon>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <p>Govind</p>
+      </ion-col>
+      <ion-col>
+        <ion-icon name="call" (click)="openMenu()" mode="md"></ion-icon>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <p>Babji</p>
+      </ion-col>
+      <ion-col>
+        <ion-icon name="call" (click)="openMenu()" mode="md"></ion-icon>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+
+  <p class="connect">Reach</p>
+  <h6 (click)="openMsg()" mode="md">Message</h6>
+</ion-content>

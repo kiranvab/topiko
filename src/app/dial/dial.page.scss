@@ -1,0 +1,44 @@
+ion-content {
+    --background: linear-gradient(#871178, #3c1378) !important;
+    color: #ffffff;
+}
+
+ion-avatar {
+    width: 180px;
+    height: 180px;
+    margin-top: 49px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+ion-icon {
+    font-size: 25px;
+    color: #ffffff;
+    border-radius: 50%;
+    border: 2px solid white;
+    padding: 15px;
+    opacity: 65%;
+}
+p {
+    margin: 2px;
+    opacity: 65%;
+    font-size: 24px;
+    text-align: center;
+    color: #fff;
+}
+ion-col
+{
+    text-align: center;
+}
+.end {
+    margin-top: 36px;
+    margin-left: 155px;
+    background-color: #e02042;
+    font-size: 28px;
+    color: #ffffff;
+    border-radius: 50%;
+    border: transparent;
+    padding: 20px;
+    opacity: 100%;
+    transform: rotate(135deg);
+}

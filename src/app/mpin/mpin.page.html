@@ -1,0 +1,66 @@
+<ion-content class="background">
+
+  <div class="logo">
+    <img src="assets/logo.png" width="30%">
+  </div>
+
+  <ion-row class="mt25-10">
+    <ion-col size="12" class="lbl-text">
+      <ion-label>Create MPIN</ion-label>
+    </ion-col>
+    <ion-col>
+      <ion-item>
+        <ion-input [(ngModel)]="mpin1" type="number" max="1" #mpin_1 (keyup)="gotoNextField(mpin_2)" ></ion-input>
+      </ion-item>
+    </ion-col>
+    <ion-col>
+      <ion-item>
+        <ion-input [(ngModel)]="mpin2" type="number" max="1" #mpin_2 (keyup)="gotoNextField(mpin_3)"></ion-input>
+      </ion-item>
+    </ion-col>
+    <ion-col>
+      <ion-item>
+        <ion-input [(ngModel)]="mpin3" type="number" max="1" #mpin_3 (keyup)="gotoNextField(mpin_4)"></ion-input>
+      </ion-item>
+    </ion-col>
+    <ion-col>
+      <ion-item>
+        <ion-input [(ngModel)]="mpin4" type="number" max="1" #mpin_4 (keyup)="gotoNextField(cmpin_1)"></ion-input>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+  <ion-row class="mt25-10">
+    <ion-col size="12" class="lbl-text">
+    <ion-label>Confirm MPIN</ion-label>
+  </ion-col>
+    <ion-col>
+      <ion-item>
+        <ion-input [(ngModel)]="cmpin1" type="number" max="1" #cmpin_1 (keyup)="gotoNextField(cmpin_2)" ></ion-input>
+      </ion-item>
+    </ion-col>
+    <ion-col>
+      <ion-item>
+        <ion-input [(ngModel)]="cmpin2" type="number" max="1" #cmpin_2 (keyup)="gotoNextField(cmpin_3)"></ion-input>
+      </ion-item>
+    </ion-col>
+    <ion-col>
+      <ion-item>
+        <ion-input [(ngModel)]="cmpin3" type="number" max="1" #cmpin_3 (keyup)="gotoNextField(cmpin_4)"></ion-input>
+      </ion-item>
+    </ion-col>
+    <ion-col>
+      <ion-item>
+        <ion-input [(ngModel)]="cmpin4" type="number" max="1" #cmpin_4 (keyup)="check()"></ion-input>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+
+  
+  <ion-row class="mt-10 ">
+    <ion-col class="text-center">
+      <ion-col>
+        <img src="assets/refresh.svg" (click)="setmpin()">
+      </ion-col>
+    </ion-col>
+  </ion-row>
+</ion-content>

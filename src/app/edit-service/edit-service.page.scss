@@ -1,0 +1,147 @@
+ion-header .title {
+    text-align: center;
+    size: 18px;
+    color: #ffffff;
+}
+h5 {
+    color: #871178;
+    text-align: center;
+    margin-bottom: 0px;
+}
+
+ion-grid {
+    margin: 14px 18px;
+    padding: 0px;
+}
+ion-card ion-icon {
+    width: 40px;
+    height: 30px;
+    color: #9f9f9f;
+}
+ion-card p {
+    color: #9f9f9f;
+    font-size: 0.75em;
+    margin: 0.625em 3.125em;
+    text-align: center;
+    line-height: 1.5em;
+}
+.first-card {
+    height: 249px;
+    margin: 0px;
+    background-color: #f2f2f2;
+    border-radius: 3px;
+    box-shadow: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.first-card img {
+    width: 100%;
+    height: 100%;
+}
+.second-card {
+    height: 169px;
+    margin: 0px;
+    background-color: #f2f2f2;
+    border-radius: 3px;
+    box-shadow: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.third-card {
+    height: 75px;
+    margin: 0px;
+    background-color: #f2f2f2;
+    border-radius: 3px;
+    box-shadow: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.left {
+    padding: 5px 2.5px 0px 0px;
+}
+.third-card ion-icon {
+    width: 25px;
+    height: 20px;
+}
+.third-card p {
+    font-size: 0.625em;
+    margin: 0.25em 0px;
+}
+.right {
+    padding: 5px 0px 0px 2.5px;
+}
+
+.second-grid p {
+    margin: 30px 0px;
+}
+ion-textarea {
+    border: 1px solid #707070;
+    width: 100%;
+    opacity: 70%;
+    border-radius: 0.3125em;
+}
+ion-chip {
+    font-size: 0.75em;
+    margin: 10px;
+}
+
+.toggle p {
+    font-size: 1em;
+    color: #22272a;
+    margin: 1em 0px;
+}
+.toggle ion-col {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+ion-row ion-toggle {
+    --width: 34px;
+    --height: 14px;
+    --background-checked: linear-gradient(#871178, #3c1378);
+    --handle-background-checked: #9f9f9f;
+    padding-top: 0.71875em;
+}
+
+.check {
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+ion-checkbox {
+    --border-color-checked: #707070;
+    opacity: 70%;
+    --checkmark-color: #871178;
+    --checkmark-width: 4;
+    --background: transparent;
+    --background-checked: transparent;
+}
+ion-col .confirm {
+    font-size: 0.75em;
+    color: #22272a;
+    margin-top: 0%;
+    line-height: 1.3em;
+    letter-spacing: 0.025em;
+}
+.confirm span {
+    color: #871178;
+    text-decoration: underline;
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+}
+.btn ion-button {
+    --background: linear-gradient(#871178, #3c1378);
+    --color: #ffffff;
+    text-transform: capitalize;
+    font-size: 0.75em;
+    width: 7.6875em;
+    height: 3.125em;
+}

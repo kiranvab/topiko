@@ -1,90 +1,956 @@
 <ion-header>
   <ion-toolbar color="custom">
     <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
+      <ion-back-button mode="md"></ion-back-button>
+      <ion-menu-button mode="ios"></ion-menu-button>
     </ion-buttons>
-    <ion-title>Red Bus Chennai</ion-title>
-    <ion-icon slot="end" style="font-size: 24px;" name="ellipsis-vertical-outline"></ion-icon>
+    <ion-title>Details</ion-title>
+    <ion-buttons slot="end" (click)="openMenu()">
+      <ion-icon name="ellipsis-vertical"></ion-icon>
+    </ion-buttons>
   </ion-toolbar>
-
 </ion-header>
+
+<ion-segment value="all" scrollable="true" mode="md" color="secondary" [(ngModel)]="segmentModel">
+  <ion-segment-button value="topiko">
+    <ion-label>Topiko</ion-label>
+  </ion-segment-button>
+  <ion-segment-button value="products">
+    <ion-label>Products</ion-label>
+  </ion-segment-button>
+  <ion-segment-button value="service">
+    <ion-label>Service</ion-label>
+  </ion-segment-button>
+  <ion-segment-button value="post">
+    <ion-label>Post</ion-label>
+  </ion-segment-button>
+  <ion-segment-button value="career">
+    <ion-label>Career</ion-label>
+  </ion-segment-button>
+  <ion-segment-button value="overview">
+    <ion-label>Overview</ion-label>
+  </ion-segment-button>
+</ion-segment>
 
 <ion-content>
 
-  <ion-segment 
-  value="all" 
-  color="tertiary" 
-  scrollable="true"
-  mode="ios"
-  [(ngModel)]="segmentModel" >
+  <!-- Topiko Div Start-->
+  <div *ngIf="segmentModel === 'topiko'">
 
-    <ion-segment-button value="details">
-    <ion-label>Topiko</ion-label>
-    </ion-segment-button>
+    <ion-slides pager="true" [options]="slideOpts" class="margin-class top-slide">
+      <ion-slide >
+        <img src="{{business_image}}" style="border-radius: 10px;">
+      </ion-slide>
+      <ion-slide>
+        <img src="https://businessrights.in/wp-content/uploads/2020/11/Swiggy-Restaurant-Listing.png"
+          style="border-radius: 10px;">
+      </ion-slide>
+      <ion-slide>
+        <img src="https://mir-s3-cdn-cf.behance.net/projects/original/3445c9110418311.Y3JvcCwxMzgwLDEwODAsNDEzLDA.jpg"
+          style="border-radius: 10px;">
+      </ion-slide>
+    </ion-slides>
 
-    <ion-segment-button value="offers">
-    <ion-label>Overview</ion-label>
-    </ion-segment-button>
+    <ion-row class="margin-class red-bus">
+      <ion-col>
+        {{name}} <ion-icon name="shield-checkmark" class="shield"></ion-icon><br>
+        <ion-icon name="star" class="star"></ion-icon>
+        <ion-icon name="star" class="star"></ion-icon>
+        <ion-icon name="star" class="star"></ion-icon>
+        <ion-icon name="star-outline" class="star"></ion-icon>
+        <ion-icon name="star-outline" class="star"></ion-icon>
+        <p class="ceo">CEO {{owner_name}} </p>
+      </ion-col>
+      <ion-col size="4" class="shop-btn">
+        <ion-button class="purple-btn-sm" size="small" routerLink="/shophere"> Shop Here </ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row class="margin-class" >
+      <ion-col class="travel scroll">
+        <p *ngFor = "let busi of bdetails; let i=index;">{{busi.tags}}</p>
+      </ion-col>
+    </ion-row>
+    <p class="margin-class lorem">{{story}}</p>
 
-    <ion-segment-button value="products">
-    <ion-label>Services</ion-label>
-    </ion-segment-button>
+    <ion-card class="third-bg margin-class">
+      <ion-row>
+        <ion-col size="3" class="icons">
+          <ion-fab-button color="light">
+            <ion-icon name="share-social-outline"></ion-icon>
+          </ion-fab-button>
+          <p>Share</p>
+        </ion-col>
+        <ion-col size="3" class="icons">
+          <ion-fab-button color="light">
+            <ion-icon name="thumbs-up-outline"></ion-icon>
+          </ion-fab-button>
+          <p>Like</p>
+        </ion-col>
+        <ion-col size="3" class="icons">
+          <ion-fab-button color="light">
+            <ion-icon name="heart-outline"></ion-icon>
+          </ion-fab-button>
+          <p>Favourite</p>
+        </ion-col>
+        <ion-col size="3" class="icons">
+          <ion-fab-button color="light">
+            <ion-icon name="chatbubble-ellipses-outline"></ion-icon>
+          </ion-fab-button>
+          <p>Comment</p>
+        </ion-col>
+      </ion-row>
+    </ion-card>
 
-    <ion-segment-button value="reviews">
-    <ion-label>Careers</ion-label>
-    </ion-segment-button>    
-  </ion-segment>
-<div style="padding: 5%;">
-  <ion-row>
-    <ion-col routerLink="/business">
-      <img src="https://pbs.twimg.com/media/EFvAU2mU4AAtwHv.jpg">
-    </ion-col>
-  </ion-row>
-  <ion-row>
-   <h6>Red Bus Chennai</h6>
-   <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, </p>
-  </ion-row>
-  <ion-row style="background-color:gainsboro; color: #7f1073; font-size: 10px;">
-    <ion-col style="text-align: center;">
-      <ion-icon class="icons" name="share-social-outline"></ion-icon>
-      Share
-    </ion-col>
-    <ion-col style="text-align: center;">
-      <ion-icon class="icons" name="compass-outline"></ion-icon>
-      Direction
-    </ion-col>
-    <ion-col style="text-align: center;">
-      <ion-icon class="icons" name="heart-outline"></ion-icon>
-      Favourites
-    </ion-col>
-    <ion-col  style="text-align: center;">
-      <ion-icon class="icons" name="chatbubble-ellipses-outline"></ion-icon>
-      Comments
-    </ion-col>
-  </ion-row>
-  <ion-card style="margin: 10px 0; padding: 10px 5px 0 10px;">
-    <h6>Time</h6>
-    <p><span style="color: purple;">Opened</span> Opens 10 AM Mon <ion-icon name="chevron-down-outline"></ion-icon></p>
-  </ion-card>
-  <ion-row style="font-size: 16px;">
-    <ion-col>Similar products</ion-col>
-    <ion-col size="3" style="color: purple;">View All</ion-col>
-  </ion-row>
-  <ion-row>
-    <ion-col>
-      <img src="https://www.englandforever.org/images/london-bus.jpg">
-    </ion-col>
-    <ion-col>
-      <img src="https://www.englandforever.org/images/london-bus.jpg">
-    </ion-col>
-    <ion-col>
-      <img src="https://www.englandforever.org/images/london-bus.jpg">
-    </ion-col>
-  </ion-row>
+    <p class="rfq">Request a Quote</p>
+    <ion-card class="margin-class fourth">
+      <ion-row>
+        <ion-col>
+          <strong>Address</strong>
+          <p>{{address}},<br> {{city}}-{{pincode}}, <br>{{state}}, <br> {{country}}</p>
+        </ion-col>
+        <ion-col size="4" class="map">
+          <img
+            src="https://previews.123rf.com/images/vasilyrosca/vasilyrosca1612/vasilyrosca161200298/68591274-perspective-city-map-gps-service-concept-3d-city-map-route-template-design-.jpg">
+        </ion-col>
+      </ion-row>
+    </ion-card>
+
+    <ion-row class="margin-class">
+      <ion-col class="head">Similar Products</ion-col>
+      <ion-col size="3" class="view-all">View All</ion-col>
+    </ion-row>
+
+    <ion-row class="margin-class">
+      <ion-col size="4">
+        <img src="https://m.media-amazon.com/images/I/41gr3r3FSWL.jpg">
+      </ion-col>
+      <ion-col size="4">
+        <img src="https://lithub.com/wp-content/uploads/2019/01/9781616208882.jpg">
+      </ion-col>
+      <ion-col size="4">
+        <img src="https://www.oberlo.com/media/1603897577-image22-1.jpg?w=1824&fit=max">
+      </ion-col>
+    </ion-row>
+    <ion-row class="margin-class">
+      <ion-col size="4">
+        <img src="https://m.media-amazon.com/images/I/41gr3r3FSWL.jpg">
+      </ion-col>
+      <ion-col size="4">
+        <img src="https://lithub.com/wp-content/uploads/2019/01/9781616208882.jpg">
+      </ion-col>
+      <ion-col size="4">
+        <img src="https://www.oberlo.com/media/1603897577-image22-1.jpg?w=1824&fit=max">
+      </ion-col>
+    </ion-row>
+
+
+    <ion-row class="margin-class">
+      <ion-col class="head">Recently Viewed</ion-col>
+      <ion-col size="3" class="view-all">View All</ion-col>
+    </ion-row>
+
+    <ion-row class="margin-class">
+
+      <ion-col class="col-mt-3" size="6" routerLink="/details">
+        <img class="bdr-rad-20"
+          src="https://www.couponmaal.com/wp-content/uploads/2019/10/redbus-coupons-and-promo-codes.jpg">
+        <ion-row>
+          <ion-col class="img-title">
+            Redbus | Delhi
+          </ion-col>
+          <div class="hearticon-div">
+            <ion-icon class="heart-icon" name="heart"></ion-icon>
+          </div>
+          <ion-col size="2" class="coun text-overflow">389</ion-col>
+        </ion-row>
+      </ion-col>
+
+      <ion-col class="col-mt-3" size="6">
+        <img class="bdr-rad-20" src="https://gos3.ibcdn.com/goibibo-offers-1471858246.jpg">
+        <ion-row>
+          <ion-col class="img-title">
+            Ibibo | Chennai
+          </ion-col>
+          <div class="hearticon-div">
+            <ion-icon class="heart-icon" name="heart"></ion-icon>
+          </div>
+          <ion-col size="2" class="coun text-overflow">389</ion-col>
+        </ion-row>
+      </ion-col>
+
+      <ion-col class="col-mt-3" size="6">
+        <img class="bdr-rad-20"
+          src="https://70415bb9924dca896de0-34a37044c62e41b40b39fcedad8af927.ssl.cf3.rackcdn.com/MAX-Friday/Sale-Womenfest21-266Feb2021-a-2.jpg">
+        <ion-row>
+          <ion-col class="img-title">
+            Trends | Goa
+          </ion-col>
+          <div class="hearticon-div">
+            <ion-icon class="heart-icon" name="heart"></ion-icon>
+          </div>
+          <ion-col size="2" class="coun text-overflow">389</ion-col>
+        </ion-row>
+      </ion-col>
+
+      <ion-col class="col-mt-3" size="6">
+        <img class="bdr-rad-20"
+          src="https://d18lkz4dllo6v2.cloudfront.net/cumulus_uploads/entry/2019-04-23/oyo.jpg?w=660">
+        <ion-row>
+          <ion-col class="img-title">
+            OYO | HYD
+          </ion-col>
+          <div class="hearticon-div">
+            <ion-icon class="heart-icon" name="heart"></ion-icon>
+          </div>
+          <ion-col size="2" class="coun text-overflow">389</ion-col>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+
   </div>
-  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-    <ion-fab-button color="primary">
-      <img class="link-icon" src="assets/link.svg" />
+  <!-- Topiko Div End-->
+
+
+  <!-- product Div Start-->
+  <div *ngIf="segmentModel === 'products'">
+    <ion-card class="sleek">
+      <img src="assets/sleek.JPG" alt="">
+    </ion-card>
+    <ion-row>
+      <ion-col size="6" *ngFor="let product of products; let i=index">
+        <ion-card class="cards" (click)="productDetials(i)">
+          <img
+            src="{{product.product_image}}"
+            alt="">
+          <p>{{product.title}}</p>
+          <span>Price-</span>
+          <span class="rs">Rs{{product.discount}} </span>
+          <span class="real-price">{{product.mrp}} </span>
+          <span class="off">{{product.discount_price}} Off</span>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+
+   
+  </div>
+  <!-- produt Div End-->
+
+  <!-- service Div Start-->
+  <div *ngIf="segmentModel === 'service'">
+    <ion-grid class="service-grid">
+      <ion-card class="first">
+        <ion-slides pager="true" [options]="slideOpts">
+          <ion-slide>
+            <img
+              src="https://suyaaninfrastructure.jcbindia.co.in/media/4988/intelli-performancefuel-efficiency_1050_768_v2.jpg"
+              style="border-radius: 10px;">
+          </ion-slide>
+          <ion-slide>
+            <img src="https://businessrights.in/wp-content/uploads/2020/11/Swiggy-Restaurant-Listing.png"
+              style="border-radius: 10px;">
+          </ion-slide>
+          <ion-slide>
+            <img
+              src="https://mir-s3-cdn-cf.behance.net/projects/original/3445c9110418311.Y3JvcCwxMzgwLDEwODAsNDEzLDA.jpg"
+              style="border-radius: 10px;">
+          </ion-slide>
+        </ion-slides>
+      </ion-card>
+
+      <ion-card class="second">
+        <ion-row>
+          <ion-col class="item">
+            <img src="https://plantandcivilengineer.com/wp-content/uploads/2017/08/JCB-Front-Cover-FP-NEW.jpg" alt="">
+            <p>JCB Hire</p>
+            <span>Per Hour-</span>
+            <span class="rs">Rs800 </span>
+          </ion-col>
+          <ion-col class="des">
+            <h6>Description</h6>
+            <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae sed temporibus dolor tempora
+              expedita
+              possimus laudantium? Architecto totam, quo quisquam fuga sit quia quas maxime quos dolor voluptate? Harum,
+              quis?
+            </p>
+          </ion-col>
+        </ion-row>
+        <ion-row class="des">
+          <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae sed temporibus dolor tempora expedita
+            possimus laudantium? Architecto totam, quo quisquam fuga sit quia quas maxime quos dolor voluptate? Harum,
+            quis?
+          </p>
+        </ion-row>
+      </ion-card>
+
+      <ion-card class="third">
+        <ion-row>
+          <ion-col size="3" class="icons">
+            <ion-fab-button color="light">
+              <ion-icon name="share-social-outline"></ion-icon>
+            </ion-fab-button>
+            <p>Share</p>
+          </ion-col>
+          <ion-col size="3" class="icons">
+            <ion-fab-button color="light">
+              <ion-icon name="thumbs-up-outline"></ion-icon>
+            </ion-fab-button>
+            <p>Like</p>
+          </ion-col>
+          <ion-col size="3" class="icons">
+            <ion-fab-button color="light">
+              <ion-icon name="heart-outline"></ion-icon>
+            </ion-fab-button>
+            <p>Favourite</p>
+          </ion-col>
+          <ion-col size="3" class="icons">
+            <ion-fab-button color="light">
+              <ion-icon name="chatbubble-ellipses-outline"></ion-icon>
+            </ion-fab-button>
+            <p>Comment</p>
+          </ion-col>
+        </ion-row>
+      </ion-card>
+    </ion-grid>
+
+    <ion-row class="margin-class">
+      <ion-col class="head">Similar Products</ion-col>
+      <ion-col size="3" class="view-all">View All</ion-col>
+    </ion-row>
+
+    <ion-row class="margin-class">
+      <ion-col size="4">
+        <img src="https://m.media-amazon.com/images/I/41gr3r3FSWL.jpg">
+      </ion-col>
+      <ion-col size="4">
+        <img src="https://lithub.com/wp-content/uploads/2019/01/9781616208882.jpg">
+      </ion-col>
+      <ion-col size="4">
+        <img src="https://www.oberlo.com/media/1603897577-image22-1.jpg?w=1824&fit=max">
+      </ion-col>
+    </ion-row>
+    <ion-row class="margin-class">
+      <ion-col size="4">
+        <img src="https://m.media-amazon.com/images/I/41gr3r3FSWL.jpg">
+      </ion-col>
+      <ion-col size="4">
+        <img src="https://lithub.com/wp-content/uploads/2019/01/9781616208882.jpg">
+      </ion-col>
+      <ion-col size="4">
+        <img src="https://www.oberlo.com/media/1603897577-image22-1.jpg?w=1824&fit=max">
+      </ion-col>
+    </ion-row>
+
+
+    <ion-row class="margin-class">
+      <ion-col class="head">Recently Viewed</ion-col>
+      <ion-col size="3" class="view-all">View All</ion-col>
+    </ion-row>
+
+    <ion-row class="margin-class">
+
+      <ion-col class="col-mt-3" size="6" routerLink="/details">
+        <img class="bdr-rad-20"
+          src="https://www.couponmaal.com/wp-content/uploads/2019/10/redbus-coupons-and-promo-codes.jpg">
+        <ion-row>
+          <ion-col class="img-title">
+            Redbus | Delhi
+          </ion-col>
+          <div class="hearticon-div">
+            <ion-icon class="heart-icon" name="heart"></ion-icon>
+          </div>
+          <ion-col size="2" class="coun text-overflow">389</ion-col>
+        </ion-row>
+      </ion-col>
+
+      <ion-col class="col-mt-3" size="6">
+        <img class="bdr-rad-20" src="https://gos3.ibcdn.com/goibibo-offers-1471858246.jpg">
+        <ion-row>
+          <ion-col class="img-title">
+            Ibibo | Chennai
+          </ion-col>
+          <div class="hearticon-div">
+            <ion-icon class="heart-icon" name="heart"></ion-icon>
+          </div>
+          <ion-col size="2" class="coun text-overflow">389</ion-col>
+        </ion-row>
+      </ion-col>
+
+      <ion-col class="col-mt-3" size="6">
+        <img class="bdr-rad-20"
+          src="https://70415bb9924dca896de0-34a37044c62e41b40b39fcedad8af927.ssl.cf3.rackcdn.com/MAX-Friday/Sale-Womenfest21-266Feb2021-a-2.jpg">
+        <ion-row>
+          <ion-col class="img-title">
+            Trends | Goa
+          </ion-col>
+          <div class="hearticon-div">
+            <ion-icon class="heart-icon" name="heart"></ion-icon>
+          </div>
+          <ion-col size="2" class="coun text-overflow">389</ion-col>
+        </ion-row>
+      </ion-col>
+
+      <ion-col class="col-mt-3" size="6">
+        <img class="bdr-rad-20"
+          src="https://d18lkz4dllo6v2.cloudfront.net/cumulus_uploads/entry/2019-04-23/oyo.jpg?w=660">
+        <ion-row>
+          <ion-col class="img-title">
+            OYO | HYD
+          </ion-col>
+          <div class="hearticon-div">
+            <ion-icon class="heart-icon" name="heart"></ion-icon>
+          </div>
+          <ion-col size="2" class="coun text-overflow">389</ion-col>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+
+  </div>
+  <!-- service Div End-->
+
+  <!-- post Div Start-->
+  <div *ngIf="segmentModel === 'post'">
+
+    <div class="post-div">
+      <div class="date">
+        <p>04/23/2021</p>
+      </div>
+    </div>
+
+    <ion-card class="margin-class post-card">
+      <ion-slides pager="true" [options]="slideOpts">
+        <ion-slide>
+          <img
+            src="https://edlab.nl/wp-content/uploads/2015/10/looking-for-a-job-pandora-and-190-companies-are-hiring-c1b39cd0a1.jpg"
+            style="border-radius: 10px;">
+        </ion-slide>
+        <ion-slide>
+          <img src="https://businessrights.in/wp-content/uploads/2020/11/Swiggy-Restaurant-Listing.png"
+            style="border-radius: 10px;">
+        </ion-slide>
+        <ion-slide>
+          <img src="https://mir-s3-cdn-cf.behance.net/projects/original/3445c9110418311.Y3JvcCwxMzgwLDEwODAsNDEzLDA.jpg"
+            style="border-radius: 10px;">
+        </ion-slide>
+      </ion-slides>
+    </ion-card>
+
+    <p class="dashboard">Job Info</p>
+    <ion-card class="margin-class">
+      <ion-row>
+        <ion-col class="qualification" size="5">
+          <p>Qualification-</p>
+        </ion-col>
+        <ion-col class="degree" size="4">
+          <p>Any Degree</p>
+        </ion-col>
+        <ion-col class="bcom" size="3">
+          <p>Bcom</p>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col class="qualification" size="5">
+          <p>Working Experience-</p>
+        </ion-col>
+        <ion-col class="degree" size="4">
+          <p>Fresher</p>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col class="qualification" size="5">
+          <p>Working Hours</p>
+        </ion-col>
+        <ion-col class="degree" size="4">
+          <p>8hours</p>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col class="qualification" size="5">
+          <p>Salary</p>
+        </ion-col>
+        <ion-col class="degree" size="4">
+          <p>2lacks-3.5lacks</p>
+        </ion-col>
+      </ion-row>
+
+    </ion-card>
+
+    <p class="dashboard">Descriptions</p>
+    <ion-card class="margin-class">
+      <ion-row>
+        <p class="description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quis vitae voluptatibus autem
+          quidem reiciendis iusto</p>
+      </ion-row>
+    </ion-card>
+    <ion-card class="margin-class post-chats">
+      <ion-row class="chats scroll">
+        <ion-col>
+          <p class="text">Chat</p>
+          <p class="number">0</p>
+        </ion-col>
+        <ion-col class="seperator" size="0.1"></ion-col>
+        <ion-col>
+          <p class="text">Video</p>
+          <p class="number">0</p>
+        </ion-col>
+        <ion-col class="seperator" size="0.1"></ion-col>
+        <ion-col>
+          <p class="text">Call</p>
+          <p class="number">0</p>
+        </ion-col>
+        <ion-col class="seperator" size="0.1"></ion-col>
+        <ion-col class="calls">
+          <p class="text">Branches</p>
+          <p class="number">02</p>
+        </ion-col>
+      </ion-row>
+    </ion-card>
+
+  </div>
+  <!-- post Div End-->
+
+  <!-- career Div Start-->
+  <div *ngIf="segmentModel === 'career'">
+    <div class="post-div">
+      <div class="date">
+        <p>04/23/2021</p>
+      </div>
+    </div>
+
+    <ion-slides pager="true" [options]="slideOpts" class="margin-class">
+      <ion-slide>
+        <div class="column">
+          <div class="round-img" (click)="openMenu()">
+            <ion-icon name="ellipsis-vertical"></ion-icon>
+          </div>
+          <img class="image" src="http://mediawiremobile.com/news/wp-content/uploads/499924122-612x612.jpg">
+        </div>
+      </ion-slide>
+      <ion-slide>
+        <div class="column">
+          <div class="round-img">
+            <ion-icon name="ellipsis-vertical"></ion-icon>
+          </div>
+          <img class="image" src="https://guy-gweth.com/wp-content/uploads/2020/10/1.jpg" alt="">
+        </div>
+      </ion-slide>
+      <ion-slide>
+        <div class="column">
+          <div class="round-img">
+            <ion-icon name="ellipsis-vertical"></ion-icon>
+          </div>
+          <img class="image" src="https://sitalcollege.com/edu/wp-content/uploads/2021/01/e-learning.jpg" alt="">
+        </div>
+      </ion-slide>
+    </ion-slides>
+
+    <p class="dashboard">Descriptions</p>
+    <ion-card class="second margin-class">
+      <ion-row>
+        <p class="description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quis vitae voluptatibus autem
+          quidem reiciendis iusto</p>
+      </ion-row>
+    </ion-card>
+    <ion-card class="margin-class post-chats">
+      <ion-row class="chats scroll">
+        <ion-col>
+          <p class="text">Likes</p>
+          <p class="number">36</p>
+        </ion-col>
+        <ion-col class="seperator" size="0.1"></ion-col>
+        <ion-col>
+          <p class="text">Dislikes</p>
+          <p class="number">0</p>
+        </ion-col>
+        <ion-col class="seperator" size="0.1"></ion-col>
+        <ion-col>
+          <p class="text">Share</p>
+          <p class="number">05</p>
+        </ion-col>
+        <ion-col class="seperator" size="0.1"></ion-col>
+        <ion-col>
+          <p class="text">Comment</p>
+          <p class="number">15</p>
+        </ion-col>
+      </ion-row>
+    </ion-card>
+
+    <div class="post-div">
+      <div class="date">
+        <p>04/23/2021</p>
+      </div>
+    </div>
+
+    <ion-slides pager="true" [options]="slideOpts" class="margin-class">
+      <ion-slide>
+        <div class="column">
+          <div class="round-img" (click)="openMenu()">
+            <ion-icon name="ellipsis-vertical"></ion-icon>
+          </div>
+          <img class="image" src="https://guy-gweth.com/wp-content/uploads/2020/10/1.jpg" alt="">
+        </div>
+      </ion-slide>
+      <ion-slide>
+        <div class="column">
+          <div class="round-img">
+            <ion-icon name="ellipsis-vertical"></ion-icon>
+          </div>
+          <img class="image" src="https://sitalcollege.com/edu/wp-content/uploads/2021/01/e-learning.jpg" alt="">
+        </div>
+      </ion-slide>
+      <ion-slide>
+        <div class="column">
+          <div class="round-img">
+            <ion-icon name="ellipsis-vertical"></ion-icon>
+          </div>
+          <img class="image" src="http://mediawiremobile.com/news/wp-content/uploads/499924122-612x612.jpg">
+        </div>
+      </ion-slide>
+    </ion-slides>
+
+    <p class="dashboard">Descriptions</p>
+    <ion-card class="second margin-class">
+      <ion-row>
+        <p class="description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quis vitae voluptatibus autem
+          quidem reiciendis iusto</p>
+      </ion-row>
+    </ion-card>
+    <ion-card class="margin-class post-chats">
+      <ion-row class="chats scroll">
+        <ion-col>
+          <p class="text">Likes</p>
+          <p class="number">36</p>
+        </ion-col>
+        <ion-col class="seperator" size="0.1"></ion-col>
+        <ion-col>
+          <p class="text">Dislikes</p>
+          <p class="number">0</p>
+        </ion-col>
+        <ion-col class="seperator" size="0.1"></ion-col>
+        <ion-col>
+          <p class="text">Share</p>
+          <p class="number">05</p>
+        </ion-col>
+        <ion-col class="seperator" size="0.1"></ion-col>
+        <ion-col>
+          <p class="text">Comment</p>
+          <p class="number">15</p>
+        </ion-col>
+      </ion-row>
+    </ion-card>
+  </div>
+
+  <!-- career Div End-->
+
+  <!-- Overview Div Start-->
+  <div *ngIf="segmentModel === 'overview'">
+    <ion-card class="box">
+      <ion-row class="overview-row">
+        <div class="avatar">
+          <ion-avatar>
+            <img class="border"
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuCplPn3Mq26bkNeD71qseA9m-aNavXIG2yw&usqp=CAU"
+              alt="">
+          </ion-avatar>
+        </div>
+        <ion-col class="title text-overflow">
+          <p>Sun Group water <ion-icon name="shield-checkmark"></ion-icon>
+          </p>
+          <ion-row class="ceo text-overflow">
+            <p>CEO-Murali</p>
+          </ion-row>
+          <ion-row class="director text-overflow">
+            <p>Referral id -791541</p>
+          </ion-row>
+        </ion-col>
+      </ion-row>
+      <ion-row class="text">
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+          industry's
+          standard dummy text ever since the</p>
+      </ion-row>
+      <ion-row class="read-more">
+        <p>Read More</p>
+      </ion-row>
+      <ion-row class="rating">
+        <p>Rating & Review</p>
+      </ion-row>
+      <ion-row>
+        <ion-col class="ratings">
+          <ion-row class="rate">
+            <p>4.0</p>
+          </ion-row>
+          <ion-row class="star">
+            <ion-icon name="star"></ion-icon>
+            <ion-icon name="star"></ion-icon>
+            <ion-icon name="star"></ion-icon>
+            <ion-icon name="star"></ion-icon>
+            <ion-icon name="star"></ion-icon>
+            <p>4.1 Ratings</p>
+          </ion-row>
+          <ion-row class="num">
+            <p>2,122,00</p>
+          </ion-row>
+        </ion-col>
+        <ion-col></ion-col>
+      </ion-row>
+      <ion-row class="certify">
+        <p>Topiko Certification</p>
+      </ion-row>
+      <ion-row class="square">
+        <ion-col size="2.8">
+          <ion-card>
+          </ion-card>
+        </ion-col>
+        <ion-col size="2.8">
+          <ion-card>
+          </ion-card>
+        </ion-col>
+        <ion-col size="2.8">
+          <ion-card>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+      <ion-row class="certify">
+        <p>Topiko Awards</p>
+      </ion-row>
+      <ion-row class="square">
+        <ion-col size="2.8">
+          <ion-card>
+          </ion-card>
+        </ion-col>
+        <ion-col size="2.8">
+          <ion-card>
+          </ion-card>
+        </ion-col>
+        <ion-col size="2.8">
+          <ion-card>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+      <ion-row class="product">
+        <ion-col>
+          <p>Product & Services</p>
+        </ion-col>
+        <ion-col size="1">
+          <ion-icon name="chevron-up-outline"></ion-icon>
+        </ion-col>
+      </ion-row>
+
+      <div class="scrolll">
+        <p class="designn">Designer</p>
+        <div class="borderr" size="0.1">
+          <p></p>
+        </div>
+        <p class="designn">Banner Design</p>
+        <div class="borderr" size="0.1">
+          <p></p>
+        </div>
+        <p class="designn">Logo Design</p>
+        <div class="borderr" size="0.1">
+          <p></p>
+        </div>
+        <p class="designn">Poster Designer</p>
+        <div class="borderr" size="0.1">
+          <p></p>
+        </div>
+        <p class="designn">Image Design</p>
+        <div class="borderr" size="0.1">
+          <p></p>
+        </div>
+        <p class="designn">Website Design</p>
+      </div>
+
+      <ion-card class="address">
+        <ion-row>
+          <ion-col size="8">
+            <ion-row class="add">
+              <p>Address</p>
+            </ion-row>
+            <ion-row class="street">
+              <p>{{this.address}}</p>
+            </ion-row>
+          </ion-col>
+          <ion-col size="4">
+            <img src="https://www.xda-developers.com/files/2019/06/google-maps-india.jpg" alt="">
+          </ion-col>
+        </ion-row>
+      </ion-card>
+      <ion-row class="product">
+        <ion-col>
+          <p>Online Supporters</p>
+        </ion-col>
+        <ion-col size="1">
+          <ion-icon name="chevron-up-outline"></ion-icon>
+        </ion-col>
+      </ion-row>
+      <ion-card class="third-card">
+        <ion-row>
+          <div class="avatar avatarr">
+            <ion-avatar>
+              <img class="border"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuCplPn3Mq26bkNeD71qseA9m-aNavXIG2yw&usqp=CAU"
+                alt="">
+            </ion-avatar>
+          </div>
+          <ion-col class="name text-overflow overflowroww">
+            <p class="namee">Kiran</p>
+            <ion-row class="market text-overflow">
+              <p>Marketing | Telecaller | Delivery</p>
+            </ion-row>
+            <ion-row class="lang text-overflow">
+              <p>Tamil <span>|</span> Telugu <span>|</span> Malayalam</p>
+            </ion-row>
+          </ion-col>
+        </ion-row>
+      </ion-card>
+      <ion-card class="third-card">
+        <ion-row>
+          <div class="avatar avatarr">
+            <ion-avatar>
+              <img class="border"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuCplPn3Mq26bkNeD71qseA9m-aNavXIG2yw&usqp=CAU"
+                alt="">
+            </ion-avatar>
+          </div>
+          <ion-col class="name text-overflow overflowroww">
+            <p class="namee">Kiran</p>
+            <ion-row class="market text-overflow">
+              <p>Marketing | Telecaller | Delivery</p>
+            </ion-row>
+            <ion-row class="lang text-overflow">
+              <p>Tamil <span>|</span> Telugu <span>|</span> Malayalam</p>
+            </ion-row>
+          </ion-col>
+        </ion-row>
+      </ion-card>
+      <ion-row class="product">
+        <ion-col>
+          <p>Company Certificate</p>
+        </ion-col>
+      </ion-row>
+      <ion-row class="square">
+        <ion-col size="2.8">
+          <ion-card>
+          </ion-card>
+        </ion-col>
+        <ion-col size="2.8">
+          <ion-card>
+          </ion-card>
+        </ion-col>
+        <ion-col size="2.8">
+          <ion-card>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+      <ion-row class="product">
+        <ion-col>
+          <p>Company Gallery</p>
+        </ion-col>
+      </ion-row>
+      <ion-row class="square">
+        <ion-col size="2.8">
+          <ion-card>
+          </ion-card>
+        </ion-col>
+        <ion-col size="2.8">
+          <ion-card>
+          </ion-card>
+        </ion-col>
+        <ion-col size="2.8">
+          <ion-card>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+      <ion-row class="product">
+        <ion-col>
+          <p>Partners</p>
+        </ion-col>
+        <ion-col size="1">
+          <ion-icon name="chevron-up-outline"></ion-icon>
+        </ion-col>
+      </ion-row>
+      <ion-row class="namerow">
+        <div class="avatar avatarr">
+          <ion-avatar>
+            <img class="border"
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuCplPn3Mq26bkNeD71qseA9m-aNavXIG2yw&usqp=CAU"
+              alt="">
+          </ion-avatar>
+        </div>
+        <ion-col class="name text-overflow nameee">
+          <p class="namee">Murali</p>
+          <ion-row class="market text-overflow">
+            <p>CEO</p>
+          </ion-row>
+        </ion-col>
+        <ion-col class="fab-overview" size="1.5">
+          <ion-fab>
+            <ion-fab-button class="fabbb">
+              <ion-icon name="call"></ion-icon>
+            </ion-fab-button>
+          </ion-fab>
+        </ion-col>
+      </ion-row>
+      <ion-row class="views">
+        <p>Views</p>
+      </ion-row>
+      <ion-row class="text">
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+          industry's
+          standard dummy text ever since the</p>
+      </ion-row>
+      <ion-row class="read-more">
+        <p>Read More</p>
+      </ion-row>
+      <ion-row class="views">
+        <p>Gallery</p>
+      </ion-row>
+      <ion-row class="square">
+        <ion-col size="2.8">
+          <ion-card>
+          </ion-card>
+        </ion-col>
+        <ion-col size="2.8">
+          <ion-card>
+          </ion-card>
+        </ion-col>
+        <ion-col size="2.8">
+          <ion-card>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+      <ion-row class="product">
+        <ion-col>
+          <p>Reach</p>
+        </ion-col>
+      </ion-row>
+      <ion-row class="inp">
+        <ion-col>
+          <ion-grid class="grid">
+            <ion-row>
+              <ion-col class="msg">
+                <ion-input placeholder="Send a message..."></ion-input>
+              </ion-col>
+              <ion-col class="icn" size="1">
+                <ion-icon name="mic-outline"></ion-icon>
+              </ion-col>
+              <ion-col class="icn" size="1">
+                <ion-icon name="camera-outline"></ion-icon>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-col>
+      </ion-row>
+      <ion-row class="topup" float="right">
+        <ion-button>Send</ion-button>
+      </ion-row>
+    </ion-card>
+
+  </div>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed" routerLink="/connect">
+    <ion-fab-button class="fab">
+      <ion-icon name="headset-outline"></ion-icon>
     </ion-fab-button>
   </ion-fab>
+  <!-- Topiko Div End-->
 </ion-content>

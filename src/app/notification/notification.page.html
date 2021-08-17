@@ -1,0 +1,145 @@
+<ion-header>
+  <ion-toolbar color="custom" class="toolbar">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Notification</ion-title>
+    <ion-buttons slot="end" (click)="openMenu()">
+      <ion-icon name="ellipsis-vertical"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-row class="select">
+    <ion-select placeholder="Select One" value="read" interface="popover" mode="ios">
+      <ion-select-option value="read" selected>Read</ion-select-option>
+      <ion-select-option value="unread">Unread</ion-select-option>
+      <ion-select-option value="started">Started</ion-select-option>
+      <ion-select-option value="reminder">Reminder</ion-select-option>
+    </ion-select>
+  </ion-row>
+
+  <ion-card>
+    <ion-row>
+      <div class="avatar">
+        <ion-avatar>
+          <img src="https://i.pinimg.com/originals/5d/4c/52/5d4c52c502918194e39ef7582a4e8eba.jpg" alt="">
+        </ion-avatar>
+      </div>
+      <ion-col>
+        <ion-row>
+          <ion-col>
+            <p class="lorem">Lorem Ipsum is simply dummy text the printing</p>
+          </ion-col>
+          <ion-col size="1" class="ellipsis">
+            <ion-icon name="ellipsis-vertical" (click)="openMenu()"></ion-icon>
+          </ion-col>
+        </ion-row>
+        <ion-row class="star-row">
+          <ion-icon name="star"></ion-icon>
+          <p class="pclass">3hours ago</p>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+
+  <ion-card>
+    <ion-row>
+      <div class="avatar">
+        <ion-avatar>
+          <img src="https://i.pinimg.com/originals/5d/4c/52/5d4c52c502918194e39ef7582a4e8eba.jpg" alt="">
+        </ion-avatar>
+      </div>
+      <ion-col>
+        <ion-row>
+          <ion-col>
+            <p class="lorem">Lorem Ipsum is simply dummy text the printing</p>
+          </ion-col>
+          <ion-col size="1" class="ellipsis">
+            <ion-icon name="ellipsis-vertical" (click)="openMenu()"></ion-icon>
+          </ion-col>
+        </ion-row>
+        <ion-row class="star-row">
+          <ion-icon name="star"></ion-icon>
+          <p class="pclass">3hours ago</p>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+
+  <ion-card>
+    <ion-row>
+      <div class="avatar">
+        <ion-avatar>
+          <img src="https://i.pinimg.com/originals/5d/4c/52/5d4c52c502918194e39ef7582a4e8eba.jpg" alt="">
+        </ion-avatar>
+      </div>
+      <ion-col>
+        <ion-row>
+          <ion-col>
+            <p class="lorem">Lorem Ipsum is simply dummy text the printing</p>
+          </ion-col>
+          <ion-col size="1" class="ellipsis">
+            <ion-icon name="ellipsis-vertical" (click)="openMenu()"></ion-icon>
+          </ion-col>
+        </ion-row>
+        <ion-row class="star-row">
+          <ion-icon name="star"></ion-icon>
+          <p class="pclass">3hours ago</p>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+
+  <ion-card>
+    <ion-row>
+      <div class="avatar">
+        <ion-avatar>
+          <img src="https://i.pinimg.com/originals/5d/4c/52/5d4c52c502918194e39ef7582a4e8eba.jpg" alt="">
+        </ion-avatar>
+      </div>
+      <ion-col>
+        <ion-row>
+          <ion-col>
+            <p class="lorem">Lorem Ipsum is simply dummy text the printing</p>
+          </ion-col>
+          <ion-col size="1" class="ellipsis">
+            <ion-icon name="ellipsis-vertical" (click)="openMenu()"></ion-icon>
+          </ion-col>
+        </ion-row>
+        <ion-row class="star-row">
+          <ion-icon name="star"></ion-icon>
+          <p class="pclass">3hours ago</p>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+
+  <ion-card>
+    <ion-row>
+      <div class="avatar">
+        <ion-avatar>
+          <img src="https://i.pinimg.com/originals/5d/4c/52/5d4c52c502918194e39ef7582a4e8eba.jpg" alt="">
+        </ion-avatar>
+      </div>
+      <ion-col>
+        <ion-row>
+          <ion-col>
+            <p class="lorem">Lorem Ipsum is simply dummy text the printing</p>
+          </ion-col>
+          <ion-col size="1" class="ellipsis">
+            <ion-icon name="ellipsis-vertical" (click)="openMenu()"></ion-icon>
+          </ion-col>
+        </ion-row>
+        <ion-row class="star-row">
+          <ion-icon name="star"></ion-icon>
+          <p class="pclass">3hours ago</p>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+
+</ion-content>

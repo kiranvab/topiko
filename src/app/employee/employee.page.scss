@@ -1,0 +1,135 @@
+ion-title {
+    font-size: 16px;
+    color: #ffffff;
+    padding: 0px;
+    padding-top: 1px;
+    letter-spacing: 0.6px;
+    text-align: left;
+}
+
+ion-content {
+    --padding-top: 8px;
+    --padding-bottom: 80px;
+    --padding-start: 18px;
+    --padding-end: 18px;
+}
+ion-card {
+    margin: 0.75em 0px;
+    padding: 7px;
+    box-shadow: 0px 3px 6px #00000029;
+}
+
+.avatar ion-avatar {
+    width: 65px;
+    height: 65px;
+}
+.border {
+    border: 0.2px solid #707070;
+}
+.user-name {
+    color: #22272a;
+    font-size: 18px;
+    margin: 0px;
+}
+.user-name ion-icon {
+    color: #39ac00;
+}
+.ellipsis ion-icon {
+    font-size: 18px;
+}
+.time {
+    color: #9f9f9f;
+    font-size: 12px;
+    margin: 0px;
+}
+.pclass {
+    margin: 0%;
+    line-height: 18px;
+}
+.lang {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0%;
+    min-width: max-content;
+    font-size: 14px;
+    margin: 0px 10px;
+    color: #871178;
+}
+.scrol {
+    display: flex;
+    overflow-x: auto;
+    height: 30px;
+    margin-bottom: 10px;
+}
+.scroll {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.chats .text {
+    color: #707070;
+    font-size: 14px;
+    text-align: center;
+    margin-bottom: 12px;
+}
+.chats .number {
+    color: #871178;
+    font-size: 22px;
+    text-align: center;
+    margin-bottom: 12px;
+}
+.seperator {
+    margin: 14px 0px;
+    margin-bottom: 25px;
+}
+
+ion-row .gps {
+    font-size: 16px;
+    color: #22272a;
+    line-height: 1.3125em;
+}
+ion-row ion-toggle {
+    --width: 34px;
+    --height: 14px;
+    --background-checked: linear-gradient(#871178, #3c1378);
+    --handle-background-checked: #9f9f9f;
+    padding-top: 0.71875em;
+    float: right;
+}
+.tog {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.inp ion-input {
+    border: 1px solid #707070;
+    border-radius: 0.3125em;
+}
+.btn {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+.btn ion-button {
+    --background: linear-gradient(#871178, #3c1378);
+    --color: #ffffff;
+    text-transform: capitalize;
+    font-size: 1.125em;
+    width: 99px;
+    height: 30px;
+}
+
+// fab
+ion-fab-button {
+    --background: linear-gradient(#871178, #3c1378);
+    --color: #ffffff;
+    height: 4.375em;
+    width: 4.375em;
+}
+.fab ion-icon {
+    color: #ffffff;
+    height: 45px;
+    width: 45px;
+}

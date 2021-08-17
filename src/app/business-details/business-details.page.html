@@ -1,0 +1,400 @@
+<ion-header color="custom">
+  <ion-toolbar color="custom" class="toolbar">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>{{business_name}}</ion-title>
+    <ion-buttons slot="end">
+      <ion-icon routerLink="/qr-payments" name="qr-code-outline"></ion-icon>
+      <ion-icon (click)="openMenu()" name="ellipsis-vertical"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card class="box" routerLink="/business-profile" *ngFor="let business of bdata">
+    <ion-row>
+      <div class="avatar">
+        <ion-avatar>
+          <img class="border"
+            src="{{business.logo}}"
+            alt="">
+        </ion-avatar>
+      </div>
+      <ion-col class="text-overflow">
+        <p class="user-name pclass">{{business.business_name}} <ion-icon name="shield-checkmark"></ion-icon>
+        </p>
+        <ion-row class="star">
+          <ion-icon name="star"></ion-icon>
+          <ion-icon name="star"></ion-icon>
+          <ion-icon name="star"></ion-icon>
+          <ion-icon name="star"></ion-icon>
+          <ion-icon name="star"></ion-icon>
+          <span>
+            <p class="pclass">4.1 Ratings</p>
+          </span>
+        </ion-row>
+        <p class="time pclass">{{business.owner_name}}</p>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col class="reg text-overflow">
+        <p>Regional - 500 Call Credits</p>
+      </ion-col>
+      <ion-col size="4.2" class="claim ellipsis">
+        <ion-button>Top up</ion-button>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="chats scroll">
+      <ion-col>
+        <p class="text">Viewed</p>
+        <p class="number">36</p>
+      </ion-col>
+      <ion-col class="seperator" size="0.1"></ion-col>
+      <ion-col>
+        <p class="text">Orders</p>
+        <p class="number">12</p>
+      </ion-col>
+      <ion-col class="seperator" size="0.1"></ion-col>
+      <ion-col>
+        <p class="text">Enquire</p>
+        <p class="number">09</p>
+      </ion-col>
+      <ion-col class="seperator" size="0.1"></ion-col>
+      <ion-col class="calls">
+        <p class="text">Favourite</p>
+        <p class="number">06</p>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+
+  <h6>Dashboard</h6>
+
+  <ion-card class="first">
+    <ion-row class="scroll">
+      <ion-col class="icons" (click)="products()">
+        <ion-fab-button color="light">
+          <ion-icon name="cube-outline"></ion-icon>
+        </ion-fab-button>
+        <p>Products</p>
+      </ion-col>
+      <ion-col class="icons" (click)="offers()">
+        <ion-fab-button color="light">
+          <ion-icon name="thumbs-up-outline"></ion-icon>
+        </ion-fab-button>
+        <p>Offers</p>
+      </ion-col>
+      <ion-col class="icons"  (click)="services()">
+        <ion-fab-button color="light">
+          <ion-icon name="heart-outline"></ion-icon>
+        </ion-fab-button>
+        <p>Services</p>
+      </ion-col>
+      <ion-col class="icons" (click)="employees()">
+        <ion-fab-button color="light">
+          <ion-icon name="headset-outline"></ion-icon>
+        </ion-fab-button>
+        <p>Employee</p>
+      </ion-col>
+      <ion-col class="icons" (click)="employees()">
+        <ion-fab-button color="light">
+          <ion-icon name="recording-outline"></ion-icon>
+        </ion-fab-button>
+        <p>Records</p>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+
+  <ion-segment value="all" scrollable="true" mode="md" color="secondary" [(ngModel)]="segmentModel">
+    <ion-segment-button value="post">
+      <ion-label>Post</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="upload">
+      <ion-label>Upload</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="branches">
+      <ion-label>Branches</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="job">
+      <ion-label>Job</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="partner">
+      <ion-label>Partner</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
+  <!-- post Div Start-->
+  <div *ngIf="segmentModel === 'post'">
+    <div class="datecont">
+      <div class="date">
+        <p>04/23/2021</p>
+      </div>
+    </div>
+
+    <ion-slides pager="true" [options]="slideOpts">
+      <ion-slide>
+        <div class="column">
+          <div class="round-img" (click)="openMenu()">
+            <ion-icon name="ellipsis-vertical"></ion-icon>
+          </div>
+          <img class="image" src="http://mediawiremobile.com/news/wp-content/uploads/499924122-612x612.jpg">
+        </div>
+      </ion-slide>
+      <ion-slide>
+        <div class="column">
+          <div class="round-img">
+            <ion-icon name="ellipsis-vertical"></ion-icon>
+          </div>
+          <img class="image" src="https://guy-gweth.com/wp-content/uploads/2020/10/1.jpg" alt="">
+        </div>
+      </ion-slide>
+      <ion-slide>
+        <div class="column">
+          <div class="round-img">
+            <ion-icon name="ellipsis-vertical"></ion-icon>
+          </div>
+          <img class="image" src="https://sitalcollege.com/edu/wp-content/uploads/2021/01/e-learning.jpg" alt="">
+        </div>
+      </ion-slide>
+    </ion-slides>
+
+    <p class="dashboard">Descriptions</p>
+    <ion-card class="second">
+      <ion-row>
+        <p class="description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quis vitae voluptatibus autem
+          quidem reiciendis iusto</p>
+      </ion-row>
+    </ion-card>
+    <ion-card class="second">
+      <ion-row class="likes">
+        <ion-col>
+          <p class="like">Likes</p>
+          <p class="count">036</p>
+        </ion-col>
+        <ion-col class="lines" size="0.1"></ion-col>
+        <ion-col>
+          <p class="like">Dislikes</p>
+          <p class="count">30</p>
+        </ion-col>
+        <ion-col class="lines" size="0.1"></ion-col>
+        <ion-col>
+          <p class="like">Share</p>
+          <p class="count">105</p>
+        </ion-col>
+        <ion-col class="lines" size="0.1"></ion-col>
+        <ion-col class="comment">
+          <p class="like">Comment</p>
+          <p class="count">150</p>
+        </ion-col>
+      </ion-row>
+    </ion-card>
+
+    <div class="datecont">
+      <div class="date">
+        <p>04/23/2021</p>
+      </div>
+    </div>
+
+    <ion-slides pager="true" [options]="slideOpts">
+      <ion-slide>
+        <div class="column">
+          <div class="round-img" (click)="openMenu()">
+            <ion-icon name="ellipsis-vertical"></ion-icon>
+          </div>
+          <img class="image" src="https://guy-gweth.com/wp-content/uploads/2020/10/1.jpg" alt="">
+        </div>
+      </ion-slide>
+      <ion-slide>
+        <div class="column">
+          <div class="round-img">
+            <ion-icon name="ellipsis-vertical"></ion-icon>
+          </div>
+          <img class="image" src="https://sitalcollege.com/edu/wp-content/uploads/2021/01/e-learning.jpg" alt="">
+        </div>
+      </ion-slide>
+      <ion-slide>
+        <div class="column">
+          <div class="round-img">
+            <ion-icon name="ellipsis-vertical"></ion-icon>
+          </div>
+          <img class="image" src="http://mediawiremobile.com/news/wp-content/uploads/499924122-612x612.jpg">
+        </div>
+      </ion-slide>
+    </ion-slides>
+
+    <p class="dashboard">Descriptions</p>
+    <ion-card class="second">
+      <ion-row>
+        <p class="description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quis vitae voluptatibus autem
+          quidem reiciendis iusto</p>
+      </ion-row>
+    </ion-card>
+    <ion-card class="second">
+      <ion-row class="likes">
+        <ion-col>
+          <p class="like">Likes</p>
+          <p class="count">036</p>
+        </ion-col>
+        <ion-col class="lines" size="0.1"></ion-col>
+        <ion-col>
+          <p class="like">Dislikes</p>
+          <p class="count">30</p>
+        </ion-col>
+        <ion-col class="lines" size="0.1"></ion-col>
+        <ion-col>
+          <p class="like">Share</p>
+          <p class="count">105</p>
+        </ion-col>
+        <ion-col class="lines" size="0.1"></ion-col>
+        <ion-col class="comment">
+          <p class="like">Comment</p>
+          <p class="count">150</p>
+        </ion-col>
+      </ion-row>
+    </ion-card>
+  </div>
+  <!-- post div end-->
+  <!-- Uplaod div start-->
+  <div class="upload" *ngIf="segmentModel === 'upload'">
+    <ion-row>
+      <ion-col class="left">
+        <ion-card class="first-card">
+          <ion-row>
+            <ion-icon name="cloud-upload-outline"></ion-icon>
+          </ion-row>
+          <ion-row>
+            <p>Upload Service Banner</p>
+          </ion-row>
+        </ion-card>
+      </ion-col>
+      <ion-col class="right">
+        <ion-card class="second-card">
+          <ion-row>
+            <ion-icon name="cloud-upload-outline"></ion-icon>
+          </ion-row>
+          <ion-row>
+            <p>Upload Service video, gif or URL</p>
+          </ion-row>
+        </ion-card>
+        <ion-row class="pad">
+          <ion-col class="left">
+            <ion-card class="third-card">
+              <ion-row>
+                <ion-icon name="cloud-upload-outline"></ion-icon>
+              </ion-row>
+              <ion-row>
+                <p>Upload Image</p>
+              </ion-row>
+            </ion-card>
+          </ion-col>
+          <ion-col class="right">
+            <ion-card class="third-card">
+              <ion-row>
+                <ion-icon name="cloud-upload-outline"></ion-icon>
+              </ion-row>
+              <ion-row>
+                <p>Upload Image</p>
+              </ion-row>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="3" class="left">
+        <ion-card class="third-card">
+          <ion-row>
+            <ion-icon name="cloud-upload-outline"></ion-icon>
+          </ion-row>
+          <ion-row>
+            <p>Upload Image</p>
+          </ion-row>
+        </ion-card>
+      </ion-col>
+      <ion-col class="right">
+        <ion-card class="third-card">
+          <ion-row>
+            <ion-icon name="cloud-upload-outline"></ion-icon>
+          </ion-row>
+          <ion-row>
+            <p>Upload Banner</p>
+          </ion-row>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </div>
+  <!-- uplaod div end-->
+  <!--branches div start-->
+  <div *ngIf="segmentModel === 'branches'">
+    <ion-card>
+      <ion-row routerLink="/branches">
+        <ion-col class="add-branch">
+          <span>+</span> Add
+        </ion-col>
+      </ion-row>
+      <ion-row class="branches" *ngFor="let branch of branches;">
+        <ion-col class="branches-text">
+          {{branch.branch_title}}<br>
+          Address: <br>
+          {{branch.branch_address}}
+          {{branch.branch_area}}
+          {{branch.branch_city}}
+          {{branch.branch_state}}
+          {{branch.branch_pincode}}
+          {{branch.branch_country}}
+          <ion-row class="branches-color">
+            <ion-col>{{branch.created_date}}</ion-col>
+            <ion-col>{{branch.created_time}}</ion-col>
+          </ion-row>
+        </ion-col>
+        <ion-col size="3">
+          <img src="https://www.google.com/maps/d/u/0/thumbnail?mid=1X39vwqR9XQIHWZwXa4HS4FAgjeo&hl=en">
+        </ion-col>
+      </ion-row>
+    </ion-card>
+  </div>
+  <!--Branches div end-->
+  <!--Job div start-->
+  <div *ngIf="segmentModel === 'job'">
+    <ion-card>
+
+    </ion-card>
+  </div>
+  <!--job div end-->
+  <!--partner div start-->
+  <div *ngIf="segmentModel === 'partner'">
+    <ion-card></ion-card>
+  </div>
+  <!--partner div end-->
+
+
+</ion-content>
+
+
+<ion-footer>
+  <ion-row>
+    <ion-col>
+      <ion-icon name="home"></ion-icon>
+      <p>Home</p>
+    </ion-col>
+    <ion-col>
+      <ion-icon name="person-outline"></ion-icon>
+      <p>Profile</p>
+    </ion-col>
+    <ion-col>
+      <ion-icon name="scan-outline"></ion-icon>
+      <p>Scan</p>
+    </ion-col>
+    <ion-col>
+      <ion-icon name="heart-outline"></ion-icon>
+      <p>Favourites</p>
+    </ion-col>
+    <ion-col>
+      <ion-icon name="call-outline"></ion-icon>
+      <p>Call</p>
+    </ion-col>
+  </ion-row>
+</ion-footer>

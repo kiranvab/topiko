@@ -1,0 +1,57 @@
+ion-title {
+    font-size: 16px;
+    color: #ffffff;
+    padding: 0px;
+    padding-top: 1px;
+    letter-spacing: 0.6px;
+    text-align: left;
+}
+
+ion-content {
+    --padding-bottom: 80px;
+    --padding-start: 18px;
+    --padding-end: 18px;
+}
+ion-card {
+    margin: 0.75em 0px;
+    padding: 7px;
+    box-shadow: 0px 3px 6px #00000029;
+}
+.avatar ion-avatar {
+    width: 61px;
+    height: 61px;
+}
+.border {
+    border: 0.2px solid #707070;
+}
+.user-name {
+    color: #22272a;
+    font-size: 18px;
+    margin: 0px;
+}
+.user-name ion-icon {
+    color: #39ac00;
+}
+.star {
+    margin-top: 5px;
+}
+.star ion-icon {
+    color: #fcb900;
+}
+.star span p {
+    font-size: 0.5em;
+    padding-left: 5px;
+    color: #22272a;
+}
+.time {
+    color: #9f9f9f;
+    font-size: 12px;
+    margin: 0px;
+}
+p {
+    margin: 0%;
+    line-height: 18px;
+}
+.ellipsis ion-icon {
+    font-size: 18px;
+}

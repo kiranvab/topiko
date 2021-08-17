@@ -1,0 +1,79 @@
+<ion-header color="custom">
+  <ion-toolbar color="custom" class="toolbar">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>My Business</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card *ngFor="let business of mybusiness; let i = index;">
+    <ion-row>
+      <div class="avatar">
+        <ion-avatar>
+          <img class="border"
+            src="{{business.logo}}"
+            alt="">
+        </ion-avatar>
+      </div>
+      <ion-col class="text-overflow" (click)="details(i)">
+        <p class="user-name pclass">{{business.business_name}} <ion-icon name="shield-checkmark"></ion-icon>
+        </p>
+        <ion-row class="star">
+          <ion-icon name="star"></ion-icon>
+          <ion-icon name="star"></ion-icon>
+          <ion-icon name="star"></ion-icon>
+          <ion-icon name="star"></ion-icon>
+          <ion-icon name="star"></ion-icon>
+          <span>
+            <p class="pclass">4.1 Ratings</p>
+          </span>
+        </ion-row>
+        <p class="time pclass">{{business.owner_name}}</p>
+      </ion-col>
+      <ion-col size="1" class="ellipsis" (click)="openMenu()">
+        <ion-icon class="btn" name="ellipsis-vertical"></ion-icon>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col class="reg text-overflow">
+        <p class="pclass">Regional - 500 Call Credits</p>
+      </ion-col>
+      <ion-col size="4" class="topup">
+        <ion-button>Top up</ion-button>
+      </ion-col>
+    </ion-row>
+
+    <div class="chats scroll" routerLink="/business-views">
+      <ion-col>
+        <p class="text">Viewed</p>
+        <p class="number">36</p>
+      </ion-col>
+      <ion-col class="sep" size="0.1"></ion-col>
+      <ion-col>
+        <p class="text">Orders</p>
+        <p class="number">12</p>
+      </ion-col>
+      <ion-col class="sep" size="0.1"></ion-col>
+      <ion-col>
+        <p class="text">Enquire</p>
+        <p class="number">09</p>
+      </ion-col>
+      <ion-col class="sep" size="0.1"></ion-col>
+      <ion-col class="calls">
+        <p class="text">Favourite</p>
+        <p class="number">06</p>
+      </ion-col>
+    </div>
+  </ion-card>
+
+  
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed" routerLink="/create-business">
+    <ion-fab-button class="fab">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

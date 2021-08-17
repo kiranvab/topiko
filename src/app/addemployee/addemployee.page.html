@@ -1,0 +1,82 @@
+<ion-header>
+  <ion-toolbar color="custom">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Add Empployees</ion-title>
+    <ion-buttons slot="end" class="create-icon" routerLink="/editdvdetails">
+     <ion-icon name="checkmark-outline" style="color: #fff;"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<div class="bcard-head">
+<div><img src="assets/profile.svg"></div>
+
+</div>
+
+<div class="bcard-body">
+  <p class="title">Employee Name</p>
+  <p class="text">
+    <ion-input placeholder="Employee Name"></ion-input>
+  </p>
+
+  <p class="title">Employee Number</p>
+  <p class="text">
+    <ion-input placeholder="Employee Number"></ion-input>
+  </p>
+
+ 
+    <ion-label class="title">Designation</ion-label>
+    <ion-select placeholder="Select One">
+      <ion-select-option value="f">Female</ion-select-option>
+      <ion-select-option value="m">Male</ion-select-option>
+    </ion-select>
+  
+    <br>
+
+
+  <p class="title">Role Tags</p>
+  <p class="text">
+    <textarea placeholder="Role Tags"></textarea>
+  </p>
+
+  <p class="title">Language Support</p>
+  <p class="text">
+    <textarea placeholder="Language Support"></textarea>
+  </p>
+
+  <p class="title">Pilot Suport</p>
+  <p class="checkbox">
+    <input type="checkbox"> Chat
+    <input type="checkbox"> Video
+    <input type="checkbox"> Call
+    <input type="checkbox"> Delivery
+  </p>
+
+  <ion-row>
+    <ion-col>Gps Tracking</ion-col>
+    <ion-col size="2"><ion-toggle style="height: 25px;" color="success"></ion-toggle></ion-col>
+  </ion-row>
+
+  <p class="title">Working Hour Setting</p>
+
+  <ion-select placeholder="Select One">
+    <ion-select-option value="f">Female</ion-select-option>
+    <ion-select-option value="m">Male</ion-select-option>
+  </ion-select>
+
+  <br>
+  <div class="text-center" class="pb-15">
+    <ion-checkbox color="success" checked></ion-checkbox> I Agree for the <span>Terms and Conditions</span>
+  </div>
+  <br>
+
+  <ion-row>
+    <ion-col>
+      <ion-button expand="block" class="purple-btn" color="custom" routerLink="/myvcard">Submit</ion-button>
+    </ion-col>
+  </ion-row>
+</div>
+</ion-content>

@@ -1,0 +1,81 @@
+ion-header ion-icon {
+    color: #ffffff;
+    font-size: 21px;
+}
+ion-title {
+    font-size: 16px;
+    color: #ffffff;
+    padding: 0px;
+    letter-spacing: 0.6px;
+}
+.date ion-title {
+    font-size: 10px;
+    margin-top: 7px;
+    letter-spacing: 0px;
+    color: #ffffff;
+}
+ion-content {
+    --padding-bottom: 65px;
+    --padding-start: 18px;
+    --padding-end: 18px;
+}
+ion-fab-button {
+    --ion-color-base: linear-gradient(#871178, #3c1378) !important;
+    --box-shadow: none;
+}
+ion-fab-button ion-icon {
+    color: #ffffff;
+    font-size: 30px;
+}
+ion-card {
+    padding: 7px;
+    padding-left: 10px;
+    margin: 7px 0px;
+    box-shadow: 0px 3px 6px #00000029;
+}
+.group ion-col {
+    padding-left: 10px;
+}
+.group {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.group p {
+    color: #871178;
+    font-size: 17px;
+    font-weight: bold;
+    padding: 0px;
+    margin-top: 18px;
+}
+
+.avatar ion-avatar {
+    width: 56px;
+    height: 56px;
+}
+.user-name {
+    color: #22272a;
+    font-size: 18px;
+    margin: 0px 5px 3px 0px;
+}
+.time {
+    color: #9f9f9f;
+    font-size: 12px;
+    margin: 4px 0px 4px 0px;
+}
+
+.callicon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.vidicon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.callicon ion-icon {
+    font-size: 22px;
+}
+.vidicon ion-icon {
+    font-size: 22px;
+}
