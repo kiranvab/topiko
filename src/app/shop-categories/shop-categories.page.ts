@@ -1,6 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { AppComponent } from '../app.component';
+import { Storage } from '@ionic/storage';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-shop-categories',
@@ -10,7 +12,9 @@ import { AppComponent } from '../app.component';
 export class ShopCategoriesPage implements OnInit {
   categories:any;
   constructor(
-    private http:HttpClient
+    private http:HttpClient,
+    private storage:Storage,
+    private router:Router
   ) { }
 
   ngOnInit() {
@@ -18,6 +22,12 @@ export class ShopCategoriesPage implements OnInit {
       this.categories = data;
       console.log(this.categories);
   })
+  }
+
+  details(i){
+    console.log(this.categories[i].type);
+    this.storage.set("type", this.categories[i].type)
+    this.router.navigate(['gcategory']);
   }
 
 }

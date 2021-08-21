@@ -3,7 +3,7 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>Favourites</ion-title>
+    <ion-title>Cateogory</ion-title>
     <ion-buttons slot="end">
       <ion-icon name="search-outline"></ion-icon>
     </ion-buttons>
@@ -11,18 +11,20 @@
 </ion-header>
 <ion-content>
 
-  <ion-card *ngFor="let fav of myfav; let i=index;">
+  <ion-card *ngFor="let cat of categories | slice:0:19; let i=index;"  (click)="Details(i)">
     <ion-row>
       <div class="avatar">
         <ion-avatar>
+          <div *ngIf="{{cat.opening_hours}}">
+            {{cat.opening_hours}}
+          </div>
           <img class="border"
-            src="{{fav.logo}}"
+            src="{{cat.icon}}"
             alt="">
         </ion-avatar>
       </div>
-      <ion-col class="text-overflow" (click)="Details(i)">
-        <p class="user-name">{{fav.business_name}} <ion-icon name="shield-checkmark"></ion-icon>
-        </p>
+      <ion-col class="text-overflow">
+        <p class="user-name">{{cat.name}}</p>
         <ion-row class="star">
           <ion-icon name="star"></ion-icon>
           <ion-icon name="star"></ion-icon>
@@ -30,17 +32,10 @@
           <ion-icon name="star"></ion-icon>
           <ion-icon name="star"></ion-icon>
           <span>
-            <p>4.1 Ratings</p>
+            {{cat.rating}} Ratings
           </span>
         </ion-row>
-        <p class="time">CEO-{{fav.owner_name}}</p>
       </ion-col>
-      <ion-col size="1" class="ellipsis" (click)="openMenu(i)">
-        <ion-icon class="btn" name="ellipsis-vertical"></ion-icon>
-      </ion-col>
-    </ion-row>
-    <ion-row class="dat">
-      <p class="date">{{fav.created_date}}</p>
     </ion-row>
   </ion-card>
 </ion-content>

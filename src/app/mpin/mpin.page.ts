@@ -27,8 +27,8 @@ mpinstatus:any;
     private route:ActivatedRoute,
     private http:HttpClient,
     private router: Router,
-    private storage:Storage
-  ) { }
+    private storage:Storage,
+    ) { }
 
   ngOnInit() {
     this.route.queryParams.subscribe(params=>{

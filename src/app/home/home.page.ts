@@ -38,6 +38,10 @@ export class HomePage implements OnInit {
   uname: any;
   user_id:any;
   vrespo:any;
+  pos1bid: any;
+  pos3bid: any;
+  allcategories: Object;
+  allservices: Object;
 
   constructor(
     private http:HttpClient,
@@ -64,13 +68,7 @@ export class HomePage implements OnInit {
 
       console.log("Latitude", this.lat);
       console.log("Latitude", this.long);
-      //this.http.get('https://maps.googleapis.com/maps/api/place/nearbysearch/json?location='+this.lat+','+this.long+'&radius=2500&type=shop&key=AIzaSyCPuQadZpFuDF9KOWFrlthnPRdRJb-QlrI').subscribe((response) =>
-      this.http.get(AppComponent.ApiUrl+"localstores.php?lat="+this.lat+"&long="+this.long).subscribe(response =>
-      {
-        this.listing = response;
-        this.listing = this.listing.results;
-        console.log("Google Places", this.listing);
-      })
+     
     })
     // Get User Details
     
@@ -88,7 +86,7 @@ this.http.get(AppComponent.ApiUrl + "offersnearyou.php?city="+this.ucity).subscr
 })
 
 // Get Shops Near you 
-this.http.get(AppComponent.ApiUrl + "shopsnearyou.php?city="+this.ucity).subscribe(async data => {
+this.http.get(AppComponent.ApiUrl + "homeshopsnearyou.php?city="+this.ucity).subscribe(async data => {
   this.shopsNear = data;
   console.log("Shops Near You", this.shopsNear);
 })
@@ -100,23 +98,36 @@ this.http.get(AppComponent.ApiUrl + "servicesnearyou.php?city="+this.ucity).subs
 })
 
 // Get Recent Viewed
-this.http.get(AppComponent.ApiUrl + "recentviewes.php?user_id="+this.user_id).subscribe(async data => {
+this.http.get(AppComponent.ApiUrl + "recentviews.php?user_id="+this.user_id).subscribe(async data => {
   this.recent = data;
  console.log(this.recent);
  })
       });
 
     // Get Categories
-    this.http.get(AppComponent.ApiUrl + "getcategories.php").subscribe(async data => {
+    this.http.get(AppComponent.ApiUrl + "gethomecategories.php").subscribe(async data => {
       this.categories = data;
       console.log("categories", this.categories);
   })
 
   // Get Services
-  this.http.get(AppComponent.ApiUrl + "getservices.php").subscribe(async data => {
+  this.http.get(AppComponent.ApiUrl + "gethomeservices.php").subscribe(async data => {
     this.services = data;
     //console.log(this.services);
   })
+
+
+   // Get All Categories
+   this.http.get(AppComponent.ApiUrl + "getcategories.php").subscribe(async data => {
+    this.allcategories = data;
+    console.log("categories", this.categories);
+})
+
+// Get All Services
+this.http.get(AppComponent.ApiUrl + "getservices.php").subscribe(async data => {
+  this.allservices = data;
+  //console.log(this.services);
+})
 
 // Get Featured
 this.http.get(AppComponent.ApiUrl + "featured.php").subscribe(async data => {
@@ -140,27 +151,33 @@ this.http.get(AppComponent.ApiUrl + "getoffers.php").subscribe(async data => {
 this.http.get(AppComponent.ApiUrl + "getbanerpos1.php").subscribe(async data => {
   this.position1 = data;
   this.posbanner1 = this.position1[0].image;
+  this.pos1bid = this.position1[0].bid;
 })
 
 // Get position 2
 this.http.get(AppComponent.ApiUrl + "getbanerpos2.php").subscribe(async data => {
   this.position2 = data;
+  console.log("position 2", this.position2)
 })
 
 // Get position 3
 this.http.get(AppComponent.ApiUrl + "getbanerpos3.php").subscribe(async data => {
   this.position3 = data;
   this.posbanner3 = this.position3[0].image;
+  this.pos3bid = this.position3[0].bid;
+  console.log("position 3", this.position3)
 })
 
 // Get position 4
 this.http.get(AppComponent.ApiUrl + "getbanerpos4.php").subscribe(async data => {
   this.position4 = data;
+  console.log("position 4", this.position5)
 })
 
 // Get position 5
 this.http.get(AppComponent.ApiUrl + "getbanerpos5.php").subscribe(async data => {
   this.position5 = data;
+  console.log("position 5", this.position5)
 })
 
 // Get Recent Viewed
@@ -172,20 +189,23 @@ this.http.get(AppComponent.ApiUrl + "getbanerpos5.php").subscribe(async data => 
 }
 
 category(i){
- this.storage.set("cid", this.categories[i].id );
- this.router.navigate(['businesses']);
- 
+  console.log("type", this.categories[i].type)
+ this.storage.set("type", this.categories[i].type)
+ this.router.navigate(['gcategory']);
 }
 
 service(i){
-  this.storage.set("sid", this.services[i].id );
-  this.router.navigate(['businesses-service']);
+  console.log("type", this.services[i].type);
+ this.storage.set("type", this.services[i].type)
+ this.router.navigate(['gcategory']);
 }
 
+
 details(list) {
-  this.storage.set("placeid",list.place_id);
-  this.router.navigate(['/details']);
-  console.log("Details",list.place_id);
+  console.log(list.place_id);
+   this.storage.set("placeid",list.place_id);
+   this.router.navigate(['/gdetails']);
+  // console.log("Details",list.place_id);
 }
 
 
@@ -197,6 +217,42 @@ details(list) {
     else{
       this.all = true;
     }
+  }
+
+  pos1details(){
+    this.storage.set("bid",this.pos1bid);
+    this.router.navigate(['details']);
+    this.Viewbusiness(this.pos1bid);
+  }
+
+  pos2details(i){
+    this.storage.set("bid",this.position2[i].bid);
+    this.router.navigate(['details']);
+    this.Viewbusiness(this.position2[i].bid);
+  }
+
+  pos3details(){
+    this.storage.set("bid",this.pos3bid);
+    this.router.navigate(['details']);
+    this.Viewbusiness(this.pos3bid);
+  }
+
+  pos4details(i){
+    this.storage.set("bid",this.position4[i].id);
+    this.router.navigate(['details']);
+    this.Viewbusiness(this.position4[i].id);
+  }
+
+  pos5details(i){
+    this.storage.set("bid",this.position5[i].id);
+    this.router.navigate(['details']);
+    this.Viewbusiness(this.position5[i].id);
+  }
+  
+  fedetials(i){
+    this.storage.set("bid",this.featured[i].id);
+    this.router.navigate(['details']);
+    this.Viewbusiness(this.featured[i].id);
   }
 
   getdetials(i){

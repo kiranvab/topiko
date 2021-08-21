@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Storage } from '@ionic/storage';
 import { AppComponent } from '../app.component';
 
@@ -17,27 +17,37 @@ export class CallsPage implements OnInit {
   chresponse: Object;
   chatroom: any;
   prtner_id: any;
+  buchat: any;
 
   constructor(
     private storage: Storage,
     private http:HttpClient,
-    private route:Router
+    private route:Router,
+    private router:ActivatedRoute
   ) {
 
     this.segmentModel = "calls";
    }
 
   ngOnInit() {
-    this.http.get(AppComponent.ApiUrl+"getcontacts.php").subscribe((response)=>{
-      this.contacts= response
-      console.log("Contacts:", this.contacts);
-    });
+   this.router.params.subscribe(val=>{
     this.storage.get('userdetails').then((udetails)=>{
       this.userDetails = udetails;
       console.log("UserDetails:", this.userDetails)
       this.user_id = this.userDetails[0].id;
-      console.log(this.user_id,'User ID')
+      console.log(this.user_id,'User ID');
+      this.http.get(AppComponent.ApiUrl+"getcontacts.php?user_id="+this.user_id).subscribe((response)=>{
+        this.contacts= response
+        console.log("Contacts:", this.contacts);
+      });
+      console.log(this.user_id,'User ID');
+      this.http.get(AppComponent.ApiUrl+"getbhcats.php?user_id="+this.user_id).subscribe((response)=>{
+        this.buchat= response
+        console.log("Get Business Chats:", this.buchat);
+      });
     })
+   })
+    
   }
 
   chat(i){
@@ -53,5 +63,17 @@ export class CallsPage implements OnInit {
     });
     this.route.navigate(['chatbox']);
   }
+  businesschat(i){
+   this.storage.set("chatroom", this.buchat[i].chatroom);
+   this.route.navigate((['/chatbox']));
+   }
+  videocall(i){
+    this.storage.set("partnerId", this.contacts[i].mobile);
+      this.route.navigate(['videocall']);
+    }
+    audiocall(i){
+      this.storage.set("partnerId", this.contacts[i].mobile);
+        this.route.navigate(['calling']);
+      }
 
 }

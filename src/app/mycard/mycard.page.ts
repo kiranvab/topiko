@@ -50,14 +50,13 @@ export class MycardPage implements OnInit {
       this.http.get(AppComponent.ApiUrl+"getcarddetails.php?user_id="+this.uid).subscribe(data =>
         {
           this.carddata = data;
-          console.log("resp", this.carddata);
-          if(this.carddata = ''){
+
+          if(this.carddata == ''){
             this.router.navigate(['/createdvc']);
           }
           else{
-            this.ucarddata = data;
-            this.name = this.ucarddata[0].name;
-            this.mobile = this.ucarddata[0].mobile;
+            this.carddata = data;
+            console.log(this.ucarddata);
         }
         })
     })
@@ -65,21 +64,13 @@ export class MycardPage implements OnInit {
   }
 
 
-  morecards()
-  {
-    this.http.get(AppComponent.ApiUrl+"getcarddetails.php?user_id="+this.card).subscribe(data =>
+   morecards()
+   {
+    this.http.get(AppComponent.ApiUrl+"getcarddetails.php?user_id="+this.uid).subscribe(data =>
       {
         console.log(data);
         this.carddata = data;
-        this.name = this.carddata[0].name;
-        this.mobile = this.carddata[0].mobile;
-
-        let navigationExtras: NavigationExtras = {
-          queryParams: {
-            card: JSON.stringify(this.carddata)
-          }
-        };
-        this.router.navigate(['morevcards'], navigationExtras);
+        //this.router.navigate(['morevcards']);
       })
   }
 

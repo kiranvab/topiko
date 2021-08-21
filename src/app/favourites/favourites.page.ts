@@ -1,6 +1,9 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ActionSheetController } from '@ionic/angular';
+import { Storage } from '@ionic/storage';
+import { AppComponent } from '../app.component';
 
 @Component({
   selector: 'app-favourites',
@@ -8,49 +11,72 @@ import { ActionSheetController } from '@ionic/angular';
   styleUrls: ['./favourites.page.scss'],
 })
 export class FavouritesPage implements OnInit {
+  udata: any;
+  user_id: any;
+  mafav: Object;
+  myfav: Object;
 
   constructor(
     public actionsheetCtrl: ActionSheetController,
-    public route: Router
-  ) { }
+    public route: Router,
+    private storage:Storage,
+    private http:HttpClient
+  ) {
+    this.storage.get("userdetails").then(val =>
+      {
+        this.udata= val;
+        this.user_id = this.udata[0].id;
+
+        this.http.get(AppComponent.ApiUrl+"myfavorites.php?user_id="+this.user_id).subscribe(response=>{
+          this.myfav = response;
+          console.log('Myfavourite shops', this.myfav);
+        })
+      });
+   }
 
   ngOnInit() {
   }
 
-  async openMenu() {
+  async openMenu(i) {
     const actionSheet = await this.actionsheetCtrl.create({
       // header: 'Modify your album',  
       buttons: [
         {
           text: 'Un Favourite',
           handler: () => {
-            console.log('Destructive clicked');
+            alert("Request Submitted")
           }
         }, {
           text: 'Mute Notification',
           handler: () => {
-            console.log('Archive clicked');
+            alert("Notifications Muted.")
           }
         }, {
           text: 'Customer Care',
           handler: () => {
-            console.log('Cancel clicked');
+            this.storage.set("bid",this.myfav[i].id);
+            this.route.navigate(['connect']);
           },
         },
         {
           text: 'Reach',
           handler: () => {
-            console.log('Promotions clicked');
+            alert("Reach us on 040-1111111")
           },
         }, {
           text: 'Report',
           handler: () => {
-            console.log('Promotions clicked');
+            alert("mail us on compliance@topiko.com")
           },
         }
       ]
     });
     await actionSheet.present();
+  }
+
+  Details(i){
+    this.storage.set("fav_id",this.myfav[i].id);
+    this.route.navigate(['favourite-details']);
   }
 
 }

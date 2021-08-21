@@ -67,18 +67,19 @@ export class ChatboxPage implements OnInit {
     this.partner_name= cname;
     console.log('partner_name:',this.partner_name);
     });
+    this.ObservableVar = Observable.interval(1000).subscribe(()=>{
     this.callFun();
-   
+    });
   }
 
   callFun(){
-    this.ObservableVar = Observable.interval(3000).subscribe(()=>{
+    
       this.http.get(AppComponent.ApiUrl+"getchatmessages.php?chatroom="+this.chatroom).subscribe((data)=>{
         this.chatmessages = data;
         console.log("chatmessages", this.chatmessages)
       });
       this. scrollToBottomOnInit();
-    });
+
   }
 
   async UploadDocument(event:any){

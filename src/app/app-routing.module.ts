@@ -418,6 +418,14 @@ const routes: Routes = [
   {
     path: 'businesses-service',
     loadChildren: () => import('./businesses-service/businesses-service.module').then( m => m.BusinessesServicePageModule)
+  },
+  {
+    path: 'gdetails',
+    loadChildren: () => import('./gdetails/gdetails.module').then( m => m.GdetailsPageModule)
+  },
+  {
+    path: 'gcategory',
+    loadChildren: () => import('./gcategory/gcategory.module').then( m => m.GcategoryPageModule)
   }
 ];
 

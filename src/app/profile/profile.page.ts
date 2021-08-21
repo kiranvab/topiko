@@ -1,7 +1,9 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { ActionSheetController } from '@ionic/angular';
 import { Storage } from '@ionic/storage';
+import { AppComponent } from '../app.component';
 
 @Component({
   selector: 'app-profile',
@@ -12,17 +14,34 @@ export class ProfilePage implements OnInit {
 
   segmentModel: string;
   udata:any;
+  uid:any;
+  uname:any;
+  ucity:any;
+  profile:any;
+  profession:any;
+  uimage:any;
 
   constructor(
     public actionsheetCtrl: ActionSheetController,
     public route: Router,
-    private storage:Storage
+    private storage:Storage,
+    private http:HttpClient
   ) { }
 
   ngOnInit() {
     this.storage.get("userdetails").then(val =>{
       this.udata = val;
+      this.uid = this.udata[0].id;
+      this.uname = this.udata[0].name;
+      this.ucity = this.udata[0].city
       console.log(this.udata);
+      this.http.get(AppComponent.ApiUrl+"getprofile.php?user_id="+this.uid).subscribe( data =>
+        {
+          this.profile = data;
+          console.log(this.profile);
+          this.profession = this.profile[0].designation;
+          this.uimage = this.profile[0].image;
+        })
     })
   }
 

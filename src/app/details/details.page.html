@@ -81,13 +81,13 @@
           <p>Share</p>
         </ion-col>
         <ion-col size="3" class="icons">
-          <ion-fab-button color="light">
+          <ion-fab-button color="light" (click)="likebusiness()">
             <ion-icon name="thumbs-up-outline"></ion-icon>
           </ion-fab-button>
           <p>Like</p>
         </ion-col>
         <ion-col size="3" class="icons">
-          <ion-fab-button color="light">
+          <ion-fab-button color="light" (click)="favbusiness()">
             <ion-icon name="heart-outline"></ion-icon>
           </ion-fab-button>
           <p>Favourite</p>
@@ -257,28 +257,21 @@
         </ion-slides>
       </ion-card>
 
-      <ion-card class="second">
+      <ion-card class="second" *ngFor="let ser of services; let i = index;">
         <ion-row>
           <ion-col class="item">
-            <img src="https://plantandcivilengineer.com/wp-content/uploads/2017/08/JCB-Front-Cover-FP-NEW.jpg" alt="">
-            <p>JCB Hire</p>
-            <span>Per Hour-</span>
-            <span class="rs">Rs800 </span>
+            <img src="{{ser.image}}" alt="">
+            <p>{{ser.service_title}}</p>
+            <span>Actual Price-</span>
+            <span class="rs">{{ser.mrp}} </span><br>
+            <span>Discount Price-</span>
+            <span class="rs">{{ser.discount_price}} </span>
           </ion-col>
           <ion-col class="des">
             <h6>Description</h6>
-            <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae sed temporibus dolor tempora
-              expedita
-              possimus laudantium? Architecto totam, quo quisquam fuga sit quia quas maxime quos dolor voluptate? Harum,
-              quis?
+            <p> {{ser.description}}
             </p>
           </ion-col>
-        </ion-row>
-        <ion-row class="des">
-          <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae sed temporibus dolor tempora expedita
-            possimus laudantium? Architecto totam, quo quisquam fuga sit quia quas maxime quos dolor voluptate? Harum,
-            quis?
-          </p>
         </ion-row>
       </ion-card>
 

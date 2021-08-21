@@ -23,11 +23,18 @@ udata:any;
   }
 
   login(){
+    console.log(this.mobile);
+    console.log(this.mpin);
     this.http.get(AppComponent.ApiUrl+"login.php?mobile="+this.mobile+"&password="+this.mpin).subscribe(data =>{
       console.log(data);
+      if(data == 0){
+        alert("Invalid Logins");
+      }
+      else {
       this.udata = data;
       this.storage.set("userdetails",this.udata);
       this.router.navigate(['home']);
+    }
     })
   }
 }

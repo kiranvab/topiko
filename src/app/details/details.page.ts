@@ -34,7 +34,10 @@ export class DetailsPage implements OnInit {
   pincoce: any;
   story: any;
   business_image:any;
-
+  udata: any;
+  user_id: any;
+  router: any;
+  services:any;
   constructor(
     public actionsheetCtrl:ActionSheetController,
     public alertCtrl:AlertController,
@@ -43,26 +46,17 @@ export class DetailsPage implements OnInit {
     private route: Router
   ) { 
     this.segmentModel="topiko";
+    this.storage.get("userdetails").then(val =>
+      {
+        this.udata= val;
+        this.user_id = this.udata[0].id;
+        if(!this.udata){
+          this.router.navigate(['login']);
+        }
+      });
   }
 
   ngOnInit() {
-    this.storage.get("placeid").then(val =>{
-      this.details_place_id = val;
-      this.http.get('https://maps.googleapis.com/maps/api/place/details/json?place_id='+this.details_place_id+'&fields=name,opening_hours,rating,vicinity,formatted_address,formatted_phone_number,review,photo,url,type&key=AIzaSyBW0TeLuYYvzuzEGXF53uxTEJ6PIcaF89w').subscribe((response)=>
-    {
-      this.details = response;
-      console.log(this.details);
-      this.name = this.details.result.name;
-      this.rating = this.details.result.rating;
-      this.address = this.details.result.formatted_address;
-      this.reviews = this.details.result.reviews;
-      this.type = this.details.result.types;
-      this.place_id = this.details.result.place_id;
-      this.photos = this.details.result.photos;
-      this.map_loc =this.details.result.url;
-      this.open_close = this.details.result.opening_hours;
-    })
-    });
     this.storage.get("bid").then((bval)=>{
       this.business_id = bval;
       this.http.get(AppComponent.ApiUrl+"getbusinessdetails.php?bid="+this.business_id).subscribe((response)=>{
@@ -82,6 +76,11 @@ export class DetailsPage implements OnInit {
       this.http.get(AppComponent.ApiUrl+"getproducts.php?bid="+this.business_id).subscribe((presponse)=>{
         this.products = presponse;
         console.log("Products:" ,this.products);
+      })
+
+      this.http.get(AppComponent.ApiUrl+"getbusiness_services.php?bid="+this.business_id).subscribe((sresponse)=>{
+        this.services = sresponse;
+        console.log("service:" ,this.services);
       })
     })
   }
@@ -136,6 +135,23 @@ async presentAlert() {
 productDetials(i){
   this.storage.set("prid", this.products[i].id);
   this.route.navigate(['item']);
+}
+
+likebusiness(){
+  this.http.get(AppComponent.ApiUrl+"addlike.php?user_id="+this.user_id+"&bid="+this.business_id).subscribe(ldata=>{
+    if(ldata==1){
+      alert("thank you for liking buisnes");
+    }
+  })
+}
+
+
+favbusiness(){
+  this.http.get(AppComponent.ApiUrl+"addfavorite.php?user_id="+this.user_id+"&bid="+this.business_id).subscribe(fdata=>{
+    if(fdata==1){
+      alert("Added busines to your favorite");
+    }
+  })
 }
 }
 
