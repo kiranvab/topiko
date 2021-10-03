@@ -13,8 +13,8 @@ ion-title {
 
 ion-content {
     --background: #f5f5f5;
-    --padding-start: 18px;
-    --padding-end: 18px;
+    --padding-start: 16px;
+    --padding-end: 16px;
     --padding-bottom: 65px;
 }
 
@@ -56,6 +56,7 @@ ion-content {
 
 .box {
     padding: 10px;
+    padding-bottom: 0px;
     box-shadow: 0px 0.1875em 0.375em #00000029;
     margin: 0%;
     margin-top: 18px;
@@ -483,6 +484,10 @@ ion-footer ion-icon {
     text-align: right;
     color: #871178;
     font-size: 1.25em;
+    padding-right: 10px;
+    display: flex;
+    justify-content: right;
+    align-items: center;
 }
 .add-branch span {
     font-size: 1.5em;
@@ -496,9 +501,14 @@ ion-footer ion-icon {
     color: #333;
     font-size: 0.9em;
     padding: 1em;
+    padding-top: 0%;
 }
 .branches-color {
     color: #871178;
+}
+.branch-card {
+    box-shadow: 0px 3px 6px #00000029;
+    margin: 10px 0%;
 }
 
 // branches div css  end

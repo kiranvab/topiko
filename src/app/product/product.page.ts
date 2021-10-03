@@ -31,7 +31,7 @@ export class ProductPage implements OnInit {
       {
         this.buid = val;
         console.log("BID", this.buid)
-        this.http.get(AppComponent.ApiUrl+"getproducts.php?bid="+this.buid).subscribe(data=>
+        this.http.get(AppComponent.ApiUrl+"getmyproducts.php?bid="+this.buid).subscribe(data=>
           {
             this.products = data;
             console.log("Products", this.products);
@@ -39,6 +39,16 @@ export class ProductPage implements OnInit {
           );
       })
     });
+    this.getProducts();
+  }
+
+  getProducts(){
+    this.http.get(AppComponent.ApiUrl+"getmyproducts.php?bid="+this.buid).subscribe(data=>
+      {
+        this.products = data;
+        console.log("Products", this.products);
+      }
+      );
   }
 
   async openMenu(i) {  
@@ -69,8 +79,8 @@ export class ProductPage implements OnInit {
   async presentAlertConfirm(i) {
     const alert = await this.alertController.create({
       cssClass: 'my-custom-class',
-      header: 'Confirm!',
-      message: 'Message <strong>text</strong>!!!',
+      header: 'Delete!',
+      message: 'Are You Sure you want to <strong>Delete</strong> Product!!!',
       buttons: [
         {
           text: 'Cancel',
@@ -80,7 +90,7 @@ export class ProductPage implements OnInit {
             console.log('Confirm Cancel: blah');
           }
         }, {
-          text: 'Delete',
+          text: 'Yes',
           handler: () => {
             console.log('Confirm Okay');
             console.log(this.products[i].id);
@@ -88,6 +98,7 @@ export class ProductPage implements OnInit {
               console.log("Response", data);
               this.AlertDelete()
             })
+            this.getProducts();
           }
         }
       ]

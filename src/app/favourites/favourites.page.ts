@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ActionSheetController } from '@ionic/angular';
-import { Storage } from '@ionic/storage';
+import { Storage } from '@ionic/storage-angular';
 import { AppComponent } from '../app.component';
 
 @Component({
@@ -15,6 +15,8 @@ export class FavouritesPage implements OnInit {
   user_id: any;
   mafav: Object;
   myfav: Object;
+  segmentModel:string;
+  myfavP: Object;
 
   constructor(
     public actionsheetCtrl: ActionSheetController,
@@ -22,6 +24,7 @@ export class FavouritesPage implements OnInit {
     private storage:Storage,
     private http:HttpClient
   ) {
+    this.segmentModel="business";
     this.storage.get("userdetails").then(val =>
       {
         this.udata= val;
@@ -31,6 +34,13 @@ export class FavouritesPage implements OnInit {
           this.myfav = response;
           console.log('Myfavourite shops', this.myfav);
         })
+
+        
+        this.http.get(AppComponent.ApiUrl+"myfavproducts.php?user_id="+this.user_id).subscribe(response=>{
+          this.myfavP = response;
+          console.log('Myfavourite Products', this.myfavP);
+        })
+
       });
    }
 

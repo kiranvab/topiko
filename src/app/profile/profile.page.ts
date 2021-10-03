@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { ActionSheetController } from '@ionic/angular';
-import { Storage } from '@ionic/storage';
+import { Storage } from '@ionic/storage-angular';
 import { AppComponent } from '../app.component';
 
 @Component({
@@ -25,7 +25,8 @@ export class ProfilePage implements OnInit {
     public actionsheetCtrl: ActionSheetController,
     public route: Router,
     private storage:Storage,
-    private http:HttpClient
+    private http:HttpClient,
+    private router:Router
   ) { }
 
   ngOnInit() {
@@ -94,4 +95,8 @@ export class ProfilePage implements OnInit {
     await actionSheet.present();
   }
 
+  settings(){
+    this.storage.set("uid", this.uid);
+    this.router.navigate(['/settings']);
+  }
 }

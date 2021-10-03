@@ -1,4 +1,28 @@
-.user-name
-{
-    color:#871178;
+ion-content {
+    --padding-bottom: 80px;
+}
+.user-name {
+    color: #871178;
+    line-height: 1;
+    padding: 10px 0;
+    margin: 0;
+    font-size: 1.2em;
+}
+.titl {
+    color: #871178;
+    border-bottom: 2px solid #cecece;
+    width: 100%;
+    display: block;
+    height: 40px;
+    margin-top: 30px;
+    margin: 0 auto;
+    background: #f3f3f3;
+    padding: 10px;
+    text-align: center;
+}
+
+ion-card {
+    padding: 10px;
+    margin: 10px 18px;
+    box-shadow: 0px 3px 6px #00000029;
 }

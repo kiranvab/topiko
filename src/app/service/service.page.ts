@@ -35,6 +35,21 @@ export class ServicePage implements OnInit {
           }
           );
       })
+      this.getservices();
+  }
+
+  getservices(){
+    this.storage.get("bid").then(val=>
+      {
+        this.buid = val;
+        console.log("Business ID", this.buid);
+        this.http.get(AppComponent.ApiUrl+"getoffered_services.php?bid="+this.buid).subscribe(data=>
+          {
+            this.services = data;
+            console.log("Services", this.services);
+          }
+          );
+      })
   }
 
   async openMenu(i) {  
@@ -65,7 +80,7 @@ export class ServicePage implements OnInit {
     const alert = await this.alertController.create({
       cssClass: 'my-custom-class',
       header: 'Confirm!',
-      message: 'Message <strong>text</strong>!!!',
+      message: 'Are you Sure do you want to <strong>Delete</strong>Service ?',
       buttons: [
         {
           text: 'Cancel',
@@ -82,6 +97,8 @@ export class ServicePage implements OnInit {
             this.http.get(AppComponent.ApiUrl+"deleteservice.php?sid="+this.services[i].id).subscribe(data =>{
               console.log("Response", data);
               this.AlertDelete()
+              this.getservices();
+              window.location.reload();
             })
           }
         }

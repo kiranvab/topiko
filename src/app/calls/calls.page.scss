@@ -22,8 +22,7 @@ ion-content {
     --padding-end: 18px;
 }
 ion-card {
-    padding: 10px;
-    padding-bottom: 7px;
+    padding: 5px 10px;
     margin: 7px 0px;
     box-shadow: 0px 3px 6px #00000029;
 }
@@ -68,11 +67,58 @@ ion-fab {
 ion-fab-button {
     --background: linear-gradient(#871178, #3c1378);
     --color: #ffffff;
-    height: 50px;
-    width: 50px;
+    height: 54px;
+    width: 54px;
 }
-.fab ion-icon {
+ion-fab-button ion-icon {
     color: #ffffff;
-    height: 36px;
-    width: 36px;
+    font-size: 26px;
+}
+
+.online {
+    width: 20px;
+    height: 20px;
+    background: #871178;
+    display: block;
+    border-radius: 50%;
+    float: right;
+    font-size: 12px;
+    text-align: center;
+    color: #fff;
+    margin-top: 70%;
+}
+
+.offline {
+    width: 20px;
+    height: 20px;
+    background: #871178;
+    display: block;
+    border-radius: 50%;
+    float: right;
+    font-size: 12px;
+    text-align: center;
+    color: #fff;
+    margin-top: 70%;
+}
+.img-circle {
+    border-radius: 50%;
+}
+.nametext {
+    padding-top: 8px !important;
+    color: #22272a;
+    font-size: 18px;
+}
+
+.call-row {
+    flex-wrap: nowrap;
+}
+.call-col {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 14px;
+}
+.avatar ion-avatar {
+    width: 56px;
+    height: 56px;
 }

@@ -13,7 +13,8 @@ import { ShopsnearyouPage } from './shopsnearyou.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    ShopsnearyouPageRoutingModule
+    ShopsnearyouPageRoutingModule,
+    
   ],
   declarations: [ShopsnearyouPage]
 })

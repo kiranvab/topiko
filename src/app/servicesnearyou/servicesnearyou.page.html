@@ -1,32 +1,53 @@
 <ion-header color="custom">
   <ion-toolbar color="custom" class="toolbar">
     <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
-      <ion-menu-button></ion-menu-button>
+      <ion-back-button icon="chevron-back"></ion-back-button>
+      <!-- <ion-menu-button></ion-menu-button> -->
     </ion-buttons>
     <ion-title>Services</ion-title>
     <ion-buttons slot="end">
-      <ion-icon name=search-outline></ion-icon>
+      <ion-icon name=search></ion-icon>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <ion-row>
-    <ion-col size="4" class="p-0"  *ngFor="let sern of servicesNear | slice:0:3; let i=index">
+    <ion-col size="4" class="p-0" *ngFor="let sern of servicesNear; let i=index">
       <img src="{{sern.logo}}">
       <div class="img-title center text-center p-0" text-center>{{sern.business_name}}</div>
     </ion-col>
   </ion-row>
-  
-  <ion-row>
 
-    <ion-col class="col-mt-3" size="6" routerLink="/details">
-      <img class="bdr-rad-20"
-        src="https://www.couponmaal.com/wp-content/uploads/2019/10/redbus-coupons-and-promo-codes.jpg">
+  <ion-row>
+    <ion-col class="col-mt-3" size="6" *ngFor="let pos2 of position2; let i = index;" (click)="pos2details(i)">
+      <img class="bdr-rad-20" style="height:150px; width:100%" src="{{pos2.image}}">
       <ion-row>
         <ion-col class="img-title">
-          Redbus | Delhi
+          {{pos2.business_name}} | {{pos2.city}}
+        </ion-col>
+        <div class="hearticon-div">
+          <ion-icon class="heart-icon" name="heart"></ion-icon>
+        </div>
+        <ion-col size="2" class="count text-overflow">389</ion-col>
+      </ion-row>
+    </ion-col>
+
+  </ion-row>
+
+  <ion-row>
+    <ion-col class="col-mt-3" (click)="pos3details()">
+      <img src="{{posbanner3}}" />
+      <ion-row>
+      </ion-row>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col class="col-mt-3" size="6" *ngFor="let pos4 of position4; let i = index;" (click)="pos4details(i)">
+      <img class="bdr-rad-20" style="height:150px; width:100%" src="{{pos4.image}}" />
+      <ion-row>
+        <ion-col class="img-title">
+          {{pos4.business_name}} | {{pos4.city}}
         </ion-col>
         <div class="hearticon-div">
           <ion-icon class="heart-icon" name="heart"></ion-icon>
@@ -36,78 +57,14 @@
       </ion-row>
     </ion-col>
 
-    <ion-col class="col-mt-3" size="6">
-      <img class="bdr-rad-20" src="https://gos3.ibcdn.com/goibibo-offers-1471858246.jpg">
-      <ion-row>
-        <ion-col class="img-title">
-          Ibibo | Chennai
-        </ion-col>
-        <div class="hearticon-div">
-          <ion-icon class="heart-icon" name="heart"></ion-icon>
-        </div>
-        <ion-col size="2" class="count text-overflow">389</ion-col>
-
-      </ion-row>
-    </ion-col>
-
-    <ion-col class="col-mt-3" size="6">
-      <img class="bdr-rad-20"
-        src="https://70415bb9924dca896de0-34a37044c62e41b40b39fcedad8af927.ssl.cf3.rackcdn.com/MAX-Friday/Sale-Womenfest21-266Feb2021-a-2.jpg">
-      <ion-row>
-        <ion-col class="img-title">
-          Trends | Goa
-        </ion-col>
-        <div class="hearticon-div">
-          <ion-icon class="heart-icon" name="heart"></ion-icon>
-        </div>
-        <ion-col size="2" class="count text-overflow">389</ion-col>
-
-      </ion-row>
-    </ion-col>
-
-    <ion-col class="col-mt-3" size="6">
-      <img class="bdr-rad-20"
-        src="https://d18lkz4dllo6v2.cloudfront.net/cumulus_uploads/entry/2019-04-23/oyo.jpg?w=660">
-      <ion-row>
-        <ion-col class="img-title">
-          OYO | HYD
-        </ion-col>
-        <div class="hearticon-div">
-          <ion-icon class="heart-icon" name="heart"></ion-icon>
-        </div>
-        <ion-col size="2" class="count text-overflow">389</ion-col>
-
-      </ion-row>
-    </ion-col>
   </ion-row>
 
+  <br>
 
-  <ion-row>
-    <ion-col>
-      <img src="https://i.ytimg.com/vi/yQahhVFsbYI/maxresdefault.jpg" style="border-radius: 10px;">
-    </ion-col>
-  </ion-row>
-  <ion-row>
-    <ion-col size="4">
-      <img src="https://m.media-amazon.com/images/I/41gr3r3FSWL.jpg">
-    </ion-col>
-    <ion-col size="4">
-      <img src="https://lithub.com/wp-content/uploads/2019/01/9781616208882.jpg">
-    </ion-col>
-    <ion-col size="4">
-      <img src="https://www.oberlo.com/media/1603897577-image22-1.jpg?w=1824&fit=max">
-    </ion-col>
-  </ion-row>
-  <ion-row>
-    <ion-col size="4">
-      <img src="https://m.media-amazon.com/images/I/41gr3r3FSWL.jpg">
-    </ion-col>
-    <ion-col size="4">
-      <img src="https://lithub.com/wp-content/uploads/2019/01/9781616208882.jpg">
-    </ion-col>
-    <ion-col size="4">
-      <img src="https://www.oberlo.com/media/1603897577-image22-1.jpg?w=1824&fit=max">
-    </ion-col>
-  </ion-row>
+  <ion-slides pager="true" [options]="slideOpts">
+    <ion-slide *ngFor="let pos5 of position5; let i = index;" (click)="pos5details(i)">
+      <img src="{{pos5.image}}" style="border-radius: 10px;">
+    </ion-slide>
+  </ion-slides>
 
 </ion-content>

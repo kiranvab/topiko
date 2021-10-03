@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
-import { Storage } from '@ionic/storage';
+import { Storage } from '@ionic/storage-angular';
 import { AppComponent } from '../app.component';
 
 @Component({
@@ -27,6 +27,8 @@ export class AddOfferPage implements OnInit {
   branches: any;
   image:any;
   buid:any;
+  image_div:any = false;
+  upload_div:any = true;
 
   constructor(
     private route: Router,
@@ -64,6 +66,8 @@ export class AddOfferPage implements OnInit {
     }
     this.camera.getPicture(options).then((imageData) => {
       this.image = 'data:image/jpeg;base64,' + imageData;
+      this.image_div = true;
+      this.upload_div = false;
     });
   }
 

@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ActionSheetController } from '@ionic/angular';
-import { Storage } from '@ionic/storage';
+import { Storage } from '@ionic/storage-angular';
 import { AppComponent } from '../app.component';
 
 @Component({
@@ -46,19 +46,28 @@ export class EmployeePage implements OnInit {
     });
   }
 
-  async openMenu() {  
+  async openMenu(i) {  
     const actionSheet = await this.actionsheetCtrl.create({  
      // header: 'Modify your album',  
       buttons: [  
         {  
           text: 'Edit',  
           handler: () => {  
-            console.log('Destructive clicked');  
+           this.storage.set("empid", this.employees[i].id )
             this.route.navigate(['/edit-employee'])
           }  
         },{  
           text: 'Delete',  
-          handler: () => {  
+          handler: () => { 
+            console.log(this.employees[i].id);
+            this.http.get(AppComponent.ApiUrl+"deleteemployee.php?empid="+this.employees[i].id).subscribe(Response =>{
+              if(Response =1){
+                alert("Employee Deleted Sucesfully");
+              }
+              else{
+                alert("Failed to delete Employee");
+              }
+            })
            console.log('Archive clicked');  
           }  
         }  

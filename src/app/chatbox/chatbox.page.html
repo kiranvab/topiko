@@ -12,7 +12,8 @@
       <ion-col class="text-overflow">
         <ion-title>{{partner_name}}</ion-title>
         <ion-row class="dat">
-          <ion-title>Last Seen 11:15AM</ion-title>
+          <ion-title *ngIf="online==0">Last Seen {{last_seen}}</ion-title>
+          <ion-title *ngIf="online==1">Online</ion-title>
         </ion-row>
       </ion-col>
     </ion-row>
@@ -31,13 +32,9 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content #content style="margin-bottom:10%">
-  <div class="div-date">
-    <div class="date">
-      <p>04/23/2021</p>
-    </div>
-  </div>
-<div *ngFor="let chat of chatmessages; let i-index" id="condiv" >
+<ion-content #scrollElement padding>
+  <div id="condiv" class="main">
+<div *ngFor="let chat of chatmessages; let i-index" >
   <ion-card class="chat-lbox"  *ngIf="chat.posted_by === user_id" (mouseup)="diSable()">
     <ion-row *ngIf="chat.type==='text'">
       <ion-col class="left-chat">
@@ -90,7 +87,8 @@
     </ion-card>
   </ion-row>
   </div>
-  <div style="min-height: 220px; text-align: center; background:#fff; padding:5%;width:100%; position: fixed; bottom:0px; z-index:9999; border-radius: 20px;" *ngIf="bottomdiv">
+  </div>
+  <div style="min-height: 220px; text-align: center; background:#fff; padding:5%;width:100%; position: fixed; bottom:40px; z-index:9999; border-radius: 20px;" *ngIf="bottomdiv" >
     <ion-row >
       <ion-col size="4" style="text-align: center;">
         <input class="ion-hide" #f type="file" [(ngModel)]="docfile" (change)="UploadDocument($event)" id="file-input"

@@ -5,7 +5,10 @@
     box-shadow: none;
 }
 .knife img {
-    border-radius: 0.5em;
+    border-radius: 8px;
+    width: 100%;
+    height: 217px;
+    object-fit: cover;
 }
 
 // grid
@@ -138,4 +141,19 @@ ion-fab-button {
     color: #ffffff;
     height: 36px;
     width: 36px;
+}
+
+.icon-img-recent {
+    border-radius: 5px;
+    width: 100%;
+    height: 100px;
+}
+
+.img-title {
+    font-size: 12px;
+    padding: 8px 0;
+    margin: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }

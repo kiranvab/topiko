@@ -1,5 +1,5 @@
 {
-  "appId": "com.vabinfo.topiko",
+  "appId": "io.ionic.starter",
   "appName": "topiko",
   "bundledWebRuntime": false,
   "npmClient": "npm",

@@ -25,7 +25,8 @@ tag:any;
   desc:any;
   oid:any;
   image: string;
-  update: Object;
+  update: any;
+  cslot:any;
   constructor(
     public actionsheetCtrl:ActionSheetController,
     public route:Router,
@@ -33,7 +34,9 @@ tag:any;
     private http:HttpClient,
     private camera:Camera,
     public alertController: AlertController
-  ) { }
+  ) { 
+    this.cslot = new Date();
+  }
 
   ngOnInit() {
     this.storage.get("oid").then(val=>
@@ -66,12 +69,14 @@ tag:any;
       mediaType: this.camera.MediaType.PICTURE
     }
     this.camera.getPicture(options).then((imageData) => {
-      this.image = 'data:image/jpeg;base64,' + imageData;
+      this.offimg = 'data:image/jpeg;base64,' + imageData;
     });
   }
 
   submit(){
     console.log("Submit Clicked");
+    this.from = this.from.split('T')[0];
+    this.to = this.to.split('T')[0];
     var link =AppComponent.ApiUrl+"updateoffer.php";
     var myData = JSON.stringify({
       "id":this.oid,
@@ -79,17 +84,17 @@ tag:any;
       "actual_price":this.actual_price,
       "discount_price":this.discount_price,
       "description":this.desc,
-      "image":this.image,
+      "image":this.offimg,
       "start":this.from,
       "end":this.to
-
     })
     console.log(myData);
     this.http.post(link,myData).subscribe(response =>
       {
         this.update = response;
+        console.log("update", this.update);
 
-        if(this.update = 1){
+        if(this.update == 1){
           alert("Offer Updated Sucesfully");
           this.route.navigate(['offers']);
         }

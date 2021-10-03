@@ -7,7 +7,7 @@
     <ion-title>Career</ion-title>
     <ion-buttons slot="end">
       <ion-icon name="search-outline"></ion-icon>
-      <ion-icon name="notifications-outline"></ion-icon>
+      <ion-icon name="notifications-outline" routerlink="/notification"></ion-icon>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
@@ -17,16 +17,17 @@
     <ion-row class="row">
       <ion-col class="bg">
         <ion-avatar>
-          <img src="https://i.pinimg.com/474x/bc/d4/ac/bcd4ac32cc7d3f98b5e54bde37d6b09e.jpg" alt="">
+          <img *ngIf="uimg"  src="{{uimg}}" alt="">
+          <img *ngIf="uimg == ''" src="assets/logo-color.png" style="background: #fff; margin-top: 10%; border-radius: 10px; padding: 5px;">
         </ion-avatar>
-        <img class="position-cam" src="assets/camera.svg" alt="">
+       
       </ion-col>
     </ion-row>
     <ion-row class="details">
-      <P class="name">JAGANKATHIK.G</P>
+      <P class="name">{{uname}}</P>
     </ion-row>
     <ion-row class="details">
-      <P class="number">+91 988134832</P>
+      <P class="number">{{umobile}}</P>
     </ion-row>
   </ion-card>
 

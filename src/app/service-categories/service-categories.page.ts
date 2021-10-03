@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AppComponent } from '../app.component';
-import { Storage } from '@ionic/storage';
+import { Storage } from '@ionic/storage-angular';
 
 @Component({
   selector: 'app-service-categories',
@@ -25,7 +25,8 @@ services:any
   }
   details(i){
     console.log(this.services[i].type);
-    this.storage.set("type", this.services[i].type)
+    this.storage.set("type", this.services[i].type);
+    this.storage.set("sid", this.services[i].id);
     this.router.navigate(['gcategory']);
   }
 

@@ -1,34 +1,67 @@
-.adress p{
+ion-title {
+    letter-spacing: 0.8px;
+    padding-right: 60px;
+}
+.adress p {
     margin: 17px 0px;
 }
-.add{
-    font-size:40px;
+.add {
+    font-size: 40px;
 
     color: #871178;
-    }
-.adds{
-    padding:10px;
-    color:purple;
+}
+.adds {
+    padding: 10px;
+    color: purple;
     font-size: 20px;
 }
-.title{
+.title {
     text-align: center;
 }
-ion-header ion-title{
-    color: #FFFFFF;
-  font-size: 18px;
+ion-header ion-title {
+    color: #ffffff;
+    font-size: 18px;
 }
-.ellipsis ion-icon{
-font-size: 22px;
-    color:#FFFFFF;
+.ellipsis ion-icon {
+    font-size: 22px;
+    color: #ffffff;
 }
-.img{
-    padding:5px;
-    max-width:100px;
-    height:110px;
+.img {
+    padding: 5px;
+    max-width: 100px;
+    height: 110px;
 }
-ion-card{
-    box-shadow:  0px 3px 6px #686666ea;
+ion-card {
+    margin: 0;
+    padding: 18px;
 }
 
-
+.label-floating.sc-ion-label-ios-h,
+.label-stacked.sc-ion-label-md-h,
+.label-floating.sc-ion-label-md-h {
+    color: #22272a;
+}
+.purple-btn {
+    background: linear-gradient(#871178, #3c1378) !important;
+    height: 50px;
+    border: 0;
+    width: 90%;
+    text-align: center;
+    font-size: 18px;
+    margin: 0 auto;
+    text-transform: capitalize;
+    color: #fff;
+    line-height: 2.5;
+    border-radius: 10px;
+}
+ion-select {
+    --placeholder-opacity: 100%;
+    --padding-start: 0px;
+}
+ion-input {
+    --placeholder-opacity: 1 !important;
+    --padding-start: 0px;
+}
+ion-item {
+    --padding-start: 0px;
+}

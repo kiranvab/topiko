@@ -1,48 +1,86 @@
 <ion-header color="custom">
   <ion-toolbar color="custom" class="toolbar">
     <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
+      <ion-back-button icon="chevron-back"></ion-back-button>
     </ion-buttons>
     <ion-title>Favourites</ion-title>
     <ion-buttons slot="end">
-      <ion-icon name="search-outline"></ion-icon>
+      <ion-icon name="search"></ion-icon>
     </ion-buttons>
   </ion-toolbar>
+
+  <ion-segment value="all" scrollable="true" mode="md" color="secondary" [(ngModel)]="segmentModel">
+    <ion-segment-button value="business">
+      <ion-label>Business</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="product">
+      <ion-label>Product</ion-label>
+    </ion-segment-button>
+  </ion-segment>
 </ion-header>
 <ion-content>
 
-  <ion-card *ngFor="let fav of myfav; let i=index;">
-    <ion-row>
-      <div class="avatar">
-        <ion-avatar>
-          <img class="border"
-            src="{{fav.logo}}"
-            alt="">
-        </ion-avatar>
-      </div>
-      <ion-col class="text-overflow" (click)="Details(i)">
-        <p class="user-name">{{fav.business_name}} <ion-icon name="shield-checkmark"></ion-icon>
-        </p>
-        <ion-row class="star">
-          <ion-icon name="star"></ion-icon>
-          <ion-icon name="star"></ion-icon>
-          <ion-icon name="star"></ion-icon>
-          <ion-icon name="star"></ion-icon>
-          <ion-icon name="star"></ion-icon>
-          <span>
-            <p>4.1 Ratings</p>
-          </span>
-        </ion-row>
-        <p class="time">CEO-{{fav.owner_name}}</p>
-      </ion-col>
-      <ion-col size="1" class="ellipsis" (click)="openMenu(i)">
-        <ion-icon class="btn" name="ellipsis-vertical"></ion-icon>
-      </ion-col>
-    </ion-row>
-    <ion-row class="dat">
-      <p class="date">{{fav.created_date}}</p>
-    </ion-row>
-  </ion-card>
+
+  <!-- Favourite business start -->
+  <div *ngIf="segmentModel === 'business'">
+    <ion-card *ngFor="let fav of myfav; let i=index;">
+      <ion-row>
+        <div class="avatar">
+          <ion-avatar>
+            <img class="border" src="{{fav.logo}}" alt="">
+          </ion-avatar>
+        </div>
+        <ion-col class="text-overflow" (click)="Details(i)">
+          <p class="user-name">{{fav.business_name}} <ion-icon name="shield-checkmark"></ion-icon>
+          </p>
+          <ion-row class="star">
+            <ion-icon name="star"></ion-icon>
+            <ion-icon name="star"></ion-icon>
+            <ion-icon name="star"></ion-icon>
+            <ion-icon name="star"></ion-icon>
+            <ion-icon name="star"></ion-icon>
+            <span>
+              <p>4.1 Ratings</p>
+            </span>
+          </ion-row>
+          <p class="time">CEO-{{fav.owner_name}}</p>
+        </ion-col>
+        <ion-col size="1" class="ellipsis" (click)="openMenu(i)">
+          <ion-icon class="btn" name="ellipsis-vertical"></ion-icon>
+        </ion-col>
+      </ion-row>
+      <ion-row class="dat">
+        <p class="date">{{fav.created_date}}</p>
+      </ion-row>
+    </ion-card>
+  </div>
+  <!-- Favourite business end -->
+
+  <!-- Favoutrite produst start-->
+  <div *ngIf="segmentModel === 'product'">
+    <ion-card *ngFor="let fav of myfavP; let i=index;">
+      <ion-row>
+        <div class="avatar">
+          <ion-avatar>
+            <img class="border" src="{{fav.product_image}}" alt="">
+          </ion-avatar>
+        </div>
+        <ion-col class="text-overflow" (click)="Details(i)">
+          <p class="user-name">{{fav.title}} <ion-icon name="shield-checkmark"></ion-icon>
+          </p>
+          <p class="time">{{fav.description}}</p>
+        </ion-col>
+        <ion-col size="1" class="ellipsis" (click)="openMenu(i)">
+          <ion-icon class="btn" name="ellipsis-vertical"></ion-icon>
+        </ion-col>
+      </ion-row>
+      <ion-row class="dat">
+        <p class="date">{{fav.created_date}}</p>
+      </ion-row>
+    </ion-card>
+  </div>
+  <!-- Favoutrite produst End-->
+
 </ion-content>
 
 <ion-footer mode="md" class="home-footer">

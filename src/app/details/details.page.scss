@@ -2,10 +2,16 @@ ion-content {
     --padding-bottom: 85px;
     // --padding-end: 8px;
     // --padding-start: 8px;
-    --ion-background-color: #fff;
+    --ion-background-color: #fff !important;
 }
 
 // topiko div starts here
+.detail-img {
+    border-radius: 3px;
+    min-width: 100%;
+    height: 254px;
+    object-fit: cover;
+}
 .margin-class {
     margin-left: 18px;
     margin-right: 18px;
@@ -32,8 +38,8 @@ ion-content {
     color: green;
 }
 .ceo {
-    font-size: 10px;
-    color: #607d8b;
+    font-size: 12px;
+    color: #9f9f9f;
     margin: 0px;
 }
 .shop-btn {
@@ -44,8 +50,26 @@ ion-content {
 .travel ion-button {
     margin-right: 10px;
 }
+// .travel p {
+//     margin: 0;
+//     background: #fff;
+//     border-radius: 10px;
+//     padding: 5px;
+//     color: #871178;
+//     border: 1px solid #871178;
+// }
+.b-tags {
+    margin: 0px;
+    color: #871178;
+    border: 1px solid #871178;
+    padding: 2px 8px;
+    border-radius: 18px;
+    margin-top: 2px;
+    font-size: 14px;
+}
 .lorem {
     color: #707070;
+    font-size: 12px;
 }
 .map {
     display: flex;
@@ -59,6 +83,7 @@ strong {
 }
 .third-bg {
     background: #ebebeb;
+    padding-top: 18px;
 }
 
 .col-mt-3 {
@@ -105,6 +130,7 @@ strong {
 // service Styles start //
 .service-grid {
     padding: 0px 8px;
+    background: #ffffff;
 }
 .service-img {
     border-radius: 8px;
@@ -181,11 +207,17 @@ ion-avatar {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-top: 1.125em;
+    padding: 0;
 }
 .icons p {
     margin: 8px 0px;
     color: #871178;
+}
+.icons ion-icon {
+    font-size: 30px;
+    background: #ffffff;
+    padding: 11px;
+    border-radius: 50%;
 }
 ion-fab-button {
     --ion-color-base: #f2f2f2 !important;
@@ -199,7 +231,12 @@ ion-badge {
     --ion-color-base: #d60000 !important;
     --border-radius: 50%;
 }
-
+.icon-img {
+    height: 100px;
+    width: 100%;
+    border-radius: 5px;
+    padding: 2px;
+}
 .date {
     width: 95px;
     height: 26px;
@@ -390,7 +427,7 @@ ion-avatar .border {
 }
 
 ion-card {
-    padding: 10px;
+    padding: 10px 5px;
     margin: 0;
 }
 .square ion-card {
@@ -574,6 +611,7 @@ ion-fab-button {
 /* Product styles start */
 .rs {
     color: #871178;
+    padding: 0;
 }
 .real-price {
     text-decoration: line-through;
@@ -612,9 +650,11 @@ ion-fab-button {
     color: #22272a;
     font-size: 1em;
     margin: 6px 0px;
+    padding-left: 4px;
 }
 .item span {
     font-size: 0.875em;
+    padding-left: 4px;
 }
 h6 {
     color: #22272a;
@@ -624,6 +664,7 @@ h6 {
     line-height: 1.6;
     font-size: 0.8em;
     color: #707070;
+    margin-bottom: -8px;
 }
 .third {
     padding-top: 0%;
@@ -910,3 +951,20 @@ ion-title {
     font-size: 24px;
     color: #ffffff;
 }
+
+.ser-img {
+    width: 100%;
+    height: 200px;
+}
+.fabs {
+    width: 4em;
+    height: 4em;
+}
+.fabstxt {
+    font-size: 12px;
+}
+
+// .cards {
+//     background: #f6f6f6;
+//     padding: 0;
+// }

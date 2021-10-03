@@ -32,6 +32,8 @@ export class CreateBusinessPage implements OnInit {
   state: any;
   pincode: any;
   accept = false;
+  cat_div = false;
+  ser_div = false;
   lat: any;
   long: any;
   udata: any;
@@ -40,6 +42,10 @@ export class CreateBusinessPage implements OnInit {
   services: any;
   image: string;
   options:any;
+  shopurl:any;
+  shopdesc:any;
+  service_id:any;
+  category_id:any;
 
   constructor(
     private http: HttpClient,
@@ -85,12 +91,16 @@ export class CreateBusinessPage implements OnInit {
   getserccat(data){
     console.log(this.mode);
     if(this.mode == "category"){
+      this.cat_div = true;
+      this.ser_div = false;
       this.http.get(AppComponent.ApiUrl+"getcategories.php").subscribe((cat)=>{
         this.options = cat;
         console.log("categories:", this.categoreis)
       })  
     }
     else{
+      this.ser_div = true;
+      this.cat_div = false;
       this.http.get(AppComponent.ApiUrl+"getservices.php").subscribe((ser)=>{
         this.services = ser;
         console.log("services:", this.services)
@@ -113,6 +123,10 @@ export class CreateBusinessPage implements OnInit {
   }
 
   submit() {
+     if(this.image == ''){
+       alert("Please Upload Business image / Logo")
+     }
+     else{
     var mydata = JSON.stringify({
       'uid':this.uid,
       'image':this.image,
@@ -131,30 +145,34 @@ export class CreateBusinessPage implements OnInit {
       'pincode': this.pincode,
       'view': this.tag2,
       'busienss_story': this.tag3,
+      'shopurl':this.shopurl,
+      'shopdesc':this.shopdesc,      
       'longitude': this.long,
-      'latitude': this.lat
+      'latitude': this.lat,
+      'category_id':this.category_id,
+      'service_id':this.service_id
     });
     console.log(mydata)
 
-    var link = AppComponent.ApiUrl + "create_business.php"
-    this.http.post(link, mydata).subscribe(async data => {
-      this.businessdata = data;
-      console.log("userdetails", this.businessdata);
-      if (this.businessdata == "Data already Exists") {
-        const alert = await this.alertCtrl.create({
-          header: 'Alert',
-          message: 'Business Already Exist',
-          buttons: ['OK']
-        });
-        await alert.present();
-        this.router.navigate(['my-business']);
-      }
+    //var link = AppComponent.ApiUrl + "create_business.php"
+    // this.http.post(link, mydata).subscribe(async data => {
+    //   this.businessdata = data;
+    //   console.log("userdetails", this.businessdata);
+    //   if (this.businessdata == "Data already Exists") {
+    //     const alert = await this.alertCtrl.create({
+    //       header: 'Alert',
+    //       message: 'Business Already Exist',
+    //       buttons: ['OK']
+    //     });
+    //     await alert.present();
+    //     //this.router.navigate(['my-business']);
+    //   }
 
-      else {
-        this.router.navigate(['my-business']);
-      }
-
-    });
+    //   else {
+    //     this.router.navigate(['my-business']);
+    //   }
+    // });
+   }
   }
 
   checkbox() {

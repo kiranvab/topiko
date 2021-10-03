@@ -1,111 +1,114 @@
 <ion-header>
   <ion-toolbar color="custom">
     <ion-buttons slot="start">
-      <ion-back-button mode="md"></ion-back-button>
-      <ion-menu-button mode="ios"></ion-menu-button>
+      <ion-back-button icon="chevron-back"></ion-back-button>
     </ion-buttons>
-    <ion-title>Details</ion-title>
+    <ion-title>{{bname}}</ion-title>
     <ion-buttons slot="end">
-      <ion-icon name="ellipsis-vertical"></ion-icon>
+      <ion-icon style="font-size: 24px;" name="ellipsis-vertical"></ion-icon>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-<div *ngFor="let pd of pdtails">
-  <ion-card class="knife">
-    <img src="{{pd.product_image}}" style="width:100%; height:200px" alt="">
-  </ion-card>
+  <div *ngFor="let pd of pdtails">
+    <ion-card class="knife">
+      <img src="{{pd.product_image}}" style="width:100%; height:200px" alt="">
+    </ion-card>
 
-  <ion-grid class="grid">
-    <ion-row class="first-row">
-      <ion-col class="title">
-        <p>{{pd.title}}<ion-icon name="shield-checkmark"></ion-icon>
-        </p>
-        <ion-row class="star">
-          <ion-icon name="star"></ion-icon>
-          <ion-icon name="star"></ion-icon>
-          <ion-icon name="star"></ion-icon>
-          <ion-icon name="star"></ion-icon>
-          <ion-icon name="star"></ion-icon>
-          <p>4.1 Ratings</p>
-        </ion-row>
-      </ion-col>
-    </ion-row>
-    <ion-row class="second-row">
-      <ion-col size="4.5">
-        <p>{{pd.title}}</p>
-      </ion-col>
-      <ion-col class="rt">
-        <span>Price-</span>
-        <span class="rs">Rs{{pd.discount}} </span>
-        <span class="real-price">{{pd.mrp}} </span>
-        <span class="off">{{pd.discount_price}} Off</span>
-      </ion-col>
-    </ion-row>
-    <ion-row class="third-row">
-      <p>Per Piece</p>
-    </ion-row>
-    <ion-row class="fourth-row">
-      <p>Cash on Delivery <span>Available</span></p>
-    </ion-row>
-    <ion-row class="fifth-row">
-      <h6>Description</h6>
-      <p> {{pd.description}}
-      </p>
-    </ion-row>
-  </ion-grid>
+    <ion-grid class="grid">
+      <ion-row class="first-row">
+        <ion-col class="title">
+          <p>{{bname}}<ion-icon name="shield-checkmark"></ion-icon>
+          </p>
+          <ion-row class="star">
+            <ion-icon name="star"></ion-icon>
+            <ion-icon name="star"></ion-icon>
+            <ion-icon name="star"></ion-icon>
+            <ion-icon name="star"></ion-icon>
+            <ion-icon name="star"></ion-icon>
+            <p>4.1 Ratings</p>
+          </ion-row>
+        </ion-col>
+      </ion-row>
+      <ion-row class="second-row">
+        <ion-col size="5">
+          <p>{{pd.title}}</p>
+        </ion-col>
+        <ion-col class="rt">
+          <span>Price-</span>
+          <span class="rs">Rs{{pd.discount}} </span>
+          <span class="real-price">{{pd.mrp}} </span>
+          <span class="off">{{pd.discount_price}} Off</span>
+        </ion-col>
+      </ion-row>
+      <ion-row class="third-row">
+        <p>Per Piece</p>
+      </ion-row>
+      <ion-row class="fourth-row">
+        <p>Cash on Delivery <span>Available</span></p>
+      </ion-row>
+      <ion-row class="fifth-row">
+        <h6 style="font-size: 16px;">Description</h6>
+      </ion-row>
+      <ion-row>
+        <p style="color: #707070; font-size: 14px; margin-top: 0%; margin-bottom: -8px;"> {{pd.description}}</p>
+      </ion-row>
+    </ion-grid>
 
-  <ion-card class="first">
-    <ion-row>
-      <ion-col size="3" class="icons">
-        <ion-fab-button color="light">
-          <ion-icon name="share-social-outline"></ion-icon>
-        </ion-fab-button>
-        <p>Share</p>
-      </ion-col>
-      <ion-col size="3" class="icons">
-        <ion-fab-button color="light">
-          <ion-icon name="thumbs-up-outline"></ion-icon>
-        </ion-fab-button>
-        <p>Like</p>
-      </ion-col>
-      <ion-col size="3" class="icons">
-        <ion-fab-button color="light">
-          <ion-icon name="heart-outline"></ion-icon>
-        </ion-fab-button>
-        <p>Favourite</p>
-      </ion-col>
-      <ion-col size="3" class="icons">
-        <ion-fab-button color="light">
-          <ion-icon name="chatbubble-ellipses-outline"></ion-icon>
-        </ion-fab-button>
-        <p>Comment</p>
-      </ion-col>
-    </ion-row>
-  </ion-card>
-</div>
-  <ion-row>
+    <ion-card class="first">
+      <ion-row>
+        <ion-col size="3" class="icons" (click)="share()">
+          <ion-fab-button color="light">
+            <ion-icon name="share-social-outline"></ion-icon>
+          </ion-fab-button>
+          <p>Share</p>
+        </ion-col>
+        <ion-col size="3" class="icons" (click)="like()">
+          <ion-fab-button color="light">
+            <ion-icon name="thumbs-up-outline"></ion-icon>
+          </ion-fab-button>
+          <p>Like</p>
+        </ion-col>
+        <ion-col size="3" class="icons" (click)="fav()">
+          <ion-fab-button color="light">
+            <ion-icon name="heart-outline"></ion-icon>
+          </ion-fab-button>
+          <p>Favourite</p>
+        </ion-col>
+        <ion-col size="3" class="icons" (click)="comment()">
+          <ion-fab-button color="light">
+            <ion-icon name="chatbubble-ellipses-outline"></ion-icon>
+          </ion-fab-button>
+          <p>Comment</p>
+        </ion-col>
+      </ion-row>
+    </ion-card>
+  </div>
+  <ion-row style="display: none;">
     <ion-col class="head">Similar Products</ion-col>
     <ion-col size="3" class="view-all">View All</ion-col>
   </ion-row>
 
-  <ion-row>
+  <ion-row style="display: none;">
     <ion-col><img src="https://images.railyatri.in/ry_images_prod/whatsapp-post-1570614557.jpg"></ion-col>
     <ion-col><img src="https://images.railyatri.in/ry_images_prod/whatsapp-post-1570614557.jpg"></ion-col>
     <ion-col><img src="https://images.railyatri.in/ry_images_prod/whatsapp-post-1570614557.jpg"></ion-col>
   </ion-row>
 
 
-  <ion-row>
+  <ion-row style="margin: 0 10px;">
     <ion-col class="head">Recently Viewed</ion-col>
-    <ion-col size="3" class="view-all">View All</ion-col>
+    <ion-col size="3" class="view-all" routerLink="/recent">View All</ion-col>
   </ion-row>
 
-  <ion-row>
-    <ion-col><img src="https://images.railyatri.in/ry_images_prod/whatsapp-post-1570614557.jpg"></ion-col>
-    <ion-col><img src="https://images.railyatri.in/ry_images_prod/whatsapp-post-1570614557.jpg"></ion-col>
-    <ion-col><img src="https://images.railyatri.in/ry_images_prod/whatsapp-post-1570614557.jpg"></ion-col>
+  <ion-row style="margin: 0 10px;">
+    <ion-col size="4" class="p-0" *ngFor="let rec of recent;  let i=index" (click)="details(i)">
+      <img *ngIf="rec.logo" class="icon-img-recent" src="{{rec.logo}}">
+      <img *ngIf="rec.logo == ''" class="icon-img-recent" src="assets/logo-color.png"
+        style="padding: 10px; background: #fafafa; border-radius: 10px;">
+      <div class="img-title center text-center p-0" text-center>{{rec.business_name}}</div>
+    </ion-col>
   </ion-row>
 
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">

@@ -1,10 +1,9 @@
 <ion-header>
   <ion-toolbar color="custom">
     <ion-buttons slot="start">
-      <ion-back-button mode="md"></ion-back-button>
-      <ion-menu-button mode="ios"></ion-menu-button>
+      <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>Details</ion-title>
+    <ion-title>{{name}}</ion-title>
     <ion-buttons slot="end" (click)="openMenu()">
       <ion-icon name="ellipsis-vertical"></ion-icon>
     </ion-buttons>
@@ -13,15 +12,15 @@
 
 <ion-segment value="all" scrollable="true" mode="md" color="secondary" [(ngModel)]="segmentModel">
   <ion-segment-button value="topiko">
-    <ion-label>Topiko</ion-label>
+    <ion-label>Overview</ion-label>
   </ion-segment-button>
   <ion-segment-button value="products">
     <ion-label>Products</ion-label>
   </ion-segment-button>
   <ion-segment-button value="service">
-    <ion-label>Service</ion-label>
+    <ion-label>Services</ion-label>
   </ion-segment-button>
-  <ion-segment-button value="post">
+  <!-- <ion-segment-button value="post">
     <ion-label>Post</ion-label>
   </ion-segment-button>
   <ion-segment-button value="career">
@@ -29,25 +28,17 @@
   </ion-segment-button>
   <ion-segment-button value="overview">
     <ion-label>Overview</ion-label>
-  </ion-segment-button>
+  </ion-segment-button> -->
 </ion-segment>
 
 <ion-content>
 
   <!-- Topiko Div Start-->
-  <div *ngIf="segmentModel === 'topiko'">
+  <div style="background: #F5F5F5;" *ngIf="segmentModel === 'topiko'">
 
     <ion-slides pager="true" [options]="slideOpts" class="margin-class top-slide">
-      <ion-slide >
-        <img src="{{business_image}}" style="border-radius: 10px;">
-      </ion-slide>
       <ion-slide>
-        <img src="https://businessrights.in/wp-content/uploads/2020/11/Swiggy-Restaurant-Listing.png"
-          style="border-radius: 10px;">
-      </ion-slide>
-      <ion-slide>
-        <img src="https://mir-s3-cdn-cf.behance.net/projects/original/3445c9110418311.Y3JvcCwxMzgwLDEwODAsNDEzLDA.jpg"
-          style="border-radius: 10px;">
+        <img src="{{business_image}}" class="detail-img">
       </ion-slide>
     </ion-slides>
 
@@ -59,49 +50,57 @@
         <ion-icon name="star" class="star"></ion-icon>
         <ion-icon name="star-outline" class="star"></ion-icon>
         <ion-icon name="star-outline" class="star"></ion-icon>
+        <span style="margin: 0%; font-size: 10px; position: absolute;
+        top: 33px; left: 90px;">4.1 Ratings</span>
         <p class="ceo">CEO {{owner_name}} </p>
+        <p style="margin:10px 0 0 0">Business Tags</p>
       </ion-col>
       <ion-col size="4" class="shop-btn">
-        <ion-button class="purple-btn-sm" size="small" routerLink="/shophere"> Shop Here </ion-button>
+        <ion-button class="purple-btn-sm" size="small" (click)="shophere()"> Shop Here </ion-button>
       </ion-col>
     </ion-row>
-    <ion-row class="margin-class" >
+    <ion-row class="margin-class">
       <ion-col class="travel scroll">
-        <p *ngFor = "let busi of bdetails; let i=index;">{{busi.tags}}</p>
+        <p *ngFor="let busi of bdetails; let i=index;" class="b-tags">{{busi.tags}}</p>
       </ion-col>
     </ion-row>
     <p class="margin-class lorem">{{story}}</p>
 
     <ion-card class="third-bg margin-class">
       <ion-row>
-        <ion-col size="3" class="icons">
-          <ion-fab-button color="light">
-            <ion-icon name="share-social-outline"></ion-icon>
+        <ion-col class="icons">
+          <ion-fab-button class="fabs" color="light">
+            <ion-icon name="arrow-redo-outline"></ion-icon>
           </ion-fab-button>
-          <p>Share</p>
+          <p class="fabstxt">Share</p>
         </ion-col>
-        <ion-col size="3" class="icons">
-          <ion-fab-button color="light" (click)="likebusiness()">
+        <ion-col class="icons">
+          <ion-fab-button class="fabs" color="light">
+            <ion-icon name="navigate-outline"></ion-icon>
+          </ion-fab-button>
+          <p class="fabstxt">Direction</p>
+        </ion-col>
+        <ion-col class="icons">
+          <ion-fab-button class="fabs" color="light" (click)="likebusiness()">
             <ion-icon name="thumbs-up-outline"></ion-icon>
           </ion-fab-button>
-          <p>Like</p>
+          <p class="fabstxt">Like</p>
         </ion-col>
-        <ion-col size="3" class="icons">
-          <ion-fab-button color="light" (click)="favbusiness()">
+        <ion-col class="icons">
+          <ion-fab-button class="fabs" color="light" (click)="favbusiness()">
             <ion-icon name="heart-outline"></ion-icon>
           </ion-fab-button>
-          <p>Favourite</p>
+          <p class="fabstxt">Favourite</p>
         </ion-col>
-        <ion-col size="3" class="icons">
-          <ion-fab-button color="light">
+        <ion-col class="icons">
+          <ion-fab-button class="fabs" color="light">
             <ion-icon name="chatbubble-ellipses-outline"></ion-icon>
           </ion-fab-button>
-          <p>Comment</p>
+          <p class="fabstxt">Comment</p>
         </ion-col>
       </ion-row>
     </ion-card>
-
-    <p class="rfq">Request a Quote</p>
+    <br>
     <ion-card class="margin-class fourth">
       <ion-row>
         <ion-col>
@@ -115,23 +114,12 @@
       </ion-row>
     </ion-card>
 
-    <ion-row class="margin-class">
+    <ion-row class="margin-class" style="display: none;">
       <ion-col class="head">Similar Products</ion-col>
       <ion-col size="3" class="view-all">View All</ion-col>
     </ion-row>
 
-    <ion-row class="margin-class">
-      <ion-col size="4">
-        <img src="https://m.media-amazon.com/images/I/41gr3r3FSWL.jpg">
-      </ion-col>
-      <ion-col size="4">
-        <img src="https://lithub.com/wp-content/uploads/2019/01/9781616208882.jpg">
-      </ion-col>
-      <ion-col size="4">
-        <img src="https://www.oberlo.com/media/1603897577-image22-1.jpg?w=1824&fit=max">
-      </ion-col>
-    </ion-row>
-    <ion-row class="margin-class">
+    <ion-row class="margin-class" style="display: none;">
       <ion-col size="4">
         <img src="https://m.media-amazon.com/images/I/41gr3r3FSWL.jpg">
       </ion-col>
@@ -143,67 +131,17 @@
       </ion-col>
     </ion-row>
 
-
-    <ion-row class="margin-class">
+    <ion-row class="margin-class" style="margin-top: 18px;">
       <ion-col class="head">Recently Viewed</ion-col>
-      <ion-col size="3" class="view-all">View All</ion-col>
+      <ion-col size="3" class="view-all" routerLink="/recent">View All</ion-col>
     </ion-row>
 
     <ion-row class="margin-class">
-
-      <ion-col class="col-mt-3" size="6" routerLink="/details">
-        <img class="bdr-rad-20"
-          src="https://www.couponmaal.com/wp-content/uploads/2019/10/redbus-coupons-and-promo-codes.jpg">
-        <ion-row>
-          <ion-col class="img-title">
-            Redbus | Delhi
-          </ion-col>
-          <div class="hearticon-div">
-            <ion-icon class="heart-icon" name="heart"></ion-icon>
-          </div>
-          <ion-col size="2" class="coun text-overflow">389</ion-col>
-        </ion-row>
-      </ion-col>
-
-      <ion-col class="col-mt-3" size="6">
-        <img class="bdr-rad-20" src="https://gos3.ibcdn.com/goibibo-offers-1471858246.jpg">
-        <ion-row>
-          <ion-col class="img-title">
-            Ibibo | Chennai
-          </ion-col>
-          <div class="hearticon-div">
-            <ion-icon class="heart-icon" name="heart"></ion-icon>
-          </div>
-          <ion-col size="2" class="coun text-overflow">389</ion-col>
-        </ion-row>
-      </ion-col>
-
-      <ion-col class="col-mt-3" size="6">
-        <img class="bdr-rad-20"
-          src="https://70415bb9924dca896de0-34a37044c62e41b40b39fcedad8af927.ssl.cf3.rackcdn.com/MAX-Friday/Sale-Womenfest21-266Feb2021-a-2.jpg">
-        <ion-row>
-          <ion-col class="img-title">
-            Trends | Goa
-          </ion-col>
-          <div class="hearticon-div">
-            <ion-icon class="heart-icon" name="heart"></ion-icon>
-          </div>
-          <ion-col size="2" class="coun text-overflow">389</ion-col>
-        </ion-row>
-      </ion-col>
-
-      <ion-col class="col-mt-3" size="6">
-        <img class="bdr-rad-20"
-          src="https://d18lkz4dllo6v2.cloudfront.net/cumulus_uploads/entry/2019-04-23/oyo.jpg?w=660">
-        <ion-row>
-          <ion-col class="img-title">
-            OYO | HYD
-          </ion-col>
-          <div class="hearticon-div">
-            <ion-icon class="heart-icon" name="heart"></ion-icon>
-          </div>
-          <ion-col size="2" class="coun text-overflow">389</ion-col>
-        </ion-row>
+      <ion-col size="4" class="p-0" *ngFor="let rec of recent;  let i=index" (click)="recdetails(i)">
+        <img *ngIf="rec.logo != ''" src="{{rec.logo}}" class="icon-img">
+        <img *ngIf="rec.logo == ''" class="icon-img" src="assets/logo-color.png"
+          style="padding: 10px; background: #fafafa;">
+        <!-- <div class="img-title center text-center p-0" text-center>{{rec.business_name}}</div> -->
       </ion-col>
     </ion-row>
 
@@ -212,33 +150,45 @@
 
 
   <!-- product Div Start-->
-  <div *ngIf="segmentModel === 'products'">
-    <ion-card class="sleek">
-      <img src="assets/sleek.JPG" alt="">
-    </ion-card>
+  <!-- <div *ngIf="segmentModel === 'products'" style="background-color: #fff; padding: 0 10px;">
+
     <ion-row>
       <ion-col size="6" *ngFor="let product of products; let i=index">
         <ion-card class="cards" (click)="productDetials(i)">
-          <img
-            src="{{product.product_image}}"
-            alt="">
-          <p>{{product.title}}</p>
-          <span>Price-</span>
-          <span class="rs">Rs{{product.discount}} </span>
-          <span class="real-price">{{product.mrp}} </span>
-          <span class="off">{{product.discount_price}} Off</span>
+          <img src="{{product.product_image}}" alt="">
+          <p style="padding: 5px 10px; margin: 0;">{{product.title}}</p>
+          <span style="padding:0px 10px">
+            <span>Price-</span>
+            <span class="rs">Rs{{product.discount}} </span>
+            <span class="real-price">{{product.mrp}} </span>
+            <span class="off">{{product.discount_price}} Off</span>
+          </span>
         </ion-card>
       </ion-col>
     </ion-row>
-
-   
+  </div> -->
+  <div *ngIf="segmentModel === 'products'" style="background-color: #fff;">
+    <ion-row style="padding-top: 12px;">
+      <ion-col size="6" *ngFor="let product of products; let i=index" style="padding: 8px;">
+        <ion-card class="cards text-overflow" (click)="productDetials(i)" style="background: #f5f5f5; padding: 0%;">
+          <img src="{{product.product_image}}" alt="">
+          <p style="color: #22272A; padding-left: 4px; margin: 4px 0px;">{{product.title}}</p>
+          <p style="margin: 4px 0px;">
+            <span style="padding-left: 4px;">Price-</span>
+            <span class="rs">Rs{{product.discount}} </span>
+            <span class="real-price">{{product.mrp}} </span>
+            <span class="off">{{product.discount_price}} Off</span>
+          </p>
+        </ion-card>
+      </ion-col>
+    </ion-row>
   </div>
   <!-- produt Div End-->
 
   <!-- service Div Start-->
   <div *ngIf="segmentModel === 'service'">
     <ion-grid class="service-grid">
-      <ion-card class="first">
+      <!-- <ion-card class="first">
         <ion-slides pager="true" [options]="slideOpts">
           <ion-slide>
             <img
@@ -255,147 +205,61 @@
               style="border-radius: 10px;">
           </ion-slide>
         </ion-slides>
-      </ion-card>
+      </ion-card> -->
 
-      <ion-card class="second" *ngFor="let ser of services; let i = index;">
-        <ion-row>
-          <ion-col class="item">
-            <img src="{{ser.image}}" alt="">
-            <p>{{ser.service_title}}</p>
-            <span>Actual Price-</span>
-            <span class="rs">{{ser.mrp}} </span><br>
-            <span>Discount Price-</span>
-            <span class="rs">{{ser.discount_price}} </span>
-          </ion-col>
-          <ion-col class="des">
-            <h6>Description</h6>
-            <p> {{ser.description}}
-            </p>
-          </ion-col>
-        </ion-row>
-      </ion-card>
+      <div *ngFor="let ser of services; let i = index;" style="padding-bottom: 18px;">
+        <ion-card class="second">
+          <ion-row>
+            <ion-col class="item" size="6" style="padding: 0%;">
+              <img class="ser-img" src="{{ser.image}}" alt="">
+              <p style="color: #22272a;">{{ser.service_title}}</p>
+              <span>Actual Price-</span>
+              <span class="rs">{{ser.mrp}} Rs</span><br>
+              <span>Discount Price-</span>
+              <span class="rs">{{ser.discount_price}} Rs</span>
+            </ion-col>
+            <ion-col class="des" size="12">
+              <h6>Description</h6>
+              <p> {{ser.description}}
+              </p>
+            </ion-col>
+          </ion-row>
+        </ion-card>
 
-      <ion-card class="third">
-        <ion-row>
-          <ion-col size="3" class="icons">
-            <ion-fab-button color="light">
-              <ion-icon name="share-social-outline"></ion-icon>
-            </ion-fab-button>
-            <p>Share</p>
-          </ion-col>
-          <ion-col size="3" class="icons">
-            <ion-fab-button color="light">
-              <ion-icon name="thumbs-up-outline"></ion-icon>
-            </ion-fab-button>
-            <p>Like</p>
-          </ion-col>
-          <ion-col size="3" class="icons">
-            <ion-fab-button color="light">
-              <ion-icon name="heart-outline"></ion-icon>
-            </ion-fab-button>
-            <p>Favourite</p>
-          </ion-col>
-          <ion-col size="3" class="icons">
-            <ion-fab-button color="light">
-              <ion-icon name="chatbubble-ellipses-outline"></ion-icon>
-            </ion-fab-button>
-            <p>Comment</p>
-          </ion-col>
-        </ion-row>
-      </ion-card>
+        <ion-card class="third-bg" style="margin: 0px 5px">
+          <ion-row>
+            <ion-col class="icons" (click)="shareservice(i)">
+              <ion-fab-button class="fabs" color="light">
+                <ion-icon name="arrow-redo-outline"></ion-icon>
+              </ion-fab-button>
+              <p class="fabstxt">Share</p>
+            </ion-col>
+            <ion-col class="icons" (click)="likeservice(i)">
+              <ion-fab-button class="fabs" color="light">
+                <ion-icon name="thumbs-up-outline"></ion-icon>
+              </ion-fab-button>
+              <p class="fabstxt">Like</p>
+            </ion-col>
+            <ion-col class="icons" (click)="favservice(i)">
+              <ion-fab-button class="fabs" color="light">
+                <ion-icon name="heart-outline"></ion-icon>
+              </ion-fab-button>
+              <p class="fabstxt">Favourite</p>
+            </ion-col>
+            <ion-col class="icons" (click)="cmtservice(i)">
+              <ion-fab-button class="fabs" color="light">
+                <ion-icon name="chatbubble-ellipses-outline"></ion-icon>
+              </ion-fab-button>
+              <p class="fabstxt">Comment</p>
+            </ion-col>
+          </ion-row>
+        </ion-card>
+      </div>
     </ion-grid>
 
-    <ion-row class="margin-class">
-      <ion-col class="head">Similar Products</ion-col>
-      <ion-col size="3" class="view-all">View All</ion-col>
-    </ion-row>
-
-    <ion-row class="margin-class">
-      <ion-col size="4">
-        <img src="https://m.media-amazon.com/images/I/41gr3r3FSWL.jpg">
-      </ion-col>
-      <ion-col size="4">
-        <img src="https://lithub.com/wp-content/uploads/2019/01/9781616208882.jpg">
-      </ion-col>
-      <ion-col size="4">
-        <img src="https://www.oberlo.com/media/1603897577-image22-1.jpg?w=1824&fit=max">
-      </ion-col>
-    </ion-row>
-    <ion-row class="margin-class">
-      <ion-col size="4">
-        <img src="https://m.media-amazon.com/images/I/41gr3r3FSWL.jpg">
-      </ion-col>
-      <ion-col size="4">
-        <img src="https://lithub.com/wp-content/uploads/2019/01/9781616208882.jpg">
-      </ion-col>
-      <ion-col size="4">
-        <img src="https://www.oberlo.com/media/1603897577-image22-1.jpg?w=1824&fit=max">
-      </ion-col>
-    </ion-row>
 
 
-    <ion-row class="margin-class">
-      <ion-col class="head">Recently Viewed</ion-col>
-      <ion-col size="3" class="view-all">View All</ion-col>
-    </ion-row>
 
-    <ion-row class="margin-class">
-
-      <ion-col class="col-mt-3" size="6" routerLink="/details">
-        <img class="bdr-rad-20"
-          src="https://www.couponmaal.com/wp-content/uploads/2019/10/redbus-coupons-and-promo-codes.jpg">
-        <ion-row>
-          <ion-col class="img-title">
-            Redbus | Delhi
-          </ion-col>
-          <div class="hearticon-div">
-            <ion-icon class="heart-icon" name="heart"></ion-icon>
-          </div>
-          <ion-col size="2" class="coun text-overflow">389</ion-col>
-        </ion-row>
-      </ion-col>
-
-      <ion-col class="col-mt-3" size="6">
-        <img class="bdr-rad-20" src="https://gos3.ibcdn.com/goibibo-offers-1471858246.jpg">
-        <ion-row>
-          <ion-col class="img-title">
-            Ibibo | Chennai
-          </ion-col>
-          <div class="hearticon-div">
-            <ion-icon class="heart-icon" name="heart"></ion-icon>
-          </div>
-          <ion-col size="2" class="coun text-overflow">389</ion-col>
-        </ion-row>
-      </ion-col>
-
-      <ion-col class="col-mt-3" size="6">
-        <img class="bdr-rad-20"
-          src="https://70415bb9924dca896de0-34a37044c62e41b40b39fcedad8af927.ssl.cf3.rackcdn.com/MAX-Friday/Sale-Womenfest21-266Feb2021-a-2.jpg">
-        <ion-row>
-          <ion-col class="img-title">
-            Trends | Goa
-          </ion-col>
-          <div class="hearticon-div">
-            <ion-icon class="heart-icon" name="heart"></ion-icon>
-          </div>
-          <ion-col size="2" class="coun text-overflow">389</ion-col>
-        </ion-row>
-      </ion-col>
-
-      <ion-col class="col-mt-3" size="6">
-        <img class="bdr-rad-20"
-          src="https://d18lkz4dllo6v2.cloudfront.net/cumulus_uploads/entry/2019-04-23/oyo.jpg?w=660">
-        <ion-row>
-          <ion-col class="img-title">
-            OYO | HYD
-          </ion-col>
-          <div class="hearticon-div">
-            <ion-icon class="heart-icon" name="heart"></ion-icon>
-          </div>
-          <ion-col size="2" class="coun text-overflow">389</ion-col>
-        </ion-row>
-      </ion-col>
-    </ion-row>
 
   </div>
   <!-- service Div End-->
@@ -756,12 +620,12 @@
       <ion-card class="address">
         <ion-row>
           <ion-col size="8">
-            <ion-row class="add">
-              <p>Address</p>
-            </ion-row>
-            <ion-row class="street">
-              <p>{{this.address}}</p>
-            </ion-row>
+            <div class="add">
+              Address
+            </div>
+            <div class="street">
+              {{this.address}}
+            </div>
           </ion-col>
           <ion-col size="4">
             <img src="https://www.xda-developers.com/files/2019/06/google-maps-india.jpg" alt="">

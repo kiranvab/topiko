@@ -1,34 +1,55 @@
-.adress p{
+ion-title {
+    letter-spacing: 0.8px;
+    padding-right: 56px;
+}
+ion-content {
+    --padding-start: 8px;
+    --padding-end: 8px;
+    --padding-top: 12px;
+    --padding-bottom: 16px;
+}
+.adress p {
     margin: 17px 0px;
 }
-.add{
-    font-size:40px;
+.add {
+    font-size: 40px;
 
     color: #871178;
-    }
-.adds{
-    padding:10px;
-    color:purple;
+}
+.adds {
+    padding: 10px;
+    color: purple;
     font-size: 20px;
 }
-.title{
+.title {
     text-align: center;
 }
-ion-header ion-title{
-    color: #FFFFFF;
-  font-size: 18px;
+ion-header ion-title {
+    color: #ffffff;
+    font-size: 18px;
 }
-.ellipsis ion-icon{
-font-size: 22px;
-    color:#FFFFFF;
+.ellipsis ion-icon {
+    font-size: 22px;
+    color: #ffffff;
 }
-.img{
-    padding:5px;
-    max-width:100px;
-    height:110px;
+.img {
+    padding: 5px;
+    max-width: 90px;
 }
-ion-card{
-    box-shadow:  0px 3px 6px #686666ea;
+ion-card {
+    padding: 5px;
+    margin: 5px 10px;
+    box-shadow: 0px 3px 6px #00000029;
 }
-
-
+// fab
+ion-fab-button {
+    --background: linear-gradient(#871178, #3c1378);
+    --color: #ffffff;
+    height: 4.375em;
+    width: 4.375em;
+}
+ion-fab-button ion-icon {
+    color: #ffffff;
+    height: 45px;
+    width: 45px;
+}

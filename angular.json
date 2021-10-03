@@ -32,7 +32,14 @@
               }
             ],
             "styles": ["src/theme/variables.scss", "src/global.scss"],
-            "scripts": []
+            "scripts": [],
+            "aot": false,
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "production": {
@@ -164,7 +171,7 @@
     }
   },
   "cli": {
-    "analytics": "66c93598-0e03-4e04-8ad5-b998192f6ac6",
+    "analytics": "fc71699d-bd89-463f-9ecf-a3eee1ce1b96",
     "defaultCollection": "@ionic/angular-toolkit"
   },
   "schematics": {

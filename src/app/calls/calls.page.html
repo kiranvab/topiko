@@ -1,8 +1,7 @@
-<ion-header color="custom" mode="md">
+<ion-header *ngIf="calheader" color="custom" mode="md">
   <ion-toolbar color="custom" class="toolbar">
     <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
-      <ion-menu-button></ion-menu-button>
+      <ion-back-button icon="chevron-back"></ion-back-button>
     </ion-buttons>
     <ion-row class="head-row">
       <ion-col><img src="assets/text-logo.png"></ion-col>
@@ -14,7 +13,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-segment value="all" color="secondary" mode="md" [(ngModel)]="segmentModel">
+<ion-segment *ngIf="calheader" value="all" color="secondary" mode="md" [(ngModel)]="segmentModel">
 
   <ion-segment-button value="calls">
     Calls
@@ -24,64 +23,117 @@
     Chats
   </ion-segment-button>
   <ion-segment-button value="B-chats">
-   B-Chats
+    B-Chats
   </ion-segment-button>
 </ion-segment>
 
-<ion-content>
+<ion-content class="backg">
 
   <div *ngIf="segmentModel === 'calls'" class="margin">
-    <ion-item *ngFor="let con of contacts; let i=index">
-      <ion-avatar slot="start">
-        <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png">
-      </ion-avatar>
-      <ion-label>
-        <p>{{con.name}}</p>
-        <p class="time">{{con.mobile}} </p>
-        <p style="text-align: right;"><ion-icon name="call"  (click)="audiocall(i)" color="medium" slot="end" style="font-size: 20px;"></ion-icon>
-          <span style="margin-left:15px"><ion-icon name="videocam" (click)="videocall(i)" color="medium" slot="end" style="font-size: 20px;"></ion-icon></span></p>
-        
-      </ion-label>
-    </ion-item>
-    <ion-item>
-      <ion-avatar slot="start">
-        <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png">
-      </ion-avatar>
-      <ion-label>
-        <p>Sarah Walker</p>
-        <p class="time">April 05, 12:04PM</p>
-        <ion-icon name="call" class="icons" (click)="audiocall(i)" color="medium" slot="end"></ion-icon>
-      </ion-label>
-    </ion-item>
+    <div *ngIf="MianDiv">
+      <audio id="partner-video" (click)="swapVideo('my-video')" autoplay controls
+        [ngClass]="{'top-video': topVideoFrame === 'partner-video', 'main-video': topVideoFrame != 'partner-video'}"
+        style="display: none;">
+      </audio>
+      <audio id="my-video" (click)="swapVideo('partner-video')" autoplay controls muted="muted"
+        [ngClass]="{'top-video': topVideoFrame === 'my-video', 'main-video': topVideoFrame != 'my-video'}"
+        style="display: none;">
+      </audio>
+      <ion-card *ngFor="let con of calls; let i=index">
+        <ion-row class="call-row">
+          <div class="avatar">
+            <ion-avatar>
+              <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png">
+            </ion-avatar>
+          </div>
+          <ion-col size="8" class="nametext">
+            <span>{{con.name}}</span>
+            <p *ngIf="con.caller_mobile==user_mobile" class="time">Outgoing ({{con.start_time}})</p>
+            <p *ngIf="con.calee_mobile==user_mobile" class="time">Incoming ({{con.start_time}})</p>
+          </ion-col>
+          <ion-col size="2" class="call-col">
+            <div style="text-align: right;">
+              <ion-icon *ngIf="con.call_type=='audio'" name="call" (click)="audiocall(i)" color="medium" slot="end"
+                style="font-size: 22px;"></ion-icon>
+              <ion-icon *ngIf="con.call_type=='video'" name="videocam" (click)="videocall(i)" color="medium" slot="end"
+                style="font-size: 22px;"></ion-icon>
+              <!--span style="margin-left:15px"><ion-icon name="videocam" (click)="videocall(i)" color="medium" slot="end" style="font-size: 20px;"></ion-icon></span-->
+            </div>
+          </ion-col>
+        </ion-row>
 
- 
+      </ion-card>
+      <ion-fab vertical="bottom" horizontal="end" slot="fixed" routerLink="/calls-contact" mode="md">
+        <ion-fab-button>
+          <ion-icon name="call"></ion-icon>
+        </ion-fab-button>
+      </ion-fab>
+    </div>
+    <div *ngIf="AudioDiv">
 
-    <ion-fab vertical="bottom" horizontal="end" slot="fixed" routerLink="/calls-contact" mode="md">
-      <ion-fab-button>
-        <ion-icon name="call"></ion-icon>
-      </ion-fab-button>
-    </ion-fab>
+      <audio id="partner-video" (click)="swapVideo('my-video')" autoplay controls
+        [ngClass]="{'top-video': topVideoFrame === 'partner-video', 'main-video': topVideoFrame != 'partner-video'}"
+        style="display: none;">
+      </audio>
+      <audio id="my-video" (click)="swapVideo('partner-video')" autoplay controls muted="muted"
+        [ngClass]="{'top-video': topVideoFrame === 'my-video', 'main-video': topVideoFrame != 'my-video'}"
+        style="display: none;">
+      </audio>
+      <div id="errorMsg"></div>
+
+
+      <h1 class="bus" style="margin-top: 70%;">{{partnerId}}</h1>
+      <h4 class="calling">Calling</h4>
+
+
+      <ion-grid>
+
+        <ion-row class="end" *ngIf="outgng" style="margin-top: 40%;">
+          <ion-fab-button color="light" (click)="callend()">
+            <ion-icon name="call"></ion-icon>
+          </ion-fab-button>
+        </ion-row>
+        <ion-row *ngIf="incmng" style="margin-top: 30%;">
+          <ion-col size="2" style="text-align: left !important;">
+            <ion-button color="danger" (click)="callend()"
+              style="width:50px; height:50px; border-radius: 17px; float: left;">
+              <ion-icon name="call"></ion-icon>
+            </ion-button>
+          </ion-col>
+          <ion-col size="8"></ion-col>
+          <ion-col size="2" style="text-align: right !important;">
+            <ion-button color="success" (click)="AnsCall()"
+              style="width:50px; height:50px; border-radius: 17px; float: right;">
+              <ion-icon name="call"></ion-icon>
+            </ion-button>
+          </ion-col>
+
+        </ion-row>
+      </ion-grid>
+    </div>
   </div>
-
   <div *ngIf="segmentModel === 'chats'" class="margin">
-    <ion-card  *ngFor="let ccnt of contacts; let i= index">
-      <ion-row>
+    <ion-card *ngFor="let ccnt of chats; let i= index">
+      <ion-row class="call-row">
         <div class="avatar">
           <ion-avatar>
-            <img src="https://i.pinimg.com/474x/bc/d4/ac/bcd4ac32cc7d3f98b5e54bde37d6b09e.jpg" alt="">
+            <img *ngIf='ccnt.image !=""' src="{{ccnt.image}}" class="img-circle">
+            <img *ngIf='ccnt.image ==""'
+              src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png">
           </ion-avatar>
         </div>
-        <ion-col class="text-overflow" (click)="chat(i)">
+        <ion-col size="9" class="text-overflow nametext" (click)="chat(i)">
           <p class="user-name">{{ccnt.name}}</p>
-          <p class="time">{{ccnt.city}}</p>
+          <p class="time" *ngIf="ccnt.online_status == 0">Last seen: {{ccnt.last_seen}}</p>
+          <p class="time" *ngIf="ccnt.online_status == 1">Online</p>
         </ion-col>
-        <ion-col size="3" class="chat-time">
-         
+        <ion-col size="1" class="chat-time">
+          <div><span *ngIf="ccnt.unread_messages!= 0" class="online">{{ccnt.unread_messages}}</span></div>
         </ion-col>
       </ion-row>
     </ion-card>
 
-  
+
 
     <ion-fab vertical="bottom" horizontal="end" slot="fixed" routerLink="/chats-contact">
       <ion-fab-button>
@@ -91,7 +143,7 @@
   </div>
 
   <div *ngIf="segmentModel === 'B-chats'" class="margin">
-    <ion-card  *ngFor="let bchat of buchat; let i= index">
+    <ion-card *ngFor="let bchat of buchat; let i= index">
       <ion-row>
         <div class="avatar">
           <ion-avatar>
@@ -100,26 +152,22 @@
         </div>
         <ion-col class="text-overflow" (click)="businesschat(i)">
           <p class="user-name">{{bchat.chatroom}}</p>
-          
+
         </ion-col>
         <ion-col size="3" class="chat-time">
-         
+
         </ion-col>
       </ion-row>
     </ion-card>
-
-  
-
     <ion-fab vertical="bottom" horizontal="end" slot="fixed" routerLink="/chats-contact">
       <ion-fab-button>
         <ion-icon name="chatbox-ellipses-outline"></ion-icon>
       </ion-fab-button>
     </ion-fab>
   </div>
-
 </ion-content>
 
-<ion-footer mode="md" class="home-footer">
+<ion-footer *ngIf="calheader" mode="md" class="home-footer">
   <ion-row>
     <ion-col routerLink="/home">
       <ion-icon name="home-outline"></ion-icon>

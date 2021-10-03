@@ -1,8 +1,8 @@
 {
   "name": "topiko",
   "integrations": {
-    "capacitor": {},
-    "cordova": {}
+    "cordova": {},
+    "capacitor": {}
   },
   "type": "angular"
 }

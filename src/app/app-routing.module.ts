@@ -426,6 +426,30 @@ const routes: Routes = [
   {
     path: 'gcategory',
     loadChildren: () => import('./gcategory/gcategory.module').then( m => m.GcategoryPageModule)
+  },
+  {
+    path: 'contact',
+    loadChildren: () => import('./contact/contact.module').then( m => m.ContactPageModule)
+  },
+  {
+    path: 'shop-here',
+    loadChildren: () => import('./shop-here/shop-here.module').then( m => m.ShopHerePageModule)
+  },
+  {
+    path: 'settings',
+    loadChildren: () => import('./settings/settings.module').then( m => m.SettingsPageModule)
+  },
+  {
+    path: 'edit-profile',
+    loadChildren: () => import('./edit-profile/edit-profile.module').then( m => m.EditProfilePageModule)
+  },
+  {
+    path: 'edit-branch',
+    loadChildren: () => import('./edit-branch/edit-branch.module').then( m => m.EditBranchPageModule)
+  },
+  {
+    path: 'edit-business',
+    loadChildren: () => import('./edit-business/edit-business.module').then( m => m.EditBusinessPageModule)
   }
 ];
 

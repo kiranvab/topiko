@@ -5,15 +5,13 @@
       <ion-menu-button mode=ios></ion-menu-button>
     </ion-buttons>
     <ion-title>My QR Reach</ion-title>
-    <ion-buttons slot="end">
-      <ion-icon name="ellipsis-vertical"></ion-icon>
-    </ion-buttons>
+    
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
 
-  <ion-row class="select-row">
+  <!-- <ion-row class="select-row">
     <div class="select">
       <ion-select placeholder="Vehicle" value="vehicle" interface="popover" mode="ios">
         <ion-select-option value="vehicle">Vehicle</ion-select-option>
@@ -21,16 +19,12 @@
         <ion-select-option value="favourites">Bicycle</ion-select-option>
       </ion-select>
     </div>
-  </ion-row>
+  </ion-row> -->
 
   <h4>Sticker</h4>
 
   <ion-card class="fourth">
     <ion-row class="gpay">
-      <img
-        src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Google_Pay_%28GPay%29_Logo_%282018-2020%29.svg/1280px-Google_Pay_%28GPay%29_Logo_%282018-2020%29.svg.png"
-        alt="">
-
       <ion-row class="second">
         <ion-col>
           <p class="reach">Refer ID</p>
@@ -41,10 +35,7 @@
       </ion-row>
       <!-- <ion-input type="text" placeholder="My QR data" [(ngModel)]="myAngularxQrCode"></ion-input>-->
       <ion-card >
-        <qrcode [qrdata]="myAngularxQrCode" style="height: 230px !important;width: 230px !important;"></qrcode>
-        <ion-card-content>
-        <p>Value: {{myAngularxQrCode}}</p>
-        </ion-card-content>
+        <qrcode [qrdata]="myAngularxQrCode" [width]="256" [errorCorrectionLevel]="'M'"></qrcode>
       </ion-card>
       <p class="phone">{{reg_number}}</p>
       <span class="note">Note: <span>Scan to reach belongers in case of emergency. don't misuse</span></span>
@@ -64,7 +55,7 @@
               <img src="http://www.eurocarnews.com/media/pictorials/1445/6905.jpg" alt="">
             </ion-avatar>
             <ion-row class="nam text-overflow">
-              <p>Murali</p>
+              <p>{{username}}</p>
             </ion-row>
           </ion-col>
         </ion-row>
@@ -76,7 +67,7 @@
               </ion-col>
               <ion-col>
                 <span class="aligncol text-overflow">
-                  <p class="id">{{this.rand}}</p>
+                  <p class="id">{{myAngularxQrCode}}</p>
                 </span>
               </ion-col>
             </ion-row>
@@ -85,7 +76,7 @@
                 <p>Vechile</p>
               </ion-col>
               <ion-col class="text-overflow">
-                <p class="vehicno">TN 22 DH 9133</p>
+                <p class="vehicno">{{reg_number}}</p>
               </ion-col>
             </ion-row>
             <ion-row class="noteclas">

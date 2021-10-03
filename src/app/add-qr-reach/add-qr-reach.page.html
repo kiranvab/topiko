@@ -14,9 +14,9 @@
     <ion-row class="row">
       <ion-col class="bg">
         <ion-avatar>
-          <img src="https://i.pinimg.com/474x/bc/d4/ac/bcd4ac32cc7d3f98b5e54bde37d6b09e.jpg" alt="">
+          <img src="{{uimg}}" alt="">
         </ion-avatar>
-        <img class="position-cam" src="assets/camera.svg" alt="">
+        <!--<img class="position-cam" src="assets/camera.svg" alt="">-->
       </ion-col>
     </ion-row>
   </ion-card>
@@ -37,68 +37,69 @@
       <p>Upload Image</p>
     </ion-row>
     <div class="scroll">
-      <ion-card class="upload-card" (click)="image1">
+      <ion-card class="upload-card" (click)="image1()" *ngIf="img_img1">
+      <img src="{{image1_img}}" />
+      </ion-card>
+      <ion-card class="upload-card" (click)="image1()" *ngIf="up_img1">
         <ion-icon name="cloud-upload-outline"></ion-icon>
         <p>upload image</p>
       </ion-card>
 
-      <ion-card class="upload-card" (click)="image2">
+      <ion-card class="upload-card" (click)="image1()" *ngIf="img_img2">
+        <img src="{{image2_img}}" />
+        </ion-card>
+      <ion-card class="upload-card" (click)="image2()" *ngIf="up_img2">
         <ion-icon name="cloud-upload-outline"></ion-icon>
         <p>upload image</p>
       </ion-card>
 
-      <ion-card class="upload-card" (click)="image3">
+      <ion-card class="upload-card" (click)="image3()" *ngIf="img_img3">
+        <img src="{{image3_img}}" />
+        </ion-card>
+      <ion-card class="upload-card" (click)="image3()" *ngIf="up_img3">
         <ion-icon name="cloud-upload-outline"></ion-icon>
         <p>upload image</p>
       </ion-card>
 
-      <ion-card class="upload-card" (click)="image4">
+      <ion-card class="upload-card" (click)="image3()" *ngIf="img_img3">
+        <img src="{{image3_img}}" />
+        </ion-card>
+      <ion-card class="upload-card" (click)="image3()" *ngIf="up_img3">
         <ion-icon name="cloud-upload-outline"></ion-icon>
         <p>upload image</p>
       </ion-card>
+
+      <ion-card class="upload-card" (click)="image4()" *ngIf="img_img4">
+        <img src="{{image4_img}}" />
+        </ion-card>
+      <ion-card class="upload-card" (click)="image4()" *ngIf="up_img4">
+        <ion-icon name="cloud-upload-outline"></ion-icon>
+        <p>upload image</p>
+      </ion-card>
+     
     </div>
   </ion-card>
 
   <ion-list>
     <ion-item>
-      <ion-input placeholder="User Name" #name></ion-input>
+      <ion-input placeholder="User Name"  [(ngModel)]="name"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-input placeholder="User Number" #mobile></ion-input>
+      <ion-input placeholder="User Number" [(ngModel)]="mobile" ></ion-input>
     </ion-item>
     <ion-item>
-      <ion-input placeholder="User Mail ID" #email></ion-input>
+      <ion-input placeholder="User Mail ID" [(ngModel)]="email" ></ion-input>
     </ion-item>
     <ion-item>
-      <ion-select placeholder="Purpose (vehicle)" #purpose></ion-select>
+      <ion-select placeholder="Purpose (vehicle)" [(ngModel)]="vehicle">
+        <ion-select-option value="Bicycle">BiCycle </ion-select-option>
+        <ion-select-option value="2 Wheeler">2 Wheeler</ion-select-option>
+        <ion-select-option value="4 Wheeler">4 Wheeler</ion-select-option>
+        <ion-select-option value="more than 4 Wheeler">More than 4 Wheeler</ion-select-option>
+      </ion-select>
     </ion-item>
-
-    <ion-radio-group>
-      <ion-row class="cycle">
-        <ion-row class="full">
-          <ion-col>
-            <ion-radio value="cycle" checked (click)="cycle()"></ion-radio>
-            <ion-label>By Cycle</ion-label>
-          </ion-col>
-          <ion-col>
-            <ion-radio value="fourwheel" (click)="fourwheel()"></ion-radio>
-            <ion-label>Four Wheeler</ion-label>
-          </ion-col>
-        </ion-row>
-        <ion-row class="full">
-          <ion-col>
-            <ion-radio value="wheel" (click)="twowheel()"></ion-radio>
-            <ion-label>Two Wheeler</ion-label>
-          </ion-col>
-          <ion-col>
-            <ion-radio value="more" (click)="more()"></ion-radio>
-            <ion-label>More than 4</ion-label>
-          </ion-col>
-        </ion-row>
-      </ion-row>
-    </ion-radio-group>
-
-    <textarea class="text" placeholder="Enter Reg No.(TN 22 DH 0000)" #reg_number></textarea>
+    
+    <textarea class="text" placeholder="Enter Reg No.(TN 22 DH 0000)" [(ngModel)]="reg_number"></textarea>
 
     <ion-row>
       <ion-col class="nominee">

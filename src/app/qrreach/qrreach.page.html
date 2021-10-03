@@ -10,29 +10,27 @@
 
 <ion-content>
 
-  <ion-card routerLink="/qr-reach-view">
+  <ion-card *ngFor="let qr of myqr; let i = index;">
     <ion-row>
-      <div class="avatar">
+      <div class="avatar"  (click)="qrdetails(i)">
         <ion-avatar>
-          <img src="https://i.pinimg.com/474x/bc/d4/ac/bcd4ac32cc7d3f98b5e54bde37d6b09e.jpg" alt="">
+          <img src="{{uimage}}" alt="" >
         </ion-avatar>
       </div>
-      <ion-col>
-        <p class="user-name pclass">Murali</p>
-        <p class="time pclass">Vehicle</p>
-        <p class="time pclass">TN 22 DH 9133</p>
+      <ion-col  (click)="qrdetails(i)"> 
+        <p class="user-name pclass">{{qr.name}}</p>
+        <p class="time pclass">{{qr.purpose}}</p>
+        <p class="time pclass">{{qr.registration_number}}</p>
       </ion-col>
       <ion-col size="1" class="ellipsis">
-        <ion-icon name="ellipsis-vertical"></ion-icon>
+        <ion-icon name="ellipsis-vertical"  (click)="openMenu(i)"></ion-icon>
       </ion-col>
     </ion-row>
     <ion-row class="nominee">
       <p>Nominee</p>
     </ion-row>
     <div class="scroll">
-      <p class="design">Jagan karthik</p>
-      <p class="design">Govind</p>
-      <p class="design">Babji</p>
+      <p class="design">{{qr.nominee_name}}</p>
     </div>
 
   </ion-card>

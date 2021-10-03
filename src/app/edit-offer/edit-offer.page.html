@@ -1,8 +1,8 @@
 <ion-header color="custom">
   <ion-toolbar color="custom" class="toolbar">
     <ion-buttons slot="start">
-      <ion-back-button mode="md"></ion-back-button>
-      <ion-menu-button mode="ios"></ion-menu-button>
+      <ion-back-button icon="chevron-back"></ion-back-button>
+      <!-- <ion-menu-button mode="ios"></ion-menu-button> -->
     </ion-buttons>
     <ion-title>Edit Offer</ion-title>
   </ion-toolbar>
@@ -22,26 +22,28 @@
     <h5>Offer Tags</h5>
     <ion-row>
       <ion-textarea [(ngModel)]="tag">
-        
+
       </ion-textarea>
     </ion-row>
-   
-    <ion-row>
+
+    <ion-row style="margin-top: 20px; margin-bottom: 12px;">
       <ion-col size="6">
+        <ion-label color="primary">Start Date</ion-label>
         <ion-item>
-          <ion-label color="primary" floating></ion-label>
-          <ion-input type="date" placeholder="From" [(ngModel)]="from"></ion-input>
+          <ion-datetime default="YYYY-MM-DD" value="YYYY-MM-DD" displayFormat="YYYY-MM-DD" placeholder="Select Date"
+            [(ngModel)]="from"></ion-datetime>
         </ion-item>
       </ion-col>
       <ion-col size="6">
+        <ion-label color="primary">End Date</ion-label>
         <ion-item>
-          <ion-label color="primary" floating></ion-label>
-          <ion-input type="date" placeholder="From" [(ngModel)]="to"></ion-input>
+          <ion-datetime default="YYYY-MM-DD" displayFormat="YYYY-MM-DD" placeholder="Select Date" [(ngModel)]="to">
+          </ion-datetime>
         </ion-item>
       </ion-col>
     </ion-row>
     <ion-row class="text">
-      <ion-col>
+      <ion-col style="padding:0%">
         <ion-item>
           <ion-label color="primary" floating></ion-label>
           <ion-input type="text" placeholder="Enter Your Text" [(ngModel)]="desc"></ion-input>

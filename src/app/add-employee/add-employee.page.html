@@ -1,7 +1,7 @@
 <ion-header color="custom">
   <ion-toolbar color="custom" class="toolbar">
     <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
+      <ion-back-button icon="chevron-back"></ion-back-button>
     </ion-buttons>
     <ion-title>Add Employee</ion-title>
   </ion-toolbar>
@@ -12,7 +12,9 @@
     <ion-row class="row">
       <ion-col class="bg">
         <ion-avatar>
-          <img src="https://banner2.cleanpng.com/20180319/sue/kisspng-camera-computer-icons-android-camera-icon-android-camera-shutter-icon-5ab02d20a19642.3023672915214953286619.jpg" alt="">
+          <img
+            src="https://banner2.cleanpng.com/20180319/sue/kisspng-camera-computer-icons-android-camera-icon-android-camera-shutter-icon-5ab02d20a19642.3023672915214953286619.jpg"
+            alt="">
         </ion-avatar>
       </ion-col>
     </ion-row>
@@ -26,14 +28,14 @@
     </p>
     <p>
       <ion-item>
-        <ion-input placeholder="Employee number"  [(ngModel)]="mobile"></ion-input>
+        <ion-input placeholder="Employee number" [(ngModel)]="mobile"></ion-input>
       </ion-item>
     </p>
     <p>
       Designation Tags
       <ion-row>
         <ion-textarea [(ngModel)]="tags" placeholder="add designations with comma seperated">
-         
+
         </ion-textarea>
       </ion-row>
     </p>
@@ -48,11 +50,11 @@
       Online Tele Support
       <ion-row class="check">
         <ion-col>
-          <ion-checkbox   [(ngModel)]="chat" (ionChange)="Chatstatus(chat)" ></ion-checkbox>
+          <ion-checkbox [(ngModel)]="chat" (ionChange)="Chatstatus(chat)"></ion-checkbox>
           <ion-label> Chat</ion-label>
         </ion-col>
         <ion-col>
-          <ion-checkbox [(ngModel)]="video" (ionChange)="VideoStatus(video)" ></ion-checkbox>
+          <ion-checkbox [(ngModel)]="video" (ionChange)="VideoStatus(video)"></ion-checkbox>
           <ion-label> Video</ion-label>
         </ion-col>
         <ion-col>
@@ -63,7 +65,7 @@
     </p>
     <p>
       Delivery Support
-      <ion-row class="check">
+      <ion-row class="check" style="margin-bottom: 0%;">
         <ion-col>
           <ion-checkbox [(ngModel)]="delivery" (ionChange)="Deliverystatus(delivery)"></ion-checkbox>
           <ion-label> Delivery</ion-label>
@@ -71,24 +73,32 @@
       </ion-row>
     </p>
 
-    <ion-row class="tog">
+    <ion-row class="tog" style="margin-top: -34px;">
       <p class="gps">Call Record Access</p>
       <ion-toggle checked [(ngModel)]="callrecord" (ionChange)="Recordstatus(callrecord)" mode="md"></ion-toggle>
     </ion-row>
-    <ion-row class="tog">
+    <ion-row class="tog" style="margin-top: -34px; margin-bottom: -12px;">
       <p class="gps">Create Invoice</p>
       <ion-toggle checked mode="md" [(ngModel)]="invoice" (ionChange)="Invoicestatus(invoice)"></ion-toggle>
     </ion-row>
 
     <h6>Work Hour Settings</h6>
-    <p>
-      <ion-item>
-        <ion-select placeholder="Working Hours"></ion-select>
-      </ion-item>
-    </p>
+    <ion-row>
+      <ion-col>Monday</ion-col>
+      <ion-col>From:
+        <ion-item>
+          <ion-select placeholder="Select One">
+            <ion-select-option value="f">Female</ion-select-option>
+            <ion-select-option value="m">Male</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-col>
+      <ion-col>To: </ion-col>
+    </ion-row>
     <ion-row class="branches">
-      <p>Branches <ion-icon name="chevron-down"></ion-icon>
-      </p>
+      <ion-select placeholder="Branches" interface="popover" [(ngModel)]="branch">
+        <ion-select-option *ngFor="let br of branches" value="{{br.id}}">{{br.branch_title}}</ion-select-option>
+      </ion-select>
     </ion-row>
     <ion-card class="card">
       <ion-row>

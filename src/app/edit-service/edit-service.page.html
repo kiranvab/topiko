@@ -1,51 +1,37 @@
 <ion-header color="custom">
   <ion-toolbar color="custom" class="toolbar">
     <ion-buttons slot="start">
-      <ion-back-button mode="md"></ion-back-button>
+      <ion-back-button icon="chevron-back"></ion-back-button>
     </ion-buttons>
-    <ion-title class="title">Edit Service</ion-title>
+    <ion-title>Edit Service</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <h5>Red Bus Chennai</h5>
   <ion-grid>
     <ion-row>
       <ion-col class="left">
-        <ion-card class="first-card">
-          <img
-            src="https://image.freepik.com/free-vector/colorful-menu-fast-food-restaurant-with-burgers-pizza-desserts-drinks-black-background-illustration_1284-27167.jpg"
-            alt="">
+        <ion-card class="first-card" (click)="getPicture()">
+          <div *ngIf="image == ''"> Upload Image</div>
+          <img *ngIf="image != ''" src="{{image}}" alt="">
         </ion-card>
       </ion-col>
       <ion-col class="right">
-        <ion-card class="second-card">
-          <ion-row>
-            <ion-icon name="cloud-upload-outline"></ion-icon>
-          </ion-row>
-          <ion-row>
-            <p>Upload Service video, gif or URL</p>
-          </ion-row>
+        <ion-card class="second-card" (click)="getVideo()">
+          <div *ngIf="video == null">Upload Video</div>
+          <img *ngIf="video != null" src="{{video}}" alt="">
         </ion-card>
         <ion-row class="pad">
           <ion-col class="left">
-            <ion-card class="third-card">
-              <ion-row>
-                <ion-icon name="cloud-upload-outline"></ion-icon>
-              </ion-row>
-              <ion-row>
-                <p>Upload Image</p>
-              </ion-row>
+            <ion-card class="third-card" (click)="getImg1()">
+              <div *ngIf="img1 == null"> Upload </div>
+              <img *ngIf="img1 != null" src="{{img1}}" alt="">
             </ion-card>
           </ion-col>
           <ion-col class="right">
-            <ion-card class="third-card">
-              <ion-row>
-                <ion-icon name="cloud-upload-outline"></ion-icon>
-              </ion-row>
-              <ion-row>
-                <p>Upload Image</p>
-              </ion-row>
+            <ion-card class="third-card" (click)="getImg2()">
+              <div *ngIf="img2 == null">Upload</div>
+              <img *ngIf="img2 != null" src="{{img2}}" alt="">
             </ion-card>
           </ion-col>
         </ion-row>
@@ -53,28 +39,19 @@
     </ion-row>
     <ion-row>
       <ion-col size="3" class="left">
-        <ion-card class="third-card">
-          <ion-row>
-            <ion-icon name="cloud-upload-outline"></ion-icon>
-          </ion-row>
-          <ion-row>
-            <p>Upload Image</p>
-          </ion-row>
+        <ion-card class="third-card" (click)="getImg3()">
+          <div *ngIf="img3 === null"> Upload </div>
+          <img *ngIf="img3 != null" src="{{img3}}" alt="">
         </ion-card>
       </ion-col>
       <ion-col class="right">
-        <ion-card class="third-card">
-          <ion-row>
-            <ion-icon name="cloud-upload-outline"></ion-icon>
-          </ion-row>
-          <ion-row>
-            <p>Upload Banner</p>
-          </ion-row>
+        <ion-card class="third-card" (click)="getBanner()">
+          <div *ngIf="banner == null"> Upload Banner</div>
+          <img *ngIf="banner != null" src="{{banner}}" alt="">
         </ion-card>
       </ion-col>
     </ion-row>
   </ion-grid>
-
   <ion-grid class="second-grid">
     <p>
       <ion-item>
@@ -84,12 +61,12 @@
     <p>
       Service Tags
       <ion-row>
-        <ion-textarea  [(ngModel)]="servicetags">
-          
+        <ion-textarea [(ngModel)]="servicetags">
+
         </ion-textarea>
       </ion-row>
     </p>
-    <p>
+    <!-- <p>
       <ion-item>
         <ion-input placeholder="Measuring Type"></ion-input>
       </ion-item>
@@ -97,16 +74,16 @@
     <ion-row>
       <ion-textarea placeholder="Measuring Details">
       </ion-textarea>
-    </ion-row>
+    </ion-row>-->
     <p>
       Description
       <ion-row>
-        <ion-textarea  [(ngModel)]="description"></ion-textarea>
+        <ion-textarea [(ngModel)]="description"></ion-textarea>
       </ion-row>
     </p>
     <p>
       <ion-item>
-        <ion-input placeholder="Actual Price" [(ngModel)]="mrp" ></ion-input>
+        <ion-input placeholder="Actual Price" [(ngModel)]="mrp"></ion-input>
       </ion-item>
     </p>
     <p>
@@ -117,7 +94,7 @@
     <p>
       <ion-row class="toggle">
         <ion-col>
-          <p>Cash on Delivery</p>
+          <p style="margin: 12px 0px;">Cash on Delivery</p>
         </ion-col>
         <ion-col size="2.5">
           <ion-toggle checked></ion-toggle>

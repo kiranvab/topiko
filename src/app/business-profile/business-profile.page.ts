@@ -1,4 +1,8 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Storage } from '@ionic/storage-angular';
+import { AppComponent } from '../app.component';
 
 @Component({
   selector: 'app-business-profile',
@@ -7,14 +11,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BusinessProfilePage implements OnInit {
   bid: any;
-  bpin: any;
-  constructor() { }
+  business:any
+  constructor(
+    private storage:Storage,
+    private http: HttpClient,
+    private router:Router
+  ) { }
 
   ngOnInit() {
-    this.bid = Math.floor(Math.random() * 100000) + 100000;
-    console.log(this.bid);
-    this.bpin = Math.floor(Math.random() * 1000) + 1000;
-    console.log(this.bpin);
+    this.storage.get("bid").then(val =>{
+      this.bid=val;
+      console.log("Business ID", this.bid);
+      this.http.get(AppComponent.ApiUrl+"businessprofile.php?bid="+this.bid).subscribe(data =>
+        {
+          this.business = data;
+          console.log("Business", this.business)
+    })
+    })
   }
 
+  edit(){
+    this.storage.set("bid", this.bid);
+    this.router.navigate(['edit-business']);
+  }
 }

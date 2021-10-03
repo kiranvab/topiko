@@ -30,10 +30,12 @@ export class AppComponent {
   incomming: any;
   ObservableVar: Subscription;
   udata: any;
+  uid:any;
   uname: any;
   umobile: any;
   ucity: any;
   ucountry: any;
+  uimage:any;
   constructor(
     private storage : Storage,
    // private backgroundMode: BackgroundMode,
@@ -46,16 +48,23 @@ export class AppComponent {
      
   }
 
+  settings(){
+    this.storage.set("uid", this.uid);
+    this.route.navigate(['/settings']);
+  }
+
   async ngOnInit() {
     await this.storage.create();
     this.storage.get("userdetails").then(val =>
       {
         this.udata= val;
+        this.uid=this.udata[0].id;
         this.uname=this.udata[0].name;
         this.umobile = this.udata[0].mobile;
         this.ucity = this.udata[0].city;
         this.ucountry = this.udata[0].country;
-        console.log(this.udata);
+        this.uimage = this.udata[0].image;
+        console.log("user Data", this.udata);
       });
     // If using a custom driver:
     // await this.storage.defineDriver(MyCustomDriver)

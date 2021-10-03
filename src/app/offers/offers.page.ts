@@ -12,7 +12,7 @@ import { AppComponent } from '../app.component';
 })
 export class OffersPage implements OnInit {
   buid: any;
-  offers: Object;
+  offers: any;
 
   constructor(
     public actionsheetCtrl:ActionSheetController,
@@ -27,14 +27,23 @@ export class OffersPage implements OnInit {
       {
         this.buid = val;
         console.log("BID", this.buid)
-        this.http.get(AppComponent.ApiUrl+"getbusinessoffers.php?bid="+this.buid).subscribe(data=>
-          {
-            this.offers = data;
-            console.log("Offers", this.offers);
-          }
-          );
       })
+      this.getoffers();
   }
+
+  getoffers(){
+    this.storage.get("bid").then(val=>
+      {
+        this.buid = val;
+    this.http.get(AppComponent.ApiUrl+"getbusinessoffers.php?bid="+this.buid).subscribe(data=>
+      {
+        this.offers = data;
+        console.log("Offers", this.offers);
+      }
+      );
+    })
+  }
+
 
 
   async openMenu(i) {  
@@ -53,7 +62,6 @@ export class OffersPage implements OnInit {
           handler: () => {  
            console.log('Archive clicked'); 
            this.presentAlertConfirm(i);
-           this.route.navigate(['/offers']); 
           }  
         }  
       ]  
@@ -66,7 +74,7 @@ export class OffersPage implements OnInit {
     const alert = await this.alertController.create({
       cssClass: 'my-custom-class',
       header: 'Confirm!',
-      message: 'Message <strong>text</strong>!!!',
+      message: 'Are You sure <strong>do you want to Delete</strong>?',
       buttons: [
         {
           text: 'Cancel',
@@ -82,7 +90,9 @@ export class OffersPage implements OnInit {
             console.log(this.offers[i].id);
             this.http.get(AppComponent.ApiUrl+"deleteoffer.php?oid="+this.offers[i].id).subscribe(data =>{
               console.log("Response", data);
-              this.AlertDelete()
+              this.AlertDelete();
+              this.getoffers();
+
             })
           }
         }
@@ -93,14 +103,18 @@ export class OffersPage implements OnInit {
   }
 
   async AlertDelete(){
+  
     const alert = await this.alertController.create({
       cssClass: 'my-custom-class',
       header: 'Deleted!',
       message: 'Offer has been deleted sucesfully.',
       buttons: ['OK']
     });
+    
 
     await alert.present();
+    this.getoffers();
+    window.location.reload();
     
   }
 

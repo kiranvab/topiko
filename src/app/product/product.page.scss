@@ -3,8 +3,9 @@ ion-title {
     color: #ffffff;
     padding: 0px;
     padding-top: 1px;
-    letter-spacing: 0.6px;
+    letter-spacing: 0.8px;
     text-align: left;
+    padding-right: 48px;
 }
 
 ion-content {
@@ -29,8 +30,8 @@ ion-card {
 }
 
 .avatar ion-avatar {
-    width: 70px;
-    height: 70px;
+    width: 80px;
+    height: 80px;
 }
 .border {
     border: 0.2px solid #707070;

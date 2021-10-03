@@ -60,7 +60,7 @@ export class AddbranchesPage implements OnInit {
       console.log(data);
       if(data == 1){
         this.Created();
-        this.router.navigate[('branches')];
+          this.router.navigate(["/branches"]);        
       }
       else{
         this.Failed();
@@ -74,9 +74,9 @@ export class AddbranchesPage implements OnInit {
       message: 'Branch has been Created sucesfully.',
       buttons: ['OK'],
       
-    });
-    
+  });
     await alert.present();
+    this.router.navigate(['branches'])   
   }
 
   async Failed(){

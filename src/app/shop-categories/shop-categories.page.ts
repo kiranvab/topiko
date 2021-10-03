@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { AppComponent } from '../app.component';
-import { Storage } from '@ionic/storage';
+import { Storage } from '@ionic/storage-angular';
 import { Router } from '@angular/router';
 
 @Component({
@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
 })
 export class ShopCategoriesPage implements OnInit {
   categories:any;
+  business:any;
   constructor(
     private http:HttpClient,
     private storage:Storage,
@@ -27,6 +28,7 @@ export class ShopCategoriesPage implements OnInit {
   details(i){
     console.log(this.categories[i].type);
     this.storage.set("type", this.categories[i].type)
+    this.storage.set("catid", this.categories[i].id)
     this.router.navigate(['gcategory']);
   }
 

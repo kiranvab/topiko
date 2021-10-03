@@ -1,0 +1,147 @@
+<ion-header color="custom" mode="md">
+  <ion-toolbar color="custom" class="toolbar">
+    <ion-buttons slot="start" mode="md">
+      <ion-back-button></ion-back-button>
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Profile</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+<ion-row class="bdr-btm">
+  <ion-col size="3">
+    <img *ngIf="uimage"  src="{{uimage}}">
+    <img *ngIf="uimage == ''" class="icon-img" src="assets/profile.png" style="padding: 10px; background: #fafafa; border-radius: 25%;">
+  </ion-col>
+  <ion-col>
+    <div class="uname">{{uname}}</div>
+    <div class="profession">{{profession}}</div>
+  </ion-col>
+</ion-row>
+
+
+<ion-row class="margin" (click)="editprofile()">
+  <ion-col size="2">
+    <ion-icon class="icons" name="person-circle-outline"></ion-icon>
+  </ion-col>
+  <ion-col class="link">Personal Data</ion-col>
+  <ion-col size="2" class="arrow">
+    <ion-icon  name="chevron-forward-outline"></ion-icon>
+  </ion-col>
+</ion-row>
+
+<ion-row class="margin">
+  <ion-col size="2">
+    <ion-icon class="icons" name="language-outline"></ion-icon>
+  </ion-col>
+  <ion-col class="link">Change Language </ion-col>
+  <ion-col size="2" class="arrow">
+    <ion-icon  name="chevron-forward-outline"></ion-icon>
+  </ion-col>
+</ion-row>
+
+<ion-row class="margin">
+  <ion-col size="2">
+    <ion-icon class="icons" name="lock-closed-outline"></ion-icon>
+  </ion-col>
+  <ion-col class="link">Change Password</ion-col>
+  <ion-col size="2" class="arrow">
+    <ion-icon  name="chevron-forward-outline"></ion-icon>
+  </ion-col>
+</ion-row>
+
+<ion-row class="margin" routerLink="/favourites">
+  <ion-col size="2">
+    <ion-icon class="icons" name="heart-outline"></ion-icon>
+  </ion-col>
+  <ion-col class="link">My Favourites</ion-col>
+  <ion-col size="2" class="arrow">
+    <ion-icon  name="chevron-forward-outline"></ion-icon>
+  </ion-col>
+</ion-row>
+
+<ion-row class="margin">
+  <ion-col size="2">
+    <ion-icon class="icons" name="open-outline"></ion-icon>
+  </ion-col>
+  <ion-col class="link">Referal Code</ion-col>
+  <ion-col size="2" class="arrow">
+    <ion-icon  name="chevron-forward-outline"></ion-icon>
+  </ion-col>
+</ion-row>
+
+<div class="bdr-btm"></div>
+
+<ion-row class="margin">
+  <ion-col size="2">
+    <ion-icon class="icons" name="chatbox-ellipses-outline"></ion-icon>
+  </ion-col>
+  <ion-col class="link"><strong>FAQ's</strong></ion-col>
+  <ion-col size="2" class="arrow">
+    <ion-icon  name="chevron-forward-outline"></ion-icon>
+  </ion-col>
+</ion-row>
+
+<ion-row class="margin">
+  <ion-col size="2">
+    <ion-icon class="icons" name="create-outline"></ion-icon>
+  </ion-col>
+  <ion-col class="link"><strong>Handbook</strong></ion-col>
+  <ion-col size="2" class="arrow">
+    <ion-icon  name="chevron-forward-outline"></ion-icon>
+  </ion-col>
+</ion-row>
+
+<ion-row class="margin">
+  <ion-col size="2">
+    <ion-icon class="icons" name="people-outline"></ion-icon>
+  </ion-col>
+  <ion-col class="link"><strong>Community</strong></ion-col>
+  <ion-col size="2" class="arrow">
+    <ion-icon  name="chevron-forward-outline"></ion-icon>
+  </ion-col>
+</ion-row>
+
+<ion-row class="call-us" routerLink="/contact">
+  <ion-col size="2">
+    <ion-icon name="headset-outline"></ion-icon>
+  </ion-col>
+  <ion-col>
+   <p> Feel Free to Ask, We are ready to Help!</p>
+  </ion-col>
+</ion-row>
+
+<ion-row>
+  <ion-col>&nbsp;</ion-col>
+</ion-row>
+
+
+</ion-content>
+
+
+<ion-footer mode="md" class="home-footer">
+  <ion-row>
+    <ion-col routerLink="/home">
+      <ion-icon name="home-outline"></ion-icon>
+      <p>Home</p>
+    </ion-col>
+    <ion-col>
+      <ion-icon name="person" class="click-footer"></ion-icon>
+      <p class="click-footer">Profile</p>
+    </ion-col>
+    <ion-col routerLink="/qr-scanner">
+      <ion-icon name="scan-outline"></ion-icon>
+      <p>Scan</p>
+    </ion-col>
+    <ion-col routerLink="/favourites">
+      <ion-icon name="heart-outline"></ion-icon>
+      <p>Favourites</p>
+    </ion-col>
+    <ion-col routerLink="/calls">
+      <ion-icon name="call-outline"></ion-icon>
+      <p>Call</p>
+    </ion-col>
+  </ion-row>
+</ion-footer>

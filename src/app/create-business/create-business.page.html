@@ -1,8 +1,7 @@
 <ion-header>
   <ion-toolbar color="custom">
     <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
-      <ion-menu-button></ion-menu-button>
+      <ion-back-button icon="chevron-back"></ion-back-button>
     </ion-buttons>
     <ion-title>Create Business</ion-title>
   </ion-toolbar>
@@ -25,33 +24,33 @@
       </ion-row>
     </div> -->
 
-  <ion-card class="first">
+  <ion-card class="first" style="border-radius: 0px;">
     <ion-row class="row">
       <ion-col class="bg">
         <ion-avatar>
-          <img src="https://i.pinimg.com/474x/bc/d4/ac/bcd4ac32cc7d3f98b5e54bde37d6b09e.jpg"> 
+          <img src="https://i.pinimg.com/474x/bc/d4/ac/bcd4ac32cc7d3f98b5e54bde37d6b09e.jpg">
         </ion-avatar>
         <img class="position-cam" src="assets/camera.svg" alt="" (click)="getPicture();">
       </ion-col>
     </ion-row>
   </ion-card>
 
-  <div class="bcard-body">
-    <div class="business-dyn">
-      <ion-row>
-        <ion-col size="5">Business ID</ion-col>
-        <ion-col class="id-color">{{bid}}</ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col size="5">Pin No</ion-col>
-        <ion-col class="id-color">{{bpin}}</ion-col>
-      </ion-row>
-    </div>
 
+  <div class="business-dyn">
+    <ion-row>
+      <ion-col size="5" style="color: #22272A;">Business ID</ion-col>
+      <ion-col class="id-color">{{bid}}</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="5" style="color: #22272A;">Pin No</ion-col>
+      <ion-col class="id-color">{{bpin}}</ion-col>
+    </ion-row>
+  </div>
+
+  <div class="bcard-body" style="padding-top: 0%;">
     <p class="text">
       <ion-input placeholder="Business Name" [(ngModel)]="businessname"></ion-input>
     </p>
-
 
     <p class="text">
       <ion-select placeholder="Business Type" [(ngModel)]="type">
@@ -73,28 +72,30 @@
     </p>
 
     <p class="text">
-      <ion-select placeholder="Business based on" [(ngModel)]="basis">
-        <ion-select-option *ngFor="let cat of categoreis; let i=index;" value="{{cat.category}}">{{cat.category}}</ion-select-option>
-        <ion-select-option *ngFor="let ser of services; let i=index;" value="{{ser.service}}">{{ser.service}}</ion-select-option>
-      </ion-select>
-    </p>
-
-    <p class="text">
       <ion-select placeholder="Business mode" [(ngModel)]="mode" (ionChange)="getserccat()">
         <ion-select-option value="services">Services </ion-select-option>
         <ion-select-option value="category">Category</ion-select-option>
       </ion-select>
     </p>
 
-    <p class="text">
-      <ion-select  [(ngModel)]="option">
-        <ion-select-option  *ngFor ="let opt of options; let i = index;" value="{{opt.id}}">{{opt.service}}</ion-select-option>
+    <p class="text" *ngIf="cat_div">
+      <ion-select placeholder="Select Category" [(ngModel)]="category_id">
+        <ion-select-option *ngFor="let cat of categoreis; let i=index;" value="{{cat.id}}">{{cat.category}}
+        </ion-select-option>
       </ion-select>
     </p>
 
+    <p class="text" *ngIf="ser_div">
+      <ion-select placeholder="Select Services" [(ngModel)]="service_id">
+        <ion-select-option *ngFor="let ser of services; let i=index;" value="{{ser.id}}">{{ser.service}}
+        </ion-select-option>
+      </ion-select>
+    </p>
+
+
     <p class="title">Select Business Tags</p>
     <p class="text">
-      <textarea placeholder="Select Business Tags" [(ngModel)]="tag1"></textarea>
+      <textarea [(ngModel)]="tag1"></textarea>
     </p>
 
     <p>
@@ -105,8 +106,8 @@
     </p>
     <p class="text">
       <ion-select placeholder="Country" [(ngModel)]="country">
-        <ion-select-option value="ind">India</ion-select-option>
-        <ion-select-option value="usa">USA</ion-select-option>
+        <ion-select-option value="India">India</ion-select-option>
+        <ion-select-option value="USA">USA</ion-select-option>
       </ion-select>
     </p>
     <p class="text">
@@ -152,10 +153,19 @@
       <ion-input type="mobile" [(ngModel)]="pincode" placeholder="Pin Code" [(ngModel)]="pincode"></ion-input>
     </p>
 
+    <p class="text">
+      <ion-input type="text" placeholder="SHOP URL" [(ngModel)]="shopurl"></ion-input>
+    </p>
+
+    <p class="title">Shop Description</p>
+    <p class="text">
+      <textarea [(ngModel)]="shopdesc"></textarea>
+    </p>
+
     <ion-row class="pin-location">
-      <ion-col size="2">
+      <div style="display: flex; width: 18px;">
         <img src="assets/location.svg">
-      </ion-col>
+      </div>
       <ion-col class="pin">
         Business location
       </ion-col>
@@ -163,12 +173,12 @@
 
     <p class="title">View on your Businesss (Optional)</p>
     <p class="text">
-      <textarea placeholder="Select Business Tags" [(ngModel)]="tag2"></textarea>
+      <textarea [(ngModel)]="tag2"></textarea>
     </p>
 
-    <p class="title">Your Business Story (optional)</p>
-    <p class="text">
-      <textarea placeholder="Select Business Tags" [(ngModel)]="tag3"></textarea>
+    <p class="title">Your Business Story (Optional)</p>
+    <p class="text" style="margin-bottom: 0%;">
+      <textarea [(ngModel)]="tag3"></textarea>
     </p>
     <br>
 

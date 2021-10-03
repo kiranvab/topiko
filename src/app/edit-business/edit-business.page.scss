@@ -1,0 +1,180 @@
+ion-header ion-icon {
+    color: #ffffff;
+    font-size: 21px;
+}
+ion-title {
+    font-size: 16px;
+    color: #ffffff;
+    padding: 0px;
+    padding-top: 1px;
+    letter-spacing: 0.6px;
+    text-align: left;
+    padding-right: 48px;
+}
+
+// first-card
+.first {
+    margin: 1em 1.125em;
+}
+.row {
+    height: 14.4em;
+}
+ion-card {
+    border: none;
+    box-shadow: none;
+}
+.bg {
+    width: 100%;
+    height: 9.375em;
+    background: linear-gradient(#871178, #44093c);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+ion-avatar {
+    width: 146px;
+    height: 146px;
+}
+ion-avatar img {
+    max-width: 100%;
+    border: 0;
+    margin-top: 50%;
+}
+.position-cam {
+    position: relative;
+    left: 52px;
+    top: 37px;
+}
+.details {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #ffffff;
+}
+.details .name {
+    color: #871178;
+    font-size: 1.25em;
+    margin: 5px;
+}
+.details .ceo {
+    color: #707070;
+    font-size: 0.875em;
+    margin: 0.3125em;
+}
+.business-dyn {
+    background: #e0e0e0;
+    padding: 0.5em;
+    margin: 1em 1.125em;
+}
+.id-color {
+    color: #871178;
+}
+.select {
+    color: #22272a;
+    padding: 6px 30px;
+}
+
+.grid {
+    margin: 0.75em 1.125em;
+    background: #ffffff;
+    padding: 0px 4px;
+    margin-top: 0px;
+}
+.top {
+    color: #871178;
+    font-size: 1em;
+    width: 100%;
+    margin: 0.625em 0px;
+}
+.bottom {
+    color: #22272a;
+    font-size: 0.875em;
+    margin: 0px;
+    margin-bottom: 0.625em;
+}
+.map {
+    margin-bottom: 30px;
+}
+.card ion-card {
+    box-shadow: 0px 3px 6px #00000029;
+    height: 90px;
+    width: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card ion-icon {
+    width: 60px;
+    height: 60px;
+    color: #9f9f9f;
+}
+.upload {
+    color: #22272a;
+    font-size: 0.9375em;
+}
+.toggle p {
+    font-size: 1em;
+    color: #22272a;
+    margin-top: 0.625em;
+}
+ion-row ion-toggle {
+    --width: 34px;
+    --height: 14px;
+    --background-checked: linear-gradient(#871178, #3c1378);
+    --handle-background-checked: #9f9f9f;
+    padding-top: 0.71875em;
+}
+
+.button .lef {
+    text-align: left;
+}
+.button .righ {
+    text-align: right;
+}
+.button .lef .ion-buttons {
+    --background: #ffffff;
+    --color: #871178;
+    border: 2px solid #871178;
+    font-size: 0.85em;
+    width: 123px;
+    height: 50px;
+    border-radius: 0.1875em;
+}
+.button .righ ion-button {
+    --background: linear-gradient(#871178, #3c1378);
+    --color: #ffffff;
+    text-transform: capitalize;
+    font-size: 0.85em;
+    width: 123px;
+    height: 50px;
+    border-radius: 0.1875em;
+}
+
+ion-textarea {
+    border: 1px solid #ccc;
+    padding: 5px;
+}
+ion-input {
+    border-bottom: 1px solid #ccc;
+    margin: 0;
+    padding: 5px;
+}
+
+ion-select {
+    width: 100%;
+    text-align: right;
+}
+ion-select {
+    --placeholder-opacity: 100%;
+    --padding-start: 0px;
+}
+ion-input {
+    --placeholder-opacity: 1 !important;
+    --padding-start: 0px;
+    --color: #22272a;
+}
+ion-item {
+    --placeholder-opacity: 1 !important;
+    --padding-start: 0px;
+}

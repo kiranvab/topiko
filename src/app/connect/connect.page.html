@@ -1,8 +1,7 @@
 <ion-header color="custom" mode="md">
   <ion-toolbar color="custom" class="toolbar">
     <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
-      <ion-menu-button></ion-menu-button>
+      <ion-back-button icon="chevron-back"></ion-back-button>
     </ion-buttons>
     <ion-title>Connect</ion-title>
     <ion-buttons slot="end">
@@ -38,11 +37,11 @@
     </ion-row>
     <ion-row>
       <ion-col size="8" class="address">
-        <p>Address</p>
+        <p><strong>Address</strong></p>
         <ion-row class="addres">
           <p>
-            {{bu.business_address}}, <br>
-            {{bu.city}}-{{bu.pincode}},<br>
+            {{bu.business_address}},
+            {{bu.city}}-{{bu.pincode}},
             {{bu.state}},
             {{bu.country}}.
           </p>
@@ -57,9 +56,8 @@
 
   <ion-grid class="branches">
     <ion-row class="branch">
-      <ion-select placeholder="Branches">
-        <ion-select-option value="branches">Branches</ion-select-option>
-        <ion-select-option value="branch">Branch</ion-select-option>
+      <ion-select placeholder="Branches" interface="popover" [(ngModel)]="branch" (ionChange)="branchemp($event)">
+        <ion-select-option *ngFor="let br of branches" value="{{br.id}}">{{br.branch_title}}</ion-select-option>
       </ion-select>
     </ion-row>
   </ion-grid>

@@ -1,7 +1,7 @@
 <ion-header color="custom">
   <ion-toolbar color="custom" class="toolbar">
     <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
+      <ion-back-button icon="chevron-back"></ion-back-button>
     </ion-buttons>
     <ion-title>Cateogory</ion-title>
     <ion-buttons slot="end">
@@ -11,16 +11,62 @@
 </ion-header>
 <ion-content>
 
-  <ion-card *ngFor="let cat of categories | slice:0:19; let i=index;"  (click)="Details(i)">
+  <!-- <ion-item>
+    <ion-range min="1" max="50" step="5" snaps="true" color="secondary">
+      <ion-label slot="start">1</ion-label>
+      <ion-label slot="end">50</ion-label>
+    </ion-range>
+  </ion-item> -->
+
+  <ion-label class="titl">TOPIKO Listed</ion-label>
+
+  <ion-card *ngFor="let bus of business  let i=index;" (click)="catdetails(i)">
     <ion-row>
       <div class="avatar">
         <ion-avatar>
-          <div *ngIf="{{cat.opening_hours}}">
-            {{cat.opening_hours}}
-          </div>
-          <img class="border"
-            src="{{cat.icon}}"
-            alt="">
+          <img class="border" src="{{bus.logo}}" />
+        </ion-avatar>
+      </div>
+      <ion-col class="text-overflow">
+        <p class="user-name">{{bus.business_name}}</p>
+        <ion-row class="star">
+          <span>
+            {{bus.busienss_story}}
+          </span>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+
+  <ion-card *ngFor="let ser of services  let i=index;" (click)="serdetails(i)">
+    <ion-row>
+      <div class="avatar">
+        <ion-avatar>
+          <img class="border" src="{{ser.logo}}" />
+        </ion-avatar>
+      </div>
+      <ion-col class="text-overflow">
+        <p class="user-name">{{ser.business_name}}</p>
+        <ion-row class="star">
+          <span>
+            {{ser.busienss_story}}
+          </span>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+
+
+
+  <ion-label class="titl">Powered by Google</ion-label>
+  <ion-card *ngFor="let cat of categories | slice:0:19; let i=index;" (click)="gdetails(i)">
+    <ion-row>
+      <div class="avatar">
+        <ion-avatar *ngIf="cat.opening_hours">
+          <img class="border" src="https://topiko.com/app/icons/open.jpg" />
+        </ion-avatar>
+        <ion-avatar *ngIf="cat.opening_hours == false">
+          <img class="border" src="https://topiko.com/app/icons/closed.jpg" />
         </ion-avatar>
       </div>
       <ion-col class="text-overflow">
@@ -54,9 +100,9 @@
       <ion-icon name="scan-outline"></ion-icon>
       <p>Scan</p>
     </ion-col>
-    <ion-col>
-      <ion-icon name="heart" class="click-footer"></ion-icon>
-      <p class="click-footer">Favourites</p>
+    <ion-col routerLink="/favourites">
+      <ion-icon name="heart-outline"></ion-icon>
+      <p>Favourites</p>
     </ion-col>
     <ion-col routerLink="/calls">
       <ion-icon name="call-outline"></ion-icon>

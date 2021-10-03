@@ -17,6 +17,11 @@ export class BusinessDetailsPage implements OnInit {
   business_id: any;
   buid: any;
   branches: Object;
+  viewedcnt:any;
+  favouritecnt:any;
+  likescnt: Object;
+  reviewcnt: Object;
+
   constructor(
     public actionsheetCtrl: ActionSheetController,
     public router: Router,
@@ -36,6 +41,28 @@ export class BusinessDetailsPage implements OnInit {
           this.branches = data;
           console.log("Branches", this.branches);
         })
+        this.http.get(AppComponent.ApiUrl+"getviewcount.php?bid="+this.buid).subscribe(viewData =>
+          {
+            this.viewedcnt = viewData;
+            console.log("View Count", this.viewedcnt)
+          })
+
+        this.http.get(AppComponent.ApiUrl+"getfavcount.php?bid="+this.buid).subscribe(viewData =>
+          {
+            this.favouritecnt = viewData;
+            console.log("Favoutire Count", this.favouritecnt);
+          })
+          this.http.get(AppComponent.ApiUrl+"getlikescount.php?bid="+this.buid).subscribe(likeData =>
+            {
+              this.likescnt = likeData;
+              console.log("Likes Count", this.likescnt);
+            })
+
+            this.http.get(AppComponent.ApiUrl+"getreviewcount.php?bid="+this.buid).subscribe(revData =>
+              {
+                this.reviewcnt = revData;
+                console.log("Review Count", this.reviewcnt);
+              })
       })
     this.route.queryParams.subscribe(params=>{
       if (params && params.businessdata) {
@@ -111,6 +138,14 @@ export class BusinessDetailsPage implements OnInit {
   }
   records(){
     console.log(this.business_id);
+  }
+  profile(){
+    this.storage.set("bid",this.business_id);
+    this.router.navigate(['business-profile']);
+  }
+  views(){
+    this.storage.set("bid", this.business_id);
+    this.router.navigate(['business-views']);
   }
 
 }

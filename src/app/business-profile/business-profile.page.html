@@ -1,80 +1,75 @@
 <ion-header color="custom">
   <ion-toolbar color="custom" class="toolbar">
     <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
-      <ion-menu-button></ion-menu-button>
+      <ion-back-button icon="chevron-back"></ion-back-button>
+      <!-- <ion-menu-button></ion-menu-button> -->
     </ion-buttons>
     <ion-title>Business Profile</ion-title>
-    <ion-buttons slot="end">
+    <ion-buttons slot="end" (click)="edit()">
       <ion-icon name="create-outline"></ion-icon>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content *ngFor="let b of business">
 
   <ion-card class="first">
     <ion-row class="row">
       <ion-col class="bg">
         <ion-avatar>
-          <img src="https://i.pinimg.com/474x/bc/d4/ac/bcd4ac32cc7d3f98b5e54bde37d6b09e.jpg" alt="">
+          <img src="{{b.logo}}" alt="">
         </ion-avatar>
-        <img class="position-cam" src="assets/camera.svg" alt="">
       </ion-col>
     </ion-row>
     <ion-row class="details">
-      <P class="name">Sun Group Water</P>
+      <P class="name">{{b.business_name}}</P>
     </ion-row>
     <ion-row class="details">
-      <p class="ceo">CEO-Murali</p>
+      <p class="ceo">CEO - {{b.owner_name}}</p>
     </ion-row>
   </ion-card>
 
   <div class="business-dyn">
     <ion-row>
       <ion-col size="4">Business ID</ion-col>
-      <ion-col class="id-color">{{bid}}</ion-col>
+      <ion-col class="id-color">{{b.business_id}}</ion-col>
     </ion-row>
     <ion-row>
       <ion-col size="4">Pin No</ion-col>
-      <ion-col class="id-color">{{bpin}}</ion-col>
+      <ion-col class="id-color">{{b.pin}}</ion-col>
     </ion-row>
   </div>
 
-  <ion-select placeholder="Business Profile" class="select" value="businessprofile" interface="popover" mode="ios">
+  <!-- <ion-select placeholder="Business Profile" class="select" value="businessprofile" interface="popover" mode="ios">
     <ion-select-option value="businessprofile" selected>Business Profile</ion-select-option>
     <ion-select-option value="branch">Branch</ion-select-option>
     <ion-select-option value="city">City</ion-select-option>
-  </ion-select>
+  </ion-select> -->
 
   <ion-grid class="grid">
     <ion-row>
       <p class="top">Business Type</p> <br>
-      <p class="bottom">UI/UX Designer</p>
+      <p class="bottom">{{b.business_type}}</p>
     </ion-row>
     <ion-row>
       <p class="top">Business Contact No</p>
-      <p class="bottom">9884612322</p>
+      <p class="bottom">{{b.primary_contact}}</p>
     </ion-row>
     <ion-row>
       <p class="top">Owner Name</p>
-      <p class="bottom">Murali</p>
+      <p class="bottom">{{b.owner_name}}</p>
     </ion-row>
     <ion-row>
       <p class="top">Business based on</p>
-      <p class="bottom">Business Analyst</p>
-    </ion-row>
-    <ion-row>
-      <p class="top">Business mode</p>
-      <p class="bottom">Topiko Private limited</p>
+      <p class="bottom">{{b.ownership_model}}</p>
     </ion-row>
     <ion-row>
       <p class="top">Business Tags</p>
-      <p class="bottom">Real Estate Pre own seller</p>
+      <p class="bottom">{{b.tags}}</p>
     </ion-row>
     <ion-row>
       <p class="top">Address</p>
-      <p class="bottom">1/38 Bhathiyar street moovarasanpet madipakkam Chennai-600091 Tamilnadu India</p>
+      <p class="bottom">{{b.business_address}}</p>
     </ion-row>
     <ion-row>
       <p class="top">Location</p>
@@ -84,15 +79,11 @@
     </ion-row>
     <ion-row>
       <p class="top">View on your business</p>
-      <p class="bottom">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
-        been
-        the industry's standard dummy</p>
+      <p class="bottom">{{b.view}}</p>
     </ion-row>
     <ion-row>
       <p class="top">Your business story</p>
-      <p class="bottom">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
-        been
-        the industry's standard dummy</p>
+      <p class="bottom">{{b.busienss_story}}</p>
     </ion-row>
 
     <ion-select placeholder="Gallery"></ion-select>
@@ -137,13 +128,6 @@
     <ion-select placeholder="Year Of Commencement"></ion-select>
     <ion-select placeholder="Topiko Awards"></ion-select>
     <ion-select placeholder="Topiko Star Rating"></ion-select>
-    <ion-row>
-      <ion-col>
-        <ion-button expand="full" class="purple-bdr-btn" color="custom">Share</ion-button>
-      </ion-col>
-      <ion-col>
-        <ion-button expand="block" class="purple-btn" color="custom">Done</ion-button>
-      </ion-col>
-    </ion-row>
+
   </ion-grid>
 </ion-content>

@@ -1,8 +1,7 @@
 <ion-header color="custom">
   <ion-toolbar color="custom" class="toolbar">
     <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
-      <ion-menu-button></ion-menu-button>
+      <ion-back-button icon="chevron-back"></ion-back-button>
     </ion-buttons>
     <ion-title>Recently Viewed</ion-title>
     <ion-buttons slot="end">
@@ -12,30 +11,14 @@
 </ion-header>
 
 <ion-content>
-<ion-row>
-  <ion-col size="4" routerLink="/details">
-    <img src="https://play-lh.googleusercontent.com/5ZxVI65M9_yQQHgsY2f_lvSFD9E4Oqvfgxkg-E-MZwWt1M65-6HLY3twREAubQtZqqo">
-  </ion-col>
-  <ion-col size="4" routerLink="/details">
-    <img src="https://play-lh.googleusercontent.com/5ZxVI65M9_yQQHgsY2f_lvSFD9E4Oqvfgxkg-E-MZwWt1M65-6HLY3twREAubQtZqqo">
-  </ion-col>
-  <ion-col size="4" routerLink="/details">
-    <img src="https://play-lh.googleusercontent.com/5ZxVI65M9_yQQHgsY2f_lvSFD9E4Oqvfgxkg-E-MZwWt1M65-6HLY3twREAubQtZqqo">
-  </ion-col>
-  <ion-col size="4" routerLink="/details">
-    <img src="https://play-lh.googleusercontent.com/5ZxVI65M9_yQQHgsY2f_lvSFD9E4Oqvfgxkg-E-MZwWt1M65-6HLY3twREAubQtZqqo">
-  </ion-col>
-  <ion-col size="4" routerLink="/details">
-    <img src="https://play-lh.googleusercontent.com/5ZxVI65M9_yQQHgsY2f_lvSFD9E4Oqvfgxkg-E-MZwWt1M65-6HLY3twREAubQtZqqo">
-  </ion-col>
-  <ion-col size="4" routerLink="/details">
-    <img src="https://play-lh.googleusercontent.com/5ZxVI65M9_yQQHgsY2f_lvSFD9E4Oqvfgxkg-E-MZwWt1M65-6HLY3twREAubQtZqqo">
-  </ion-col>
-  <ion-col size="4" routerLink="/details">
-    <img src="https://play-lh.googleusercontent.com/5ZxVI65M9_yQQHgsY2f_lvSFD9E4Oqvfgxkg-E-MZwWt1M65-6HLY3twREAubQtZqqo">
-  </ion-col>
-  <ion-col size="4" routerLink="/details">
-    <img src="https://play-lh.googleusercontent.com/5ZxVI65M9_yQQHgsY2f_lvSFD9E4Oqvfgxkg-E-MZwWt1M65-6HLY3twREAubQtZqqo">
-  </ion-col>
-</ion-row>
+
+  <ion-row>
+    <ion-col size="4" *ngFor="let rec of recent;  let i=index" (click)="details(i)">
+      <img *ngIf="rec.logo" src="{{rec.logo}}" class="icon-img-recent">
+      <img *ngIf="rec.logo == ''" class="icon-img-recent" src="assets/logo-color.png"
+        style="padding: 10px; background: #fafafa; border-radius: 3px;">
+      <div class="img-title center text-center p-0" text-center>{{rec.business_name}}</div>
+    </ion-col>
+  </ion-row>
+
 </ion-content>

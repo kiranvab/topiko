@@ -1,7 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Storage } from '@ionic/storage';
+import { ToastController } from '@ionic/angular';
+import { Storage } from '@ionic/storage-angular';
+
 import { AppComponent } from '../app.component';
 
 @Component({
@@ -23,12 +25,17 @@ export class ConnectPage implements OnInit {
   business_name: any;
   userdata: any;
   patner_mobile: any;
+  branches:any;
+  branch:any;
+  branchusers: Object;
+  count: any;
 
   constructor(
     private storage:Storage,
     private http:HttpClient,
     private route:Router,
-    private router: ActivatedRoute
+    private router: ActivatedRoute,
+    public toastController: ToastController
   ) { 
     router.params.subscribe(val=>{})
   }
@@ -38,16 +45,20 @@ export class ConnectPage implements OnInit {
       this.storage.get("bid").then(bval=>{
         this.business_id = bval;
 
-        this.http.get(AppComponent.ApiUrl+"getemployees.php?bid="+this.business_id).subscribe(response=>{
-          this.employees = response;
-          console.log("employees:", this.employees);
-        });
+        // this.http.get(AppComponent.ApiUrl+"getemployees.php?bid="+this.business_id).subscribe(response=>{
+        //   this.employees = response;
+        //   console.log("employees:", this.employees);
+        // });
         this.http.get(AppComponent.ApiUrl+"getbusinessdetails.php?bid="+this.business_id).subscribe(bdtails=>{
           this.business = bdtails;
           console.log("business Dtails:", this.business);
           this.business_name = this.business[0].business_name;
           console.log("business Name:", this.business_name)
       })
+      this.http.get(AppComponent.ApiUrl+"getbranches.php?bid="+this.business_id).subscribe(branch=>{
+        this.branches = branch;
+        console.log("business Branches:", this.branches)
+    })
     });
 
     this.storage.get("userdetails").then(val =>
@@ -93,6 +104,31 @@ export class ConnectPage implements OnInit {
       this.storage.set("partnerId", this.patner_mobile);
       this.route.navigate(['/calling']);
     })
+  }
+
+  branchemp(event){
+    console.log("Branch ID", this.branch);
+    this.http.get(AppComponent.ApiUrl+"getbranchemp.php?brid="+this.branch).subscribe(udata=>{
+    
+      this.count = udata
+      if(this.count.length > 0){
+        this.employees=udata
+        console.log(this.employees);
+    }
+    else{
+      this.presentToast();
+    }
+    })
+  }
+
+  async presentToast() {
+    const toast = await this.toastController.create({
+      message: 'No Employees in this Branch',
+      duration: 5000,
+      color: 'secondary',
+      position: "bottom"
+    });
+    toast.present();
   }
 
 }

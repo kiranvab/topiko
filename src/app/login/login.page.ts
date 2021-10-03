@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { AppComponent } from '../app.component';
 import { IonicStorageModule, Storage } from '@ionic/storage-angular';
-import { AlertController, MenuController } from '@ionic/angular';
+import { AlertController, MenuController,  } from '@ionic/angular';
 import { NavigationExtras, Router } from '@angular/router';
 import { Device } from '@ionic-native/device/ngx';
 import { Geolocation } from '@ionic-native/geolocation/ngx';
@@ -34,8 +34,7 @@ export class LoginPage implements OnInit {
     private storage:IonicStorageModule, 
     private alertCtrl: AlertController,
     private router: Router,
-    private device:Device,
-  
+    private device:Device
 
     ) { }
 

@@ -1,8 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { LoadingController } from '@ionic/angular';
-import { Router } from '@angular/router';
-import { Storage } from '@ionic/storage';
+import { LoadingController, IonContent } from '@ionic/angular';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Storage } from '@ionic/storage-angular';
 import { AppComponent } from '../app.component';
 import { Observable } from 'Rxjs/rx';
 import { Subscription } from 'rxjs/Subscription';
@@ -16,13 +16,13 @@ import { FileTransfer, FileUploadOptions, FileTransferObject } from '@ionic-nati
   styleUrls: ['./chatbox.page.scss'],
 })
 export class ChatboxPage implements OnInit {
+  @ViewChild('scrollElement') content: IonContent;
   ObservableVar : Subscription;
   partnerId: any;
   userDetails: any;
   user_id: any;
   bottomdiv:any=false;
   @ViewChild('message') message;
-  @ViewChild('content') private content: any;
   docfile:any;
   imagefile:any;
   audfile:any;
@@ -39,6 +39,9 @@ export class ChatboxPage implements OnInit {
   FileName: any;
   fileurl: string;
   image: string;
+  sub: Subscription;
+  last_seen: any;
+  online: any;
 
   constructor(
     private route: Router,
@@ -47,38 +50,50 @@ export class ChatboxPage implements OnInit {
     private file: File,
     private transfer: FileTransfer,
     public loadingController: LoadingController,
-    private camera : Camera
+    private camera : Camera,
+    private router : ActivatedRoute
   ) { 
     const fileTransfer: FileTransferObject = this.transfer.create();
     this.fileurl = "https://topiko.com/app/chatfiles/";
+    
   }
 
   ngOnInit() {
-    this.storage.get("chatroom").then((val)=>{
-      this.chatroom = val;
-    });
+    this.router.queryParams.subscribe(params => {
+      this.chatroom = params["room"];
+      this.partner_name= params["name"];
+      this.last_seen = params['last_seen'];
+      this.online = params['onine'];
+      console.log("chatroom :", this.chatroom);
+      console.log("partner Name:", this.partner_name);
+      this.http.get(AppComponent.ApiUrl+"getchatmessages.php?chatroom="+this.chatroom).subscribe((data)=>{
+        this.chatmessages = data;
+        console.log("chatmessages", this.chatmessages)
+        this. scrollToBottomOnInit();
+      });
+  });
     this.storage.get('userdetails').then((udetails)=>{
       this.userDetails = udetails;
       console.log("UserDetails:", this.userDetails)
       this.user_id = this.userDetails[0].id;
       console.log(this.user_id,'User ID')
     });
-    this.storage.get("chatname").then((cname)=>{
-    this.partner_name= cname;
-    console.log('partner_name:',this.partner_name);
-    });
-    this.ObservableVar = Observable.interval(1000).subscribe(()=>{
-    this.callFun();
-    });
-  }
-
-  callFun(){
     
+    this.ObservableVar = Observable.interval(2500000).subscribe(()=>{
       this.http.get(AppComponent.ApiUrl+"getchatmessages.php?chatroom="+this.chatroom).subscribe((data)=>{
         this.chatmessages = data;
         console.log("chatmessages", this.chatmessages)
       });
+      
+    });
+
+    this.ObservableVar = Observable.interval(100).subscribe(()=>{
       this. scrollToBottomOnInit();
+    });
+
+  }
+
+  callFun(){
 
   }
 
@@ -227,7 +242,9 @@ export class ChatboxPage implements OnInit {
   }
  
    scrollToBottomOnInit() {
-    this.content.scrollToBottom(100);
+    var element = document.getElementById("condiv");
+   element.scrollTop = element.scrollHeight - element.clientHeight;
+   
   }
   attachments(){
     if(this.bottomdiv==false){
@@ -287,7 +304,6 @@ export class ChatboxPage implements OnInit {
         this.loadingController.dismiss();
         this.message.value='';
         this.bottomdiv =false;
-        this.route.navigate(['chatbox']);
       }
     })
     

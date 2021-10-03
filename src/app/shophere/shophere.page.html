@@ -8,61 +8,30 @@
       <ion-col class="title">
         <ion-title>Shop Here</ion-title>
       </ion-col>
-      <ion-col class="ellipsis" size="1.5">
-        <ion-icon name="ellipsis-vertical-outline"></ion-icon>
-      </ion-col>
     </ion-row>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
 
-  <ion-segment>
+  <!-- <ion-segment>
     <ion-segment-button value="private">
       <ion-label>Private URL</ion-label>
     </ion-segment-button>
     <ion-segment-button value="shop">
       <ion-label>Shop</ion-label>
     </ion-segment-button>
-  </ion-segment>
+  </ion-segment> -->
 
-  <ion-card>
+  <ion-card *ngFor="let shopurl of shopurls">
     <ion-row class="text-color">
-      <p>www.cmsswift.com</p>
+      <p>{{shopurl.shopurl}}</p>
     </ion-row>
     <ion-row class="lorem">
-      <p>Lorem Ipsum is simply dummy text of
-        the Printing and type setting industry.
-        Lorem ipsum has been the industry
-        standard dummy.
+      <p>{{shopurl.shopdesc}}
       </p>
     </ion-row>
   </ion-card>
 
-  <ion-card>
-    <ion-row class="text-color">
-      <p>www.cmsswift.com</p>
-    </ion-row>
-    <ion-row class="lorem">
-      <p>Lorem Ipsum is simply dummy text of
-        the Printing and type setting industry.
-        Lorem ipsum has been the industry
-        standard dummy.
-      </p>
-    </ion-row>
-  </ion-card>
-
-  <ion-card>
-    <ion-row class="text-color">
-      <p>www.cmsswift.com</p>
-    </ion-row>
-    <ion-row class="lorem">
-      <p>Lorem Ipsum is simply dummy text of
-        the Printing and type setting industry.
-        Lorem ipsum has been the industry
-        standard dummy.
-      </p>
-    </ion-row>
-  </ion-card>
-
+ 
 </ion-content>

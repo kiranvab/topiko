@@ -5,6 +5,7 @@ ion-title {
     padding-top: 1px;
     letter-spacing: 0.6px;
     text-align: left;
+    padding-right: 40px;
 }
 h5 {
     color: #871178;
@@ -114,7 +115,7 @@ ion-row ion-toggle {
 
 .check {
     margin-top: 30px;
-    margin-bottom: 20px;
+    margin-bottom: 0px;
 }
 ion-checkbox {
     --border-color-checked: #707070;
@@ -147,4 +148,15 @@ ion-col .confirm {
     font-size: 16px;
     width: 7.6875em;
     height: 3.125em;
+}
+ion-select {
+    --placeholder-opacity: 100%;
+    --padding-start: 0px;
+}
+ion-input {
+    --placeholder-opacity: 1 !important;
+    --padding-start: 0px;
+}
+ion-item {
+    --padding-start: 0px;
 }

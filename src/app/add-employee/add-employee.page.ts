@@ -12,6 +12,7 @@ import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
 })
 export class AddEmployeePage implements OnInit {
   buid: any;
+  branch:any;
   name: any;
   mobile: any;
   tags: any;
@@ -24,13 +25,14 @@ export class AddEmployeePage implements OnInit {
   payment_image: any;
   callrecord: number;
   invoice: number;
-  response: Object;
+  response: any;
   mybusiness: any;
   owner: any;
   address: any;
   busines_name: any;
   bid: any;
-  employees: Object;
+  employees: any;
+  branches: any;
 
   constructor(
     private storage:Storage,
@@ -53,6 +55,10 @@ export class AddEmployeePage implements OnInit {
             console.log("Employees", this.employees);
           }
           );
+          this.http.get(AppComponent.ApiUrl+"getbranches.php?bid="+this.buid).subscribe(branch=>{
+            this.branches = branch;
+            console.log("business Branches:", this.branches)
+        })
       })
   }
 
@@ -154,6 +160,7 @@ adduserImage(){
     var link = AppComponent.ApiUrl+"addemployee.php";
     var myData = JSON.stringify({
       "bid":this.buid,
+      "branch_id":this.branch,
       'name':this.name,
       'mobile':this.mobile,
       'tags':this.tags,

@@ -1,0 +1,209 @@
+<ion-header color="custom">
+  <ion-toolbar color="custom" class="toolbar">
+    <ion-buttons slot="start">
+      <ion-back-button mode="md"></ion-back-button>
+      <ion-menu-button mode="ios"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Position</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+
+  <ion-slides pager="true" [options]="slideOpts">
+    <ion-slide *ngFor="let ban of banners let i=index">
+      <ion-card class="first-card" (click)="getPicture()">
+        <div class="select">
+          <ion-select placeholder="Per Day" value="recent" interface="popover" mode="ios">
+            <ion-select-option value="recent" selected>Per Day</ion-select-option>
+            <ion-select-option value="like">Per Week</ion-select-option>
+            <ion-select-option value="favourites">Per Month</ion-select-option>
+            <ion-select-option value="comments">Per Year</ion-select-option>
+          </ion-select>
+        </div>
+        <ion-row class="upload-icon">
+          <ion-icon name="cloud-upload-outline"></ion-icon>
+        </ion-row>
+        <ion-row class="txtclass">
+          <p class="up-text">Upload Your Banner<br>JPG,PNG,GIF & Video Or URL</p>
+        </ion-row>
+        <ion-row class="txtclass">
+          <p class="up-ptext">Position Topix1 <br> Cost-5000/- per day +GST</p>
+        </ion-row>
+      </ion-card>
+    </ion-slide>
+  </ion-slides>
+
+  <ion-card class="next-card" (click)="getPicture()">
+    <div class="selects">
+      <ion-select placeholder="Per Day" value="recent" interface="popover" mode="ios">
+        <ion-select-option value="recent" selected>Per Day</ion-select-option>
+        <ion-select-option value="like">Per Week</ion-select-option>
+        <ion-select-option value="favourites">Per Month</ion-select-option>
+        <ion-select-option value="comments">Per Year</ion-select-option>
+      </ion-select>
+    </div>
+    <ion-row class="upload-icon">
+      <ion-icon name="cloud-upload-outline"></ion-icon>
+    </ion-row>
+    <ion-row class="txtclass">
+      <p class="upl-text">Upload Your Banner <br> JPG,PNG,GIF & Video Or URL</p>
+    </ion-row>
+    <ion-row class="txtclass">
+      <p class="upl-ptext">Position Topix2 & Cost-2000/- per day +GST</p>
+    </ion-row>
+  </ion-card>
+
+  <!-- <ion-row (click)="pos1details()">
+    <ion-col>
+      <img width="100%" src="{{posbanner1}}">
+    </ion-col>
+  </ion-row> -->
+
+  <ion-row>
+    <ion-col class="title">Featured Listing</ion-col>
+    <ion-col size="3" class="view-all" routerLink="/featured">View All</ion-col>
+  </ion-row>
+
+  <ion-row class="featured-img">
+    <ion-col *ngFor="let fet of featured let i=index" size="2" (click)="fedetials(i)">
+      <img *ngIf="fet.logo" src="{{fet.logo}}">
+      <img *ngIf="fet.logo == ''" class="icon-img" src="assets/logo.png"
+        style="padding: 10px; background: #871178; border-radius: 25%;">
+    </ion-col>
+  </ion-row>
+
+  <!-- <ion-row>
+    <ion-col class="title">Recently Viewed</ion-col>
+    <ion-col size="3" class="view-all" routerLink="/recent">View All</ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col size="3" class="p-0"  *ngFor="let rec of recent;  let i=index" (click)="details(i)">
+      <img *ngIf="rec.logo" class="icon-img-recent"  src="{{rec.logo}}">
+      <img *ngIf="rec.logo == ''" class="icon-img-recent"  src="assets/logo.png" style="padding: 10px; background: #871178; border-radius: 10px;">
+      <div class="img-title center text-center p-0" text-center>{{rec.business_name}}</div>
+    </ion-col>
+  </ion-row> -->
+
+  <ion-row>
+    <ion-col class="title">Shop Categories</ion-col>
+    <ion-col size="3" class="view-all" routerLink="/shop-categories">View All</ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col *ngFor="let cat of categories; let i=index" (click)="category(i)">
+      <div class="service-icons">
+        <img src="https://topiko.com/app/icons/{{cat.image}}">
+        <div>{{cat.category}}</div>
+      </div>
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col class="title">Service Categories</ion-col>
+    <ion-col size="3" class="view-all" routerLink="/service-categories">View All</ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-row>
+      <ion-col *ngFor="let ser of services; let i=index" (click)="service(i)">
+        <div class="service-icons">
+          <img src="https://topiko.com/app/icons/{{ser.image}}">
+          <div>{{ser.service}}</div>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-row>
+
+  <ion-row>
+    <ion-col class="title">Offers Near You</ion-col>
+    <ion-col size="3" class="view-all" routerLink="/offersnearyou">View All</ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col size="3" class="p-0" *ngFor="let offn of offersNear; let i=index" (click)="offersdetails(i)">
+      <img *ngIf="offn.image" class="icon-img" src="{{offn.image}}">
+      <img *ngIf="offn.image == ''" class="icon-img" src="assets/logo.png"
+        style="padding: 10px; background: #871178; border-radius: 25%;">
+      <div class="img-title center text-center p-0" text-center>{{offn.offer}}</div>
+    </ion-col>
+  </ion-row>
+
+
+
+
+  <ion-row>
+    <ion-col class="title">Shops Near You</ion-col>
+    <ion-col size="3" class="view-all" routerLink="/shopsnearyou">View All</ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col size="3" class="p-0" *ngFor="let shopn of shopsNear; let i=index;" (click)="getdetials(i)">
+      <img *ngIf="shopn.logo" src="{{shopn.logo}}" class="icon-img">
+      <img *ngIf="shopn.logo == ''" class="icon-img" src="assets/logo.png"
+        style="padding: 10px; background: #871178; border-radius: 25%;">
+      <div class="img-title center text-center p-0" text-center>{{shopn.business_name}}</div>
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col class="title">Services Near You</ion-col>
+    <ion-col size="3" class="view-all" routerLink="/servicesnearyou">View All</ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col size="4" class="p-0" *ngFor="let sern of servicesNear;  let i=index">
+      <img src="{{sern.logo}}">
+      <div class="img-title center text-center p-0" text-center>{{sern.business_name}}</div>
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col class="col-mt-3" size="6" *ngFor="let pos2 of position2; let i = index;" (click)="pos2details(i)">
+      <img class="bdr-rad-20" style="height:150px; width:100%" src="{{pos2.image}}">
+      <ion-row>
+        <ion-col class="img-title">
+          {{pos2.business_name}} | {{pos2.city}}
+        </ion-col>
+        <!-- <div class="hearticon-div">
+          <ion-icon class="heart-icon" name="heart"></ion-icon>
+        </div>
+        <ion-col size="2" class="count text-overflow">389</ion-col> -->
+      </ion-row>
+    </ion-col>
+
+  </ion-row>
+
+  <ion-row>
+    <ion-col class="col-mt-3" (click)="pos3details()">
+      <img src="{{posbanner3}}" />
+      <ion-row>
+      </ion-row>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col class="col-mt-3" size="6" *ngFor="let pos4 of position4; let i = index;" (click)="pos4details(i)">
+      <img class="bdr-rad-20" style="height:150px; width:100%" src="{{pos4.image}}" />
+      <ion-row>
+        <ion-col class="img-title">
+          {{pos4.business_name}} | {{pos4.city}}
+        </ion-col>
+        <!-- <div class="hearticon-div">
+          <ion-icon class="heart-icon" name="heart"></ion-icon>
+        </div>
+        <ion-col size="2" class="count text-overflow">389</ion-col> -->
+      </ion-row>
+    </ion-col>
+
+  </ion-row>
+
+  <br>
+
+  <ion-slides pager="true" [options]="slideOpts">
+    <ion-slide *ngFor="let pos5 of position5; let i = index;" (click)="pos5details(i)">
+      <img src="{{pos5.image}}" style="border-radius: 10px;">
+    </ion-slide>
+  </ion-slides>
+
+</ion-content>

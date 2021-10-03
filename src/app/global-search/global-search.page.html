@@ -1,8 +1,7 @@
 <ion-header color="custom">
   <ion-toolbar color="custom" class="toolbar">
     <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
-      <ion-menu-button></ion-menu-button>
+      <ion-back-button icon="chevron-back"></ion-back-button>
     </ion-buttons>
     <ion-row>
       <ion-col>
@@ -15,9 +14,7 @@
               <p></p>
             </ion-col>
             <ion-col>
-              <ion-input type="text" placeholder="Chennai Designer" #keyword (keydown.enter)="Search()"
-
-              ></ion-input>
+              <ion-input type="text" placeholder="Chennai Designer" #keyword (keydown.enter)="Search()"></ion-input>
             </ion-col>
             <div class="avatar">
               <ion-icon name="search-outline"></ion-icon>
@@ -36,9 +33,7 @@
   <ion-card class="box" *ngFor="let res of result; let i=index">
     <ion-row>
       <div class="avatar">
-        <img
-          src="{{res.logo}}"
-          alt="">
+        <img src="{{res.logo}}" alt="">
       </div>
       <ion-col class="title">
         <p>{{res.business_name}} <ion-icon name="shield-checkmark"></ion-icon>
@@ -91,15 +86,15 @@
   <ion-row>
     <ion-col routerLink="/home" (click)="footerIconColor()">
       <ion-icon [style.color]="iconcolor" name="home"></ion-icon>
-      <p [style.color]="iconcolor">Home</p>
+      <p>Home</p>
     </ion-col>
     <ion-col routerLink="/profile" (click)="footerIconColor()">
       <ion-icon [style.color]="iconcolor" name="person-outline"></ion-icon>
-      <p [style.color]="iconcolor">Profile</p>
+      <p >Profile</p>
     </ion-col>
     <ion-col routerLink="/qr-scanner" (click)="footerIconColor()">
       <ion-icon [style.color]="iconcolor" name="scan-outline"></ion-icon>
-      <p [style.color]="iconcolor">Scan</p>
+      <p>Scan</p>
     </ion-col>
     <ion-col routerLink="/favourites" (click)="footerIconColor()">
       <ion-icon [style.color]="iconcolor" name="heart-outline"></ion-icon>

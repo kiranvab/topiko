@@ -14,7 +14,8 @@
 <ion-content>
   <ion-row class="featured-img">
     <ion-col  *ngFor="let fet of featured let i=index" size="2">
-      <img  src="{{fet.logo}}">
+      <img  src="{{fet.logo}}"  class="icon-img">
+      <img *ngIf="fet.logo == ''" class="icon-img" src="assets/logo.png" style="padding: 10px; background: #871178; border-radius: 25%;">
     </ion-col>
   </ion-row>
 

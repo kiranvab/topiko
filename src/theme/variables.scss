@@ -4,7 +4,7 @@
 /** Ionic CSS Variables **/
 :root {
   /** primary **/
-  --ion-color-primary: #3880ff;
+  --ion-color-primary: #871178;
   --ion-color-primary-rgb: 56, 128, 255;
   --ion-color-primary-contrast: #ffffff;
   --ion-color-primary-contrast-rgb: 255, 255, 255;
@@ -28,7 +28,7 @@
   --ion-color-tertiary-tint: #6370ff;
 
   /** success **/
-  --ion-color-success: #2dd36f;
+  --ion-color-success: #ab58a0;
   --ion-color-success-rgb: 45, 211, 111;
   --ion-color-success-contrast: #ffffff;
   --ion-color-success-contrast-rgb: 255, 255, 255;
@@ -316,7 +316,7 @@ ion-footer ion-icon {
 }
 
 ion-fab-button {
-  --background: linear-gradient(#871178, #44093c) !important;
+  --background: linear-gradient(#871178, #3c1378) !important;
 }
 
 .swiper-pagination-bullet-active {
@@ -426,4 +426,12 @@ ion-footer ion-icon {
 }
 .desc {
   font-weight: bold;
+}
+
+.select-text {
+  --opacity: 1 !important;
+}
+ion-header ion-title {
+  text-align: center !important;
+  font-size: 16px !important;
 }

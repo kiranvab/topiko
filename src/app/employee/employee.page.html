@@ -1,7 +1,7 @@
 <ion-header color="custom">
   <ion-toolbar color="custom" class="toolbar">
     <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
+      <ion-back-button icon="chevron-back"></ion-back-button>
     </ion-buttons>
     <ion-title>Employee</ion-title>
   </ion-toolbar>
@@ -13,9 +13,7 @@
     <ion-row>
       <div class="avatar">
         <ion-avatar>
-          <img
-            src="https://einsteinmarketer.ams3.digitaloceanspaces.com/em/uploads/2018/01/ben-sweet-456320-unsplash.jpg"
-            alt="">
+          <img src="{{emp.image}}" alt="">
         </ion-avatar>
       </div>
       <ion-col class="text-overflow">
@@ -23,7 +21,7 @@
         </p>
         <p class="time pclass">{{emp.designation}}</p>
       </ion-col>
-      <ion-col size="1" class="ellipsis" (click)="openMenu()">
+      <ion-col size="1" class="ellipsis" (click)="openMenu(i)">
         <ion-icon name="ellipsis-vertical"></ion-icon>
       </ion-col>
     </ion-row>
@@ -52,10 +50,10 @@
       </ion-col>
     </ion-row>
 
-    <ion-row class="tog">
+    <ion-row class="tog" style="height: 36px; margin-top: -8px;">
       <p class="gps">Call Record Access</p>
       <ion-toggle *ngIf="emp.call_records==1" checked mode="md" readonly></ion-toggle>
-      <ion-toggle *ngIf="emp.call_records==0"  mode="md" readonly></ion-toggle>
+      <ion-toggle *ngIf="emp.call_records==0" mode="md" readonly></ion-toggle>
     </ion-row>
     <ion-row class="tog">
       <p class="gps">Control Employee</p>
@@ -63,7 +61,7 @@
     </ion-row>
 
     <ion-row class="inp">
-      <ion-col>
+      <ion-col style="padding-left: 0%;">
         <ion-input placeholder="Enter OTP here"></ion-input>
       </ion-col>
       <ion-col class="btn">
@@ -72,7 +70,7 @@
     </ion-row>
   </ion-card>
 
-  
+
 
   <ion-fab vertical="bottom" horizontal="end" slot="fixed" routerLink="/add-employee">
     <ion-fab-button class="fab">

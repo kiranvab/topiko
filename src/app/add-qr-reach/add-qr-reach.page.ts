@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { QRScanner, QRScannerStatus } from '@ionic-native/qr-scanner/ngx';
-import { Storage } from '@ionic/storage';
+import { Storage } from '@ionic/storage-angular';
 import { AppComponent } from '../app.component';
 import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
 
@@ -27,7 +27,17 @@ export class AddQrReachPage implements OnInit {
   image4_img:any;
   udata: any;
   user_id: any;
-  response: Object;
+  response: any;
+  uimg:any;
+  img_img1:any = false;
+  img_img2:any = false;
+  img_img3:any = false;
+  img_img4:any = false;
+
+  up_img1 : any = true;
+  up_img2 : any = true;
+  up_img3 : any = true;
+  up_img4 : any = true;
   
   constructor(
     private route:Router,
@@ -44,6 +54,11 @@ export class AddQrReachPage implements OnInit {
     this.storage.get("userdetails").then(val=>{
       this.udata=val;
       this.user_id = this.udata[0].id;
+      this.uimg = this.udata[0].image;
+      this.name=this.udata[0].name;
+      this.mobile=this.udata[0].mobile;
+      this.email=this.udata[0].email;
+      console.log(this.udata);
     }) 
   }
 
@@ -71,6 +86,8 @@ export class AddQrReachPage implements OnInit {
   }
   this.camera.getPicture(options).then((imageData) => {
     this.image1_img = 'data:image/jpeg;base64,' + imageData;
+    this.img_img1 = true;
+    this.up_img1 = false;
   });
 }
 
@@ -83,6 +100,8 @@ image2(){
   }
   this.camera.getPicture(options).then((imageData) => {
     this.image2_img = 'data:image/jpeg;base64,' + imageData;
+    this.img_img2 = true;
+    this.up_img3 = false;
   });
 }
 
@@ -95,6 +114,8 @@ image3(){
   }
   this.camera.getPicture(options).then((imageData) => {
     this.image3_img = 'data:image/jpeg;base64,' + imageData;
+    this.img_img3 = true;
+    this.up_img3 = false;
   });
 }
 
@@ -107,6 +128,8 @@ image4(){
   }
   this.camera.getPicture(options).then((imageData) => {
     this.image4_img = 'data:image/jpeg;base64,' + imageData;
+    this.img_img4 = true;
+    this.up_img4 = false;
   });
 }
 
@@ -114,11 +137,11 @@ image4(){
    var link = AppComponent.ApiUrl+"addqr.php";
    var myData = JSON.stringify({
      'user_id': this.user_id,
-     'name':this.name.value,
-     'mobile':this.mobile.value,
-     'email':this.email.value,
+     'name':this.name,
+     'mobile':this.mobile,
+     'email':this.email,
      'purpose': 'vehicle',
-     'reg_number':this.reg_number.value,
+     'reg_number':this.reg_number,
      'nominee_name':this.nominee_name.value,
      'nominee_number':this.nomineecontact.value,
      'vehicle_type':this.vehicle,

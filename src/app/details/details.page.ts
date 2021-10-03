@@ -36,14 +36,19 @@ export class DetailsPage implements OnInit {
   business_image:any;
   udata: any;
   user_id: any;
-  router: any;
   services:any;
+  recent:any;
+  vrespo: Object;
+  sid: any;
+  repstatus: Object;
+  reporttxt: any;
   constructor(
     public actionsheetCtrl:ActionSheetController,
     public alertCtrl:AlertController,
     private storage:Storage,
     private http:HttpClient,
-    private route: Router
+    private router: Router,
+    private alertController:AlertController
   ) { 
     this.segmentModel="topiko";
     this.storage.get("userdetails").then(val =>
@@ -59,6 +64,7 @@ export class DetailsPage implements OnInit {
   ngOnInit() {
     this.storage.get("bid").then((bval)=>{
       this.business_id = bval;
+      console.log("BID",this.business_id);
       this.http.get(AppComponent.ApiUrl+"getbusinessdetails.php?bid="+this.business_id).subscribe((response)=>{
         this.bdetails = response;
         console.log("business details:" ,this.bdetails);
@@ -72,6 +78,17 @@ export class DetailsPage implements OnInit {
         this.story = this.bdetails[0].busienss_story;
         this.business_image = this.bdetails[0].logo;
       });
+
+      this.http.get(AppComponent.ApiUrl+"viewbusiness.php?bid="+this.business_id+"&user_id="+this.user_id).subscribe(vrespo=>{
+        this.vrespo = vrespo;
+        console.log("View Response:", this.user_id);
+      })
+
+      // Get Recent Viewed
+this.http.get(AppComponent.ApiUrl + "recentviews.php?user_id="+this.user_id).subscribe(async data => {
+  this.recent = data;
+ console.log(this.recent);
+ })
 
       this.http.get(AppComponent.ApiUrl+"getproducts.php?bid="+this.business_id).subscribe((presponse)=>{
         this.products = presponse;
@@ -90,27 +107,27 @@ export class DetailsPage implements OnInit {
      // header: 'Modify your album',  
       buttons: [  
         {  
-          text: 'Reach',  
-          handler: () => {  
-            console.log('Destructive clicked');  
-            this.presentAlert();
-          }  
-        },{  
-          text: 'Hide',  
-          handler: () => {  
-           console.log('Archive clicked');  
-          }  
-        },{  
           text: 'Report',  
-          handler: () => {  
-           console.log('Archive clicked');  
+          handler: () => {   
+            this.ReportAlert();
           }  
-        },{  
-          text: 'Rating',  
-          handler: () => {  
-           console.log('Archive clicked');  
-          }  
-        }  
+        }
+        //{  
+        //   text: 'Hide',  
+        //   handler: () => {  
+        //    console.log('Archive clicked');  
+        //   }  
+        // },{  
+        //   text: 'Report',  
+        //   handler: () => {  
+        //    console.log('Archive clicked');  
+        //   }  
+        // },{  
+        //   text: 'Rating',  
+        //   handler: () => {  
+        //    console.log('Archive clicked');  
+        //   }  
+        // }  
       ]  
     });  
     await actionSheet.present();  
@@ -134,7 +151,12 @@ async presentAlert() {
 
 productDetials(i){
   this.storage.set("prid", this.products[i].id);
-  this.route.navigate(['item']);
+  this.http.get(AppComponent.ApiUrl+"product_view.php?pid="+this.products[i].id+"&user_id="+this.user_id).subscribe(vrespo=>{
+    this.vrespo = vrespo;
+    console.log("View Response:", this.vrespo);
+  })
+  this.router.navigate(['item']);
+  this.storage.set("bname", this.name);
 }
 
 likebusiness(){
@@ -153,6 +175,141 @@ favbusiness(){
     }
   })
 }
+
+shareservice(i){
+  this.sid= this.services[i].id;
+  this.http.get(AppComponent.ApiUrl+"shareservice.php?user_id="+this.user_id+"&sid="+this.sid).subscribe(shares =>{
+    if(shares =1){
+      alert("Service Shared Sucesfully");
+    }
+  })
+}
+cmtservice(i){
+  this.sid= this.services[i].id;
+  this.http.get(AppComponent.ApiUrl+"cmtservice.php?user_id="+this.user_id+"&sid="+this.sid).subscribe(shares =>{
+    if(shares =1){
+      alert("Service Commented Sucesfully");
+    }
+  })
+}
+
+likeservice(i){
+  this.sid= this.services[i].id;
+  this.http.get(AppComponent.ApiUrl+"likeservice.php?user_id="+this.user_id+"&sid="+this.sid).subscribe(shares =>{
+    if(shares =1){
+      alert("Service Liked Sucesfully");
+    }
+  })
+}
+
+favservice(i){
+  this.sid= this.services[i].id;
+  this.http.get(AppComponent.ApiUrl+"favservice.php?user_id="+this.user_id+"&sid="+this.sid).subscribe(shares =>{
+    if(shares =1){
+      alert("Service Favourite Sucesfully");
+    }
+  })
+}
+
+shophere(){
+  this.storage.set("bid", this.business_id);
+  this.router.navigate(['shophere']);
+}
+
+recdetails(i) {
+  console.log(this.recent[i].id);
+  this.storage.set("bid",this.recent[i].id);
+  this.router.navigateByUrl('/details');
+  window.location.reload()
+}
+
+// async presentPrompt() {
+//   let alert = this.alertCtrl.create({
+    
+//     inputs: [
+//       {
+//         name: 'username',
+//         placeholder: 'Username'
+//       },
+//       {
+//         name: 'password',
+//         placeholder: 'Password',
+//         type: 'password'
+//       }
+//     ],
+//     buttons: [
+//       {
+//         text: 'Cancel',
+//         role: 'cancel',
+//         handler: data => {
+//           console.log('Cancel clicked');
+//         }
+//       },
+//       {
+//         text: 'Login',
+//         handler: data => {
+//           if ("kalyan") {
+//             // logged in!
+//           } else {
+//             // invalid login
+//             return false;
+//           }
+//         }
+//       }
+//     ]
+//   });
+//   await alert.present();
+// }
+
+
+async ReportAlert() {
+  const alert = await this.alertController.create({
+    cssClass: 'my-custom-class',
+    header: 'Report Business',
+    inputs: [
+      {
+        name: 'reporttext',
+        type: 'textarea',
+        id:'reporttxt',
+        placeholder: ''
+      }
+    ],
+    buttons: [
+      {
+        text: 'Cancel',
+        role: 'cancel',
+        cssClass: 'secondary',
+        handler: () => {
+          console.log('Confirm Cancel');
+        }
+      }, {
+        text: 'Report',
+        handler: data => {
+          this.reporttxt = data.reporttext,
+          console.log("Report Text", this.reporttxt);
+          console.log('Confirm Ok');
+          this.rptbusiness();
+        }
+      }
+    ]
+  });
+
+  await alert.present();
+}
+
+rptbusiness(){
+  this.http.get(AppComponent.ApiUrl +"report_business.php?uid="+this.user_id+"&bid="+this.business_id+"&report="+this.reporttxt).subscribe(response =>{
+    this.repstatus = response;
+    console.log(this.repstatus);
+    if(this.repstatus == 1){
+     alert("Business Rported Sucefully");
+    }
+    else {
+      alert("Failed to report BUsiness");
+    }
+})
+}
+
 }
 
 

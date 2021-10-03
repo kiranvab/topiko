@@ -53,22 +53,23 @@ ion-content {
 //cards
 .chat-lbox {
     border-radius: 0px 8px 8px 8px;
-    max-width: 60%;
+    max-width: 80%;
     padding: 6px;
     box-shadow: none;
     margin: 10px;
+    background: #fff;
 }
 .time {
     float: right;
 }
 .time p {
-    color: #707070;
+    color: #cecece;
     font-size: 0.625em;
     padding-right: 0.3125em;
     margin: 0%;
 }
 .left-chat {
-    background-color: #ffffff;
+    background-color: #fff;
     text-align: left;
     padding-bottom: 0%;
 }
@@ -78,14 +79,13 @@ ion-content {
     font-weight: bold;
     margin: 4px 0px;
     margin-top: 0%;
+    display: none;
 }
 .subtitle {
     color: #22272a;
     font-size: 14px;
     margin: 4px 0px;
     margin-bottom: 0%;
-    line-height: 1.5em;
-    letter-spacing: 0.4px;
 }
 .rt {
     display: flex;
@@ -93,17 +93,26 @@ ion-content {
 }
 .chat-rbox {
     border-radius: 8px 0px 8px 8px;
-    min-width: 60%;
-    max-width: 60%;
+    min-width: 80%;
+    max-width: 80%;
     padding: 6px;
     margin: 10px;
     box-shadow: none;
+    background-color: #871178;
 }
 .right-chat {
-    background-color: #ffffff;
+    background-color: #871178;
     text-align: left;
     padding-bottom: 0%;
 }
+
+.right-chat .subtitle {
+   color: #fff;
+}
+
+.right-chat .time {
+    color: #fff;
+ }
 
 .bottom {
     position: fixed;
@@ -170,3 +179,8 @@ ion-footer ion-toolbar {
     --background: #d6d6d6;
     --padding-bottom: 0.875em;
 }
+div.main{
+    overflow-y: auto;
+    height:90% !important;
+    padding: 10px;
+  }

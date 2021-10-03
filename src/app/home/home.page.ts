@@ -11,6 +11,11 @@ import { Router } from '@angular/router';
   styleUrls: ['./home.page.scss'],
 })
 export class HomePage implements OnInit {
+  slideOpts = {
+    initialSlide: 1,
+    speed: 400
+  };
+  
   all: any = false;
   categories: any;
   services:any;
@@ -80,7 +85,7 @@ export class HomePage implements OnInit {
         console.log(this.ucity);
 
         // Get Offers Near you 
-this.http.get(AppComponent.ApiUrl + "offersnearyou.php?city="+this.ucity).subscribe(async data => {
+this.http.get(AppComponent.ApiUrl + "homeoffersnearyou.php?city="+this.ucity).subscribe(async data => {
   this.offersNear = data;
   console.log("Offers Near you",this.offersNear);
 })
@@ -92,17 +97,17 @@ this.http.get(AppComponent.ApiUrl + "homeshopsnearyou.php?city="+this.ucity).sub
 })
 
 // Get Services Near you 
-this.http.get(AppComponent.ApiUrl + "servicesnearyou.php?city="+this.ucity).subscribe(async data => {
+this.http.get(AppComponent.ApiUrl + "homeservicesnearyou.php?city="+this.ucity).subscribe(async data => {
   this.servicesNear = data;
   //console.log("Services Near you", this.servicesNear);
 })
 
 // Get Recent Viewed
-this.http.get(AppComponent.ApiUrl + "recentviews.php?user_id="+this.user_id).subscribe(async data => {
+this.http.get(AppComponent.ApiUrl + "homerecentviews.php?user_id="+this.user_id).subscribe(async data => {
   this.recent = data;
  console.log(this.recent);
  })
-      });
+    });
 
     // Get Categories
     this.http.get(AppComponent.ApiUrl + "gethomecategories.php").subscribe(async data => {
@@ -116,6 +121,7 @@ this.http.get(AppComponent.ApiUrl + "recentviews.php?user_id="+this.user_id).sub
     //console.log(this.services);
   })
 
+  
 
    // Get All Categories
    this.http.get(AppComponent.ApiUrl + "getcategories.php").subscribe(async data => {
@@ -144,7 +150,7 @@ this.http.get(AppComponent.ApiUrl + "getbanners.php").subscribe(async data => {
 // Get Offers
 this.http.get(AppComponent.ApiUrl + "getoffers.php").subscribe(async data => {
   this.offers = data;
-  console.log("Offers", this.offers);
+  //console.log("Offers", this.offers);
 })
 
 // Get position 1
@@ -152,6 +158,7 @@ this.http.get(AppComponent.ApiUrl + "getbanerpos1.php").subscribe(async data => 
   this.position1 = data;
   this.posbanner1 = this.position1[0].image;
   this.pos1bid = this.position1[0].bid;
+  console.log("position1", this.position1);
 })
 
 // Get position 2
@@ -171,7 +178,7 @@ this.http.get(AppComponent.ApiUrl + "getbanerpos3.php").subscribe(async data => 
 // Get position 4
 this.http.get(AppComponent.ApiUrl + "getbanerpos4.php").subscribe(async data => {
   this.position4 = data;
-  console.log("position 4", this.position5)
+  console.log("position 4", this.position4)
 })
 
 // Get position 5
@@ -191,21 +198,30 @@ this.http.get(AppComponent.ApiUrl + "getbanerpos5.php").subscribe(async data => 
 category(i){
   console.log("type", this.categories[i].type)
  this.storage.set("type", this.categories[i].type)
+ this.storage.set("catid", this.categories[i].id)
  this.router.navigate(['gcategory']);
 }
 
 service(i){
-  console.log("type", this.services[i].type);
+ console.log("type", this.services[i].type);
  this.storage.set("type", this.services[i].type)
+ this.storage.set("sid", this.services[i].id)
  this.router.navigate(['gcategory']);
 }
 
+offersdetails(i){
+  console.log(this.offersNear[i].bid);
+   console.log(this.offersNear[i].bid);
+   this.storage.set("bid", this.offersNear[i].bid)
+   this.router.navigate(['details']);
+}
 
-details(list) {
-  console.log(list.place_id);
-   this.storage.set("placeid",list.place_id);
-   this.router.navigate(['/gdetails']);
-  // console.log("Details",list.place_id);
+
+details(i) {
+  //console.log(this.recent[i].id);
+  this.storage.set("bid",this.recent[i].id);
+  this.router.navigate(['details']);
+  this.Viewbusiness(this.recent[i].id);
 }
 
 
@@ -261,6 +277,7 @@ details(list) {
     this.Viewbusiness(this.shopsNear[i].id);
   }
 
+  
   Viewbusiness(id){
     this.http.get(AppComponent.ApiUrl+"viewbusiness.php?bid="+id+"&user_id="+this.user_id).subscribe(vrespo=>{
       this.vrespo = vrespo;

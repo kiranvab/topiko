@@ -1,38 +1,66 @@
-.user-name
-{
-    color:#22272A;
-    font-size: 16px;
-    line-height: 0;
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+ion-content {
+    margin-bottom: 20px;
+    --ion-font-family: "Poppins", sans-serif;
+    --padding-start: 6px;
+    --padding-end: 6px;
+    --padding-top: 8px;
+    --padding-bottom: 16px;
 }
-.time
-{
-    color:#9F9F9F;
+ion-title {
+    letter-spacing: 0.8px;
+    padding-right: 46px;
+}
+.user-name {
+    color: #871178;
+    font-size: 18px;
+    line-height: 1;
+    padding: 5px;
+    padding-top: 10px;
+    padding-left: 10px;
+    margin: 0;
+}
+.time {
+    color: #9f9f9f;
     font-size: 12px;
 }
-.chat-time
-{
-    color:#871178;
+.chat-time {
+    color: #871178;
     font-size: 12px;
 }
 
-.select
-{
+.select {
     float: right;
     color: #871178;
 }
 
-.select-text
-{
+.select-text {
     color: #871178;
 }
-label
-{
+label {
     color: #871178;
 }
 
-.select-icon
-{
+.select-icon {
     width: 20px !important;
-    height: 20px  !important;
+    height: 20px !important;
     color: #871187 !important;
+}
+
+ion-card {
+    margin: 10px;
+    box-shadow: 0px 3px 6px #00000029;
+}
+.select-div {
+    background: #fff;
+    color: #871178;
+    font-weight: bold;
+}
+
+.toast-content {
+    text-transform: uppercase !important;
+    text-align: center;
 }

@@ -11,14 +11,13 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content *ngFor="let qr of qrdetails">
   <ion-card class="first">
     <ion-row class="row">
       <ion-col class="bg">
         <ion-avatar>
-          <img src="https://i.pinimg.com/474x/bc/d4/ac/bcd4ac32cc7d3f98b5e54bde37d6b09e.jpg" alt="">
+          <img src="{{uimage}}" alt="">
         </ion-avatar>
-        <img class="position-cam" src="assets/camera.svg" alt="">
       </ion-col>
     </ion-row>
   </ion-card>
@@ -29,7 +28,7 @@
         <p class="reach">Reach ID</p>
       </ion-col>
       <ion-col>
-        <p class="id">4568429</p>
+        <p class="id">{{qr.qr_id}}</p>
       </ion-col>
     </ion-row>
   </ion-card>
@@ -39,45 +38,32 @@
       <p>Image</p>
     </ion-row>
     <div class="scroll">
-      <img src="https://5.imimg.com/data5/OV/ZZ/EF/SELLER-12251084/rear-view-car-side-mirror-beat-500x500.jpg" alt="">
-      <img
-        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ67pkHOVMFxVKt0tzGDIQcm2eMng_7ro_0D3T-hrujo2_hFGU9w2uPE3P7IBiGrL5UtJM&usqp=CAU"
-        alt="">
-      <img src="https://amainsider.com/wp-content/uploads/2017/06/auto-glass-insurance-windshield.jpg" alt="">
-      <img src="https://5.imimg.com/data5/OV/ZZ/EF/SELLER-12251084/rear-view-car-side-mirror-beat-500x500.jpg" alt="">
-      <img src="https://amainsider.com/wp-content/uploads/2017/06/auto-glass-insurance-windshield.jpg" alt="">
+      <img src="{{qr.image1}}" alt="">
+      <img src="{{qr.image2}}" alt="">
+      <img src="{{qr.image3}}" alt="">
+      <img src="{{qr.image4}}" alt="">
     </div>
   </ion-card>
 
   <ion-card class="third">
-    <!-- <ion-row>
-      <p>Images</p>
-    </ion-row>
-    <ion-row>
-      <img src="https://5.imimg.com/data5/OV/ZZ/EF/SELLER-12251084/rear-view-car-side-mirror-beat-500x500.jpg" alt="">
-      <img
-        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ67pkHOVMFxVKt0tzGDIQcm2eMng_7ro_0D3T-hrujo2_hFGU9w2uPE3P7IBiGrL5UtJM&usqp=CAU"
-        alt="">
-      <img src="https://amainsider.com/wp-content/uploads/2017/06/auto-glass-insurance-windshield.jpg" alt="">
-    </ion-row> -->
 
     <ion-row class="heading">
       <p>User Name</p>
     </ion-row>
     <ion-row class="ans">
-      <p>Murali</p>
+      <p>{{qr.name}}</p>
     </ion-row>
     <ion-row class="heading">
       <p>User Number</p>
     </ion-row>
     <ion-row class="ans">
-      <p>+91 988345622</p>
+      <p>{{qr.mobile}}</p>
     </ion-row>
     <ion-row class="heading">
       <p>User Mail ID</p>
     </ion-row>
     <ion-row class="ans">
-      <p>someone@example.com</p>
+      <p>{{qr.email}}</p>
     </ion-row>
     <ion-row class="heading">
       <p>Purpose (Vehicle)</p>
@@ -87,29 +73,29 @@
         <h6>Vehicle</h6>
       </ion-col>
       <ion-col size="12">
-        <h6>By Cycle</h6>
+        <h6>{{qr.vehicle_type}}</h6>
       </ion-col>
       <ion-col size="12">
-        <h6>TN 22 DH 0000</h6>
+        <h6>{{qr.registration_number}}</h6>
       </ion-col>
     </ion-row>
     <ion-row class="heading">
       <p>Address</p>
     </ion-row>
     <ion-row class="ans">
-      <p>1/38 Bhathiyar street moovarasanpet madipakkam</p>
+      <p>{{uaddress}}</p>
     </ion-row>
     <ion-row class="heading">
       <p>Nominee Name</p>
     </ion-row>
     <ion-row class="ans">
-      <p>Jagan Karthik</p>
+      <p>{{qr.nominee_name}}</p>
     </ion-row>
     <ion-row class="heading">
       <p>Contact No</p>
     </ion-row>
     <ion-row class="ans">
-      <p>+91 988345622</p>
+      <p>{{qr.nominee_mobile}}</p>
     </ion-row>
   </ion-card>
 
@@ -127,15 +113,13 @@
             <p class="reach">Reach ID</p>
           </ion-col>
           <ion-col class="aligncol">
-            <p class="id">4568429</p>
+            <p class="id">{{qr.qr_id}}</p>
           </ion-col>
         </ion-row>
       </ion-card>
 
-      <img class="qr"
-        src="https://images.vexels.com/media/users/3/143626/isolated/preview/c3603b5d39ceda0f4dd261db2300e9bb-qr-bar-code-illustration-by-vexels.png"
-        alt="">
-      <p class="phone">TN 22 DH 9354</p>
+      <qrcode [qrdata]="qr.qr_id" style="height: 230px !important;width: 230px !important;"></qrcode>
+      <p class="phone">{{qr.registration_number}}</p>
       <span class="note">Note: <span>Scan to reach belongers in case of emergency. don't misuse</span></span>
     </ion-row>
   </ion-card>
@@ -151,7 +135,7 @@
               <img src="http://www.eurocarnews.com/media/pictorials/1445/6905.jpg" alt="">
             </ion-avatar>
             <ion-row class="nam text-overflow">
-              <p>Murali</p>
+              <p>{{qr.name}}</p>
             </ion-row>
           </ion-col>
         </ion-row>
@@ -163,7 +147,7 @@
               </ion-col>
               <ion-col>
                 <span class="aligncol text-overflow">
-                  <p class="id">{{this.rand}}</p>
+                  <p class="id">{{qr.qr_id}}</p>
                 </span>
               </ion-col>
             </ion-row>
@@ -172,7 +156,7 @@
                 <p>Vechile</p>
               </ion-col>
               <ion-col class="text-overflow">
-                <p class="vehicno">TN 22 DH 9133</p>
+                <p class="vehicno">{{qr.registration_number}}</p>
               </ion-col>
             </ion-row>
             <ion-row class="noteclas">

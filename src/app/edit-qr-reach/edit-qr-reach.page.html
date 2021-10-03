@@ -5,9 +5,6 @@
       <ion-menu-button mode=ios></ion-menu-button>
     </ion-buttons>
     <ion-title>Edit QR Reach</ion-title>
-    <ion-buttons slot="end" routerLink="/qrreach">
-      <ion-icon name="checkmark-outline"></ion-icon>
-    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
@@ -17,10 +14,9 @@
       <ion-col class="bg">
         <ion-avatar>
           <img
-            src="data:image/png;base64,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"
+            src="{{uimage}}"
             alt="">
         </ion-avatar>
-        <img class="position-cam" src="assets/camera.svg" alt="">
       </ion-col>
     </ion-row>
   </ion-card>
@@ -31,7 +27,7 @@
         <p class="reach">Reach ID</p>
       </ion-col>
       <ion-col>
-        <p class="id">4568429</p>
+        <p class="id">{{this.qrid}}</p>
       </ion-col>
     </ion-row>
   </ion-card>
@@ -41,13 +37,10 @@
       <p>Image</p>
     </ion-row>
     <div class="scroll">
-      <img src="https://5.imimg.com/data5/OV/ZZ/EF/SELLER-12251084/rear-view-car-side-mirror-beat-500x500.jpg" alt="">
-      <img
-        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ67pkHOVMFxVKt0tzGDIQcm2eMng_7ro_0D3T-hrujo2_hFGU9w2uPE3P7IBiGrL5UtJM&usqp=CAU"
-        alt="">
-      <img src="https://amainsider.com/wp-content/uploads/2017/06/auto-glass-insurance-windshield.jpg" alt="">
-      <img src="https://5.imimg.com/data5/OV/ZZ/EF/SELLER-12251084/rear-view-car-side-mirror-beat-500x500.jpg" alt="">
-      <img src="https://amainsider.com/wp-content/uploads/2017/06/auto-glass-insurance-windshield.jpg" alt="">
+      <img src="{{image1}}" alt="">
+      <img src="{{image2}}" alt="">
+      <img src="{{image3}}" alt="">
+      <img src="{{image4}}" alt="">
     </div>
   </ion-card>
 
@@ -56,19 +49,25 @@
       <p>User Name</p>
     </ion-row>
     <ion-row class="ans">
-      <p>Murali</p>
+      <ion-item>
+      <ion-input value="{{name}}" [(ngModel)]="name"></ion-input>
+    </ion-item>
     </ion-row>
     <ion-row class="heading">
       <p>User Number</p>
     </ion-row>
     <ion-row class="ans">
-      <p>+91 988345622</p>
+      <ion-item>
+      <ion-input value="{{mobile}}" [(ngModel)]="mobile"></ion-input>
+    </ion-item>
     </ion-row>
     <ion-row class="heading">
       <p>User Mail ID</p>
     </ion-row>
     <ion-row class="ans">
-      <p>someone@example.com</p>
+      <ion-item>
+      <ion-input value="{{email}}" [(ngModel)]="email"></ion-input>
+    </ion-item>
     </ion-row>
     <ion-row class="heading">
       <p>Purpose (Vehicle)</p>
@@ -81,105 +80,33 @@
         <h6>By Cycle</h6>
       </ion-col>
       <ion-col size="12">
-        <h6>TN 22 DH 0000</h6>
+        <ion-item>
+        <ion-input value="{{registration_number}}" [(ngModel)]="registration_number"></ion-input>
+      </ion-item>
       </ion-col>
     </ion-row>
-    <ion-row class="heading">
-      <p>Address</p>
-    </ion-row>
-    <ion-row class="ans">
-      <p>1/38 Bhathiyar street moovarasanpet madipakkam</p>
-    </ion-row>
+
     <ion-row class="heading">
       <p>Nominee Name</p>
     </ion-row>
     <ion-row class="ans">
-      <p>Jagan Karthik</p>
+      <ion-item>
+      <ion-input value="{{nominee_name}}" [(ngModel)]="nominee_name"></ion-input>
+    </ion-item>
     </ion-row>
     <ion-row class="heading">
       <p>Contact No</p>
     </ion-row>
     <ion-row class="ans">
-      <p>+91 988345622</p>
+      <ion-item>
+      <ion-input value="{{nominee_mobile}}" [(ngModel)]="nominee_mobile"></ion-input>
+    </ion-item>
     </ion-row>
   </ion-card>
 
-  <h4>Sticker & Tag</h4>
+  
 
-  <ion-card class="generate-card">
-    <ion-row class="gpay">
-      <img
-        src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Google_Pay_%28GPay%29_Logo_%282018-2020%29.svg/1280px-Google_Pay_%28GPay%29_Logo_%282018-2020%29.svg.png"
-        alt="">
-
-      <ion-card>
-        <ion-row class="generate">
-          <ion-col>
-            <p class="reach">Reach ID</p>
-          </ion-col>
-          <ion-col class="aligncol">
-            <p class="id">4568429</p>
-          </ion-col>
-        </ion-row>
-      </ion-card>
-
-      <img class="qr"
-        src="https://images.vexels.com/media/users/3/143626/isolated/preview/c3603b5d39ceda0f4dd261db2300e9bb-qr-bar-code-illustration-by-vexels.png"
-        alt="">
-      <p class="phone">TN 22 DH 9354</p>
-      <span class="note">Note: <span>Scan to reach belongers in case of emergency. don't misuse</span></span>
-    </ion-row>
-  </ion-card>
-
-  <ion-card class="fifth">
-    <ion-card>
-      <ion-row class="rowa">
-        <ion-row class="rowb">
-          <ion-col class="bground">
-            <ion-row class="thick-border">
-            </ion-row>
-            <ion-avatar>
-              <img src="http://www.eurocarnews.com/media/pictorials/1445/6905.jpg" alt="">
-            </ion-avatar>
-            <ion-row class="nam text-overflow">
-              <p>Murali</p>
-            </ion-row>
-          </ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col>
-            <ion-row class="refer text-overflow">
-              <ion-col size="5.2">
-                <p class="reach">Refer ID</p>
-              </ion-col>
-              <ion-col>
-                <span class="aligncol text-overflow">
-                  <p class="id">{{this.rand}}</p>
-                </span>
-              </ion-col>
-            </ion-row>
-            <ion-row class="vehic text-overflow">
-              <ion-col size="5.2">
-                <p>Vechile</p>
-              </ion-col>
-              <ion-col class="text-overflow">
-                <p class="vehicno">TN 22 DH 9133</p>
-              </ion-col>
-            </ion-row>
-            <ion-row class="noteclas">
-              <span class="noteclass">Note: <span>Scan to reach belongers in case of emergency. don't
-                  misuse</span></span>
-            </ion-row>
-          </ion-col>
-          <ion-col size="4" class="qrclas">
-            <img class="qrr"
-              src="https://www.freepnglogos.com/uploads/qr-code-png/qr-code-code-sticker-transparent-png-svg-vector-19.png"
-              alt="">
-          </ion-col>
-        </ion-row>
-      </ion-row>
-    </ion-card>
-  </ion-card>
+ 
 
   <ion-grid class="last-grid">
     <ion-row>
@@ -195,7 +122,7 @@
         <ion-button>Download</ion-button>
       </ion-col>
       <ion-col class="righ">
-        <ion-button>Renewal</ion-button>
+        <ion-button (click)="update()">Update</ion-button>
       </ion-col>
     </ion-row>
   </ion-grid>

@@ -23,7 +23,7 @@
     <ion-buttons slot="end">
       <ion-icon name="search-outline" routerLink="/global-search"></ion-icon>
       <ion-icon name="notifications-outline" routerLink="/notification"></ion-icon>
-      <ion-icon name="play-outline"></ion-icon>
+      <!-- <ion-icon name="play-outline"></ion-icon> -->
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
@@ -60,7 +60,7 @@
     </ion-col>
   </ion-row> -->
 
-  <div class="seg-class scroll">
+  <!-- <div class="seg-class scroll">
 
     <ion-button (click)="showall()">All</ion-button>
 
@@ -75,18 +75,18 @@
     <ion-button>Bills</ion-button>
 
     <ion-button>Movies</ion-button>
-  </div>
+  </div> -->
+  <br>
 
-  <ion-slides pager="true" [options]="slideOpts">
-    <ion-slide *ngFor="let ban of banners let i=index" >
-      <img src="{{ban.banner_image}}"  style="border-radius: 10px;">
+  <ion-slides pager="true" [options]="slideOpts" style="margin-top: -10px;">
+    <ion-slide *ngFor="let ban of banners let i=index">
+      <img src="{{ban.banner_image}}" style="border-radius: 3px;">
     </ion-slide>
   </ion-slides>
 
   <ion-row (click)="pos1details()">
-    <ion-col>
-      <img
-        src="{{posbanner1}}">
+    <ion-col style="padding: 5px 0px;">
+      <img width="100%" height="95px" src="{{posbanner1}}">
     </ion-col>
   </ion-row>
 
@@ -96,8 +96,10 @@
   </ion-row>
 
   <ion-row class="featured-img">
-    <ion-col  *ngFor="let fet of featured let i=index" size="2" (click)="fedetials(i)">
-      <img  src="{{fet.logo}}">
+    <ion-col *ngFor="let fet of featured let i=index" size="2" (click)="fedetials(i)">
+      <img *ngIf="fet.logo" src="{{fet.logo}}">
+      <img *ngIf="fet.logo == ''" class="icon-img" src="assets/logo-color.png"
+        style="padding: 10px; background: #fafafa; border-radius: 25%;">
     </ion-col>
   </ion-row>
 
@@ -107,9 +109,11 @@
   </ion-row>
 
   <ion-row>
-    <ion-col size="3" class="p-0"  *ngFor="let rec of recent;  let i=index" (click)="details(list)">
-      <img src="{{rec.logo}}" class="icon-img">
-      <div class="img-title center text-center p-0" text-center>{{rec.business_name}}</div>
+    <ion-col size="4" class="p-0" *ngFor="let rec of recent;  let i=index" (click)="details(i)">
+      <img *ngIf="rec.logo" class="icon-img-recent" src="{{rec.logo}}">
+      <img *ngIf="rec.logo == ''" class="icon-img-recent" src="assets/logo-color.png"
+        style="padding: 10px; background: #fafafa; border-radius: 10px;">
+      <!-- <div class="img-title center text-center p-0" text-center>{{rec.business_name}}</div> -->
     </ion-col>
   </ion-row>
 
@@ -119,7 +123,7 @@
   </ion-row>
 
   <ion-row>
-    <ion-col *ngFor="let cat of categories; let i=index" (click)="category(i)">
+    <ion-col *ngFor="let cat of categories; let i=index" (click)="category(i)" style="padding: 7px;">
       <div class="service-icons">
         <img src="https://topiko.com/app/icons/{{cat.image}}">
         <div>{{cat.category}}</div>
@@ -134,7 +138,7 @@
 
   <ion-row>
     <ion-row>
-      <ion-col *ngFor="let ser of services; let i=index" (click)="service(i)">
+      <ion-col *ngFor="let ser of services; let i=index" (click)="service(i)" style="padding: 7px;">
         <div class="service-icons">
           <img src="https://topiko.com/app/icons/{{ser.image}}">
           <div>{{ser.service}}</div>
@@ -148,14 +152,13 @@
     <ion-col size="3" class="view-all" routerLink="/offersnearyou">View All</ion-col>
   </ion-row>
   <ion-row>
-    <ion-col size="4" class="p-0"  *ngFor="let offn of offersNear; let i=index">
-      <img src="{{offn.image}}">
-      <div class="img-title center text-center p-0" text-center>{{offn.offer}}</div>
+    <ion-col size="4" class="p-0" *ngFor="let offn of offersNear; let i=index" (click)="offersdetails(i)"
+      style="padding: 6px;">
+      <img *ngIf="offn.image" class="icon-img" src="{{offn.image}}">
+      <img *ngIf="offn.image == ''" class="icon-img" src="assets/logo-color.png" style="background: #fafafa;">
+      <!-- <div class="img-title center text-center p-0" text-center>{{offn.offer}}</div> -->
     </ion-col>
   </ion-row>
-  
-
-
 
   <ion-row>
     <ion-col class="title">Shops Near You</ion-col>
@@ -163,9 +166,11 @@
   </ion-row>
 
   <ion-row>
-    <ion-col size="3" class="p-0"  *ngFor="let shopn of shopsNear; let i=index;" (click)="getdetials(i)">
-      <img src="{{shopn.logo}}"  class="icon-img">
-      <div class="img-title center text-center p-0" text-center>{{shopn.business_name}}</div>
+    <ion-col size="4" class="p-0" *ngFor="let shopn of shopsNear; let i=index;" (click)="getdetials(i)">
+      <img *ngIf="shopn.logo" src="{{shopn.logo}}" class="icon-img">
+      <img *ngIf="shopn.logo == ''" class="icon-img" src="assets/logo-color.png"
+        style="padding: 6px; background: #fafafa;">
+      <!-- <div class="img-title center text-center p-0" text-center>{{shopn.business_name}}</div> -->
     </ion-col>
   </ion-row>
 
@@ -175,17 +180,16 @@
   </ion-row>
 
   <ion-row>
-    <ion-col size="4" class="p-0"  *ngFor="let sern of servicesNear;  let i=index">
+    <ion-col size="4" class="p-0" *ngFor="let sern of servicesNear;  let i=index">
       <img src="{{sern.logo}}">
-      <div class="img-title center text-center p-0" text-center>{{sern.business_name}}</div>
+      <!-- <div class="img-title center text-center p-0" text-center>{{sern.business_name}}</div> -->
     </ion-col>
   </ion-row>
 
   <ion-row>
-
-    <ion-col class="col-mt-3" size="6" *ngFor="let pos2 of position2; let i = index;"  (click)="pos2details(i)" >
-      <img class="bdr-rad-20" style="height:150px; width:100%"
-        src="{{pos2.image}}">
+    <ion-col class="col-mt-3" size="6" style="padding:7px;" *ngFor="let pos2 of position2; let i = index;"
+      (click)="pos2details(i)">
+      <img class="bdr-rad-20" style="height:150px; width:165px; object-fit: cover;" src="{{pos2.image}}">
       <ion-row>
         <ion-col class="img-title">
           {{pos2.business_name}} | {{pos2.city}}
@@ -194,40 +198,15 @@
           <ion-icon class="heart-icon" name="heart"></ion-icon>
         </div>
         <ion-col size="2" class="count text-overflow">389</ion-col>
-        <!-- <ion-col size="1">
-          <ion-icon color="custom" name="ellipsis-horizontal"></ion-icon>
-        </ion-col>
-        <ion-col size="1">
-        </ion-col> -->
       </ion-row>
     </ion-col>
 
   </ion-row>
 
   <ion-row>
-    <ion-col class="col-mt-3"  (click)="pos3details()">
-      <img 
-        src="{{posbanner3}}" />
-      <ion-row>
-        <!-- <ion-col style="font-size: 12px;">
-          OYO | Chennai
-        </ion-col>
-        <div class="hearticon-div">
-          <ion-icon class="heart-icon" name="heart"></ion-icon>
-        </div>
-        <ion-col size="2" class="count text-overflow">389</ion-col> -->
-        <!-- <ion-col size="1">
-          <ion-icon name="ellipsis-horizontal-outline"></ion-icon>
-        </ion-col>
-        <ion-col size="1">
-        </ion-col> -->
-      </ion-row>
-    </ion-col>
-  </ion-row>
-  <ion-row>
-    <ion-col class="col-mt-3" size="6"  *ngFor="let pos4 of position4; let i = index;"  (click)="pos4details(i)">
-      <img class="bdr-rad-20" style="height:150px; width:100%"
-        src="{{pos4.image}}" />
+    <ion-col class="col-mt-3" size="6" style="padding:7px;" *ngFor="let pos4 of position4; let i = index;"
+      (click)="pos4details(i)">
+      <img class="bdr-rad-20" style="height:150px; width:165px; object-fit: cover;" src="{{pos4.image}}" />
       <ion-row>
         <ion-col class="img-title">
           {{pos4.business_name}} | {{pos4.city}}
@@ -236,23 +215,23 @@
           <ion-icon class="heart-icon" name="heart"></ion-icon>
         </div>
         <ion-col size="2" class="count text-overflow">389</ion-col>
-        <!-- <ion-col size="1">
-          <ion-icon color="custom" name="ellipsis-horizontal"></ion-icon>
-        </ion-col>
-        <ion-col size="1">
-        </ion-col> -->
       </ion-row>
     </ion-col>
+  </ion-row>
 
+  <ion-row>
+    <ion-col class="col-mt-3" style="padding: 8px 0px;" (click)="pos3details()">
+      <img style="height: 494px; border-radius: 0%;" src="{{posbanner3}}" />
+      <ion-row>
+      </ion-row>
+    </ion-col>
   </ion-row>
 
   <br>
 
   <ion-slides pager="true" [options]="slideOpts">
-    <ion-slide *ngFor="let pos5 of position5; let i = index;" (click)="pos5details(i)" >
-      <img
-        src="{{pos5.image}}"
-        style="border-radius: 10px;">
+    <ion-slide *ngFor="let pos5 of position5; let i = index;" (click)="pos5details(i)">
+      <img src="{{pos5.image}}" style="border-radius: 10px;">
     </ion-slide>
   </ion-slides>
 

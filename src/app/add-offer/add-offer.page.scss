@@ -3,8 +3,9 @@ ion-title {
     color: #ffffff;
     padding: 0px;
     padding-top: 1px;
-    letter-spacing: 0.6px;
+    letter-spacing: 0.8px;
     text-align: left;
+    padding-right: 48px;
 }
 
 //first-card
@@ -32,7 +33,9 @@ ion-item {
 }
 h5 {
     color: #22272a;
-    margin-top: 2.875em;
+    margin-top: 26px;
+    font-size: 16px;
+    margin-bottom: 2px;
 }
 ion-textarea {
     border: 1px solid #707070;
@@ -109,7 +112,7 @@ img {
 }
 
 .check {
-    margin: 50px 0px;
+    margin: 32px 0px;
     margin-bottom: 25px;
 }
 ion-checkbox {
@@ -119,13 +122,14 @@ ion-checkbox {
     --checkmark-width: 4;
     --background: transparent;
     --background-checked: transparent;
+    margin-top: 4px;
 }
 ion-col .confirm {
-    font-size: 0.75em;
+    font-size: 12px;
     color: #22272a;
-    margin-top: 0%;
+    margin-top: 2%;
     line-height: 1.3em;
-    letter-spacing: 0.025em;
+    padding-left: 5px;
 }
 .confirm span {
     color: #871178;
@@ -143,4 +147,20 @@ ion-col .confirm {
     width: 7.6875em;
     height: 3.125em;
     margin-bottom: 10px;
+}
+
+ion-col {
+    margin: 0;
+    padding: 0;
+}
+ion-select {
+    --placeholder-opacity: 100%;
+    --padding-start: 0px;
+}
+ion-input {
+    --placeholder-opacity: 1 !important;
+    --padding-start: 0px;
+}
+ion-item {
+    --padding-start: 0px;
 }

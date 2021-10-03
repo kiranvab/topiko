@@ -1,12 +1,11 @@
 <ion-header color="custom">
   <ion-toolbar color="custom" class="toolbar">
     <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
-      <ion-menu-button></ion-menu-button>
+      <ion-back-button icon="chevron-back"></ion-back-button>
     </ion-buttons>
     <ion-title>{{business_name}}</ion-title>
     <ion-buttons slot="end">
-      <ion-icon routerLink="/qr-payments" name="qr-code-outline"></ion-icon>
+      <!-- <ion-icon routerLink="/qr-payments" name="qr-code-outline"></ion-icon> -->
       <ion-icon (click)="openMenu()" name="ellipsis-vertical"></ion-icon>
     </ion-buttons>
   </ion-toolbar>
@@ -14,13 +13,11 @@
 
 <ion-content>
 
-  <ion-card class="box" routerLink="/business-profile" *ngFor="let business of bdata">
-    <ion-row>
+  <ion-card class="box" *ngFor="let business of bdata">
+    <ion-row (click)="profile()">
       <div class="avatar">
         <ion-avatar>
-          <img class="border"
-            src="{{business.logo}}"
-            alt="">
+          <img class="border" src="{{business.logo}}" alt="">
         </ion-avatar>
       </div>
       <ion-col class="text-overflow">
@@ -36,37 +33,37 @@
             <p class="pclass">4.1 Ratings</p>
           </span>
         </ion-row>
-        <p class="time pclass">{{business.owner_name}}</p>
+        <p class="time pclass">CEO - {{business.owner_name}}</p>
       </ion-col>
     </ion-row>
     <ion-row>
       <ion-col class="reg text-overflow">
-        <p>Regional - 500 Call Credits</p>
+        <p>Free Package</p>
       </ion-col>
-      <ion-col size="4.2" class="claim ellipsis">
+      <ion-col size="4.2" class="claim ellipsis" routerLink="/contact">
         <ion-button>Top up</ion-button>
       </ion-col>
     </ion-row>
 
-    <ion-row class="chats scroll">
+    <ion-row class="chats scroll" (click)="views()">
       <ion-col>
         <p class="text">Viewed</p>
-        <p class="number">36</p>
+        <p class="number">{{viewedcnt}}</p>
       </ion-col>
       <ion-col class="seperator" size="0.1"></ion-col>
       <ion-col>
-        <p class="text">Orders</p>
-        <p class="number">12</p>
+        <p class="text">Likes</p>
+        <p class="number">{{likescnt}}</p>
       </ion-col>
       <ion-col class="seperator" size="0.1"></ion-col>
       <ion-col>
-        <p class="text">Enquire</p>
-        <p class="number">09</p>
+        <p class="text">Reviews</p>
+        <p class="number">{{reviewcnt}}</p>
       </ion-col>
       <ion-col class="seperator" size="0.1"></ion-col>
       <ion-col class="calls">
         <p class="text">Favourite</p>
-        <p class="number">06</p>
+        <p class="number">{{favouritecnt}}</p>
       </ion-col>
     </ion-row>
   </ion-card>
@@ -83,19 +80,19 @@
       </ion-col>
       <ion-col class="icons" (click)="offers()">
         <ion-fab-button color="light">
-          <ion-icon name="thumbs-up-outline"></ion-icon>
+          <img src="../assets/offers.png" width="60%" />
         </ion-fab-button>
         <p>Offers</p>
       </ion-col>
-      <ion-col class="icons"  (click)="services()">
+      <ion-col class="icons" (click)="services()">
         <ion-fab-button color="light">
-          <ion-icon name="heart-outline"></ion-icon>
+          <img src="../assets/service.png" style="width: 70%; filter: opacity(0.6);" />
         </ion-fab-button>
         <p>Services</p>
       </ion-col>
       <ion-col class="icons" (click)="employees()">
         <ion-fab-button color="light">
-          <ion-icon name="headset-outline"></ion-icon>
+          <img src="../assets/cs.png" width="75%; filter: opacity(0.8);" />
         </ion-fab-button>
         <p>Employee</p>
       </ion-col>
@@ -329,7 +326,7 @@
   <!-- uplaod div end-->
   <!--branches div start-->
   <div *ngIf="segmentModel === 'branches'">
-    <ion-card>
+    <ion-card class="branch-card">
       <ion-row routerLink="/branches">
         <ion-col class="add-branch">
           <span>+</span> Add
@@ -337,8 +334,9 @@
       </ion-row>
       <ion-row class="branches" *ngFor="let branch of branches;">
         <ion-col class="branches-text">
-          {{branch.branch_title}}<br>
-          Address: <br>
+          <p style="color: #871178; margin: 0%; font-size: 16px; margin-bottom: -10px; margin-top: -37px;">
+            {{branch.branch_title}}</p><br>
+          <strong>Address:</strong><br>
           {{branch.branch_address}}
           {{branch.branch_area}}
           {{branch.branch_city}}
@@ -350,7 +348,7 @@
             <ion-col>{{branch.created_time}}</ion-col>
           </ion-row>
         </ion-col>
-        <ion-col size="3">
+        <ion-col size="3" style="padding-right: 10px; display: flex; align-items: center;">
           <img src="https://www.google.com/maps/d/u/0/thumbnail?mid=1X39vwqR9XQIHWZwXa4HS4FAgjeo&hl=en">
         </ion-col>
       </ion-row>
