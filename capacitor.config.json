@@ -1,6 +1,6 @@
 {
-  "appId": "io.ionic.starter",
-  "appName": "topiko",
+  "appId": "com.vabinformatics.topiko",
+  "appName": "Topiko",
   "bundledWebRuntime": false,
   "npmClient": "npm",
   "webDir": "www",

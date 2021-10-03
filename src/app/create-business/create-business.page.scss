@@ -14,9 +14,8 @@ ion-title {
   color: #ffffff;
   padding: 0px;
   padding-top: 1px;
-  letter-spacing: 0.8px;
+  letter-spacing: 0.6px;
   text-align: left;
-  padding-right: 56px;
 }
 .pin {
   color: #871178;
@@ -222,10 +221,6 @@ ion-select {
   --padding-start: 0px;
 }
 ion-input {
-  --placeholder-opacity: 1 !important;
-  --padding-start: 0px;
-}
-ion-item {
   --placeholder-opacity: 1 !important;
   --padding-start: 0px;
 }

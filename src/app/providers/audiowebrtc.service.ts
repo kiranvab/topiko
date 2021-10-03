@@ -21,14 +21,19 @@ export class AudiowebrtcService {
       key: 'cd1ft79ro8g833di',
       debug: 3
     };
+    
    }
    getMedia() {
-    navigator.getUserMedia({ audio: true}, (stream) => {
+     navigator.mediaDevices.getUserMedia({ audio: true}).then((stream)=>{
       this.handleSuccess(stream);
+      this.nowstream = stream;
+     })
+   /* navigator.getUserMedia({ audio: true}, (stream) => {
+    this.handleSuccess(stream);
       this.nowstream = stream;
     }, (error) => {
       this.handleError(error);
-    });
+    }); */
   }
 
   async init(userId: string, myEl: HTMLMediaElement, partnerEl: HTMLMediaElement) {
@@ -40,8 +45,7 @@ export class AudiowebrtcService {
       this.handleError(e);
     }
     await this.createPeer(userId);
-    this.setupAudioOutput(this.myEl);
-    this.setupAudioOutput(this.partnerEl);
+    this.setupPAudioOutput(this.partnerEl);
   }
 
   async createPeer(userId: string) {
@@ -73,6 +77,12 @@ export class AudiowebrtcService {
     this.myEl.srcObject = stream;
   }
   close() {
+    const stream = this.nowstream;
+  const tracks = stream.getTracks();
+
+  tracks.forEach(function(track) {
+    track.stop();
+  });
    this.peer.destroy();
   }
   handleError(error: any) {
@@ -95,10 +105,12 @@ export class AudiowebrtcService {
       console.error(error);
     }
   }
-
-  async setupAudioOutput(audio) {
+  async setupPAudioOutput(paudio){
     const devices = await navigator.mediaDevices.enumerateDevices();
-    const audioDevices = devices.filter(device => device.kind === 'audiooutput');
-    await audio.setSinkId(audioDevices[0].deviceId);
+    console.log(devices);
+const audioDevices = devices.filter(device => device.kind === 'audiooutput');
+
+await paudio.setSinkId(audioDevices[1].deviceId);
+
   }
 }

@@ -5,7 +5,7 @@
     </ion-buttons>
     <ion-title>{{business_name}}</ion-title>
     <ion-buttons slot="end">
-      <!-- <ion-icon routerLink="/qr-payments" name="qr-code-outline"></ion-icon> -->
+      <ion-icon routerLink="/qr-payments" name="qr-code-outline"></ion-icon>
       <ion-icon (click)="openMenu()" name="ellipsis-vertical"></ion-icon>
     </ion-buttons>
   </ion-toolbar>
@@ -326,7 +326,7 @@
   <!-- uplaod div end-->
   <!--branches div start-->
   <div *ngIf="segmentModel === 'branches'">
-    <ion-card class="branch-card">
+    <ion-card>
       <ion-row routerLink="/branches">
         <ion-col class="add-branch">
           <span>+</span> Add
@@ -334,8 +334,7 @@
       </ion-row>
       <ion-row class="branches" *ngFor="let branch of branches;">
         <ion-col class="branches-text">
-          <p style="color: #871178; margin: 0%; font-size: 16px; margin-bottom: -10px; margin-top: -37px;">
-            {{branch.branch_title}}</p><br>
+          <p style="color: #871178; margin: 0%;">{{branch.branch_title}}</p><br>
           <strong>Address:</strong><br>
           {{branch.branch_address}}
           {{branch.branch_area}}
@@ -348,7 +347,7 @@
             <ion-col>{{branch.created_time}}</ion-col>
           </ion-row>
         </ion-col>
-        <ion-col size="3" style="padding-right: 10px; display: flex; align-items: center;">
+        <ion-col size="3">
           <img src="https://www.google.com/maps/d/u/0/thumbnail?mid=1X39vwqR9XQIHWZwXa4HS4FAgjeo&hl=en">
         </ion-col>
       </ion-row>

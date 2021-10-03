@@ -1,8 +1,8 @@
 <ion-header color="custom">
   <ion-toolbar color="custom" class="toolbar">
     <ion-buttons slot="start">
-      <ion-back-button icon="chevron-back"></ion-back-button>
-      <!-- <ion-menu-button></ion-menu-button> -->
+      <ion-back-button></ion-back-button>
+      <ion-menu-button></ion-menu-button>
     </ion-buttons>
     <ion-title>Edit Business Profile</ion-title>
   </ion-toolbar>
@@ -20,11 +20,11 @@
       </ion-col>
     </ion-row>
     <ion-row class="details">
-      <p class="top" style="text-align: center;">Business Title</p> <br>
+      <p class="top">Business Title</p> <br>
       <ion-input [(ngModel)]="business_name"></ion-input>
     </ion-row>
     <ion-row class="details">
-      <p class="top" style="text-align: center;">Business Owner Name</p> <br>
+      <p class="top">Business Owner Name</p> <br>
       <ion-input [(ngModel)]="owner_name"></ion-input>
     </ion-row>
   </ion-card>
@@ -46,7 +46,7 @@
       <ion-input [(ngModel)]="primary_contact"></ion-input>
 
     </ion-row>
-
+  
     <ion-row>
       <p class="top">Business mode</p>
       <ion-select placeholder="Business mode" [(ngModel)]="ownership_model" (ionChange)="getserccat()">
@@ -57,15 +57,13 @@
 
     <p class="text" *ngIf="cat_div">
       <ion-select placeholder="Select Category" [(ngModel)]="category_id">
-        <ion-select-option *ngFor="let cat of categoreis; let i=index;" value="{{cat.id}}">{{cat.category}}
-        </ion-select-option>
+        <ion-select-option *ngFor="let cat of categoreis; let i=index;" value="{{cat.id}}">{{cat.category}}</ion-select-option>
       </ion-select>
     </p>
 
-    <p class="text" *ngIf="ser_div">
+    <p class="text"  *ngIf="ser_div">
       <ion-select placeholder="Select Services" [(ngModel)]="service_id">
-        <ion-select-option *ngFor="let ser of services; let i=index;" value="{{ser.id}}">{{ser.service}}
-        </ion-select-option>
+        <ion-select-option *ngFor="let ser of services; let i=index;" value="{{ser.id}}">{{ser.service}}</ion-select-option>
       </ion-select>
     </p>
 
@@ -85,7 +83,7 @@
     </ion-row>
     <ion-row>
       <p class="top">View on your business</p>
-      <ion-input [(ngModel)]="views">{{b.view}}</ion-input>
+      <ion-input [(ngModel)]="views" >{{b.view}}</ion-input>
     </ion-row>
     <ion-row>
       <p class="top">Your business story</p>

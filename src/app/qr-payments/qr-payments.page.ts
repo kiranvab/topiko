@@ -10,7 +10,7 @@ import { Storage } from '@ionic/storage-angular';
 })
 export class QrPaymentsPage implements OnInit {
 buid:any;
-  businessupi: any;
+  businessupi: Object;
   constructor(
     private http:HttpClient,
     private storage:Storage

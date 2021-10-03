@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar color="custom">
     <ion-buttons slot="start">
-      <ion-back-button icon="chevron-back"></ion-back-button>
+      <ion-back-button mode="md"></ion-back-button>
     </ion-buttons>
     <ion-title>Edit Branch</ion-title>
   </ion-toolbar>
@@ -9,65 +9,65 @@
 
 <ion-content>
   <ion-card>
-    <ion-item>
-      <ion-label position="floating">Branch Name</ion-label>
-      <ion-input [(ngModel)]="branch_title"></ion-input>
-    </ion-item>
+  <ion-item>
+    <ion-label position="floating">Branch Name</ion-label>
+    <ion-input [(ngModel)]="branch_title" ></ion-input>
+  </ion-item> 
 
-    <ion-item>
-      <ion-label position="floating">Branch Address</ion-label>
-      <ion-input [(ngModel)]="branch_address"></ion-input>
-    </ion-item>
+  <ion-item>
+    <ion-label position="floating">Branch Address</ion-label>
+    <ion-input [(ngModel)]="branch_address"></ion-input>
+  </ion-item> 
+  
+  <ion-item>
+    <ion-label position="floating">Branch Head</ion-label>
+    <ion-input [(ngModel)]="branch_head"></ion-input>
+  </ion-item> 
+  
+  <ion-item>
+    <ion-label position="floating">Contact Number </ion-label>
+    <ion-input [(ngModel)]="contact_number"></ion-input>
+  </ion-item> 
+  
+  <ion-item>
+    <ion-label position="floating">Branch Email </ion-label>
+    <ion-input [(ngModel)]="contact_email"></ion-input>
+  </ion-item> 
+  
+  <ion-item>
+    <ion-label position="floating">Alternate Phone No</ion-label>
+    <ion-input [(ngModel)]="alternate_number"></ion-input>
+  </ion-item> 
 
-    <ion-item>
-      <ion-label position="floating">Branch Head</ion-label>
-      <ion-input [(ngModel)]="branch_head"></ion-input>
-    </ion-item>
+  <ion-item>
+    <ion-label position="floating">Branch Area</ion-label>
+    <ion-input [(ngModel)]="branch_area"></ion-input>
+  </ion-item>   
 
-    <ion-item>
-      <ion-label position="floating">Contact Number </ion-label>
-      <ion-input [(ngModel)]="contact_number"></ion-input>
-    </ion-item>
+  <ion-item>
+    <ion-label position="floating">Branch Pincode</ion-label>
+    <ion-input [(ngModel)]="branch_pincode"></ion-input>
+  </ion-item> 
 
-    <ion-item>
-      <ion-label position="floating">Branch Email </ion-label>
-      <ion-input [(ngModel)]="contact_email"></ion-input>
-    </ion-item>
+  <ion-item>
+    <ion-label position="floating">Branch City</ion-label>
+    <ion-input [(ngModel)]="branch_city"></ion-input>
+  </ion-item> 
 
-    <ion-item>
-      <ion-label position="floating">Alternate Phone No</ion-label>
-      <ion-input [(ngModel)]="alternate_number"></ion-input>
-    </ion-item>
+  <ion-item>
+    <ion-label position="floating">Branch State</ion-label>
+    <ion-input [(ngModel)]="branch_state"></ion-input>
+  </ion-item> 
 
-    <ion-item>
-      <ion-label position="floating">Branch Area</ion-label>
-      <ion-input [(ngModel)]="branch_area"></ion-input>
-    </ion-item>
-
-    <ion-item>
-      <ion-label position="floating">Branch Pincode</ion-label>
-      <ion-input [(ngModel)]="branch_pincode"></ion-input>
-    </ion-item>
-
-    <ion-item>
-      <ion-label position="floating">Branch City</ion-label>
-      <ion-input [(ngModel)]="branch_city"></ion-input>
-    </ion-item>
-
-    <ion-item>
-      <ion-label position="floating">Branch State</ion-label>
-      <ion-input [(ngModel)]="branch_state"></ion-input>
-    </ion-item>
-
-    <ion-item>
-      <ion-label position="floating">Branch Country</ion-label>
-      <ion-input [(ngModel)]="branch_country"></ion-input>
-    </ion-item>
-
-    <br>
-    <div expand="block" class="purple-btn" size="small" (click)="submit()">Submit</div>
-    <br>
+  <ion-item>
+    <ion-label position="floating">Branch Country</ion-label>
+    <ion-input   [(ngModel)]="branch_country"></ion-input>
+  </ion-item> 
+  
+  <br>
+  <div expand="block" class="purple-btn" size="small" (click)="submit()">Submit</div>
+  <br>
   </ion-card>
 
-
+  
 </ion-content>

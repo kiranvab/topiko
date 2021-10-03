@@ -12,8 +12,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./shopsnearyou.page.scss'],
 })
 export class ShopsnearyouPage implements OnInit {
-  shopsNear: any;
-  udata: any;
+  shopsNear: object;
+  udata: object;
   ucity: any;
   lat:any;
   long:any;
@@ -155,11 +155,4 @@ this.http.get(AppComponent.ApiUrl + "getbanerpos5.php").subscribe(async data => 
     this.storage.set("placeid",this.listing[i].place_id);
     this.router.navigate(['/gdetails']);
   }
-  getdetials(i){
-    this.storage.set("bid",this.shopsNear[i].id);
-    this.router.navigate(['details']);
-    this.Viewbusiness(this.shopsNear[i].id);
-  }
-
-
 }

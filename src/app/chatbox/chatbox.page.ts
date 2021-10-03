@@ -18,6 +18,7 @@ import { FileTransfer, FileUploadOptions, FileTransferObject } from '@ionic-nati
 export class ChatboxPage implements OnInit {
   @ViewChild('scrollElement') content: IonContent;
   ObservableVar : Subscription;
+  ObservableVar1 : Subscription;
   partnerId: any;
   userDetails: any;
   user_id: any;
@@ -79,7 +80,7 @@ export class ChatboxPage implements OnInit {
       console.log(this.user_id,'User ID')
     });
     
-    this.ObservableVar = Observable.interval(2500000).subscribe(()=>{
+    this.ObservableVar = Observable.interval(2000).subscribe(()=>{
       this.http.get(AppComponent.ApiUrl+"getchatmessages.php?chatroom="+this.chatroom).subscribe((data)=>{
         this.chatmessages = data;
         console.log("chatmessages", this.chatmessages)
@@ -87,7 +88,7 @@ export class ChatboxPage implements OnInit {
       
     });
 
-    this.ObservableVar = Observable.interval(100).subscribe(()=>{
+    this.ObservableVar1 = Observable.interval(100).subscribe(()=>{
       this. scrollToBottomOnInit();
     });
 

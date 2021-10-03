@@ -1,8 +1,9 @@
 <ion-header>
   <ion-toolbar color="custom">
     <ion-buttons slot="start">
-      <ion-back-button icon="chevron-back"></ion-back-button>
-      <!-- <ion-menu-button mode="ios"></ion-menu-button> -->
+      <ion-back-button mode="md"></ion-back-button>
+      <ion-menu-button mode="ios"></ion-menu-button>
+     
     </ion-buttons>
     <ion-title>Branches</ion-title>
   </ion-toolbar>
@@ -27,18 +28,16 @@
         </p>
         <span style="color: #871178;">{{branch.created_date}} - {{branch.created_time}}</span>
       </ion-col>
-      <ion-col size="3" style="display: flex;
-      justify-content: center;
-      align-items: center;">
+      <ion-col size="3">
         <img src="https://localsearchforum.com/attachments/maps-embed-api-example-png.3469/" class="img">
       </ion-col>
       <ion-col style="text-align: right;">
-        <ion-icon style="font-size: 17px; color: #871178;" name="ellipsis-vertical" (click)="openMenu(i)"></ion-icon>
+        <ion-icon name="ellipsis-vertical"  (click)="openMenu(i)"></ion-icon>
       </ion-col>
     </ion-row>
   </ion-card>
 
-
+  
   <ion-fab vertical="bottom" horizontal="end" slot="fixed" routerLink="/addbranches">
     <ion-fab-button>
       <ion-icon name="add-outline"></ion-icon>

@@ -14,6 +14,10 @@
     <param name="android-package" value="org.apache.cordova.camera.CameraLauncher"/>
   </feature>
 
+  <feature name="Contacts">
+    <param name="android-package" value="org.apache.cordova.contacts.ContactManager"/>
+  </feature>
+
   <feature name="Notification">
     <param name="android-package" value="org.apache.cordova.dialogs.Notification"/>
   </feature>
@@ -27,32 +31,39 @@
     <param name="android-package" value="org.apache.cordova.filetransfer.FileTransfer"/>
   </feature>
 
-  <feature name="Geolocation">
-    <param name="android-package" value="org.apache.cordova.geolocation.Geolocation"/>
-  </feature>
-
   <feature name="Media">
     <param name="android-package" value="org.apache.cordova.media.AudioHandler"/>
   </feature>
 
-  <feature name="Sim">
-    <param name="android-package" value="com.pbakondy.Sim"/>
+  <feature name="QRScanner">
+    <param name="android-package" value="com.bitpay.cordova.qrscanner.QRScanner"/>
+  </feature>
+
+  <feature name="CDVOrientation">
+    <param name="android-package" value="cordova.plugins.screenorientation.CDVOrientation"/>
   </feature>
 
   <feature name="LaunchNavigator">
     <param name="android-package" value="uk.co.workingedge.phonegap.plugin.LaunchNavigatorPlugin"/>
   </feature>
 
+  <feature name="BackgroundMode">
+    <param name="android-package" value="de.appplant.cordova.plugin.background.BackgroundMode"/>
+  </feature>
+  <feature name="BackgroundModeExt">
+    <param name="android-package" value="de.appplant.cordova.plugin.background.BackgroundModeExt"/>
+  </feature>
+
   <feature name="Device">
     <param name="android-package" value="org.apache.cordova.device.Device"/>
   </feature>
 
-  <feature name="networkinterface">
-    <param name="android-package" value="com.albahra.plugin.networkinterface.networkinterface"/>
+  <feature name="Geolocation">
+    <param name="android-package" value="org.apache.cordova.geolocation.Geolocation"/>
   </feature>
 
-  <feature name="QRScanner">
-    <param name="android-package" value="com.bitpay.cordova.qrscanner.QRScanner"/>
+  <feature name="NativeAudio">
+    <param name="android-package" value="com.rjfun.cordova.plugin.nativeaudio.NativeAudio"/>
   </feature>
 
   <feature name="StatusBar">
@@ -65,8 +76,8 @@
     <param name="onload" value="true"/>
   </feature>
 
-  <feature name="SQLitePlugin">
-    <param name="android-package" value="io.sqlc.SQLitePlugin"/>
+  <feature name="SocialSharing">
+    <param name="android-package" value="nl.xservices.plugins.SocialSharing"/>
   </feature>
 
   

@@ -11,11 +11,6 @@ import { Router } from '@angular/router';
   styleUrls: ['./home.page.scss'],
 })
 export class HomePage implements OnInit {
-  slideOpts = {
-    initialSlide: 1,
-    speed: 400
-  };
-  
   all: any = false;
   categories: any;
   services:any;
@@ -272,7 +267,7 @@ details(i) {
   }
 
   getdetials(i){
-    this.storage.set("bid",this.shopsNear[i].id);
+    this.storage.set("bid",this.shopsNear[i].business_id);
     this.router.navigate(['details']);
     this.Viewbusiness(this.shopsNear[i].id);
   }

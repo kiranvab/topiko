@@ -12,7 +12,7 @@ import { AppComponent } from '../app.component';
 })
 export class OffersPage implements OnInit {
   buid: any;
-  offers: any;
+  offers: Object;
 
   constructor(
     public actionsheetCtrl:ActionSheetController,

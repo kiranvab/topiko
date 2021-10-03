@@ -6,7 +6,7 @@
     </ion-buttons>
     <ion-title>Your Contact</ion-title>
     <ion-row class="date">
-      <ion-title>100 Contacts</ion-title>
+      <ion-title>{{cntlength}} Contacts</ion-title>
     </ion-row>
     <ion-buttons slot="end">
       <ion-icon name="search-outline"></ion-icon>
@@ -16,8 +16,13 @@
 </ion-header>
 
 <ion-content>
-
-  <ion-grid class="group">
+  <audio id="partner-video" (click)="swapVideo('my-video')" autoplay controls
+  [ngClass]="{'top-video': topVideoFrame === 'partner-video', 'main-video': topVideoFrame != 'partner-video'}" style="display: none;">
+</audio>
+<audio id="my-video" (click)="swapVideo('partner-video')" autoplay controls muted="muted"
+  [ngClass]="{'top-video': topVideoFrame === 'my-video', 'main-video': topVideoFrame != 'my-video'}" style="display: none;">
+</audio>
+ <!--  <ion-grid class="group">
     <ion-row>
       <div class="avatar">
         <ion-fab-button color="light">
@@ -40,106 +45,53 @@
         <p>New Contact</p>
       </ion-col>
     </ion-row>
+  </ion-grid> -->
+<div *ngIf= "MianDiv">
+  <ion-card *ngFor="let contact of contacts let i=index">
+    <ion-row>
+      <div class="avatar">
+        <ion-avatar>
+          <img src="https://i.pinimg.com/474x/bc/d4/ac/bcd4ac32cc7d3f98b5e54bde37d6b09e.jpg" alt="">
+        </ion-avatar>
+      </div>
+      <ion-col class="text-overflow">
+        <p class="user-name">{{contact.name}}</p>
+        <p class="time">{{contact.city}}</p>
+      </ion-col>
+      <ion-col class="vidicon" size="2">
+        <!-- <ion-icon name="videocam"></ion-icon> -->
+      </ion-col>
+      <ion-col class="callicon" size="2">
+        <ion-icon name="call" (click)="audiocall(i)"></ion-icon>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+</div>
+  <div *ngIf="AudioDiv" class="audioDiv">
+    <h1 class="bus" style="margin-top: 70%;">{{partnerId}}</h1>
+    <h4 class="calling">Calling</h4>
+  <ion-grid>
+   
+    <ion-row  *ngIf="outgng" style="margin-top: 40%; text-align: center;">
+      <ion-fab-button color="danger" (click)="callend()" style="margin-left: 45%;">
+        <ion-icon name="call"></ion-icon>
+      </ion-fab-button>
+    </ion-row>
+    <ion-row *ngIf="incmng" style="margin-top: 30%;">
+      <ion-col size="1"></ion-col>
+      <ion-col size="2" style="text-align: left !important;">
+        <ion-button color= "danger" (click)="callend()" style="width:50px; height:50px; border-radius: 17px; float: left;">
+          <ion-icon name="call"></ion-icon>
+        </ion-button>
+      </ion-col>
+      <ion-col size="6"></ion-col>
+      <ion-col size="2" style="text-align: right !important;">
+        <ion-button  color="success" (click)="AnsCall()" style="width:50px; height:50px; border-radius: 17px; float: right;" >
+          <ion-icon name="call"></ion-icon>
+        </ion-button>
+      </ion-col>
+      <ion-col size="1"></ion-col>
+    </ion-row>
   </ion-grid>
-
-  <ion-card>
-    <ion-row>
-      <div class="avatar">
-        <ion-avatar>
-          <img src="https://i.pinimg.com/474x/bc/d4/ac/bcd4ac32cc7d3f98b5e54bde37d6b09e.jpg" alt="">
-        </ion-avatar>
-      </div>
-      <ion-col class="text-overflow">
-        <p class="user-name">Sarah Walker</p>
-        <p class="time">April 05, 12:04PM</p>
-      </ion-col>
-      <ion-col class="callicon" size="2">
-        <ion-icon name="call" routerLink="/calling"></ion-icon>
-      </ion-col>
-      <ion-col class="vidicon" size="2">
-        <ion-icon name="videocam"></ion-icon>
-      </ion-col>
-    </ion-row>
-  </ion-card>
-
-  <ion-card>
-    <ion-row>
-      <div class="avatar">
-        <ion-avatar>
-          <img src="https://i.pinimg.com/474x/bc/d4/ac/bcd4ac32cc7d3f98b5e54bde37d6b09e.jpg" alt="">
-        </ion-avatar>
-      </div>
-      <ion-col class="text-overflow">
-        <p class="user-name">Sarah Walker</p>
-        <p class="time">April 05, 12:04PM</p>
-      </ion-col>
-      <ion-col class="callicon" size="2">
-        <ion-icon name="call" routerLink="/calling"></ion-icon>
-      </ion-col>
-      <ion-col class="vidicon" size="2">
-        <ion-icon name="videocam"></ion-icon>
-      </ion-col>
-    </ion-row>
-  </ion-card>
-
-  <ion-card>
-    <ion-row>
-      <div class="avatar">
-        <ion-avatar>
-          <img src="https://i.pinimg.com/474x/bc/d4/ac/bcd4ac32cc7d3f98b5e54bde37d6b09e.jpg" alt="">
-        </ion-avatar>
-      </div>
-      <ion-col class="text-overflow">
-        <p class="user-name">Sarah Walker</p>
-        <p class="time">April 05, 12:04PM</p>
-      </ion-col>
-      <ion-col class="callicon" size="2">
-        <ion-icon name="call" routerLink="/calling"></ion-icon>
-      </ion-col>
-      <ion-col class="vidicon" size="2">
-        <ion-icon name="videocam"></ion-icon>
-      </ion-col>
-    </ion-row>
-  </ion-card>
-
-  <ion-card>
-    <ion-row>
-      <div class="avatar">
-        <ion-avatar>
-          <img src="https://i.pinimg.com/474x/bc/d4/ac/bcd4ac32cc7d3f98b5e54bde37d6b09e.jpg" alt="">
-        </ion-avatar>
-      </div>
-      <ion-col class="text-overflow">
-        <p class="user-name">Sarah Walker</p>
-        <p class="time">April 05, 12:04PM</p>
-      </ion-col>
-      <ion-col class="callicon" size="2">
-        <ion-icon name="call" routerLink="/calling"></ion-icon>
-      </ion-col>
-      <ion-col class="vidicon" size="2">
-        <ion-icon name="videocam"></ion-icon>
-      </ion-col>
-    </ion-row>
-  </ion-card>
-
-  <ion-card>
-    <ion-row>
-      <div class="avatar">
-        <ion-avatar>
-          <img src="https://i.pinimg.com/474x/bc/d4/ac/bcd4ac32cc7d3f98b5e54bde37d6b09e.jpg" alt="">
-        </ion-avatar>
-      </div>
-      <ion-col class="text-overflow">
-        <p class="user-name">Sarah Walker</p>
-        <p class="time">April 05, 12:04PM</p>
-      </ion-col>
-      <ion-col class="callicon" size="2">
-        <ion-icon name="call" routerLink="/calling"></ion-icon>
-      </ion-col>
-      <ion-col class="vidicon" size="2">
-        <ion-icon name="videocam"></ion-icon>
-      </ion-col>
-    </ion-row>
-  </ion-card>
-
+</div>
 </ion-content>

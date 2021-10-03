@@ -1,8 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { IonicStorageModule, Storage } from '@ionic/storage-angular';
+import { MenuController } from '@ionic/angular';
+import { Storage } from '@ionic/storage-angular';
 import { AppComponent } from '../app.component';
+import { EventsService } from '../services/events.service';
 
 @Component({
   selector: 'app-relogin',
@@ -16,10 +18,15 @@ udata:any;
   constructor(
     private http:HttpClient,
     private storage:Storage,
-    private router:Router
-  ) { }
+    private router:Router,
+    public events: EventsService,
+    private menuCtrl : MenuController
+  ) {
+    this.menuCtrl.enable(false);
+   }
 
   ngOnInit() {
+    this.storage.remove('userdetails');
   }
 
   login(){
@@ -32,6 +39,9 @@ udata:any;
       }
       else {
       this.udata = data;
+      this.events.publishSomeData({
+        userdetails: this.udata
+      })
       this.storage.set("userdetails",this.udata);
       this.router.navigate(['home']);
     }

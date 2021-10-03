@@ -1,8 +1,8 @@
 <ion-header color="custom">
   <ion-toolbar color="custom" class="toolbar">
     <ion-buttons slot="start">
-      <ion-back-button icon="chevron-back"></ion-back-button>
-      <!-- <ion-menu-button></ion-menu-button> -->
+      <ion-back-button></ion-back-button>
+      <ion-menu-button></ion-menu-button>
     </ion-buttons>
     <ion-title>Business Profile</ion-title>
     <ion-buttons slot="end" (click)="edit()">
@@ -25,7 +25,7 @@
       <P class="name">{{b.business_name}}</P>
     </ion-row>
     <ion-row class="details">
-      <p class="ceo">CEO - {{b.owner_name}}</p>
+      <p class="ceo">{{b.owner_name}}</p>
     </ion-row>
   </ion-card>
 
@@ -128,6 +128,6 @@
     <ion-select placeholder="Year Of Commencement"></ion-select>
     <ion-select placeholder="Topiko Awards"></ion-select>
     <ion-select placeholder="Topiko Star Rating"></ion-select>
-
+    
   </ion-grid>
 </ion-content>

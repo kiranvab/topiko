@@ -1,36 +1,36 @@
 <ion-header color="custom">
   <ion-toolbar color="custom" class="toolbar">
     <ion-buttons slot="start">
-      <ion-back-button icon="chevron-back"></ion-back-button>
+      <ion-back-button mode="md"></ion-back-button>
     </ion-buttons>
-    <ion-title>Edit Service</ion-title>
+    <ion-title class="title">Edit Service</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content> 
   <ion-grid>
     <ion-row>
       <ion-col class="left">
         <ion-card class="first-card" (click)="getPicture()">
-          <div *ngIf="image == ''"> Upload Image</div>
-          <img *ngIf="image != ''" src="{{image}}" alt="">
+          <div *ngIf="image == ''"  > Upload Image</div>
+          <img  *ngIf="image != ''" src="{{image}}" alt="">
         </ion-card>
       </ion-col>
       <ion-col class="right">
         <ion-card class="second-card" (click)="getVideo()">
-          <div *ngIf="video == null">Upload Video</div>
+          <div *ngIf="video == null" >Upload Video</div>
           <img *ngIf="video != null" src="{{video}}" alt="">
         </ion-card>
         <ion-row class="pad">
           <ion-col class="left">
-            <ion-card class="third-card" (click)="getImg1()">
-              <div *ngIf="img1 == null"> Upload </div>
-              <img *ngIf="img1 != null" src="{{img1}}" alt="">
+            <ion-card class="third-card"  (click)="getImg1()">
+             <div *ngIf="img1 == null" > Upload </div>
+            <img *ngIf="img1 != null" src="{{img1}}" alt="">
             </ion-card>
           </ion-col>
           <ion-col class="right">
-            <ion-card class="third-card" (click)="getImg2()">
-              <div *ngIf="img2 == null">Upload</div>
+            <ion-card class="third-card"  (click)="getImg2()">
+              <div *ngIf="img2 == null" >Upload</div>
               <img *ngIf="img2 != null" src="{{img2}}" alt="">
             </ion-card>
           </ion-col>
@@ -39,15 +39,15 @@
     </ion-row>
     <ion-row>
       <ion-col size="3" class="left">
-        <ion-card class="third-card" (click)="getImg3()">
+        <ion-card class="third-card"  (click)="getImg3()">
           <div *ngIf="img3 === null"> Upload </div>
           <img *ngIf="img3 != null" src="{{img3}}" alt="">
         </ion-card>
       </ion-col>
       <ion-col class="right">
         <ion-card class="third-card" (click)="getBanner()">
-          <div *ngIf="banner == null"> Upload Banner</div>
-          <img *ngIf="banner != null" src="{{banner}}" alt="">
+          <div *ngIf="banner == null" > Upload Banner</div>
+          <img *ngIf="banner != null"  src="{{banner}}" alt="">
         </ion-card>
       </ion-col>
     </ion-row>
@@ -61,8 +61,8 @@
     <p>
       Service Tags
       <ion-row>
-        <ion-textarea [(ngModel)]="servicetags">
-
+        <ion-textarea  [(ngModel)]="servicetags">
+          
         </ion-textarea>
       </ion-row>
     </p>
@@ -78,12 +78,12 @@
     <p>
       Description
       <ion-row>
-        <ion-textarea [(ngModel)]="description"></ion-textarea>
+        <ion-textarea  [(ngModel)]="description"></ion-textarea>
       </ion-row>
     </p>
     <p>
       <ion-item>
-        <ion-input placeholder="Actual Price" [(ngModel)]="mrp"></ion-input>
+        <ion-input placeholder="Actual Price" [(ngModel)]="mrp" ></ion-input>
       </ion-item>
     </p>
     <p>
@@ -94,7 +94,7 @@
     <p>
       <ion-row class="toggle">
         <ion-col>
-          <p style="margin: 12px 0px;">Cash on Delivery</p>
+          <p>Cash on Delivery</p>
         </ion-col>
         <ion-col size="2.5">
           <ion-toggle checked></ion-toggle>

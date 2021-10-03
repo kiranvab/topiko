@@ -11,10 +11,6 @@ import { Router } from '@angular/router';
   styleUrls: ['./offersnearyou.page.scss'],
 })
 export class OffersnearyouPage implements OnInit {
-  slideOpts = {
-    initialSlide: 1,
-    speed: 400
-  };
   offersNear:any;
   udata: any;
   ucity: any;

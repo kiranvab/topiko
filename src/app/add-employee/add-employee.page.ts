@@ -25,14 +25,14 @@ export class AddEmployeePage implements OnInit {
   payment_image: any;
   callrecord: number;
   invoice: number;
-  response: any;
+  response: Object;
   mybusiness: any;
   owner: any;
   address: any;
   busines_name: any;
   bid: any;
-  employees: any;
-  branches: any;
+  employees: Object;
+  branches: Object;
 
   constructor(
     private storage:Storage,

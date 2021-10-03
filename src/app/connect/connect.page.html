@@ -1,7 +1,8 @@
 <ion-header color="custom" mode="md">
   <ion-toolbar color="custom" class="toolbar">
     <ion-buttons slot="start">
-      <ion-back-button icon="chevron-back"></ion-back-button>
+      <ion-back-button></ion-back-button>
+      <ion-menu-button></ion-menu-button>
     </ion-buttons>
     <ion-title>Connect</ion-title>
     <ion-buttons slot="end">
@@ -11,7 +12,13 @@
 </ion-header>
 
 <ion-content>
-
+  <div *ngIf="MianDiv" style="background: #fff;">
+    <audio id="partner-video" (click)="swapVideo('my-video')" autoplay controls
+    [ngClass]="{'top-video': topVideoFrame === 'partner-video', 'main-video': topVideoFrame != 'partner-video'}" style="display: none;">
+</audio>
+  <audio id="my-video" (click)="swapVideo('partner-video')" autoplay controls muted="muted"
+    [ngClass]="{'top-video': topVideoFrame === 'my-video', 'main-video': topVideoFrame != 'my-video'}" style="display: none;">
+</audio>
   <ion-card class="firstbox" *ngFor="let bu of business">
     <ion-row>
       <div class="avatar">
@@ -37,11 +44,11 @@
     </ion-row>
     <ion-row>
       <ion-col size="8" class="address">
-        <p><strong>Address</strong></p>
+        <p>Address</p>
         <ion-row class="addres">
           <p>
-            {{bu.business_address}},
-            {{bu.city}}-{{bu.pincode}},
+            {{bu.business_address}}, <br>
+            {{bu.city}}-{{bu.pincode}},<br>
             {{bu.state}},
             {{bu.country}}.
           </p>
@@ -56,8 +63,8 @@
 
   <ion-grid class="branches">
     <ion-row class="branch">
-      <ion-select placeholder="Branches" interface="popover" [(ngModel)]="branch" (ionChange)="branchemp($event)">
-        <ion-select-option *ngFor="let br of branches" value="{{br.id}}">{{br.branch_title}}</ion-select-option>
+      <ion-select placeholder="Branches" interface="popover"  [(ngModel)]="branch" (ionChange)="branchemp($event)">
+        <ion-select-option *ngFor="let br of branches"  value="{{br.id}}"  >{{br.branch_title}}</ion-select-option>
       </ion-select>
     </ion-row>
   </ion-grid>
@@ -92,5 +99,43 @@
       </ion-col>
     </ion-row>
   </ion-card>
+</div>
+<div *ngIf="AudioDiv">
+     
+  <audio id="partner-video" (click)="swapVideo('my-video')" autoplay controls
+    [ngClass]="{'top-video': topVideoFrame === 'partner-video', 'main-video': topVideoFrame != 'partner-video'}" style="display: none;">
+</audio>
+  <audio id="my-video" (click)="swapVideo('partner-video')" autoplay controls muted="muted"
+    [ngClass]="{'top-video': topVideoFrame === 'my-video', 'main-video': topVideoFrame != 'my-video'}" style="display: none;">
+</audio>
+<div id="errorMsg"></div>
 
+
+  <h1 class="bus" style="margin-top: 70%;">{{partnerId}}</h1>
+  <h4 class="calling">Calling</h4>
+
+
+<ion-grid>
+ 
+  <ion-row class="end" *ngIf="outgng" style="margin-top: 40%;">
+    <ion-fab-button color="light" (click)="callend()" style="margin-left:45%">
+      <ion-icon name="call"></ion-icon>
+    </ion-fab-button>
+  </ion-row>
+  <ion-row *ngIf="incmng" style="margin-top: 30%;">
+    <ion-col size="2" style="text-align: left !important;">
+      <ion-button color= "danger" (click)="callend()" style="width:50px; height:50px; border-radius: 17px; float: left;">
+        <ion-icon name="call"></ion-icon>
+      </ion-button>
+    </ion-col>
+    <ion-col size="8"></ion-col>
+    <ion-col size="2" style="text-align: right !important;">
+      <ion-button  color="success" (click)="AnsCall()" style="width:50px; height:50px; border-radius: 17px; float: right;" >
+        <ion-icon name="call"></ion-icon>
+      </ion-button>
+    </ion-col>
+   
+  </ion-row>
+</ion-grid>
+</div>
 </ion-content>

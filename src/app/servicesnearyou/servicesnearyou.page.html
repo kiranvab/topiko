@@ -1,27 +1,28 @@
 <ion-header color="custom">
   <ion-toolbar color="custom" class="toolbar">
     <ion-buttons slot="start">
-      <ion-back-button icon="chevron-back"></ion-back-button>
-      <!-- <ion-menu-button></ion-menu-button> -->
+      <ion-back-button></ion-back-button>
+      <ion-menu-button></ion-menu-button>
     </ion-buttons>
     <ion-title>Services</ion-title>
     <ion-buttons slot="end">
-      <ion-icon name=search></ion-icon>
+      <ion-icon name=search-outline></ion-icon>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <ion-row>
-    <ion-col size="4" class="p-0" *ngFor="let sern of servicesNear; let i=index">
+    <ion-col size="4" class="p-0"  *ngFor="let sern of servicesNear; let i=index">
       <img src="{{sern.logo}}">
       <div class="img-title center text-center p-0" text-center>{{sern.business_name}}</div>
     </ion-col>
   </ion-row>
-
+  
   <ion-row>
-    <ion-col class="col-mt-3" size="6" *ngFor="let pos2 of position2; let i = index;" (click)="pos2details(i)">
-      <img class="bdr-rad-20" style="height:150px; width:100%" src="{{pos2.image}}">
+    <ion-col class="col-mt-3" size="6" *ngFor="let pos2 of position2; let i = index;"  (click)="pos2details(i)" >
+      <img class="bdr-rad-20" style="height:150px; width:100%"
+        src="{{pos2.image}}">
       <ion-row>
         <ion-col class="img-title">
           {{pos2.business_name}} | {{pos2.city}}
@@ -36,15 +37,17 @@
   </ion-row>
 
   <ion-row>
-    <ion-col class="col-mt-3" (click)="pos3details()">
-      <img src="{{posbanner3}}" />
+    <ion-col class="col-mt-3"  (click)="pos3details()">
+      <img 
+        src="{{posbanner3}}" />
       <ion-row>
       </ion-row>
     </ion-col>
   </ion-row>
   <ion-row>
-    <ion-col class="col-mt-3" size="6" *ngFor="let pos4 of position4; let i = index;" (click)="pos4details(i)">
-      <img class="bdr-rad-20" style="height:150px; width:100%" src="{{pos4.image}}" />
+    <ion-col class="col-mt-3" size="6"  *ngFor="let pos4 of position4; let i = index;"  (click)="pos4details(i)">
+      <img class="bdr-rad-20" style="height:150px; width:100%"
+        src="{{pos4.image}}" />
       <ion-row>
         <ion-col class="img-title">
           {{pos4.business_name}} | {{pos4.city}}
@@ -53,7 +56,7 @@
           <ion-icon class="heart-icon" name="heart"></ion-icon>
         </div>
         <ion-col size="2" class="count text-overflow">389</ion-col>
-
+    
       </ion-row>
     </ion-col>
 
@@ -62,9 +65,10 @@
   <br>
 
   <ion-slides pager="true" [options]="slideOpts">
-    <ion-slide *ngFor="let pos5 of position5; let i = index;" (click)="pos5details(i)">
-      <img src="{{pos5.image}}" style="border-radius: 10px;">
+    <ion-slide *ngFor="let pos5 of position5; let i = index;" (click)="pos5details(i)" >
+      <img
+        src="{{pos5.image}}"
+        style="border-radius: 10px;">
     </ion-slide>
   </ion-slides>
-
 </ion-content>

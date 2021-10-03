@@ -86,15 +86,15 @@
   <ion-row>
     <ion-col routerLink="/home" (click)="footerIconColor()">
       <ion-icon [style.color]="iconcolor" name="home"></ion-icon>
-      <p>Home</p>
+      <p [style.color]="iconcolor">Home</p>
     </ion-col>
     <ion-col routerLink="/profile" (click)="footerIconColor()">
       <ion-icon [style.color]="iconcolor" name="person-outline"></ion-icon>
-      <p >Profile</p>
+      <p [style.color]="iconcolor">Profile</p>
     </ion-col>
     <ion-col routerLink="/qr-scanner" (click)="footerIconColor()">
       <ion-icon [style.color]="iconcolor" name="scan-outline"></ion-icon>
-      <p>Scan</p>
+      <p [style.color]="iconcolor">Scan</p>
     </ion-col>
     <ion-col routerLink="/favourites" (click)="footerIconColor()">
       <ion-icon [style.color]="iconcolor" name="heart-outline"></ion-icon>

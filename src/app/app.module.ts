@@ -17,12 +17,15 @@ import { QRCodeModule } from 'angularx-qrcode';
 import { CallNumber } from '@ionic-native/call-number/ngx';
 import { LaunchNavigator } from '@ionic-native/launch-navigator/ngx';
 import { Media } from '@ionic-native/media/ngx';
-
+import { Contacts } from '@ionic-native/contacts/ngx';
+import { StatusBar } from '@ionic-native/status-bar/ngx';
+import { ScreenOrientation } from '@ionic-native/screen-orientation/ngx';
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule, FormsModule, QRCodeModule, ReactiveFormsModule,  IonicStorageModule.forRoot()],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, Device, Geolocation, File, FileTransfer, Geolocation , Camera, QRScanner, CallNumber, LaunchNavigator, Media],
+  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },Contacts,
+    StatusBar, ScreenOrientation,Device, Geolocation, File, FileTransfer, Geolocation , Camera, QRScanner, CallNumber, LaunchNavigator, Media],
   bootstrap: [AppComponent],
 })
 export class AppModule { }

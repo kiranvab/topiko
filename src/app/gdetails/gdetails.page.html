@@ -1,8 +1,9 @@
+
 <ion-header color="custom">
   <ion-toolbar color="custom" class="toolbar">
     <ion-buttons slot="start">
-      <ion-back-button icon="chevron-back"></ion-back-button>
-      <!-- <ion-menu-button></ion-menu-button> -->
+      <ion-back-button></ion-back-button>
+      <ion-menu-button></ion-menu-button>
     </ion-buttons>
     <ion-title>Business Name</ion-title>
   </ion-toolbar>
@@ -11,54 +12,53 @@
 
 <ion-content>
 
-  <ion-segment value="all" color="custom" scrollable="true" mode="md" [(ngModel)]="segmentModel">
+  <ion-segment 
+  value="all" 
+  color="custom" 
+  scrollable="true"
+  mode="md"
+  [(ngModel)]="segmentModel" >
 
     <ion-segment-button value="details">
-      <ion-label>Details</ion-label>
+    <ion-label>Details</ion-label>
     </ion-segment-button>
 
     <ion-segment-button value="reviews">
-      <ion-label>Reviews</ion-label>
+    <ion-label>Reviews</ion-label>
     </ion-segment-button>
 
-
+    
   </ion-segment>
 
-  <div *ngIf="segmentModel === 'details'">
-    <ion-card style="height: 250px; padding: 0%;">
+  <div  *ngIf="segmentModel === 'details'">
+    <ion-card style="height: 250px;">
       <img src="{{converted_image}}" width="100%" height="100%" />
     </ion-card>
-    <ion-card style="margin-top: 16px;">
+    <ion-card>
       <ion-row no-padding>
-        <ion-col>
-          <p class="shop-name">{{name}}</p>
-        </ion-col>
-        <ion-col size="2">
-          <ion-badge>{{rating}}</ion-badge>
-        </ion-col>
+        <ion-col><p class="shop-name">{{name}}</p></ion-col>
+        <ion-col size="2"><ion-badge>{{rating}}</ion-badge></ion-col>
       </ion-row>
-      <p class="location">
-        <ion-icon name="location-outline"></ion-icon> {{address}}
-      </p>
+      <p class="location"><ion-icon name="location-outline"></ion-icon> {{address}}</p>
       <ion-row text-center center class="row-top-bdr">
-        <ion-col (click)="call()">
+        <ion-col  (click)="call()">
           <ion-icon class="icons" name="call-outline"></ion-icon>
           Call
         </ion-col>
         <ion-col class="sep" size="0.2"></ion-col>
         <ion-col size="4" (click)="navigate()">
-          <ion-icon class="icons" name="navigate-outline"></ion-icon>
+          <ion-icon  class="icons" name="navigate-outline" ></ion-icon>
           Directions
         </ion-col>
         <ion-col class="sep" size="0.2"></ion-col>
         <ion-col>
-          <ion-icon class="icons" name="share-social-outline" (click)="share()"></ion-icon>
+          <ion-icon  class="icons" name="share-social-outline" (click)="share()"></ion-icon>
           Share
         </ion-col>
       </ion-row>
     </ion-card>
-
-    <ion-card style="padding-top: 16px; margin-top: 16px;">
+  
+    <ion-card>
       <strong>Store Timings :</strong><br>
       <div class="time">{{monday}}</div>
       <div class="time">{{tuesday}}</div>
@@ -68,182 +68,174 @@
       <div class="time">{{saturday}}</div>
       <div class="time">{{sunday}}</div>
     </ion-card>
-
+  
   </div>
-
-
+  
+  
   <div *ngIf="segmentModel === 'products'">
-    <ion-card>
-      <ion-row no-padding>
-        <ion-col size="2">
-          <img src="https://winaero.com/blog/wp-content/uploads/2019/11/Photos-new-icon.png">
-        </ion-col>
-        <ion-col>
-          <p class="shop-name">Product Name</p>
-          <p class="cat">Product Description</p>
-        </ion-col>
-        <ion-col size="2">
-          <ion-badge>99.00</ion-badge>
-        </ion-col>
-      </ion-row>
-    </ion-card>
-    <ion-card>
-      <ion-row no-padding>
-        <ion-col size="2">
-          <img src="https://winaero.com/blog/wp-content/uploads/2019/11/Photos-new-icon.png">
-        </ion-col>
-        <ion-col>
-          <p class="shop-name">Product Name</p>
-          <p class="cat">Product Description</p>
+  <ion-card>
+     <ion-row no-padding>
+       <ion-col size="2">
+         <img src="https://winaero.com/blog/wp-content/uploads/2019/11/Photos-new-icon.png" >
+       </ion-col>
+       <ion-col>
+         <p class="shop-name">Product Name</p>
+         <p class="cat">Product Description</p>        
         </ion-col>
         <ion-col size="2">
           <ion-badge>99.00</ion-badge>
         </ion-col>
-      </ion-row>
-    </ion-card>
-    <ion-card>
-      <ion-row no-padding>
-        <ion-col size="2">
-          <img src="https://winaero.com/blog/wp-content/uploads/2019/11/Photos-new-icon.png">
-        </ion-col>
-        <ion-col>
-          <p class="shop-name">Product Name</p>
-          <p class="cat">Product Description</p>
-        </ion-col>
-        <ion-col size="2">
-          <ion-badge>99.00</ion-badge>
-        </ion-col>
-      </ion-row>
-    </ion-card>
-    <ion-card>
-      <ion-row no-padding>
-        <ion-col size="2">
-          <img src="https://winaero.com/blog/wp-content/uploads/2019/11/Photos-new-icon.png">
-        </ion-col>
-        <ion-col>
-          <p class="shop-name">Product Name</p>
-          <p class="cat">Product Description</p>
-        </ion-col>
-        <ion-col size="2">
-          <ion-badge>99.00</ion-badge>
-        </ion-col>
-      </ion-row>
-    </ion-card>
-    <ion-card>
-      <ion-row no-padding>
-        <ion-col size="2">
-          <img src="https://winaero.com/blog/wp-content/uploads/2019/11/Photos-new-icon.png">
-        </ion-col>
-        <ion-col>
-          <p class="shop-name">Product Name</p>
-          <p class="cat">Product Description</p>
-        </ion-col>
-        <ion-col size="2">
-          <ion-badge>99.00</ion-badge>
-        </ion-col>
-      </ion-row>
-    </ion-card>
-  </div>
+     </ion-row>
+  </ion-card>
+  <ion-card>
+    <ion-row no-padding>
+      <ion-col size="2">
+        <img src="https://winaero.com/blog/wp-content/uploads/2019/11/Photos-new-icon.png" >
+      </ion-col>
+      <ion-col>
+        <p class="shop-name">Product Name</p>
+        <p class="cat">Product Description</p>        
+       </ion-col>
+       <ion-col size="2">
+         <ion-badge>99.00</ion-badge>
+       </ion-col>
+    </ion-row>
+ </ion-card>
+ <ion-card>
+  <ion-row no-padding>
+    <ion-col size="2">
+      <img src="https://winaero.com/blog/wp-content/uploads/2019/11/Photos-new-icon.png" >
+    </ion-col>
+    <ion-col>
+      <p class="shop-name">Product Name</p>
+      <p class="cat">Product Description</p>        
+     </ion-col>
+     <ion-col size="2">
+       <ion-badge>99.00</ion-badge>
+     </ion-col>
+  </ion-row>
+</ion-card>
+<ion-card>
+<ion-row no-padding>
+  <ion-col size="2">
+    <img src="https://winaero.com/blog/wp-content/uploads/2019/11/Photos-new-icon.png" >
+  </ion-col>
+  <ion-col>
+    <p class="shop-name">Product Name</p>
+    <p class="cat">Product Description</p>        
+   </ion-col>
+   <ion-col size="2">
+     <ion-badge>99.00</ion-badge>
+   </ion-col>
+</ion-row>
+</ion-card>
+<ion-card>
+<ion-row no-padding>
+  <ion-col size="2">
+    <img src="https://winaero.com/blog/wp-content/uploads/2019/11/Photos-new-icon.png" >
+  </ion-col>
+  <ion-col>
+    <p class="shop-name">Product Name</p>
+    <p class="cat">Product Description</p>        
+   </ion-col>
+   <ion-col size="2">
+     <ion-badge>99.00</ion-badge>
+   </ion-col>
+</ion-row>
+</ion-card>
+</div>
+  
+<div *ngIf="segmentModel === 'reviews'">
+  <ion-card>
+    <strong>Add Review</strong>
+    <ion-row>
+      <ion-col class="rating">
+        <ion-icon name="star-outline"></ion-icon>
+        <ion-icon name="star-outline"></ion-icon>
+        <ion-icon name="star-outline"></ion-icon>
+        <ion-icon name="star-outline"></ion-icon>
+        <ion-icon name="star-outline"></ion-icon>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-textarea placeholder="Enter more information here..."></ion-textarea>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row class="text-right">
+      <ion-button size="small">Submit Review</ion-button>
+    </ion-row>
+  </ion-card>
 
-  <div *ngIf="segmentModel === 'reviews'">
-    <ion-card style="padding-top: 16px; padding-bottom: 16px;">
-      <strong>Add Review</strong>
+  <ion-card no-padding  *ngFor="let rev of reviews">
+   <ion-row>
+     <ion-col size="3">
+       <img class="img-round" src="{{rev.profile_photo_url}}">
+     </ion-col>
+     <ion-col>
+      <p class="review-name">{{rev.author_name}}</p>
+      <p><ion-icon name="calendar-outline"></ion-icon> 2021-02-17 10:31</p>
+     </ion-col>
+     <ion-col size="2">
+       <ion-badge><ion-icon name="star-outline"></ion-icon> {{rev.rating}}</ion-badge>
+     </ion-col>
+   </ion-row>
+   <ion-row>
+     <ion-col>
+      <p class="review-text" style="line-height: 12px;">{{rev.text}}</p>
+     </ion-col>
+   </ion-row>
+  </ion-card>
+
+  
+</div>
+
+  <div  *ngIf="segmentModel === 'offers'">
+<ion-card>
+  <ion-row>
+    <ion-col>BUY ONE GET ONE FREE</ion-col>
+    <ion-col size="3">
+      <ion-button color="primary" size="small" expand="block" type="ios">Claim</ion-button>
+    </ion-col>
+  </ion-row>
+</ion-card>
+
+</div>
+
+<div class="customer" *ngIf = "Customer">
+  <ion-card>
+    <ion-card-header style="text-align: right;">
+      <ion-icon class="close" (click)="CustClose()" name="close-circle-outline" color="danger"></ion-icon>
+    </ion-card-header>
+    <ion-card-content>
       <ion-row>
-        <ion-col class="rating">
-          <ion-icon name="star-outline"></ion-icon>
-          <ion-icon name="star-outline"></ion-icon>
-          <ion-icon name="star-outline"></ion-icon>
-          <ion-icon name="star-outline"></ion-icon>
-          <ion-icon name="star-outline"></ion-icon>
+        <ion-col style="text-align: right;">
+         
         </ion-col>
       </ion-row>
-      <ion-row>
-        <ion-col>
-          <ion-item>
-            <ion-textarea placeholder="Enter more information here..."></ion-textarea>
-          </ion-item>
-        </ion-col>
-      </ion-row>
-      <ion-row class="text-right">
-        <ion-button size="small">Submit Review</ion-button>
-      </ion-row>
-    </ion-card>
-
-    <ion-card no-padding *ngFor="let rev of reviews">
-      <ion-row>
-        <ion-col size="3">
-          <img class="img-round" src="{{rev.profile_photo_url}}">
-        </ion-col>
-        <ion-col>
-          <p class="review-name">{{rev.author_name}}</p>
-          <p style="margin-top: 4px;">
-            <ion-icon name="calendar-outline"></ion-icon> 2021-02-17 10:31
-          </p>
-        </ion-col>
-        <ion-col size="2">
-          <ion-badge>
-            <ion-icon name="star-outline"></ion-icon> {{rev.rating}}
-          </ion-badge>
-        </ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col>
-          <p class="review-text" style="line-height: 12px;">{{rev.text}}</p>
-        </ion-col>
-      </ion-row>
-    </ion-card>
-
-
-  </div>
-
-  <div *ngIf="segmentModel === 'offers'">
-    <ion-card>
-      <ion-row>
-        <ion-col>BUY ONE GET ONE FREE</ion-col>
-        <ion-col size="3">
-          <ion-button color="primary" size="small" expand="block" type="ios">Claim</ion-button>
-        </ion-col>
-      </ion-row>
-    </ion-card>
-
-  </div>
-
-  <div class="customer" *ngIf="Customer">
-    <ion-card>
-      <ion-card-header style="text-align: right;">
-        <ion-icon class="close" (click)="CustClose()" name="close-circle-outline" color="danger"></ion-icon>
-      </ion-card-header>
-      <ion-card-content>
-        <ion-row>
-          <ion-col style="text-align: right;">
-
-          </ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col size="10" class="cust-name">
-            <div class="cust-name">Surendra</div>
-            <div class="cust-lang">Can Speak: English, Telugu, Hindi</div>
-          </ion-col>
-          <ion-col size="2" class="call-btn" routerLink="/calling">
-            <ion-icon name="call-outline"></ion-icon>
-          </ion-col>
-        </ion-row>
+          <ion-row>
+            <ion-col size="10" class="cust-name">
+              <div class="cust-name">Surendra</div>
+              <div class="cust-lang">Can Speak: English, Telugu, Hindi</div>
+            </ion-col>
+            <ion-col size="2" class="call-btn" routerLink="/calling"><ion-icon name="call-outline"></ion-icon></ion-col>
+          </ion-row>
         <hr>
-        <ion-row>
-          <ion-col size="10" class="cust-name">
-            <div class="cust-name">Senthil Kumar</div>
-            <div class="cust-lang">Can Speak: Tamil, English</div>
-          </ion-col>
-          <ion-col size="2" class="call-btn" routerLink="/calling">
-            <ion-icon name="call-outline"></ion-icon>
-          </ion-col>
-        </ion-row>
-      </ion-card-content>
-    </ion-card>
+          <ion-row>
+            <ion-col size="10" class="cust-name">
+              <div class="cust-name">Senthil Kumar</div>
+              <div class="cust-lang">Can Speak: Tamil, English</div>
+            </ion-col>
+            <ion-col size="2" class="call-btn" routerLink="/calling"><ion-icon name="call-outline"></ion-icon></ion-col>
+          </ion-row>
+    </ion-card-content>
+  </ion-card>
+  
+</div>
 
-  </div>
-
-  <div #map id="map"></div>
+<div #map id="map"></div>
 </ion-content>
 
 

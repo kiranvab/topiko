@@ -9,7 +9,6 @@ ion-title {
     padding-top: 1px;
     letter-spacing: 0.6px;
     text-align: left;
-    padding-right: 16px;
 }
 
 // first-card
@@ -56,13 +55,11 @@ ion-avatar img {
     color: #871178;
     font-size: 1.25em;
     margin: 5px;
-    margin-top: 16px;
 }
 .details .ceo {
     color: #707070;
     font-size: 0.875em;
     margin: 0.3125em;
-    margin-top: -2px;
 }
 .business-dyn {
     background: #e0e0e0;
@@ -151,16 +148,4 @@ ion-row ion-toggle {
     width: 123px;
     height: 50px;
     border-radius: 0.1875em;
-}
-ion-select {
-    --placeholder-opacity: 100%;
-    --padding-start: 0px;
-}
-ion-input {
-    --placeholder-opacity: 1 !important;
-    --padding-start: 0px;
-}
-ion-item {
-    --placeholder-opacity: 1 !important;
-    --padding-start: 0px;
 }

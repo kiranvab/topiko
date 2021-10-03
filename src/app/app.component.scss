@@ -87,15 +87,13 @@ ion-menu.ios ion-item {
 }
 
 ion-menu.ios ion-item.selected ion-icon {
-  color: #871178;
+  color:#871178;
   font-size: 24px;
 }
-ion-menu.md ion-item.selected ion-label {
-  font-weight: 600;
-}
 
-.item.sc-ion-label-ios-h {
-  color: #871178;
+.item.sc-ion-label-ios-h
+{
+  color:#871178;
 }
 ion-menu.ios ion-item ion-icon {
   font-size: 24px;
@@ -146,9 +144,4 @@ p {
   color: #fff;
   line-height: 1;
   margin-top: 0px;
-}
-
-.item.sc-ion-label-ios-h,
-.item .sc-ion-label-ios-h {
-  color: #871178;
 }

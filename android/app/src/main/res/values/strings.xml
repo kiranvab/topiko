@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
-    <string name="app_name">topiko</string>
-    <string name="title_activity_main">topiko</string>
-    <string name="package_name">io.ionic.starter</string>
-    <string name="custom_url_scheme">io.ionic.starter</string>
+    <string name="app_name">Topiko</string>
+    <string name="title_activity_main">Topiko</string>
+    <string name="package_name">com.vabinformatics.topiko</string>
+    <string name="custom_url_scheme">com.vabinformatics.topiko</string>
 </resources>

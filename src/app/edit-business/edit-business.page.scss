@@ -9,7 +9,6 @@ ion-title {
     padding-top: 1px;
     letter-spacing: 0.6px;
     text-align: left;
-    padding-right: 48px;
 }
 
 // first-card
@@ -78,7 +77,7 @@ ion-avatar img {
 .grid {
     margin: 0.75em 1.125em;
     background: #ffffff;
-    padding: 0px 4px;
+    padding: 0px 0.8125em;
     margin-top: 0px;
 }
 .top {
@@ -110,7 +109,7 @@ ion-avatar img {
     color: #9f9f9f;
 }
 .upload {
-    color: #22272a;
+    color: #9f9f9f;
     font-size: 0.9375em;
 }
 .toggle p {
@@ -151,30 +150,20 @@ ion-row ion-toggle {
     border-radius: 0.1875em;
 }
 
-ion-textarea {
-    border: 1px solid #ccc;
+ion-textarea
+{
+    border:1px solid #ccc;
     padding: 5px;
 }
-ion-input {
+ion-input
+{
     border-bottom: 1px solid #ccc;
     margin: 0;
     padding: 5px;
 }
 
-ion-select {
+ion-select
+{
     width: 100%;
     text-align: right;
-}
-ion-select {
-    --placeholder-opacity: 100%;
-    --padding-start: 0px;
-}
-ion-input {
-    --placeholder-opacity: 1 !important;
-    --padding-start: 0px;
-    --color: #22272a;
-}
-ion-item {
-    --placeholder-opacity: 1 !important;
-    --padding-start: 0px;
 }

@@ -16,20 +16,20 @@ ion-content {
     --padding-end: 8px;
     --padding-top: 10px;
     --padding-bottom: 10px;
+    --background: linear-gradient(#871178, #3c1378) !important;
 }
 .firstbox {
     box-shadow: 0px 3px 6px #00000029;
     padding: 10px;
     padding-bottom: 3px;
     padding-right: 5px;
-    margin: 5px;
 }
 .firstbox .bgcolor {
     padding: 0px;
 }
 .avatar ion-avatar {
-    width: 70px;
-    height: 70px;
+    width: 61px;
+    height: 61px;
 }
 .bgcolor p {
     font-size: 1.125em;
@@ -61,14 +61,14 @@ ion-content {
 }
 .address p {
     font-size: 12px;
-    color: #22272a;
-    margin: 3px 0px;
+    color: #707070;
+    margin: 5px 0px;
 }
 .addres p {
-    font-size: 0.8em;
-    color: #707070 !important;
+    font-size: 10px;
+    color: #22272a;
     text-align: left;
-    line-height: 18px;
+    line-height: 14px;
 }
 .map {
     text-align: right;
@@ -94,7 +94,6 @@ ion-select {
     padding-bottom: 3px;
     padding-right: 5px;
     margin-top: 0%;
-    margin: 5px;
 }
 .title p {
     font-size: 18px;
@@ -111,8 +110,6 @@ ion-select {
     color: #871178;
     margin: 10px 0px;
     margin-right: 20px;
-    word-spacing: 10px;
-    text-transform: capitalize;
 }
 ion-fab-button {
     --ion-color-base: #ebebeb !important;
@@ -145,7 +142,7 @@ ion-fab-button ion-icon {
     background-size: 55px 55px;
     border-radius: 50%;
 }
-
-ion-select {
-    --placeholder-opacity: 100%;
+.audioDiv {
+    text-align: center;
+    color: #fff;
 }

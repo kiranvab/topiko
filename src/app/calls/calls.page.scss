@@ -1,3 +1,7 @@
+ion-content {
+    // --background: linear-gradient(#871178, #3c1378) !important;
+    color: #ffffff;
+}
 ion-header ion-icon {
     color: #ffffff;
     font-size: 20px;
@@ -18,11 +22,12 @@ ion-segment-button {
 
 ion-content {
     --padding-bottom: 65px;
-    --padding-start: 18px;
-    --padding-end: 18px;
+    --padding-start: 0px;
+    --padding-end: 12px;
 }
 ion-card {
-    padding: 5px 10px;
+    padding: 10px;
+    padding-bottom: 7px;
     margin: 7px 0px;
     box-shadow: 0px 3px 6px #00000029;
 }
@@ -32,7 +37,7 @@ ion-card {
 }
 .user-name {
     color: #22272a;
-    font-size: 18px;
+    font-size: 14px;
     margin: 0px 0px 3px 0px;
     text-overflow: ellipsis;
 }
@@ -67,58 +72,81 @@ ion-fab {
 ion-fab-button {
     --background: linear-gradient(#871178, #3c1378);
     --color: #ffffff;
-    height: 54px;
-    width: 54px;
+    height: 50px;
+    width: 50px;
 }
-ion-fab-button ion-icon {
+.fab ion-icon {
     color: #ffffff;
-    font-size: 26px;
+    height: 36px;
+    width: 36px;
 }
 
-.online {
+.online
+{
     width: 20px;
     height: 20px;
-    background: #871178;
+    background:#871178;
     display: block;
     border-radius: 50%;
     float: right;
     font-size: 12px;
-    text-align: center;
+   text-align: center;
     color: #fff;
     margin-top: 70%;
 }
 
-.offline {
+.offline
+{
     width: 20px;
     height: 20px;
-    background: #871178;
+    background:#871178;
     display: block;
     border-radius: 50%;
     float: right;
     font-size: 12px;
-    text-align: center;
+   text-align: center;
     color: #fff;
     margin-top: 70%;
 }
-.img-circle {
+.img-circle{
     border-radius: 50%;
+    width:80%;
 }
 .nametext {
-    padding-top: 8px !important;
-    color: #22272a;
-    font-size: 18px;
+padding-top: 10px !important;
+color: #871178;
 }
 
-.call-row {
-    flex-wrap: nowrap;
+.audioDiv {
+    text-align: center;
+    color: #fff;
+    background: linear-gradient(#871178, #3c1378) !important;
+    height: 100vh;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    margin-top: -20px;
 }
-.call-col {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    padding-right: 14px;
+
+ion-icon[_ngcontent-ydv-c133] {
+    font-size: 30px;
+    color: #ffffff;
+    border-radius: 50%;
+    border: 2px solid white;
+    padding: 20px;
+    opacity: 80%;
 }
-.avatar ion-avatar {
-    width: 56px;
-    height: 56px;
+
+.call-icon
+{
+    text-align: center;
+    font-size: 18px;
+    border-radius: 50%;
+    border: 1px solid #fff;
+    padding: 15%;
+}
+
+.calling
+{
+    margin-bottom: 50%;
 }

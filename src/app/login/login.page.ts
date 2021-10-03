@@ -34,9 +34,12 @@ export class LoginPage implements OnInit {
     private storage:IonicStorageModule, 
     private alertCtrl: AlertController,
     private router: Router,
-    private device:Device
+    private device:Device,
+    private menuCtrl:MenuController
 
-    ) { }
+    ) { 
+      this.menuCtrl.enable(false);
+    }
 
   ngOnInit() {
     
