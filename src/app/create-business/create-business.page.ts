@@ -46,6 +46,11 @@ export class CreateBusinessPage implements OnInit {
   shopdesc:any;
   service_id:any;
   category_id:any;
+  upload_div:any=true;
+  image_div:any = false;
+  overview:any = true;
+  address:any = false;
+  description:any = false;
 
   constructor(
     private http: HttpClient,
@@ -118,6 +123,8 @@ export class CreateBusinessPage implements OnInit {
     }
     this.camera.getPicture(options).then((imageData) => {
       this.image = 'data:image/jpeg;base64,' + imageData;
+      this.upload_div = false;
+      this.image_div = true;
     });
     
   }
@@ -178,7 +185,24 @@ export class CreateBusinessPage implements OnInit {
   checkbox() {
     this.accept = !this.accept;
   }
+  next1(){
+    this.overview = false;
+    this.address = true;
+  }
 
+  next2(){
+    this.address = false;
+    this.description = true;
+  }
   
+  prev1(){
+    this.overview = true;
+    this.address = false;
+  }
+
+  prev2(){
+    this.address = true;
+    this.description = false;
+  }
 
 }

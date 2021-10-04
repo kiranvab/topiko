@@ -373,7 +373,7 @@ ion-footer ion-icon {
   --opacity: 1 !important;
 }
 ion-header ion-title {
-  text-align: center !important;
+  text-align: left !important;
   font-size: 16px !important;
 }
 /*

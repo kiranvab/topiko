@@ -82,7 +82,7 @@ export class AppComponent {
         this.ucity = this.udata[0].city;
         this.ucountry = this.udata[0].country;
         this.uimage = this.udata[0].image;
-        console.log(this.udata);
+        console.log("User Data", this.udata);
         this.storage.set("userdetails",this.udata);
       });
       this.storage.get("userdetails").then(data=>{

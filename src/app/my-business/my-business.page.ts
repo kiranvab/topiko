@@ -79,7 +79,7 @@ export class MyBusinessPage implements OnInit {
     console.log("Business Exist;");
     this.http.get(AppComponent.ApiUrl+"checkbcount.php?user_id="+this.uid).subscribe(response =>{
       console.log("Business Count", response);
-      if(response == 1){
+      if(response === 1){
         this.presentToast();
       }
       else{

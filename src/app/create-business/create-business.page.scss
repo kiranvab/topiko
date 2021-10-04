@@ -1,8 +1,8 @@
 ion-content {
   --padding-bottom: 10px;
-  --padding-end: 18px;
-  --padding-start: 18px;
-  --padding-top: 20px;
+  --padding-end: 5px;
+  --padding-start: 5px;
+  --padding-top: 5px;
   --ion-background-color: #fff;
 }
 ion-header ion-icon {
@@ -64,7 +64,7 @@ ion-title {
   margin: 0px;
 }
 .row {
-  height: 14.4em;
+  height: 12em;
 }
 ion-card {
   border: none;
@@ -86,18 +86,19 @@ ion-avatar {
 ion-avatar img {
   max-width: 100%;
   border: 0;
-  margin-top: 50%;
+  margin-top: 30%;
 }
 .position-cam {
   position: relative;
-  left: 52px;
-  top: 37px;
+    left: 45px;
+    top: 5px;
+    width: 40px;
 }
 .business-dyn {
   background: #f2f2f2 !important;
   padding: 0.5em;
   padding-left: 14px;
-  margin-top: 6px;
+  margin-top: 0px;
 }
 .id-color {
   color: #871178;
@@ -223,4 +224,30 @@ ion-select {
 ion-input {
   --placeholder-opacity: 1 !important;
   --padding-start: 0px;
+}
+
+.next-div
+{
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    background: #fff;
+    left: 0;
+    right: 0;
+    z-index: 10;
+}
+
+.fixed-head
+{
+   position: fixed;
+    width: 97%;
+    height: 250px;
+    overflow: scroll;
+    top: 50px;
+}
+.center-content
+{
+    z-index: -1;
+    margin: 0 auto;
+    width: 95%;
 }
