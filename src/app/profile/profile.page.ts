@@ -33,17 +33,22 @@ export class ProfilePage implements OnInit {
     this.storage.get("userdetails").then(val =>{
       this.udata = val;
       this.uid = this.udata[0].id;
-      this.uname = this.udata[0].name;
-      this.ucity = this.udata[0].city
-      console.log(this.udata);
-      this.http.get(AppComponent.ApiUrl+"getprofile.php?user_id="+this.uid).subscribe( data =>
-        {
-          this.profile = data;
-          console.log(this.profile);
-          this.profession = this.profile[0].designation;
-          this.uimage = this.profile[0].image;
-        })
+      console.log(this.udata[0].image);
+      this.getprofile();
     })
+  }
+
+  getprofile()
+  {
+    this.http.get(AppComponent.ApiUrl+"profile.php?user_id="+this.uid).subscribe( data =>
+      {
+        this.profile = data;
+        console.log(this.profile[0].image);
+        this.uname = this.profile[0].name;
+        this.ucity = this.profile[0].city   
+        this.profession = this.profile[0].designation;
+        this.uimage = this.profile[0].image;
+      })
   }
 
   async openMenu() {

@@ -112,6 +112,11 @@ export class CallsPage implements OnInit {
       this.http.get(AppComponent.ApiUrl+"mychats.php?user_id="+this.user_id).subscribe((response)=>{
         this.chats= response
         console.log("Chats:", this.chats);
+        for(var i=0; i<10;i++){
+          this.chats.id[i] = {
+            'color': ('#'+Math.floor(Math.random()*16777215).toString(16))
+          };
+        }
       });
     });
       console.log(this.user_id,'User ID');

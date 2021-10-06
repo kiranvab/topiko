@@ -9,14 +9,14 @@
   </video>
 
 
-  <ion-row nowrap>
+  <ion-row nowrap style="display: none;">
     <ion-button (click)="init()">Login As: </ion-button>
     <ion-item>
       <ion-input type="text" [(ngModel)]="userId" placeholder="enter your nick name"></ion-input>
     </ion-item>
   </ion-row>
 
-  <ion-row nowrap>
+  <ion-row nowrap style="display: none;">
     <ion-button (click)="call()">Call To: </ion-button>
     <ion-item>
       <ion-input type="text" [(ngModel)]="partnerId" placeholder="your partner nick name"></ion-input>
@@ -24,3 +24,26 @@
   </ion-row>  
 </ion-content>
 
+<ion-footer>
+  <ion-row>
+    <ion-col>
+      <ion-fab-button class="acc-call">
+        <ion-icon name="call-outline"></ion-icon>
+      </ion-fab-button>
+
+      <ion-fab-button color="light">
+      <ion-icon name="mic-outline"  style="color: #000;"></ion-icon>
+      <ion-icon name="mic-off-outline"  style="color: #000;"></ion-icon>
+    </ion-fab-button>
+    </ion-col>
+    <ion-col>
+      <ion-icon name="camera-reverse-outline"></ion-icon>
+    </ion-col>
+    <ion-col>
+      <ion-fab-button>
+        <ion-icon name="call-outline" style="transform: rotate(135deg);"></ion-icon>
+      </ion-fab-button>
+      
+    </ion-col>
+  </ion-row>
+</ion-footer>

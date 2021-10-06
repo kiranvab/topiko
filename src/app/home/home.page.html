@@ -18,11 +18,13 @@
       </ion-col>
     </ion-row> -->
     <div style="margin-top: 7px">
-      <img src="assets/text-logo.png">
+      <img src="assets/text-logo.png" width="80px">
     </div>
     <ion-buttons slot="end">
       <ion-icon name="search-outline" routerLink="/global-search"></ion-icon>
+      &nbsp;
       <ion-icon name="notifications-outline" routerLink="/notification"></ion-icon>
+      &nbsp;
       <!-- <ion-icon name="play-outline"></ion-icon> -->
     </ion-buttons>
   </ion-toolbar>
@@ -78,7 +80,7 @@
   </div> -->
   <br>
 
-  <ion-slides pager="true" [options]="slideOpts" style="margin-top: -10px;">
+  <ion-slides   pager="true" [options]="slideOpts"  style="margin-top: -20px;">
     <ion-slide *ngFor="let ban of banners let i=index">
       <img src="{{ban.banner_image}}" style="border-radius: 3px;">
     </ion-slide>

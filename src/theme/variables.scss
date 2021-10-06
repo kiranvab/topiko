@@ -279,7 +279,7 @@ ion-header ion-icon {
 }
 
 .purple-btn {
-  background: linear-gradient(#871178, #3c1378) !important;
+  background: linear-gradient(#871178, #44093c) !important;
   height: 50px;
   border: 0;
   width: 90%;
@@ -316,27 +316,27 @@ ion-footer ion-icon {
 }
 
 ion-fab-button {
-  --background: linear-gradient(#871178, #3c1378) !important;
+  --background: linear-gradient(#871178, #44093c) !important;
 }
 
 .swiper-pagination-bullet-active {
-  background: #9c27b0 !important;
+  background: #fff !important;
 }
 
 .swiper-pagination-bullet {
-  width: 25px !important;
-  height: 5px !important;
+  width: 20px !important;
+  height: 3px !important;
   border-radius: 2px;
   background: #9e9e9e;
 }
 
-.swiper-container-horizontal > .swiper-pagination-bullets {
-  bottom: -2px !important;
-}
+// .swiper-container-horizontal > .swiper-pagination-bullets {
+//   bottom: -2px !important;
+// }
 
-.swiper-wrapper {
-  margin-bottom: 20px !important;
-}
+// .swiper-wrapper {
+//   margin-bottom: 20px !important;
+// }
 
 .action-sheet-group.sc-ion-action-sheet-md:last-child {
   border-radius: 20px 20px 0 0;

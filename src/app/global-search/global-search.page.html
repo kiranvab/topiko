@@ -1,18 +1,14 @@
 <ion-header color="custom">
   <ion-toolbar color="custom" class="toolbar">
     <ion-buttons slot="start">
-      <ion-back-button icon="chevron-back"></ion-back-button>
+      <ion-back-button icon="chevron-back" mode="md" text=""></ion-back-button>
     </ion-buttons>
     <ion-row>
-      <ion-col>
-        <ion-card class="head-card">
+      <ion-col style="margin: 0px; padding: 0px;">
           <ion-row>
             <div class="avatar">
               <ion-icon name="location-outline"></ion-icon>
             </div>
-            <ion-col class="seperator" size="0.1">
-              <p></p>
-            </ion-col>
             <ion-col>
               <ion-input type="text" placeholder="Chennai Designer" #keyword (keydown.enter)="Search()"></ion-input>
             </ion-col>
@@ -20,13 +16,11 @@
               <ion-icon name="search-outline"></ion-icon>
             </div>
           </ion-row>
-        </ion-card>
+        
       </ion-col>
-    </ion-row>
-    <ion-buttons slot="end" routerLink="/notification">
-      <ion-icon name="notifications-outline"></ion-icon>
-    </ion-buttons>
+    </ion-row>  
   </ion-toolbar>
+  
 </ion-header>
 
 <ion-content>

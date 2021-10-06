@@ -1,12 +1,19 @@
 <ion-header color="custom">
   <ion-toolbar color="custom" class="toolbar">
     <ion-buttons slot="start">
-      <ion-back-button icon="chevron-back"></ion-back-button>
+      <ion-back-button icon="chevron-back" mode="md" text=""></ion-back-button>
     </ion-buttons>
     <ion-title>Favourites</ion-title>
+   
+    
     <ion-buttons slot="end">
-      <ion-icon name="search-outline"></ion-icon>
+        <ion-icon name="search-outline"></ion-icon>
     </ion-buttons>
+
+    <ion-buttons slot="end">
+      <ion-icon name="ellipsis-vertical"></ion-icon>
+  </ion-buttons>
+   
   </ion-toolbar>
 
   <ion-segment value="all" scrollable="true" mode="md" color="secondary" [(ngModel)]="segmentModel">
@@ -87,25 +94,25 @@
 
 
    <!-- Favoutrite Services start-->
-   <div *ngIf="segmentModel === 'service'">
-    <ion-card *ngFor="let fav of myfavP; let i=index;">
+   <div *ngIf="segmentModel === 'services'">
+    <ion-card *ngFor="let sfav of myfavS; let i=index;">
       <ion-row>
         <div class="avatar">
           <ion-avatar>
-            <img class="border" src="{{fav.product_image}}" alt="">
+            <img class="border" src="{{sfav.image}}" alt="">
           </ion-avatar>
         </div>
         <ion-col class="text-overflow" (click)="Details(i)">
-          <p class="user-name">{{fav.title}} <ion-icon name="shield-checkmark"></ion-icon>
+          <p class="user-name">{{sfav.service_title}} <ion-icon name="shield-checkmark"></ion-icon>
           </p>
-          <p class="time">{{fav.description}}</p>
+          <p class="time">{{sfav.description}}</p>
         </ion-col>
         <ion-col size="1" class="ellipsis" (click)="openMenu(i)">
           <ion-icon class="btn" name="ellipsis-vertical"></ion-icon>
         </ion-col>
       </ion-row>
       <ion-row class="dat">
-        <p class="date">{{fav.created_date}}</p>
+        <p class="date">{{sfav.created_date}}</p>
       </ion-row>
     </ion-card>
   </div>

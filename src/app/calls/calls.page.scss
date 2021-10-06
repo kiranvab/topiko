@@ -67,7 +67,7 @@ ion-card {
 // fab
 ion-fab {
     position: fixed;
-    bottom: 64px;
+    bottom: 100px;
 }
 ion-fab-button {
     --background: linear-gradient(#871178, #3c1378);
@@ -110,7 +110,8 @@ ion-fab-button {
 }
 .img-circle{
     border-radius: 50%;
-    width:80%;
+    width:100%;
+    margin-top: 10px;
 }
 .nametext {
 padding-top: 10px !important;

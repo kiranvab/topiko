@@ -40,8 +40,14 @@ export class HomePage implements OnInit {
   vrespo:any;
   pos1bid: any;
   pos3bid: any;
-  allcategories: Object;
-  allservices: Object;
+  allcategories: any;
+  allservices: any;
+
+  slideOpts = {
+    initialSlide: 1,
+    speed: 400,
+    autoplay:true
+  };
 
   constructor(
     private http:HttpClient,
@@ -267,7 +273,7 @@ details(i) {
   }
 
   getdetials(i){
-    this.storage.set("bid",this.shopsNear[i].business_id);
+    this.storage.set("bid",this.shopsNear[i].id);
     this.router.navigate(['details']);
     this.Viewbusiness(this.shopsNear[i].id);
   }

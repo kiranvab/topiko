@@ -1,7 +1,7 @@
 <ion-header color="custom" mode="md">
   <ion-toolbar color="custom" class="toolbar">
     <ion-buttons slot="start" mode="md">
-      <ion-back-button></ion-back-button>
+      <ion-back-button mode="md" text="" icon="chevron-back"></ion-back-button>
     </ion-buttons>
     <ion-title>Profile</ion-title>
     <ion-buttons slot="end" (click)="openMenu()">
@@ -30,9 +30,12 @@
     <ion-card class="first-card" (click)="settings()">
       <ion-row>
         <div class="avatar">
-          <ion-avatar>
-            <img src="{{this.uimage}}" alt="">
+          <ion-avatar *ngIf="uimage != ''">
+            <img  src="{{uimage}}" alt="">
           </ion-avatar>
+            <span *ngIf="uimage == ''">
+              <p style="background: #00a56e; margin-left: -33%; position: absolute; font-size: 4em; color:#fff; text-align: center; width: 75px; height: 75px; padding:25%; border-radius:50%; margin-bottom: 7%;">{{uname | slice:0:1}}</p>
+            </span>
         </div>
         <ion-col class="text-overflow">
           <ion-row class="title text-overflow">

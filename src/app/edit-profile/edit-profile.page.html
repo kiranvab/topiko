@@ -1,12 +1,54 @@
 <ion-header color="custom" mode="md">
   <ion-toolbar color="custom" class="toolbar">
     <ion-buttons slot="start" mode="md">
-      <ion-back-button></ion-back-button>
+      <ion-back-button icon="chevron-back"></ion-back-button>
     </ion-buttons>
     <ion-title>Edit Profile</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+
+  <ion-card class="firstcard" (click)="adduserImage()">
+    <ion-row class="row">
+      <ion-col class="bg">
+        <ion-avatar *ngIf="uimage != ''">
+          <img src="{{uimage}}">
+        </ion-avatar>
+        <ion-avatar *ngIf="uimage == ''">
+          <img src="assets/profile.png">
+        </ion-avatar>
+        <img class="position-cam" src="assets/camera.svg" alt="" (click)="getPicture">
+      </ion-col>
+    </ion-row>
+  </ion-card>
+
+  <ion-grid class="main-grid">
+    <p>
+      <ion-item>
+        <ion-input placeholder="Name" [(ngModel)]="name"></ion-input>
+      </ion-item>
+    </p>
+    <p>
+      <ion-item>
+        <ion-input placeholder="Mobile" [(ngModel)]="mobile"></ion-input>
+      </ion-item>
+    </p>
+    <p>
+      <ion-item>
+        <ion-input placeholder="Email" [(ngModel)]="email"></ion-input>
+      </ion-item>
+    </p>
+    <!-- p>
+      <ion-item>
+        <ion-input placeholder="Designation" [(ngModel)]="profession"></ion-input>
+      </ion-item>
+    </p> -->
+
+    <ion-row class="btn">
+      <ion-button (click)="update()">Update</ion-button>
+    </ion-row>
+
+  </ion-grid>
 
 </ion-content>

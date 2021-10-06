@@ -13,10 +13,11 @@ import { AppComponent } from '../app.component';
 export class FavouritesPage implements OnInit {
   udata: any;
   user_id: any;
-  mafav: Object;
-  myfav: Object;
+  mafav: any;
+  myfav: any;
   segmentModel:string;
   myfavP: Object;
+  myfavS:any;
 
   constructor(
     public actionsheetCtrl: ActionSheetController,
@@ -40,6 +41,13 @@ export class FavouritesPage implements OnInit {
           this.myfavP = response;
           console.log('Myfavourite Products', this.myfavP);
         })
+
+        this.http.get(AppComponent.ApiUrl+"myfavservices.php?user_id="+this.user_id).subscribe(response=>{
+          this.myfavS = response;
+          console.log('Myfavourite Services', this.myfavS);
+        })
+
+
 
       });
    }
