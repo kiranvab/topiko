@@ -161,24 +161,24 @@ export class CreateBusinessPage implements OnInit {
     });
     console.log(mydata)
 
-    //var link = AppComponent.ApiUrl + "create_business.php"
-    // this.http.post(link, mydata).subscribe(async data => {
-    //   this.businessdata = data;
-    //   console.log("userdetails", this.businessdata);
-    //   if (this.businessdata == "Data already Exists") {
-    //     const alert = await this.alertCtrl.create({
-    //       header: 'Alert',
-    //       message: 'Business Already Exist',
-    //       buttons: ['OK']
-    //     });
-    //     await alert.present();
-    //     //this.router.navigate(['my-business']);
-    //   }
+    var link = AppComponent.ApiUrl + "create_business.php"
+    this.http.post(link, mydata).subscribe(async data => {
+      this.businessdata = data;
+      console.log("userdetails", this.businessdata);
+      if (this.businessdata == "Data already Exists") {
+        const alert = await this.alertCtrl.create({
+          header: 'Alert',
+          message: 'Business Already Exist',
+          buttons: ['OK']
+        });
+        await alert.present();
+        //this.router.navigate(['my-business']);
+      }
 
-    //   else {
-    //     this.router.navigate(['my-business']);
-    //   }
-    // });
+      else {
+        this.router.navigate(['my-business']);
+      }
+    });
    }
   }
 

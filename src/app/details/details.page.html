@@ -210,7 +210,7 @@
       <div *ngFor="let ser of services; let i = index;" style="padding-bottom: 18px;">
         <ion-card class="second">
           <ion-row>
-            <ion-col class="item" size="6" style="padding: 0%;">
+            <ion-col class="item" size="12" style="padding: 0%;">
               <img class="ser-img" src="{{ser.image}}" alt="">
               <p style="color: #22272a;">{{ser.service_title}}</p>
               <span>Actual Price-</span>
@@ -811,3 +811,29 @@
   </ion-fab>
   <!-- Topiko Div End-->
 </ion-content>
+
+
+<ion-footer mode="md" class="home-footer">
+  <ion-row>
+    <ion-col>
+      <ion-icon name="home" class="click-footer" routerLink="/home"></ion-icon>
+      <p class="click-footer">Home</p>
+    </ion-col>
+    <ion-col routerLink="/profile">
+      <ion-icon name="person-outline"></ion-icon>
+      <p>Profile</p>
+    </ion-col>
+    <ion-col routerLink="/qr-scanner">
+      <ion-icon name="scan-outline"></ion-icon>
+      <p>Scan</p>
+    </ion-col>
+    <ion-col routerLink="/favourites">
+      <ion-icon name="heart-outline"></ion-icon>
+      <p>Favourites</p>
+    </ion-col>
+    <ion-col routerLink="/calls">
+      <ion-icon name="call-outline"></ion-icon>
+      <p>Call</p>
+    </ion-col>
+  </ion-row>
+</ion-footer>

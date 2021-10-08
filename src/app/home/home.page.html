@@ -172,7 +172,7 @@
       <img *ngIf="shopn.logo" src="{{shopn.logo}}" class="icon-img">
       <img *ngIf="shopn.logo == ''" class="icon-img" src="assets/logo-color.png"
         style="padding: 6px; background: #fafafa;">
-      <!-- <div class="img-title center text-center p-0" text-center>{{shopn.business_name}}</div> -->
+      <div class="img-title center text-center p-0" text-center>{{shopn.business_name}}</div>
     </ion-col>
   </ion-row>
 
@@ -241,7 +241,7 @@
 
 <ion-footer mode="md" class="home-footer">
   <ion-row>
-    <ion-col>
+    <ion-col routerLink="/home">
       <ion-icon name="home" class="click-footer"></ion-icon>
       <p class="click-footer">Home</p>
     </ion-col>

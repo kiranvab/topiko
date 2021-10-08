@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar color="custom">
     <ion-buttons slot="start">
-      <ion-back-button icon="chevron-back"></ion-back-button>
+      <ion-back-button icon="chevron-back" mode="md" text=""></ion-back-button>
     </ion-buttons>
     <ion-title>Create Business</ion-title>
   </ion-toolbar>
@@ -78,12 +78,12 @@
     <p class="text">
       <ion-select placeholder="Business mode" [(ngModel)]="mode" (ionChange)="getserccat()">
         <ion-select-option value="services">Services </ion-select-option>
-        <ion-select-option value="category">Category</ion-select-option>
+        <ion-select-option value="category">Products</ion-select-option>
       </ion-select>
     </p>
 
     <p class="text" *ngIf="cat_div">
-      <ion-select placeholder="Select Category" [(ngModel)]="category_id">
+      <ion-select placeholder="Select" [(ngModel)]="category_id">np
         <ion-select-option *ngFor="let cat of categoreis; let i=index;" value="{{cat.id}}">{{cat.category}}
         </ion-select-option>
       </ion-select>
@@ -237,3 +237,4 @@
   </div>
   </div>
 </ion-content>
+
