@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Storage } from '@ionic/storage-angular';
 import { AppComponent } from '../app.component';
 import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-edit-business',
@@ -40,7 +41,8 @@ export class EditBusinessPage implements OnInit {
   constructor(
     private storage:Storage,
     private http: HttpClient,
-    private camera:Camera
+    private camera:Camera,
+    private router:Router
   ) { }
 
   ngOnInit() {
@@ -73,14 +75,32 @@ export class EditBusinessPage implements OnInit {
       })  
     }
     else{
-      this.ser_div = true;
+      if(this.ownership_model == "services"){
+        this.ser_div = true;
       this.cat_div = false;
       this.http.get(AppComponent.ApiUrl+"getservices.php").subscribe((ser)=>{
         this.services = ser;
         console.log("services:", this.services)
       })
+      }
+      else{
+      this.ser_div = true;
+      this.cat_div = true;
+      this.http.get(AppComponent.ApiUrl+"getservices.php").subscribe((ser)=>{
+        this.services = ser;
+        console.log("services:", this.services)
+      });
+      this.http.get(AppComponent.ApiUrl+"getcategories.php").subscribe((cat)=>{
+        this.options = cat;
+        console.log("categories:", this.categoreis)
+      }) ;
     }
-}
+        
+    }
+    
+  }
+
+
 
 getPicture(){
   const options: CameraOptions = {
@@ -122,10 +142,16 @@ update(){
   });
   console.log(mydata)
 
-  // var link = AppComponent.ApiUrl + "create_business.php"
-  // this.http.post(link, mydata).subscribe(async data => {
-  //   this.businessdata = data;
-  // })
+   var link = AppComponent.ApiUrl + "updatebusiness.php";
+   this.http.post(link, mydata).subscribe(data => {
+     this.businessdata = data;
+     if(this.businessdata == 1){
+       this.router.navigate(["/my-business"]);
+     }
+     else {
+       alert("Failed to update Business");
+     }
+   })
 }
 
   }

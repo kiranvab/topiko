@@ -2,10 +2,9 @@
   <ion-toolbar color="custom" class="toolbar">
     <ion-buttons slot="start">
       <ion-back-button mode="md" icon="chevron-back"></ion-back-button>
-      <ion-menu-button></ion-menu-button>
     </ion-buttons>
     <ion-title>Featured</ion-title>
-    <ion-buttons slot="end">
+    <ion-buttons slot="end" style="margin-right: 10px;">
       <ion-icon class="search" name=search-outline></ion-icon>
     </ion-buttons>
   </ion-toolbar>
@@ -13,10 +12,36 @@
 
 <ion-content>
   <ion-row class="featured-img">
-    <ion-col  *ngFor="let fet of featured let i=index" size="2">
+    <ion-col  *ngFor="let fet of featured let i=index" size="3">
       <img  src="{{fet.logo}}"  class="icon-img">
       <img *ngIf="fet.logo == ''" class="icon-img" src="assets/logo.png" style="padding: 10px; background: #871178; border-radius: 25%;">
+      <p>{{fet.business_name}}</p>
     </ion-col>
   </ion-row>
 
 </ion-content>
+
+<ion-footer mode="md">
+  <ion-row>
+    <ion-col routerLink="/home">
+      <ion-icon name="home" class="click-footer"></ion-icon>
+      <p class="click-footer">Home</p>
+    </ion-col>
+    <ion-col routerLink="/profile">
+      <ion-icon name="person-outline"></ion-icon>
+      <p>Profile</p>
+    </ion-col>
+    <ion-col routerLink="/qr-scanner">
+      <ion-icon name="scan-outline"></ion-icon>
+      <p>Scan</p>
+    </ion-col>
+    <ion-col routerLink="/favourites">
+      <ion-icon name="heart-outline"></ion-icon>
+      <p>Favourites</p>
+    </ion-col>
+    <ion-col routerLink="/calls">
+      <ion-icon name="call-outline"></ion-icon>
+      <p>Call</p>
+    </ion-col>
+  </ion-row>
+</ion-footer>

@@ -120,14 +120,19 @@ export class MyBusinessPage implements OnInit {
           handler: () => {  
             console.log('Cancel clicked');  
             this.route.navigate(['/showcase'])
-          },  
-        }
-        // {  
-        //   text: 'Promotion',  
-        //   handler: () => {  
-        //     console.log('Promotions clicked');  
-        //   },  
-        // }    
+          }
+        },{
+          text: 'Customize',   
+          handler: () => {  
+            console.log('Cancel clicked');  
+          }
+        },{
+          text: 'Plan',   
+          handler: () => {  
+            console.log('Cancel clicked');  
+            this.route.navigate(['/plan'])
+          }
+        }   
       ]  
     });  
     await actionSheet.present();  

@@ -1,10 +1,12 @@
 <ion-header color="custom">
   <ion-toolbar color="custom" class="toolbar">
     <ion-buttons slot="start">
-      <ion-back-button mode="md"></ion-back-button>
-      <ion-menu-button mode="ios"></ion-menu-button>
+      <ion-back-button mode="md" icon="chevron-back" text=""></ion-back-button>
     </ion-buttons>
     <ion-title class="title">Edit Product</ion-title>
+    <ion-butttons slot="end">
+      <ion-icon name="save-outline"  (click)="submit()"></ion-icon>
+    </ion-butttons>
   </ion-toolbar>
 </ion-header>
 
@@ -111,7 +113,7 @@
       </ion-col>
     </ion-row>
     <ion-row class="btn">
-      <ion-button (click)="submit()">Submit</ion-button>
+      <ion-button (click)="submit()">Save</ion-button>
     </ion-row>
   </ion-grid>
 </ion-content>

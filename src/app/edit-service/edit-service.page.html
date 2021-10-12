@@ -1,9 +1,12 @@
 <ion-header color="custom">
   <ion-toolbar color="custom" class="toolbar">
     <ion-buttons slot="start">
-      <ion-back-button mode="md"></ion-back-button>
+      <ion-back-button mode="md" icon="chevron-back" text=""></ion-back-button>
     </ion-buttons>
     <ion-title class="title">Edit Service</ion-title>
+    <ion-buttons slot="end">
+      <ion-icon name="save-outline" (click)="submit()"></ion-icon>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
@@ -91,7 +94,7 @@
         <ion-input type="number" placeholder="Discount" [(ngModel)]="discount"></ion-input>
       </ion-item>
     </p>
-    <p>
+    <!-- <p>
       <ion-row class="toggle">
         <ion-col>
           <p>Cash on Delivery</p>
@@ -100,7 +103,7 @@
           <ion-toggle checked></ion-toggle>
         </ion-col>
       </ion-row>
-    </p>
+    </p> -->
     <ion-row class="check">
       <ion-col size="1">
         <ion-checkbox checked></ion-checkbox>
@@ -110,7 +113,7 @@
       </ion-col>
     </ion-row>
     <ion-row class="btn">
-      <ion-button (click)="submit()">Submit</ion-button>
+      <ion-button (click)="submit()">Save</ion-button>
     </ion-row>
   </ion-grid>
 </ion-content>

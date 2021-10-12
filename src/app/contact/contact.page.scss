@@ -1,6 +1,21 @@
-ion-icon
+.icons
 {
     color: #871178;
     font-size: 1.5em;
-    padding-right: 10px;
+    border-radius: 50%;
+    border: 1px solid #871178;
+    padding: 8px;
+    margin-top: 7px;
+}
+
+ion-card
+{
+    margin: 0;
+    margin: 10px;
+    padding: 10px;
+}
+
+h2
+{
+    margin-top: 10px;
 }

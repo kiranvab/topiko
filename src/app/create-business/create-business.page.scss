@@ -61,10 +61,10 @@ ion-title {
 
 // first-card
 .first {
-  margin: 0px;
+  margin: 5px;
 }
 .row {
-  height: 12em;
+  height: 14em;
 }
 ion-card {
   border: none;
@@ -82,6 +82,7 @@ ion-card {
 ion-avatar {
   width: 146px;
   height: 146px;
+  margin-top:15%;
 }
 ion-avatar img {
   max-width: 100%;
@@ -208,14 +209,14 @@ ion-col .agree {
   justify-content: center;
   padding-top: 20px;
 }
-.buton ion-button {
+ion-button {
   --background: linear-gradient(#871178, #3c1378);
   --color: #ffffff;
   text-transform: capitalize;
   font-size: 20px;
-  width: 123px;
+  width: 165px;
   height: 50px;
-  margin-bottom: 20px;
+  --border-radius: 3px;
 }
 ion-select {
   --placeholder-opacity: 100%;

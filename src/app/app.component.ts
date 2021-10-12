@@ -24,7 +24,7 @@ export class AppComponent {
   public static ApiUrl = 'https://topiko.com/app/';
   //public static ApiUrl = 'http://localhost/topiko/app/';
   public appPages = [
-    { title: 'Home', url: '/home', img: 'assets/menu/home.png' },
+    { title: 'Home', url: '/home', img: 'assets/menu/home.svg' },
     { title: 'Business', url: '/my-business', img: 'assets/menu/business.svg' },
     { title: 'Career', url: '/careerview', img: 'assets/menu/careers.svg' },
     { title: 'Wallet', url: '/wallet', img: 'assets/menu/wallet.svg' },
@@ -32,8 +32,7 @@ export class AppComponent {
     { title: 'Qr Reach', url: '/qrreach', img: 'assets/menu/qr-code.svg' },
     // { title: 'Invitation', url: '/folder/Inbox', icon: 'mail-open' },
     //{ title: 'Referal', url: '/folder/Inbox', img: 'assets/menu/invitation.svg' },
-    { title: 'Reach Us', url: '/folder/Inbox', img: 'assets/menu/reach.svg' },
-    { title: 'Settings', url: '/settings', img: 'assets/menu/settings.svg' },
+    { title: 'Reach Us', url: '/contact', img: 'assets/menu/reach.svg' },
     { title: 'Logout', url: '/relogin', img: 'assets/menu/logout.svg' }
   ];
   public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];

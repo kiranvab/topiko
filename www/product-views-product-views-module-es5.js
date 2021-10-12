@@ -38,13 +38,28 @@
       /* harmony import */
 
 
-      var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+      var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+      /*! @angular/common/http */
+      "tk/3");
+      /* harmony import */
+
+
+      var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
       /*! @angular/core */
       "fXoL");
+      /* harmony import */
+
+
+      var _ionic_storage_angular__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+      /*! @ionic/storage-angular */
+      "jSNZ");
 
       var ProductViewsPage = /*#__PURE__*/function () {
-        function ProductViewsPage() {
+        function ProductViewsPage(storage, http) {
           _classCallCheck(this, ProductViewsPage);
+
+          this.storage = storage;
+          this.http = http;
         }
 
         _createClass(ProductViewsPage, [{
@@ -56,10 +71,14 @@
       }();
 
       ProductViewsPage.ctorParameters = function () {
-        return [];
+        return [{
+          type: _ionic_storage_angular__WEBPACK_IMPORTED_MODULE_5__["Storage"]
+        }, {
+          type: _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClient"]
+        }];
       };
 
-      ProductViewsPage = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["Component"])({
+      ProductViewsPage = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_4__["Component"])({
         selector: 'app-product-views',
         template: _raw_loader_product_views_page_html__WEBPACK_IMPORTED_MODULE_1__["default"],
         styles: [_product_views_page_scss__WEBPACK_IMPORTED_MODULE_2__["default"]]

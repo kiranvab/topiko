@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Storage } from '@ionic/storage-angular';
 import { AppComponent } from '../app.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-product-view',
@@ -27,7 +28,8 @@ export class ProductViewPage implements OnInit {
 
   constructor(
     private storage:Storage,
-    private http:HttpClient
+    private http:HttpClient,
+    private router:Router
   ) { }
 
   ngOnInit() {
@@ -54,6 +56,11 @@ export class ProductViewPage implements OnInit {
             console.log(this.product);
           })
       })
+  }
+
+  edit(){
+    this.storage.set('pid', this.pid);
+    this.router.navigate(['edit-product']);
   }
 
 }

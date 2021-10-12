@@ -1,8 +1,7 @@
 <ion-header color="custom" mode="md">
   <ion-toolbar color="custom" class="toolbar">
     <ion-buttons slot="start" mode="md">
-      <ion-back-button mode="ios" text=""></ion-back-button>
-      <ion-menu-button></ion-menu-button>
+      <ion-back-button mode="md" text="" icon="chevron-back"></ion-back-button>
     </ion-buttons>
     <ion-title>Settings</ion-title>
   </ion-toolbar>
@@ -128,7 +127,7 @@
       <p>Home</p>
     </ion-col>
     <ion-col>
-      <ion-icon name="person" class="click-footer"></ion-icon>
+      <ion-icon name="person" routerLink="/profile" class="click-footer"></ion-icon>
       <p class="click-footer">Profile</p>
     </ion-col>
     <ion-col routerLink="/qr-scanner">

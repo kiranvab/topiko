@@ -1,21 +1,21 @@
 <ion-header color="custom">
   <ion-toolbar color="custom" class="toolbar">
     <ion-buttons slot="start">
-      <ion-back-button icon="chevron-back"></ion-back-button>
+      <ion-back-button icon="chevron-back" mode="md" text=""></ion-back-button>
     </ion-buttons>
     <ion-title>Products</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-card *ngFor="let product of products; let i = index;" (click)="productDetials(i)">
+  <ion-card *ngFor="let product of products; let i = index;">
     <ion-row >
-      <div class="avatar" >
+      <div class="avatar"  (click)="productDetials(i)" >
         <ion-avatar>
           <img class="product-img" src="{{product.product_image}}">
         </ion-avatar>
       </div>
-      <ion-col class="text-overflow">
+      <ion-col class="text-overflow"  (click)="productDetials(i)">
         <p class="user-name pclass" (click)="productDetials(i)">{{product.title}}</p>
         <p class="time pclass">{{product.created_date}}</p>
         <p class="price-div pclass">Price - <span class="price">{{product.discount_price}}</span> <span
@@ -58,3 +58,29 @@
     </ion-fab-button>
   </ion-fab>
 </ion-content>
+
+
+<ion-footer mode="md" class="home-footer">
+  <ion-row>
+    <ion-col routerLink="/home">
+      <ion-icon name="home" class="click-footer"></ion-icon>
+      <p class="click-footer">Home</p>
+    </ion-col>
+    <ion-col routerLink="/profile">
+      <ion-icon name="person-outline"></ion-icon>
+      <p>Profile</p>
+    </ion-col>
+    <ion-col routerLink="/qr-scanner">
+      <ion-icon name="scan-outline"></ion-icon>
+      <p>Scan</p>
+    </ion-col>
+    <ion-col routerLink="/favourites">
+      <ion-icon name="heart-outline"></ion-icon>
+      <p>Favourites</p>
+    </ion-col>
+    <ion-col routerLink="/calls">
+      <ion-icon name="call-outline"></ion-icon>
+      <p>Call</p>
+    </ion-col>
+  </ion-row>
+</ion-footer>

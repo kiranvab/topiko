@@ -219,8 +219,8 @@
         }, {
           key: "Details",
           value: function Details(i) {
-            this.storage.set("fav_id", this.myfav[i].id);
-            this.route.navigate(['favourite-details']);
+            this.storage.set("bid", this.myfav[i].id);
+            this.route.navigate(['/details']);
           }
         }]);
 

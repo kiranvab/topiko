@@ -12,6 +12,9 @@ ion-content {
     --padding-bottom: 80px;
     --padding-start: 18px;
     --padding-end: 18px;
+    position: absolute;
+    bottom: 70px;
+    right: 0;
 }
 .title {
     text-align: center;

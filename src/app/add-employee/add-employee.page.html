@@ -11,11 +11,11 @@
   <ion-card class="firstcard" (click)="adduserImage()">
     <ion-row class="row">
       <ion-col class="bg">
-        <ion-avatar>
-          <img
-            src="https://banner2.cleanpng.com/20180319/sue/kisspng-camera-computer-icons-android-camera-icon-android-camera-shutter-icon-5ab02d20a19642.3023672915214953286619.jpg"
-            alt="">
+          <ion-avatar (click)="getpicture()">
+          <img src="assets/profile.png" />
+          
         </ion-avatar>
+        <img class="position-cam" src="assets/camera.svg" alt="" (click)="getPicture()">
       </ion-col>
     </ion-row>
   </ion-card>
@@ -82,7 +82,7 @@
       <ion-toggle checked mode="md" [(ngModel)]="invoice" (ionChange)="Invoicestatus(invoice)"></ion-toggle>
     </ion-row>
  -->
-    <h6>Work Hour Settings</h6>
+    <!-- <h6>Work Hour Settings</h6>
     <ion-row>
       <ion-col>Monday</ion-col>
       <ion-col>From:
@@ -94,7 +94,7 @@
         </ion-item>
       </ion-col>
       <ion-col>To: </ion-col>
-    </ion-row>
+    </ion-row> -->
     <ion-row class="branches">
       <ion-select placeholder="Branches" interface="popover" [(ngModel)]="branch">
         <ion-select-option *ngFor="let br of branches" value="{{br.id}}">{{br.branch_title}}</ion-select-option>

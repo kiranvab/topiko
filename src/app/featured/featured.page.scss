@@ -16,7 +16,7 @@ ion-content
 
 .featured-img ion-col img
   {
-      border-radius: 50%;
+      border-radius: 5px;
       padding: 0;
   }
 
@@ -27,11 +27,16 @@ ion-content
     width: 100%;
     border: 1px solid #871178;
     padding: 5px;
-    border-radius: 50%;
+    border-radius: 5px;
     background: #f1f1f1;
-    height: 50px;
 }
 
+p
+{
+    font-size: 12px;
+    line-height: 1;
+    
+}
 .img-title {
     font-size: 12px;
     padding: 8px 0;

@@ -216,6 +216,19 @@ ion-fab-button {
     --ion-color-base: #f2f2f2 !important;
     --box-shadow: none;
 }
+
+.fabbtn
+{
+    position: absolute;
+    bottom: 70px;
+    right: 10px;
+}
+.fabbtn ion-icon
+{
+    color: #fff;
+    font-size: 30px;
+}
+
 ion-fab-button ion-icon {
     color: #707070;
     font-size: 30px;

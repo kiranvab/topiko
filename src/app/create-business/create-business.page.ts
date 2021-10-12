@@ -113,7 +113,7 @@ export class CreateBusinessPage implements OnInit {
       })
       }
       else{
-        this.ser_div = true;
+      this.ser_div = true;
       this.cat_div = true;
       this.http.get(AppComponent.ApiUrl+"getservices.php").subscribe((ser)=>{
         this.services = ser;

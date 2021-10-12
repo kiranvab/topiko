@@ -112,9 +112,9 @@ let CallsPage = class CallsPage {
         this.calheader = true;
         this.incmng = false;
         this.outgng = true;
-        this.ring = this.media.create('https://topiko.com/ringtones/ring.mp3');
-        this.ringtone = this.media.create('https://topiko.com/ringtones/ringtone.mp3');
-        this.busytone = this.media.create('https://topiko.com/ringtones/busy.mp3');
+        this.ring = this.media.create('assets/ringtones/ring.mp3');
+        this.ringtone = this.media.create('assets/ringtones/ringtone.mp3');
+        this.busytone = this.media.create('assets/ringtones/busy.mp3');
         this.segmentModel = "calls";
         this.ObservableVar = rxjs_rx__WEBPACK_IMPORTED_MODULE_9__["Observable"].interval(2000).subscribe(() => {
             this.CheckCallStatus();
@@ -253,7 +253,7 @@ let CallsPage = class CallsPage {
         let mycall = this;
         setTimeout(function () {
             mycall.call();
-        }, 5000);
+        }, 3000);
     }
     call() {
         console.log("call connected", this.partnerId);
@@ -298,6 +298,9 @@ let CallsPage = class CallsPage {
                         setTimeout(() => {
                             clearInterval();
                         }, 10000);
+                        setTimeout(() => {
+                            ringer.callend();
+                        }, 45000);
                     }
                     else {
                         this.busytone = this.media.create('https://topiko.com/ringtones/busy.mp3');

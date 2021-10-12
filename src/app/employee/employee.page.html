@@ -50,7 +50,7 @@
       </ion-col>
     </ion-row>
 
-    <ion-row class="tog" style="height: 36px; margin-top: -8px;">
+    <!-- <ion-row class="tog" style="height: 36px; margin-top: -8px;">
       <p class="gps">Call Record Access</p>
       <ion-toggle *ngIf="emp.call_records==1" checked mode="md" readonly></ion-toggle>
       <ion-toggle *ngIf="emp.call_records==0" mode="md" readonly></ion-toggle>
@@ -58,7 +58,7 @@
     <ion-row class="tog">
       <p class="gps">Control Employee</p>
       <ion-toggle checked mode="md"></ion-toggle>
-    </ion-row>
+    </ion-row> -->
 
     <ion-row class="inp">
       <ion-col style="padding-left: 0%;">
@@ -79,3 +79,28 @@
   </ion-fab>
 
 </ion-content>
+
+<ion-footer mode="md" class="home-footer">
+  <ion-row>
+    <ion-col routerLink="/home">
+      <ion-icon name="home"></ion-icon>
+      <p class="click-footer">Home</p>
+    </ion-col>
+    <ion-col routerLink="/profile">
+      <ion-icon name="person-outline"></ion-icon>
+      <p>Profile</p>
+    </ion-col>
+    <ion-col routerLink="/qr-scanner">
+      <ion-icon name="scan-outline"></ion-icon>
+      <p>Scan</p>
+    </ion-col>
+    <ion-col routerLink="/favourites">
+      <ion-icon name="heart-outline"></ion-icon>
+      <p>Favourites</p>
+    </ion-col>
+    <ion-col routerLink="/calls">
+      <ion-icon name="call-outline"></ion-icon>
+      <p>Call</p>
+    </ion-col>
+  </ion-row>
+</ion-footer>

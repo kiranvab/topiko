@@ -1,8 +1,7 @@
 <ion-header color="custom" mode="md">
   <ion-toolbar color="custom" class="toolbar">
     <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
-      <ion-menu-button></ion-menu-button>
+      <ion-back-button mode="md" icon="chevron-back" text=""></ion-back-button>
     </ion-buttons>
     <ion-title>Career</ion-title>
     <ion-buttons slot="end">
@@ -32,231 +31,22 @@
   </ion-card>
 
   <p class="dashboard">Dashboard</p>
+  
   <ion-card class="first">
-    <ion-row class="scroll">
-      <ion-col class="icons">
-        <ion-fab-button color="light" routerLink="/resume">
-          <ion-icon name="briefcase-outline"></ion-icon>
-        </ion-fab-button>
-        <p>Resume</p>
-      </ion-col>
-      <ion-col class="icons">
-        <ion-fab-button color="light" routerLink="/interview">
-          <ion-icon name="headset-outline"></ion-icon>
-        </ion-fab-button>
-        <p>Interview</p>
-      </ion-col>
-      <ion-col class="icons">
-        <ion-fab-button color="light" routerLink="/partner">
-          <ion-icon name="people-outline"></ion-icon>
-        </ion-fab-button>
-        <p>Partner</p>
-      </ion-col>
-      <ion-col class="icons">
-        <ion-fab-button color="light" routerLink="/records">
-          <ion-icon name="receipt-outline"></ion-icon>
-        </ion-fab-button>
-        <p>Records</p>
-      </ion-col>
-      <ion-col class="icons">
-        <ion-fab-button color="light" routerLink="/employee-group">
-          <ion-icon name="headset-outline"></ion-icon>
-        </ion-fab-button>
+    <ion-row class="scroll" (click)="employee()">
+      <ion-col size="9" style="font-size: 24px;">
         <p>Employee</p>
       </ion-col>
-    </ion-row>
-  </ion-card>
-
-  <div>
-    <div class="date">
-      <p>04/23/2021</p>
-    </div>
-  </div>
-
-  <ion-slides pager="true" [options]="slideOpts">
-    <ion-slide>
-      <div class="column">
-        <div class="round-img" (click)="openMenu()">
-          <ion-icon name="ellipsis-vertical"></ion-icon>
-        </div>
-        <img class="image" src="https://sitalcollege.com/edu/wp-content/uploads/2021/01/e-learning.jpg" alt="">
-      </div>
-    </ion-slide>
-    <ion-slide>
-      <div class="column">
-        <div class="round-img">
-          <ion-icon name="ellipsis-vertical"></ion-icon>
-        </div>
-        <img class="image" src="http://mediawiremobile.com/news/wp-content/uploads/499924122-612x612.jpg">
-      </div>
-    </ion-slide>
-    <ion-slide>
-      <div class="column">
-        <div class="round-img">
-          <ion-icon name="ellipsis-vertical"></ion-icon>
-        </div>
-        <img class="image" src="https://guy-gweth.com/wp-content/uploads/2020/10/1.jpg" alt="">
-      </div>
-    </ion-slide>
-  </ion-slides>
-
-  <p class="dashboard">Descriptions</p>
-  <ion-card class="second">
-    <ion-row>
-      <p class="description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quis vitae voluptatibus autem
-        quidem reiciendis iusto modi temporibus impedit</p>
-    </ion-row>
-  </ion-card>
-  <ion-card class="second">
-    <ion-row class="likes">
-      <ion-col>
-        <p class="like">Likes</p>
-        <p class="count">036</p>
-      </ion-col>
-      <ion-col class="lines" size="0.1"></ion-col>
-      <ion-col>
-        <p class="like">Dislikes</p>
-        <p class="count">30</p>
-      </ion-col>
-      <ion-col class="lines" size="0.1"></ion-col>
-      <ion-col>
-        <p class="like">Share</p>
-        <p class="count">105</p>
-      </ion-col>
-      <ion-col class="lines" size="0.1"></ion-col>
-      <ion-col class="comment">
-        <p class="like">Comment</p>
-        <p class="count">150</p>
+      <ion-col class="icons">
+        <ion-fab-button color="light" routerLink="/resume">
+          <ion-icon name="headset-outline"></ion-icon>
+        </ion-fab-button>
       </ion-col>
     </ion-row>
   </ion-card>
 
-  <div>
-    <div class="date">
-      <p>04/23/2021</p>
-    </div>
-  </div>
+  
 
-  <ion-slides pager="true" [options]="slideOpts">
-    <ion-slide>
-      <div class="column">
-        <div class="round-img" (click)="openMenu()">
-          <ion-icon name="ellipsis-vertical"></ion-icon>
-        </div>
-        <img class="image" src="http://mediawiremobile.com/news/wp-content/uploads/499924122-612x612.jpg">
-      </div>
-    </ion-slide>
-    <ion-slide>
-      <div class="column">
-        <div class="round-img">
-          <ion-icon name="ellipsis-vertical"></ion-icon>
-        </div>
-        <img class="image" src="https://guy-gweth.com/wp-content/uploads/2020/10/1.jpg" alt="">
-      </div>
-    </ion-slide>
-    <ion-slide>
-      <div class="column">
-        <div class="round-img">
-          <ion-icon name="ellipsis-vertical"></ion-icon>
-        </div>
-        <img class="image" src="https://sitalcollege.com/edu/wp-content/uploads/2021/01/e-learning.jpg" alt="">
-      </div>
-    </ion-slide>
-  </ion-slides>
-
-  <p class="dashboard">Descriptions</p>
-  <ion-card class="second">
-    <ion-row>
-      <p class="description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quis vitae voluptatibus autem
-        quidem reiciendis iusto</p>
-    </ion-row>
-  </ion-card>
-  <ion-card class="second">
-    <ion-row class="likes">
-      <ion-col>
-        <p class="like">Likes</p>
-        <p class="count">036</p>
-      </ion-col>
-      <ion-col class="lines" size="0.1"></ion-col>
-      <ion-col>
-        <p class="like">Dislikes</p>
-        <p class="count">30</p>
-      </ion-col>
-      <ion-col class="lines" size="0.1"></ion-col>
-      <ion-col>
-        <p class="like">Share</p>
-        <p class="count">105</p>
-      </ion-col>
-      <ion-col class="lines" size="0.1"></ion-col>
-      <ion-col class="comment">
-        <p class="like">Comment</p>
-        <p class="count">150</p>
-      </ion-col>
-    </ion-row>
-  </ion-card>
-
-  <div>
-    <div class="date">
-      <p>04/23/2021</p>
-    </div>
-  </div>
-
-  <ion-slides pager="true" [options]="slideOpts">
-    <ion-slide>
-      <div class="column">
-        <div class="round-img" (click)="openMenu()">
-          <ion-icon name="ellipsis-vertical"></ion-icon>
-        </div>
-        <img class="image" src="https://guy-gweth.com/wp-content/uploads/2020/10/1.jpg" alt="">
-      </div>
-    </ion-slide>
-    <ion-slide>
-      <div class="column">
-        <div class="round-img">
-          <ion-icon name="ellipsis-vertical"></ion-icon>
-        </div>
-        <img class="image" src="https://sitalcollege.com/edu/wp-content/uploads/2021/01/e-learning.jpg" alt="">
-      </div>
-    </ion-slide>
-    <ion-slide>
-      <div class="column">
-        <div class="round-img">
-          <ion-icon name="ellipsis-vertical"></ion-icon>
-        </div>
-        <img class="image" src="http://mediawiremobile.com/news/wp-content/uploads/499924122-612x612.jpg">
-      </div>
-    </ion-slide>
-  </ion-slides>
-
-  <p class="dashboard">Descriptions</p>
-  <ion-card class="second">
-    <ion-row>
-      <p class="description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quis vitae voluptatibus autem
-        quidem reiciendis iusto</p>
-    </ion-row>
-  </ion-card>
-  <ion-card class="second">
-    <ion-row class="likes">
-      <ion-col>
-        <p class="like">Likes</p>
-        <p class="count">036</p>
-      </ion-col>
-      <ion-col class="lines" size="0.1"></ion-col>
-      <ion-col>
-        <p class="like">Dislikes</p>
-        <p class="count">30</p>
-      </ion-col>
-      <ion-col class="lines" size="0.1"></ion-col>
-      <ion-col>
-        <p class="like">Share</p>
-        <p class="count">105</p>
-      </ion-col>
-      <ion-col class="lines" size="0.1"></ion-col>
-      <ion-col class="comment">
-        <p class="like">Comment</p>
-        <p class="count">150</p>
-      </ion-col>
-    </ion-row>
-  </ion-card>
-
+  
+  
 </ion-content>

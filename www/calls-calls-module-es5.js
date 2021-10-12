@@ -202,9 +202,9 @@
           this.calheader = true;
           this.incmng = false;
           this.outgng = true;
-          this.ring = this.media.create('https://topiko.com/ringtones/ring.mp3');
-          this.ringtone = this.media.create('https://topiko.com/ringtones/ringtone.mp3');
-          this.busytone = this.media.create('https://topiko.com/ringtones/busy.mp3');
+          this.ring = this.media.create('assets/ringtones/ring.mp3');
+          this.ringtone = this.media.create('assets/ringtones/ringtone.mp3');
+          this.busytone = this.media.create('assets/ringtones/busy.mp3');
           this.segmentModel = "calls";
           this.ObservableVar = rxjs_rx__WEBPACK_IMPORTED_MODULE_9__["Observable"].interval(2000).subscribe(function () {
             _this.CheckCallStatus(); //this.CheckIncomming();
@@ -382,7 +382,7 @@
             var mycall = this;
             setTimeout(function () {
               mycall.call();
-            }, 5000);
+            }, 3000);
           }
         }, {
           key: "call",
@@ -445,6 +445,9 @@
                     setTimeout(function () {
                       clearInterval();
                     }, 10000);
+                    setTimeout(function () {
+                      ringer.callend();
+                    }, 45000);
                   } else {
                     _this5.busytone = _this5.media.create('https://topiko.com/ringtones/busy.mp3');
 

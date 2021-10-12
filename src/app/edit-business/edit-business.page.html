@@ -4,7 +4,11 @@
       <ion-back-button mode="md" text="" icon="chevron-back"></ion-back-button>
     </ion-buttons>
     <ion-title>Edit Business Profile</ion-title>
+    <ion-buttons slot="end" >
+      <ion-icon name="save-outline" (click)="update()"></ion-icon>
+    </ion-buttons>
   </ion-toolbar>
+ 
 </ion-header>
 
 <ion-content *ngFor="let b of business">
@@ -12,9 +16,14 @@
   <ion-card class="first">
     <ion-row class="row">
       <ion-col class="bg">
-        <ion-avatar>
+        <ion-avatar *ngIf="b.logo != ''">
           <img src="{{b.logo}}" alt="">
         </ion-avatar>
+        <span *ngIf="b.logo == ''">
+          <ion-avatar>
+          <img src="assets/profile.png" />
+        </ion-avatar>
+        </span>
         <img class="position-cam" src="assets/camera.svg" alt="" (click)="getPicture">
       </ion-col>
     </ion-row>
@@ -50,12 +59,15 @@
       <p class="top">Business mode</p>
       <ion-select placeholder="Business mode" [(ngModel)]="ownership_model" (ionChange)="getserccat()">
         <ion-select-option value="services">Services </ion-select-option>
-        <ion-select-option value="category">Category</ion-select-option>
+        <ion-select-option value="category">Product</ion-select-option>
+        <ion-select-option value="both">Both</ion-select-option>
+
+        
       </ion-select>
     </ion-row>
 
     <p class="text" *ngIf="cat_div">
-      <ion-select placeholder="Select Category" [(ngModel)]="category_id">
+      <ion-select placeholder="Select Product" [(ngModel)]="category_id">
         <ion-select-option *ngFor="let cat of categoreis; let i=index;" value="{{cat.id}}">{{cat.category}}</ion-select-option>
       </ion-select>
     </p>
@@ -74,12 +86,12 @@
       <p class="top">Address</p>
       <ion-textarea [(ngModel)]="business_address"></ion-textarea>
     </ion-row>
-    <ion-row>
+    <!-- <ion-row>
       <p class="top">Location</p>
       <img class="map"
         src="https://play-lh.googleusercontent.com/0uRNRSe4iS6nhvfbBcoScHcBTx1PMmxkCx8rrEsI2UQcQeZ5ByKz8fkhwRqR3vttOg"
         alt="">
-    </ion-row>
+    </ion-row> -->
     <ion-row>
       <p class="top">View on your business</p>
       <ion-input [(ngModel)]="views" >{{b.view}}</ion-input>
@@ -141,10 +153,10 @@
     <ion-select placeholder="Year Of Commencement"></ion-select>
     <ion-select placeholder="Topiko Awards"></ion-select>
     <ion-select placeholder="Topiko Star Rating"></ion-select>
-    <ion-row>
+    <ion-row> -->
       <ion-col>
-        <ion-button expand="block" class="purple-btn" color="custom" (click)="update()">Update</ion-button>
+        <ion-button expand="block" class="purple-btn" color="custom" (click)="update()">Save</ion-button>
       </ion-col>
-    </ion-row> -->
+    </ion-row>
   </ion-grid>
 </ion-content>

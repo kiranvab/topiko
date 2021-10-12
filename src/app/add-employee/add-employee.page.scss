@@ -28,6 +28,7 @@ ion-avatar {
     width: 8.1875em;
     height: 8.1875em;
     margin-top: 90px;
+    margin-left:10%;
 }
 ion-grid {
     margin: 14px 18px;
@@ -160,4 +161,10 @@ ion-label {
     position: absolute;
     bottom: 8px;
     left: 30px;
+}
+
+.position-cam {
+    position: relative;
+    left: -30px;
+    top: 85px;
 }

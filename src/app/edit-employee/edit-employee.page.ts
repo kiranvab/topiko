@@ -1,8 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Storage } from '@ionic/storage';
+import { Storage } from '@ionic/storage-angular';
 import { AppComponent } from '../app.component';
+import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
 
 @Component({
   selector: 'app-edit-employee',
@@ -23,10 +24,12 @@ designation:any;
   invoice: any;
   delivery: number;
   upd: Object;
+  image: string;
   constructor(
-    private storage:Storage,
+    private storage: Storage,
     private http:HttpClient,
-    private router:Router
+    private router:Router,
+    private camera:Camera,
   ) { }
 
   ngOnInit() {
@@ -123,10 +126,22 @@ designation:any;
   }
   
   
+  getPicture(){
+    const options: CameraOptions = {
+      sourceType: this.camera.PictureSourceType.PHOTOLIBRARY,
+      destinationType: this.camera.DestinationType.DATA_URL,
+      encodingType: this.camera.EncodingType.JPEG,
+      mediaType: this.camera.MediaType.PICTURE
+    }
+    this.camera.getPicture(options).then((imageData) => {
+      this.image = 'data:image/jpeg;base64,' + imageData;
+    });
+}
 
   update(){
     var link = AppComponent.ApiUrl+"updateemployee.php";
     var emp = JSON.stringify({
+      "image":this.image,
       "empid":this.emp_id,
       "name":this.name,
       "mobile":this.mobile,

@@ -91,7 +91,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "<ion-header color=\"custom\">\n  <ion-toolbar color=\"custom\" class=\"toolbar\">\n    <ion-buttons slot=\"start\">\n      <ion-back-button></ion-back-button>\n      <ion-menu-button></ion-menu-button>\n    </ion-buttons>\n    <ion-title>Edit Business Profile</ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content *ngFor=\"let b of business\">\n\n  <ion-card class=\"first\">\n    <ion-row class=\"row\">\n      <ion-col class=\"bg\">\n        <ion-avatar>\n          <img src=\"{{b.logo}}\" alt=\"\">\n        </ion-avatar>\n        <img class=\"position-cam\" src=\"assets/camera.svg\" alt=\"\" (click)=\"getPicture\">\n      </ion-col>\n    </ion-row>\n    <ion-row class=\"details\">\n      <p class=\"top\">Business Title</p> <br>\n      <ion-input [(ngModel)]=\"business_name\"></ion-input>\n    </ion-row>\n    <ion-row class=\"details\">\n      <p class=\"top\">Business Owner Name</p> <br>\n      <ion-input [(ngModel)]=\"owner_name\"></ion-input>\n    </ion-row>\n  </ion-card>\n\n  <ion-grid class=\"grid\">\n    <ion-row>\n      <p class=\"top\">Business Type</p> <br>\n      <ion-select placeholder=\"Business Type\" [(ngModel)]=\"business_type\">\n        <ion-select-option value=\"proprietorship\">Proprietorship</ion-select-option>\n        <ion-select-option value=\"partnership\">Partnership</ion-select-option>\n        <ion-select-option value=\"opc\">OPC</ion-select-option>\n        <ion-select-option value=\"llp\">LLP</ion-select-option>\n        <ion-select-option value=\"private\">Private Limited</ion-select-option>\n        <ion-select-option value=\"public\">Public Limited</ion-select-option>\n      </ion-select>\n    </ion-row>\n    <ion-row>\n      <p class=\"top\">Business Contact No</p>\n      <ion-input [(ngModel)]=\"primary_contact\"></ion-input>\n\n    </ion-row>\n  \n    <ion-row>\n      <p class=\"top\">Business mode</p>\n      <ion-select placeholder=\"Business mode\" [(ngModel)]=\"ownership_model\" (ionChange)=\"getserccat()\">\n        <ion-select-option value=\"services\">Services </ion-select-option>\n        <ion-select-option value=\"category\">Category</ion-select-option>\n      </ion-select>\n    </ion-row>\n\n    <p class=\"text\" *ngIf=\"cat_div\">\n      <ion-select placeholder=\"Select Category\" [(ngModel)]=\"category_id\">\n        <ion-select-option *ngFor=\"let cat of categoreis; let i=index;\" value=\"{{cat.id}}\">{{cat.category}}</ion-select-option>\n      </ion-select>\n    </p>\n\n    <p class=\"text\"  *ngIf=\"ser_div\">\n      <ion-select placeholder=\"Select Services\" [(ngModel)]=\"service_id\">\n        <ion-select-option *ngFor=\"let ser of services; let i=index;\" value=\"{{ser.id}}\">{{ser.service}}</ion-select-option>\n      </ion-select>\n    </p>\n\n    <ion-row>\n      <p class=\"top\">Business Tags</p>\n      <ion-input [(ngModel)]=\"tags\"></ion-input>\n    </ion-row>\n    <ion-row>\n      <p class=\"top\">Address</p>\n      <ion-textarea [(ngModel)]=\"business_address\"></ion-textarea>\n    </ion-row>\n    <ion-row>\n      <p class=\"top\">Location</p>\n      <img class=\"map\"\n        src=\"https://play-lh.googleusercontent.com/0uRNRSe4iS6nhvfbBcoScHcBTx1PMmxkCx8rrEsI2UQcQeZ5ByKz8fkhwRqR3vttOg\"\n        alt=\"\">\n    </ion-row>\n    <ion-row>\n      <p class=\"top\">View on your business</p>\n      <ion-input [(ngModel)]=\"views\" >{{b.view}}</ion-input>\n    </ion-row>\n    <ion-row>\n      <p class=\"top\">Your business story</p>\n      <ion-input [(ngModel)]=\"story\">{{b.busienss_story}}</ion-input>\n    </ion-row>\n\n    <ion-row>\n      <p class=\"top\">SHOP URL</p>\n      <ion-input [(ngModel)]=\"shopurl\">{{b.shopurl}}</ion-input>\n    </ion-row>\n\n    <ion-row>\n      <p class=\"top\">Shop Desc</p>\n      <ion-input [(ngModel)]=\"shopdesc\">{{b.shopdesc}}</ion-input>\n    </ion-row>\n\n    <ion-select placeholder=\"Gallery\"></ion-select>\n\n    <ion-row class=\"card\">\n      <ion-col size=\"4\">\n        <ion-card>\n          <ion-icon name=\"add\"></ion-icon>\n        </ion-card>\n      </ion-col>\n      <ion-col size=\"4\">\n        <ion-card>\n        </ion-card>\n      </ion-col>\n      <ion-col size=\"4\">\n        <ion-card>\n        </ion-card>\n      </ion-col>\n    </ion-row>\n    <ion-select placeholder=\"Certificate\"></ion-select>\n    <p class=\"upload\">Upload Certificate</p>\n    <ion-row class=\"card\">\n      <ion-col size=\"4\">\n        <ion-card>\n          <ion-icon name=\"add\"></ion-icon>\n        </ion-card>\n      </ion-col>\n      <ion-col size=\"4\">\n        <ion-card>\n        </ion-card>\n      </ion-col>\n    </ion-row>\n    <ion-row class=\"toggle\">\n      <ion-col>\n        <p>Certificate Hide</p>\n      </ion-col>\n      <ion-col size=\"2\">\n        <ion-toggle checked></ion-toggle>\n      </ion-col>\n    </ion-row>\n    <ion-select placeholder=\"Partner Details\"></ion-select>\n    <ion-select placeholder=\"Year Of Commencement\"></ion-select>\n    <ion-select placeholder=\"Topiko Awards\"></ion-select>\n    <ion-select placeholder=\"Topiko Star Rating\"></ion-select>\n    <ion-row>\n      <ion-col>\n        <ion-button expand=\"block\" class=\"purple-btn\" color=\"custom\" (click)=\"update()\">Update</ion-button>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n</ion-content>";
+      __webpack_exports__["default"] = "<ion-header color=\"custom\">\n  <ion-toolbar color=\"custom\" class=\"toolbar\">\n    <ion-buttons slot=\"start\">\n      <ion-back-button mode=\"md\" text=\"\" icon=\"chevron-back\"></ion-back-button>\n    </ion-buttons>\n    <ion-title>Edit Business Profile</ion-title>\n    <ion-buttons slot=\"end\" >\n      <ion-icon name=\"save-outline\" (click)=\"update()\"></ion-icon>\n    </ion-buttons>\n  </ion-toolbar>\n \n</ion-header>\n\n<ion-content *ngFor=\"let b of business\">\n\n  <ion-card class=\"first\">\n    <ion-row class=\"row\">\n      <ion-col class=\"bg\">\n        <ion-avatar *ngIf=\"b.logo != ''\">\n          <img src=\"{{b.logo}}\" alt=\"\">\n        </ion-avatar>\n        <span *ngIf=\"b.logo == ''\">\n          <ion-avatar>\n          <img src=\"assets/profile.png\" />\n        </ion-avatar>\n        </span>\n        <img class=\"position-cam\" src=\"assets/camera.svg\" alt=\"\" (click)=\"getPicture\">\n      </ion-col>\n    </ion-row>\n    <ion-row class=\"details\">\n      <p class=\"top\">Business Title</p> <br>\n      <ion-input [(ngModel)]=\"business_name\"></ion-input>\n    </ion-row>\n    <ion-row class=\"details\">\n      <p class=\"top\">Business Owner Name</p> <br>\n      <ion-input [(ngModel)]=\"owner_name\"></ion-input>\n    </ion-row>\n  </ion-card>\n\n  <ion-grid class=\"grid\">\n    <ion-row>\n      <p class=\"top\">Business Type</p> <br>\n      <ion-select placeholder=\"Business Type\" [(ngModel)]=\"business_type\">\n        <ion-select-option value=\"proprietorship\">Proprietorship</ion-select-option>\n        <ion-select-option value=\"partnership\">Partnership</ion-select-option>\n        <ion-select-option value=\"opc\">OPC</ion-select-option>\n        <ion-select-option value=\"llp\">LLP</ion-select-option>\n        <ion-select-option value=\"private\">Private Limited</ion-select-option>\n        <ion-select-option value=\"public\">Public Limited</ion-select-option>\n      </ion-select>\n    </ion-row>\n    <ion-row>\n      <p class=\"top\">Business Contact No</p>\n      <ion-input [(ngModel)]=\"primary_contact\"></ion-input>\n\n    </ion-row>\n  \n    <ion-row>\n      <p class=\"top\">Business mode</p>\n      <ion-select placeholder=\"Business mode\" [(ngModel)]=\"ownership_model\" (ionChange)=\"getserccat()\">\n        <ion-select-option value=\"services\">Services </ion-select-option>\n        <ion-select-option value=\"category\">Product</ion-select-option>\n        <ion-select-option value=\"both\">Both</ion-select-option>\n\n        \n      </ion-select>\n    </ion-row>\n\n    <p class=\"text\" *ngIf=\"cat_div\">\n      <ion-select placeholder=\"Select Product\" [(ngModel)]=\"category_id\">\n        <ion-select-option *ngFor=\"let cat of categoreis; let i=index;\" value=\"{{cat.id}}\">{{cat.category}}</ion-select-option>\n      </ion-select>\n    </p>\n\n    <p class=\"text\"  *ngIf=\"ser_div\">\n      <ion-select placeholder=\"Select Services\" [(ngModel)]=\"service_id\">\n        <ion-select-option *ngFor=\"let ser of services; let i=index;\" value=\"{{ser.id}}\">{{ser.service}}</ion-select-option>\n      </ion-select>\n    </p>\n\n    <ion-row>\n      <p class=\"top\">Business Tags</p>\n      <ion-input [(ngModel)]=\"tags\"></ion-input>\n    </ion-row>\n    <ion-row>\n      <p class=\"top\">Address</p>\n      <ion-textarea [(ngModel)]=\"business_address\"></ion-textarea>\n    </ion-row>\n    <!-- <ion-row>\n      <p class=\"top\">Location</p>\n      <img class=\"map\"\n        src=\"https://play-lh.googleusercontent.com/0uRNRSe4iS6nhvfbBcoScHcBTx1PMmxkCx8rrEsI2UQcQeZ5ByKz8fkhwRqR3vttOg\"\n        alt=\"\">\n    </ion-row> -->\n    <ion-row>\n      <p class=\"top\">View on your business</p>\n      <ion-input [(ngModel)]=\"views\" >{{b.view}}</ion-input>\n    </ion-row>\n    <ion-row>\n      <p class=\"top\">Your business story</p>\n      <ion-input [(ngModel)]=\"story\">{{b.busienss_story}}</ion-input>\n    </ion-row>\n\n    <ion-row>\n      <p class=\"top\">SHOP URL</p>\n      <ion-input [(ngModel)]=\"shopurl\">{{b.shopurl}}</ion-input>\n    </ion-row>\n\n    <ion-row>\n      <p class=\"top\">Shop Description</p>\n      <ion-input [(ngModel)]=\"shopdesc\">{{b.shopdesc}}</ion-input>\n    </ion-row>\n\n    <!-- <ion-select placeholder=\"Gallery\"></ion-select>\n\n    <ion-row class=\"card\">\n      <ion-col size=\"4\">\n        <ion-card>\n          <ion-icon name=\"add\"></ion-icon>\n        </ion-card>\n      </ion-col>\n      <ion-col size=\"4\">\n        <ion-card>\n        </ion-card>\n      </ion-col>\n      <ion-col size=\"4\">\n        <ion-card>\n        </ion-card>\n      </ion-col>\n    </ion-row>\n    <ion-select placeholder=\"Certificate\"></ion-select>\n    <p class=\"upload\">Upload Certificate</p>\n    <ion-row class=\"card\">\n      <ion-col size=\"4\">\n        <ion-card>\n          <ion-icon name=\"add\"></ion-icon>\n        </ion-card>\n      </ion-col>\n      <ion-col size=\"4\">\n        <ion-card>\n        </ion-card>\n      </ion-col>\n    </ion-row>\n    <ion-row class=\"toggle\">\n      <ion-col>\n        <p>Certificate Hide</p>\n      </ion-col>\n      <ion-col size=\"2\">\n        <ion-toggle checked></ion-toggle>\n      </ion-col>\n    </ion-row>\n    <ion-select placeholder=\"Partner Details\"></ion-select>\n    <ion-select placeholder=\"Year Of Commencement\"></ion-select>\n    <ion-select placeholder=\"Topiko Awards\"></ion-select>\n    <ion-select placeholder=\"Topiko Star Rating\"></ion-select>\n    <ion-row> -->\n      <ion-col>\n        <ion-button expand=\"block\" class=\"purple-btn\" color=\"custom\" (click)=\"update()\">Save</ion-button>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n</ion-content>";
       /***/
     },
 
@@ -154,14 +154,21 @@
       var _ionic_native_camera_ngx__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
       /*! @ionic-native/camera/ngx */
       "a/9d");
+      /* harmony import */
+
+
+      var _angular_router__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
+      /*! @angular/router */
+      "tyNb");
 
       var EditBusinessPage = /*#__PURE__*/function () {
-        function EditBusinessPage(storage, http, camera) {
+        function EditBusinessPage(storage, http, camera, router) {
           _classCallCheck(this, EditBusinessPage);
 
           this.storage = storage;
           this.http = http;
           this.camera = camera;
+          this.router = router;
           this.cat_div = false;
           this.ser_div = false;
         }
@@ -203,12 +210,25 @@
                 console.log("categories:", _this2.categoreis);
               });
             } else {
-              this.ser_div = true;
-              this.cat_div = false;
-              this.http.get(_app_component__WEBPACK_IMPORTED_MODULE_6__["AppComponent"].ApiUrl + "getservices.php").subscribe(function (ser) {
-                _this2.services = ser;
-                console.log("services:", _this2.services);
-              });
+              if (this.ownership_model == "services") {
+                this.ser_div = true;
+                this.cat_div = false;
+                this.http.get(_app_component__WEBPACK_IMPORTED_MODULE_6__["AppComponent"].ApiUrl + "getservices.php").subscribe(function (ser) {
+                  _this2.services = ser;
+                  console.log("services:", _this2.services);
+                });
+              } else {
+                this.ser_div = true;
+                this.cat_div = true;
+                this.http.get(_app_component__WEBPACK_IMPORTED_MODULE_6__["AppComponent"].ApiUrl + "getservices.php").subscribe(function (ser) {
+                  _this2.services = ser;
+                  console.log("services:", _this2.services);
+                });
+                this.http.get(_app_component__WEBPACK_IMPORTED_MODULE_6__["AppComponent"].ApiUrl + "getcategories.php").subscribe(function (cat) {
+                  _this2.options = cat;
+                  console.log("categories:", _this2.categoreis);
+                });
+              }
             }
           }
         }, {
@@ -229,6 +249,8 @@
         }, {
           key: "update",
           value: function update() {
+            var _this4 = this;
+
             var mydata = JSON.stringify({
               'image': this.image,
               'business_id': this.bid,
@@ -252,10 +274,17 @@
               'country': this.country,
               'state': this.state
             });
-            console.log(mydata); // var link = AppComponent.ApiUrl + "create_business.php"
-            // this.http.post(link, mydata).subscribe(async data => {
-            //   this.businessdata = data;
-            // })
+            console.log(mydata);
+            var link = _app_component__WEBPACK_IMPORTED_MODULE_6__["AppComponent"].ApiUrl + "updatebusiness.php";
+            this.http.post(link, mydata).subscribe(function (data) {
+              _this4.businessdata = data;
+
+              if (_this4.businessdata == 1) {
+                _this4.router.navigate(["/my-business"]);
+              } else {
+                alert("Failed to update Business");
+              }
+            });
           }
         }]);
 
@@ -269,6 +298,8 @@
           type: _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpClient"]
         }, {
           type: _ionic_native_camera_ngx__WEBPACK_IMPORTED_MODULE_7__["Camera"]
+        }, {
+          type: _angular_router__WEBPACK_IMPORTED_MODULE_8__["Router"]
         }];
       };
 

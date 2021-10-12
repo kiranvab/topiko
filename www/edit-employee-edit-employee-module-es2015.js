@@ -16,8 +16,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common/http */ "tk/3");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ "fXoL");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/router */ "tyNb");
-/* harmony import */ var _ionic_storage__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @ionic/storage */ "e8h1");
+/* harmony import */ var _ionic_storage_angular__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @ionic/storage-angular */ "jSNZ");
 /* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../app.component */ "Sy1n");
+/* harmony import */ var _ionic_native_camera_ngx__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @ionic-native/camera/ngx */ "a/9d");
+
 
 
 
@@ -27,10 +29,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let EditEmployeePage = class EditEmployeePage {
-    constructor(storage, http, router) {
+    constructor(storage, http, router, camera) {
         this.storage = storage;
         this.http = http;
         this.router = router;
+        this.camera = camera;
     }
     ngOnInit() {
         this.storage.get("empid").then(val => {
@@ -112,9 +115,21 @@ let EditEmployeePage = class EditEmployeePage {
         }
         console.log(isChecked);
     }
+    getPicture() {
+        const options = {
+            sourceType: this.camera.PictureSourceType.PHOTOLIBRARY,
+            destinationType: this.camera.DestinationType.DATA_URL,
+            encodingType: this.camera.EncodingType.JPEG,
+            mediaType: this.camera.MediaType.PICTURE
+        };
+        this.camera.getPicture(options).then((imageData) => {
+            this.image = 'data:image/jpeg;base64,' + imageData;
+        });
+    }
     update() {
         var link = _app_component__WEBPACK_IMPORTED_MODULE_7__["AppComponent"].ApiUrl + "updateemployee.php";
         var emp = JSON.stringify({
+            "image": this.image,
             "empid": this.emp_id,
             "name": this.name,
             "mobile": this.mobile,
@@ -142,9 +157,10 @@ let EditEmployeePage = class EditEmployeePage {
     }
 };
 EditEmployeePage.ctorParameters = () => [
-    { type: _ionic_storage__WEBPACK_IMPORTED_MODULE_6__["Storage"] },
+    { type: _ionic_storage_angular__WEBPACK_IMPORTED_MODULE_6__["Storage"] },
     { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClient"] },
-    { type: _angular_router__WEBPACK_IMPORTED_MODULE_5__["Router"] }
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_5__["Router"] },
+    { type: _ionic_native_camera_ngx__WEBPACK_IMPORTED_MODULE_8__["Camera"] }
 ];
 EditEmployeePage = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_4__["Component"])({
@@ -167,7 +183,7 @@ EditEmployeePage = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-header color=\"custom\" mode=\"md\">\n  <ion-toolbar color=\"custom\" class=\"toolbar\">\n    <ion-buttons slot=\"start\">\n      <ion-back-button></ion-back-button>\n      <ion-menu-button></ion-menu-button>\n    </ion-buttons>\n    <ion-title>Edit Employee</ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content *ngFor=\"let emp of empdata; let i = index;\">\n  <ion-card class=\"first\">\n    <ion-row class=\"row\">\n      <ion-col class=\"bg\">\n        <ion-avatar>\n          <img\n            src=\"{{emp.image}}\"\n            alt=\"\">\n        </ion-avatar>\n        <!-- <img class=\"position-cam\" src=\"assets/camera.svg\" alt=\"\"> -->\n      </ion-col>\n    </ion-row>\n  </ion-card>\n\n  <ion-grid>\n    <p>\n      <ion-item>\n        <ion-input placeholder=\"Employee name\" [(ngModel)]=\"name\"></ion-input>\n      </ion-item>\n    </p>\n    <p>\n      <ion-item>\n        <ion-input placeholder=\"Employee number\"  [(ngModel)]=\"mobile\"></ion-input>\n      </ion-item>\n    </p>\n    <p>\n      Designation Tags\n      <ion-row>\n        <ion-textarea  [(ngModel)]=\"designation\">\n          \n        </ion-textarea>\n      </ion-row>\n    </p>\n    <p>\n      Language Support\n      <ion-row>\n        <ion-textarea [(ngModel)]=\"language\">\n        \n        </ion-textarea>\n      </ion-row>\n    </p>\n    <p>\n      Online Tele Support\n      <ion-row class=\"check\">\n        <ion-col>\n          <ion-checkbox   [(ngModel)]=\"chat\" (ionChange)=\"Chatstatus(chat)\" ></ion-checkbox>\n          <ion-label> Chat</ion-label>\n        </ion-col>\n        <ion-col>\n          <ion-checkbox [(ngModel)]=\"video\" (ionChange)=\"VideoStatus(video)\" ></ion-checkbox>\n          <ion-label> Video</ion-label>\n        </ion-col>\n        <ion-col>\n          <ion-checkbox [(ngModel)]=\"call\" (ionChange)=\"Callstatus(call)\"></ion-checkbox>\n          <ion-label> Call</ion-label>\n        </ion-col>\n      </ion-row>\n    </p>\n    \n    <p>\n      Delivery Support\n      <ion-row class=\"check\">\n        <ion-col>\n          <ion-checkbox [(ngModel)]=\"delivery\" (ionChange)=\"Deliverystatus(delivery)\"></ion-checkbox>\n          <ion-label> Delivery</ion-label>\n        </ion-col>\n      </ion-row>\n    </p>\n\n    <ion-row class=\"tog\">\n      <p class=\"gps\">Call Record Access</p>\n      <ion-toggle checked [(ngModel)]=\"callrecord\" (ionChange)=\"Recordstatus(callrecord)\" mode=\"md\"></ion-toggle>\n    </ion-row>\n    <ion-row class=\"tog\">\n      <p class=\"gps\">Create Invoice</p>\n      <ion-toggle checked mode=\"md\" [(ngModel)]=\"invoice\" (ionChange)=\"Invoicestatus(invoice)\"></ion-toggle>\n    </ion-row>\n    <h6>Work Hour Settings</h6>\n    <p>\n      <ion-item>\n        <ion-select placeholder=\"Working Hours\"></ion-select>\n      </ion-item>\n    </p>\n    <ion-row class=\"branches\">\n      <ion-col>\n        <div class=\"select\">\n          <ion-select placeholder=\"Select One\" value=\"recent\" interface=\"popover\" mode=\"ios\">\n            <ion-select-option value=\"recent\" selected>Branches</ion-select-option>\n            <ion-select-option value=\"like\">Orders</ion-select-option>\n            <ion-select-option value=\"favourites\">Enquiry</ion-select-option>\n            <ion-select-option value=\"comments\">Customer</ion-select-option>\n          </ion-select>\n        </div>\n      </ion-col>\n    </ion-row>\n    <ion-card class=\"card\">\n      <ion-row>\n        <ion-col class=\"address\">\n          <p>Address</p>\n          <ion-row class=\"add\">\n            <p>No-1/38 Parathiyar street moovara pet madipkkam Chennai-600091 TamilNadu - India</p>\n          </ion-row>\n        </ion-col>\n        <ion-col size=\"4\">\n          <img\n            src=\"https://play-lh.googleusercontent.com/0uRNRSe4iS6nhvfbBcoScHcBTx1PMmxkCx8rrEsI2UQcQeZ5ByKz8fkhwRqR3vttOg\"\n            alt=\"\">\n        </ion-col>\n      </ion-row>\n    </ion-card>\n    <p class=\"sun\">Sun water group payment QR</p>\n    <p class=\"qr\">\n      <ion-icon name=\"qr-code-outline\"></ion-icon>\n    </p>\n    <ion-row class=\"check\">\n      <ion-col size=\"1\">\n        <ion-checkbox checked></ion-checkbox>\n      </ion-col>\n      <ion-col size=\"9\">\n        <p class=\"confirm\">I agree for the <span>Terms and Conditions</span></p>\n      </ion-col>\n    </ion-row>\n    <ion-row class=\"btn\">\n      <ion-button (click)=\"update()\">Submit</ion-button>\n    </ion-row>\n  </ion-grid>\n</ion-content>");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-header color=\"custom\" mode=\"md\">\n  <ion-toolbar color=\"custom\" class=\"toolbar\">\n    <ion-buttons slot=\"start\">\n      <ion-back-button mode=\"md\" icon=\"chevron-back\" text=\"\"></ion-back-button>\n    </ion-buttons>\n    <ion-title>Edit Employee</ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content *ngFor=\"let emp of empdata; let i = index;\">\n  <ion-card class=\"first\">\n    <ion-row class=\"row\">\n      <ion-col class=\"bg\">\n        <ion-avatar *ngIf=\"emp.image != ''\">\n          <img\n            src=\"{{emp.image}}\"\n            alt=\"\">\n        </ion-avatar>\n        <span *ngIf=\"emp.image == ''\">\n          <ion-avatar>\n          <img src=\"assets/profile.png\" />\n        </ion-avatar>\n        </span>\n        <img class=\"position-cam\" src=\"assets/camera.svg\" alt=\"\" (click)=\"getPicture\">\n      </ion-col>\n    </ion-row>\n  </ion-card>\n\n  <ion-grid>\n    <p>\n      <ion-item>\n        <ion-input placeholder=\"Employee name\" [(ngModel)]=\"name\"></ion-input>\n      </ion-item>\n    </p>\n    <p>\n      <ion-item>\n        <ion-input placeholder=\"Employee number\"  [(ngModel)]=\"mobile\"></ion-input>\n      </ion-item>\n    </p>\n    <p>\n      Designation Tags\n      <ion-row>\n        <ion-textarea  [(ngModel)]=\"designation\">\n          \n        </ion-textarea>\n      </ion-row>\n    </p>\n    <p>\n      Language Support\n      <ion-row>\n        <ion-textarea [(ngModel)]=\"language\">\n        \n        </ion-textarea>\n      </ion-row>\n    </p>\n    <p>\n      Online Tele Support\n      <ion-row class=\"check\">\n        <ion-col>\n          <ion-checkbox   [(ngModel)]=\"chat\" (ionChange)=\"Chatstatus(chat)\" ></ion-checkbox>\n          <ion-label> Chat</ion-label>\n        </ion-col>\n        <ion-col>\n          <ion-checkbox [(ngModel)]=\"video\" (ionChange)=\"VideoStatus(video)\" ></ion-checkbox>\n          <ion-label> Video</ion-label>\n        </ion-col>\n        <ion-col>\n          <ion-checkbox [(ngModel)]=\"call\" (ionChange)=\"Callstatus(call)\"></ion-checkbox>\n          <ion-label> Call</ion-label>\n        </ion-col>\n      </ion-row>\n    </p>\n    \n    <p>\n      Delivery Support\n      <ion-row class=\"check\">\n        <ion-col>\n          <ion-checkbox [(ngModel)]=\"delivery\" (ionChange)=\"Deliverystatus(delivery)\"></ion-checkbox>\n          <ion-label> Delivery</ion-label>\n        </ion-col>\n      </ion-row>\n    </p>\n\n    <ion-row class=\"tog\">\n      <p class=\"gps\">Call Record Access</p>\n      <ion-toggle checked [(ngModel)]=\"callrecord\" (ionChange)=\"Recordstatus(callrecord)\" mode=\"md\"></ion-toggle>\n    </ion-row>\n    <ion-row class=\"tog\">\n      <p class=\"gps\">Create Invoice</p>\n      <ion-toggle checked mode=\"md\" [(ngModel)]=\"invoice\" (ionChange)=\"Invoicestatus(invoice)\"></ion-toggle>\n    </ion-row>\n    <h6>Work Hour Settings</h6>\n    <p>\n      <ion-item>\n        <ion-select placeholder=\"Working Hours\"></ion-select>\n      </ion-item>\n    </p>\n    <ion-row class=\"branches\">\n      <ion-col>\n        <div class=\"select\">\n          <ion-select placeholder=\"Select One\" value=\"recent\" interface=\"popover\" mode=\"ios\">\n            <ion-select-option value=\"recent\" selected>Branches</ion-select-option>\n            <ion-select-option value=\"like\">Orders</ion-select-option>\n            <ion-select-option value=\"favourites\">Enquiry</ion-select-option>\n            <ion-select-option value=\"comments\">Customer</ion-select-option>\n          </ion-select>\n        </div>\n      </ion-col>\n    </ion-row>\n    <ion-card class=\"card\">\n      <ion-row>\n        <ion-col class=\"address\">\n          <p>Address</p>\n          <ion-row class=\"add\">\n            <p>No-1/38 Parathiyar street moovara pet madipkkam Chennai-600091 TamilNadu - India</p>\n          </ion-row>\n        </ion-col>\n        <ion-col size=\"4\">\n          <img\n            src=\"https://play-lh.googleusercontent.com/0uRNRSe4iS6nhvfbBcoScHcBTx1PMmxkCx8rrEsI2UQcQeZ5ByKz8fkhwRqR3vttOg\"\n            alt=\"\">\n        </ion-col>\n      </ion-row>\n    </ion-card>\n    <p class=\"sun\">Sun water group payment QR</p>\n    <p class=\"qr\">\n      <ion-icon name=\"qr-code-outline\"></ion-icon>\n    </p>\n    <ion-row class=\"check\">\n      <ion-col size=\"1\">\n        <ion-checkbox checked></ion-checkbox>\n      </ion-col>\n      <ion-col size=\"9\">\n        <p class=\"confirm\">I agree for the <span>Terms and Conditions</span></p>\n      </ion-col>\n    </ion-row>\n    <ion-row class=\"btn\">\n      <ion-button (click)=\"update()\">Submit</ion-button>\n    </ion-row>\n  </ion-grid>\n</ion-content>");
 
 /***/ }),
 

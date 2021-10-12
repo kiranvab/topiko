@@ -223,7 +223,7 @@ ion-content {
   text-align: center;
 }
 ion-header {
-  background: linear-gradient(#871178, #44093c) !important;
+  background: linear-gradient(#871178, #44093C) !important;
   color: #ffffff;
 }
 ion-header ion-icon {
@@ -236,7 +236,7 @@ ion-header ion-icon {
   line-height: 0;
 }
 .purple-btn {
-  background: linear-gradient(#871178, #44093c) !important;
+  background: linear-gradient(#871178, #3C1378) !important;
   height: 50px;
   border: 0;
   width: 90%;
@@ -256,7 +256,7 @@ ion-header ion-icon {
   text-transform: capitalize;
 }
 ion-footer {
-  background: linear-gradient(#871178, #44093c) !important;
+  background: linear-gradient(#871178, #44093C) !important;
   --padding: 0.2 em 0 !important;
   text-align: center;
   color: #fff;
@@ -269,7 +269,7 @@ ion-footer ion-icon {
   color: #ffffffbd;
 }
 ion-fab-button {
-  --background: linear-gradient(#871178, #44093c) !important;
+  --background: linear-gradient(#871178, #3C1378) !important;
 }
 .swiper-pagination-bullet-active {
   background: #fff !important;

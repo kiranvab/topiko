@@ -5,6 +5,10 @@
     </ion-buttons>
     <ion-title>Create Business</ion-title>
   </ion-toolbar>
+  
+</ion-header>
+
+<ion-content>
   <ion-card class="first" style="border-radius: 0px;" (click)="getPicture();">
     <ion-row class="row">
       <ion-col class="bg" *ngIf="upload_div" >
@@ -31,9 +35,6 @@
       <ion-col class="id-color">{{bpin}}</ion-col>
     </ion-row>
   </div>
-</ion-header>
-
-<ion-content>
   <!-- <div class="bcard-head">
     <div><img src="assets/profile.svg" class="mt-20"></div>
   </div>

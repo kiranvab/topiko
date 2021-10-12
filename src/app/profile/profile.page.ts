@@ -100,8 +100,8 @@ export class ProfilePage implements OnInit {
     await actionSheet.present();
   }
 
-  settings(){
+  editprofile(){
     this.storage.set("uid", this.uid);
-    this.router.navigate(['/settings']);
+    this.router.navigate(['/edit-profile']);
   }
 }

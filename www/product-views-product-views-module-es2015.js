@@ -13,19 +13,29 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "mrSG");
 /* harmony import */ var _raw_loader_product_views_page_html__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! raw-loader!./product-views.page.html */ "MnAj");
 /* harmony import */ var _product_views_page_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./product-views.page.scss */ "bXuq");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common/http */ "tk/3");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var _ionic_storage_angular__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @ionic/storage-angular */ "jSNZ");
+
+
 
 
 
 
 let ProductViewsPage = class ProductViewsPage {
-    constructor() { }
+    constructor(storage, http) {
+        this.storage = storage;
+        this.http = http;
+    }
     ngOnInit() {
     }
 };
-ProductViewsPage.ctorParameters = () => [];
+ProductViewsPage.ctorParameters = () => [
+    { type: _ionic_storage_angular__WEBPACK_IMPORTED_MODULE_5__["Storage"] },
+    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClient"] }
+];
 ProductViewsPage = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["Component"])({
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_4__["Component"])({
         selector: 'app-product-views',
         template: _raw_loader_product_views_page_html__WEBPACK_IMPORTED_MODULE_1__["default"],
         styles: [_product_views_page_scss__WEBPACK_IMPORTED_MODULE_2__["default"]]

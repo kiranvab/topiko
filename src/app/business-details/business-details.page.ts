@@ -4,6 +4,7 @@ import { ActivatedRoute, Router, Routes } from '@angular/router';
 import { ActionSheetController } from '@ionic/angular';
 import { Storage } from '@ionic/storage-angular';
 import { AppComponent } from '../app.component';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-business-details',
@@ -16,18 +17,19 @@ export class BusinessDetailsPage implements OnInit {
   business_name:any;
   business_id: any;
   buid: any;
-  branches: Object;
+  branches: any;
   viewedcnt:any;
   favouritecnt:any;
-  likescnt: Object;
-  reviewcnt: Object;
+  likescnt: any;
+  reviewcnt: any;
 
   constructor(
     public actionsheetCtrl: ActionSheetController,
     public router: Router,
     private route: ActivatedRoute,
     private storage:Storage,
-    private http: HttpClient
+    private http: HttpClient,
+    public alertController: AlertController,
   ) {
     this.segmentModel = "branches";
   }
@@ -75,6 +77,12 @@ export class BusinessDetailsPage implements OnInit {
     })
   }
 
+  edit(){
+    this.storage.set('bid', this.buid);
+    this.router.navigate(['/edit-business']);
+  }
+
+  
   async openMenu() {
     const actionSheet = await this.actionsheetCtrl.create({
       // header: 'Modify your album',  
@@ -156,5 +164,72 @@ export class BusinessDetailsPage implements OnInit {
     this.storage.set("bid", this.business_id);
     this.router.navigate(['business-views']);
   }
+
+  async proMenu(i) {  
+    const actionSheet = await this.actionsheetCtrl.create({  
+     // header: 'Modify your album',  
+      buttons: [  
+        {  
+          text: 'Edit',  
+          handler: () => {  
+            this.storage.set("brid",this.branches[i].id);
+            console.log("brid",this.branches[i].id);
+            this.router.navigate(['edit-branch']);
+          }  
+        },{  
+          text: 'Delete',  
+          handler: () => {  
+            this.presentAlertConfirm(i);
+            this.router.navigate(['branches']);
+            
+          }  
+        }  
+      ]  
+    });  
+    await actionSheet.present();  
+  } 
+
+  async presentAlertConfirm(i) {
+    const alert = await this.alertController.create({
+      cssClass: 'my-custom-class',
+      header: 'Confirm!',
+      message: 'Are You Sure you want to <strong>Delete</strong> Branch!!!',
+      buttons: [
+        {
+          text: 'Cancel',
+          role: 'cancel',
+          cssClass: 'secondary',
+          handler: (blah) => {
+            console.log('Confirm Cancel: blah');
+          }
+        }, {
+          text: 'Yes',
+          handler: () => {
+            console.log('Confirm Okay');
+            console.log(this.branches[i].id);
+            this.http.get(AppComponent.ApiUrl+"deletebranch.php?brid="+this.branches[i].id).subscribe(data =>{
+              console.log("Response", data);
+              //this.Branches();
+              this.AlertDelete()
+            })
+          }
+        }
+      ]
+    });
+
+    await alert.present();
+  }
+
+  async AlertDelete(){
+    const alert = await this.alertController.create({
+      cssClass: 'my-custom-class',
+      header: 'Deleted!',
+      message: 'Branch has been deleted sucesfully.',
+      buttons: ['OK']
+    });
+    await alert.present();
+    this.router.navigate(['/business-details']);
+    
+      }
 
 }
