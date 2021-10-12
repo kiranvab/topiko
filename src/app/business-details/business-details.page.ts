@@ -29,7 +29,7 @@ export class BusinessDetailsPage implements OnInit {
     private storage:Storage,
     private http: HttpClient
   ) {
-    this.segmentModel = "post";
+    this.segmentModel = "branches";
   }
 
   ngOnInit() {
@@ -80,41 +80,50 @@ export class BusinessDetailsPage implements OnInit {
       // header: 'Modify your album',  
       buttons: [
         {
-          text: 'Plans',
+          text: 'Edit',
           handler: () => {
-            this.router.navigate(['plans']);
+            this.storage.set('bid', this.buid);
+            this.router.navigate(['/edit-business']);
             console.log('Destructive clicked');
           }
-        }, {
-          text: 'Verification',
-          handler: () => {
-            this.router.navigate(['verification'])
-            console.log('Archive clicked');
-          }
-        }, {
+        },
+        {
           text: 'Show Case',
           handler: () => {
-            console.log('Cancel clicked');
-            this.router.navigate(['/showcase'])
-          },
-        },
-        {
-          text: 'Promotion',
-          handler: () => {
-            console.log('Promotions clicked');
-          },
-        },
-        {
-          text: 'Customize',
-          handler: () => {
-            console.log('Customize clicked');
-          },
-        },
-        {
-          text: 'Setting',
-          handler: () => {
-            console.log('Setting clicked');
-          },
+            this.profile();
+            console.log('Destructive clicked');
+          }
+        // }
+        // , {
+        //   text: 'Verification',
+        //   handler: () => {
+        //     this.router.navigate(['verification'])
+        //     console.log('Archive clicked');
+        //   }
+        // }, {
+        //   text: 'Show Case',
+        //   handler: () => {
+        //     console.log('Cancel clicked');
+        //     this.router.navigate(['/showcase'])
+        //   },
+        // },
+        // {
+        //   text: 'Promotion',
+        //   handler: () => {
+        //     console.log('Promotions clicked');
+        //   },
+        // },
+        // {
+        //   text: 'Customize',
+        //   handler: () => {
+        //     console.log('Customize clicked');
+        //   },
+        // },
+        // {
+        //   text: 'Settings',
+        //   handler: () => {
+        //     console.log('Setting clicked');
+        //   },
         }
       ]
     });

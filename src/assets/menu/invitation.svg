@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="21" height="21.97" viewBox="0 0 21 21.97">
+  <g id="invitation" transform="translate(-9.668 0)">
+    <g id="Group_300" data-name="Group 300" transform="translate(9.668 0)">
+      <g id="Group_299" data-name="Group 299" transform="translate(0 0)">
+        <path id="Path_279" data-name="Path 279" d="M30.5,7.83,27.8,5.576v-3.2a.505.505,0,0,0-.522-.487H23.347L21.771.576a2.508,2.508,0,0,0-3.2.005l-1.576,1.31H13.011a.505.505,0,0,0-.522.487V5.626L9.839,7.83a.5.5,0,0,0-.171.387h.01v11.24a2.506,2.506,0,0,0,2.495,2.515H28.161a2.506,2.506,0,0,0,2.495-2.515V8.216h.01A.456.456,0,0,0,30.5,7.83Zm-2.7-.949L29.381,8.2,27.8,9.371ZM19.211,1.349a1.507,1.507,0,0,1,1.923.005l.638.537H18.563ZM13.493,2.9H26.8v7.224l-5.718,4.257a1.529,1.529,0,0,1-1.812,0l-5.773-4.3V2.9Zm-1,4.031v2.4l-1.531-1.14ZM29.657,19.451a1.5,1.5,0,0,1-1.491,1.516H12.173a1.5,1.5,0,0,1-1.491-1.511V9.215l7.992,5.969a2.515,2.515,0,0,0,2.992,0l7.992-5.969Z" transform="translate(-9.668 0)" fill="#22272a"/>
+      </g>
+    </g>
+    <g id="Group_302" data-name="Group 302" transform="translate(16.555 6.911)">
+      <g id="Group_301" data-name="Group 301">
+        <path id="Path_280" data-name="Path 280" d="M150.086,137.663h-2.711a.5.5,0,0,0,0,1h2.711a.5.5,0,1,0,0-1Z" transform="translate(-146.873 -137.663)" fill="#22272a"/>
+      </g>
+    </g>
+    <g id="Group_304" data-name="Group 304" transform="translate(16.555 9.421)">
+      <g id="Group_303" data-name="Group 303" transform="translate(0)">
+        <path id="Path_281" data-name="Path 281" d="M153.6,187.663h-6.225a.5.5,0,0,0,0,1H153.6a.5.5,0,1,0,0-1Z" transform="translate(-146.873 -187.663)" fill="#22272a"/>
+      </g>
+    </g>
+  </g>
+</svg>

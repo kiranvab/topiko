@@ -13,10 +13,13 @@
   <ion-card class="first">
     <ion-row class="row">
       <ion-col class="bg">
-        <ion-avatar>
-          <img src="{{uimg}}" alt="">
+        <ion-avatar *ngIf="uimg!=''" >
+          <img  src="{{uimg}}" alt="">
         </ion-avatar>
-        <!--<img class="position-cam" src="assets/camera.svg" alt="">-->
+        <ion-avatar *ngIf="uimg==''">
+          <img src="https://i.pinimg.com/474x/bc/d4/ac/bcd4ac32cc7d3f98b5e54bde37d6b09e.jpg">
+        </ion-avatar>
+        <img  class="position-cam" src="assets/camera.svg" alt="">
       </ion-col>
     </ion-row>
   </ion-card>

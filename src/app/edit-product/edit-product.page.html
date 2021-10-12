@@ -69,11 +69,11 @@
     </p>
     <p>
       <ion-item>
-        <ion-input placeholder="Measuring Type" [(ngModel)]="measuringtype"></ion-input>
+        <ion-input placeholder="Measuring Type" [(ngModel)]="measuringtype" readonly></ion-input>
       </ion-item>
     </p>
     <ion-row>
-      <ion-textarea placeholder="Measuring Details" [(ngModel)]="measuringdetails">
+      <ion-textarea placeholder="Measuring Details" [(ngModel)]="measuringdetails" readonly>
       </ion-textarea>
     </ion-row>
     <p>
@@ -84,15 +84,15 @@
     </p>
     <p>
       <ion-item>
-        <ion-input placeholder="Actual Price" [(ngModel)]="actualprice"></ion-input>
+        <ion-input tpe="number" placeholder="Actual Price" [(ngModel)]="actualprice"></ion-input>
       </ion-item>
     </p>
     <p>
       <ion-item>
-        <ion-input placeholder="Discount" [(ngModel)]="discount_price"></ion-input>
+        <ion-input type="number" placeholder="Discount" [(ngModel)]="discount_price"></ion-input>
       </ion-item>
     </p>
-    <p>
+    <!-- <p>
       <ion-row class="toggle">
         <ion-col>
           <p>Cash on Delivery</p>
@@ -101,7 +101,7 @@
           <ion-toggle checked></ion-toggle>
         </ion-col>
       </ion-row>
-    </p>
+    </p> -->
     <ion-row class="check">
       <ion-col size="1">
         <ion-checkbox checked></ion-checkbox>

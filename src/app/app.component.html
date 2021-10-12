@@ -6,7 +6,7 @@
           <div class="side-head">
             <ion-row>
               <ion-col size="3" style="padding: 10px;">English</ion-col>
-              <ion-col (click)="settings()" style="text-align: right;"><ion-icon name="cog-outline"></ion-icon></ion-col>
+              <!-- <ion-col (click)="settings()" style="text-align: right;"><ion-icon name="cog-outline"></ion-icon></ion-col> -->
             </ion-row>
             <ion-row>
               <ion-col size="5"></ion-col>
@@ -29,8 +29,9 @@
 
           <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
             <ion-item routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false" routerLinkActive="selected">
-              <ion-icon slot="start" [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon>
-              <ion-label>{{ p.title }}</ion-label>
+              <!-- <ion-icon slot="start" [ios]="p.img + '-outline'" [md]="p.icon + '-sharp'"></ion-icon> -->
+              <img style="width: 25px; height: 25px;" [src]="p.img">
+              <ion-label style="margin-left: 5%;">{{ p.title }}</ion-label>
             </ion-item>
           </ion-menu-toggle>
         </ion-list>

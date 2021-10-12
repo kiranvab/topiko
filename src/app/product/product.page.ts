@@ -15,6 +15,9 @@ import { AlertController } from '@ionic/angular';
 export class ProductPage implements OnInit {
   buid: any;
   products: any;
+  vrespo: any;
+  udata: any;
+  user_id: any;
 
   constructor(
     public actionsheetCtrl:ActionSheetController,
@@ -26,6 +29,12 @@ export class ProductPage implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.storage.get("userdetails").then(val =>
+      {
+        this.udata= val;
+        this.user_id = this.udata[0].id;
+      });
+
     this.router.params.subscribe(val=>{
     this.storage.get("bid").then(val=>
       {
@@ -118,5 +127,12 @@ export class ProductPage implements OnInit {
     await alert.present();
   }
 
+
+
+productDetials(i){
+  console.log("product ID", this.products[i].id);
+  this.storage.set("pid", this.products[i].id);
+  this.route.navigate(['/product-view']);
+}
 
 }

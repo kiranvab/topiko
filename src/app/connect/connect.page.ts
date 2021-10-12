@@ -56,6 +56,8 @@ export class ConnectPage implements OnInit {
   myEl: HTMLMediaElement;
   partnerEl: HTMLMediaElement;
   user_mobile: any;
+  firstbranch: any;
+  firstbranch_id: any;
   constructor(
     private storage:Storage,
     private http:HttpClient,
@@ -67,9 +69,9 @@ export class ConnectPage implements OnInit {
     public elRef: ElementRef,
     private media : Media,
   ) { 
-    this.ring = this.media.create('https://topiko.com/ringtones/ring.mp3');
-  this.ringtone = this.media.create('https://topiko.com/ringtones/ringtone.mp3');
-  this.busytone = this.media.create('https://topiko.com/ringtones/busy.mp3')
+    this.ring = this.media.create('assets/ringtones/ring.mp3');
+    this.ringtone = this.media.create('assets/ringtones/ringtone.mp3');
+    this.busytone = this.media.create('assets/ringtones/busy.mp3')
     router.params.subscribe(val=>{})
     this.ObservableVar = Observable.interval(2000).subscribe(()=>{ 
       this.CheckCallStatus();
@@ -93,6 +95,13 @@ export class ConnectPage implements OnInit {
       })
       this.http.get(AppComponent.ApiUrl+"getbranches.php?bid="+this.business_id).subscribe(branch=>{
         this.branches = branch;
+        this.firstbranch = this.branches[0].branch_title;
+        this.branch = this.branches[0].id;
+        let br=this;
+        setTimeout(() => {
+          br.branchemp(this.branch);
+        }, 2000);
+        
         console.log("business Branches:", this.branches)
     })
     });

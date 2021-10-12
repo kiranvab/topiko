@@ -16,16 +16,20 @@ ion-content
 
 .featured-img ion-col img
   {
-      border-radius: 5px;
+      border-radius: 50%;
       padding: 0;
   }
 
   .icon-img
 {
-    border-radius: 3px;
-    width: 104px !important;
-    height: 104px;
-    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    border: 1px solid #871178;
+    padding: 5px;
+    border-radius: 50%;
+    background: #f1f1f1;
+    height: 50px;
 }
 
 .img-title {
@@ -35,18 +39,4 @@ ion-content
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-}
-
-.btitle
-{
-    font-size: 12px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    color: #871178;
-    padding: 0;
-}
-.heart
-{
-    color: red;
 }

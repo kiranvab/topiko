@@ -109,12 +109,13 @@ export class MyBusinessPage implements OnInit {
         //     console.log('Destructive clicked');  
         //   }  
         // },{  
-        //   text: 'Verification',  
-        //   handler: () => {  
-        //     this.route.navigate(['verification'])
-        //     console.log('Archive clicked');  
-        //   }  
-        // },  {  
+           text: 'Edit',  
+           handler: () => {  
+            this.storage.set("bid",  this.mybusiness[0].id);
+             this.route.navigate(['edit-business'])
+             console.log('Archive clicked');  
+           }  
+         },  {  
           text: 'Show Case',   
           handler: () => {  
             console.log('Cancel clicked');  

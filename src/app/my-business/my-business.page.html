@@ -51,12 +51,12 @@
       </ion-col>
       <ion-col class="sep" size="0.1"></ion-col>
       <ion-col>
-        <p class="text">Likes</p>
+        <p class="text">Enquiries</p>
         <p class="number">{{likescnt}}</p>
       </ion-col>
       <ion-col class="sep" size="0.1"></ion-col>
       <ion-col>
-        <p class="text">Reviews</p>
+        <p class="text">Orders</p>
         <p class="number">{{reviewcnt}}</p>
       </ion-col>
       <ion-col class="sep" size="0.1"></ion-col>
@@ -68,8 +68,8 @@
   </ion-card>
 
 
-  <ion-fab vertical="bottom" horizontal="end" slot="fixed" (click)="checkbusiness()">
-    <ion-fab-button class="fab">
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed" >
+    <ion-fab-button class="fab" (click)="checkbusiness()">
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
   </ion-fab>
@@ -78,8 +78,8 @@
 
 <ion-footer mode="md" class="home-footer">
   <ion-row>
-    <ion-col>
-      <ion-icon name="home" class="click-footer"></ion-icon>
+    <ion-col routerLink="/home">
+      <ion-icon name="home"></ion-icon>
       <p class="click-footer">Home</p>
     </ion-col>
     <ion-col routerLink="/profile">

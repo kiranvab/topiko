@@ -1,8 +1,7 @@
 <ion-header color="custom">
   <ion-toolbar color="custom" class="toolbar">
     <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
-      <ion-menu-button></ion-menu-button>
+      <ion-back-button mode="md" text="" icon="chevron-back"></ion-back-button>
     </ion-buttons>
     <ion-title>Edit Business Profile</ion-title>
   </ion-toolbar>
@@ -96,11 +95,11 @@
     </ion-row>
 
     <ion-row>
-      <p class="top">Shop Desc</p>
+      <p class="top">Shop Description</p>
       <ion-input [(ngModel)]="shopdesc">{{b.shopdesc}}</ion-input>
     </ion-row>
 
-    <ion-select placeholder="Gallery"></ion-select>
+    <!-- <ion-select placeholder="Gallery"></ion-select>
 
     <ion-row class="card">
       <ion-col size="4">
@@ -146,6 +145,6 @@
       <ion-col>
         <ion-button expand="block" class="purple-btn" color="custom" (click)="update()">Update</ion-button>
       </ion-col>
-    </ion-row>
+    </ion-row> -->
   </ion-grid>
 </ion-content>

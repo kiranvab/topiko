@@ -104,12 +104,27 @@ export class CreateBusinessPage implements OnInit {
       })  
     }
     else{
-      this.ser_div = true;
+      if(this.mode == "services"){
+        this.ser_div = true;
       this.cat_div = false;
       this.http.get(AppComponent.ApiUrl+"getservices.php").subscribe((ser)=>{
         this.services = ser;
         console.log("services:", this.services)
       })
+      }
+      else{
+        this.ser_div = true;
+      this.cat_div = true;
+      this.http.get(AppComponent.ApiUrl+"getservices.php").subscribe((ser)=>{
+        this.services = ser;
+        console.log("services:", this.services)
+      });
+      this.http.get(AppComponent.ApiUrl+"getcategories.php").subscribe((cat)=>{
+        this.options = cat;
+        console.log("categories:", this.categoreis)
+      }) ;
+    }
+        
     }
     
   }
@@ -161,9 +176,9 @@ export class CreateBusinessPage implements OnInit {
     });
     console.log(mydata)
 
-    var link = AppComponent.ApiUrl + "create_business.php"
+     var link = AppComponent.ApiUrl + "create_business.php"
     this.http.post(link, mydata).subscribe(async data => {
-      this.businessdata = data;
+       this.businessdata = data;
       console.log("userdetails", this.businessdata);
       if (this.businessdata == "Data already Exists") {
         const alert = await this.alertCtrl.create({
@@ -178,7 +193,7 @@ export class CreateBusinessPage implements OnInit {
       else {
         this.router.navigate(['my-business']);
       }
-    });
+    }); 
    }
   }
 

@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, NavigationExtras, Router } from '@angular/router';
 import { AppComponent } from '../app.component';
-import { Storage } from "@ionic/storage";
+import { Storage } from '@ionic/storage-angular';
 
 @Component({
   selector: 'app-mycard',
@@ -25,7 +25,7 @@ export class MycardPage implements OnInit {
     private route : ActivatedRoute, 
     private http:HttpClient,
     private router:Router,
-    private storage:Storage
+    private storage:Storage,
   ) { }
 
 
@@ -44,26 +44,32 @@ export class MycardPage implements OnInit {
   
 
   ngOnInit() {
+    this.route.params.subscribe(val=>{
     this.storage.get("userdetails").then(val => {
       this.userdetails=val;
       this.uid = this.userdetails[0].id;
-      this.http.get(AppComponent.ApiUrl+"getcarddetails.php?user_id="+this.uid).subscribe(data =>
-        {
-          this.carddata = data;
-
-          if(this.carddata == ''){
-            this.router.navigate(['/createdvc']);
-          }
-          else{
-            this.carddata = data;
-            console.log(this.ucarddata);
-        }
-        })
+      let car =this;
+      setTimeout(() => {
+        car.loadcard();
+      }, 2000);
     })
-
+  });
   }
 
-
+loadcard(){
+  this.http.get(AppComponent.ApiUrl+"getcarddetails.php?user_id="+this.uid).subscribe(data =>
+    {
+      this.carddata = data;
+      console.log("Mycard Data", this.carddata)
+      if(this.carddata == null){
+        this.router.navigate(['/createdvc']);
+      }
+      else{
+        this.carddata = data;
+        console.log(this.ucarddata);
+    }
+    })
+}
    morecards()
    {
     this.http.get(AppComponent.ApiUrl+"getcarddetails.php?user_id="+this.uid).subscribe(data =>

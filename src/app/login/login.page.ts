@@ -38,7 +38,7 @@ export class LoginPage implements OnInit {
     private menuCtrl:MenuController
 
     ) { 
-      this.menuCtrl.enable(false);
+      //this.menuCtrl.enable(false);
     }
 
   ngOnInit() {

@@ -115,7 +115,11 @@ audiocall(i){
   setTimeout(function(){ 
     mycall.call();},5000)
   }
-  
+  videocall(i){
+      this.partnerId=this.contacts[i].mobile;
+    this.storage.set("partnerId", this.partnerId);
+      this.route.navigate(['videocall']);
+    }
 
   call(){
     console.log("call connected", this.partnerId);

@@ -77,9 +77,9 @@ export class CallsPage implements OnInit {
     private file: File,
     private transfer: FileTransfer,
   ) {
-    this.ring = this.media.create('https://topiko.com/ringtones/ring.mp3');
-    this.ringtone = this.media.create('https://topiko.com/ringtones/ringtone.mp3');
-    this.busytone = this.media.create('https://topiko.com/ringtones/busy.mp3')
+    this.ring = this.media.create('assets/ringtones/ring.mp3');
+    this.ringtone = this.media.create('assets/ringtones/ringtone.mp3');
+    this.busytone = this.media.create('assets/ringtones/busy.mp3')
     this.segmentModel = "calls";
     this.ObservableVar = Observable.interval(2000).subscribe(()=>{ 
       this.CheckCallStatus();
@@ -231,7 +231,7 @@ this.navCtrl.navigateForward(['/chatbox'],navigationExtras);
       this.webRTC.init(this.user_mobile, this.myEl, this.partnerEl);
       let mycall = this;
       setTimeout(function(){ 
-        mycall.call();},5000)
+        mycall.call();},3000)
       }
       
 
@@ -283,7 +283,9 @@ this.navCtrl.navigateForward(['/chatbox'],navigationExtras);
               setTimeout(() => {
                 clearInterval();
               }, 10000);
-
+              setTimeout(()=>{
+                ringer.callend();
+              }, 45000);
               
              }
              else{
@@ -300,7 +302,6 @@ this.navCtrl.navigateForward(['/chatbox'],navigationExtras);
         })
         }
       // Strat call code EndsHere
-
 
 
       // Answer Call code
@@ -379,6 +380,7 @@ this.navCtrl.navigateForward(['/chatbox'],navigationExtras);
       });
       this.ObservableVar.unsubscribe();
       this.ObservableVar1.unsubscribe();
+      
   }
   GotoHome(){
     this.route.navigate(['/home']);

@@ -80,12 +80,12 @@
           </ion-fab-button>
           <p class="fabstxt">Direction</p>
         </ion-col>
-        <ion-col class="icons">
+        <!-- <ion-col class="icons">
           <ion-fab-button class="fabs" color="light" (click)="likebusiness()">
             <ion-icon name="thumbs-up-outline"></ion-icon>
           </ion-fab-button>
           <p class="fabstxt">Like</p>
-        </ion-col>
+        </ion-col> -->
         <ion-col class="icons">
           <ion-fab-button class="fabs" color="light" (click)="favbusiness()">
             <ion-icon name="heart-outline"></ion-icon>
@@ -804,7 +804,7 @@
     </ion-card>
 
   </div>
-  <ion-fab vertical="bottom" horizontal="end" slot="fixed" routerLink="/connect">
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed" routerLink="/connect" style="margin-bottom: 70px;">
     <ion-fab-button class="fab">
       <ion-icon name="headset-outline"></ion-icon>
     </ion-fab-button>
@@ -815,8 +815,8 @@
 
 <ion-footer mode="md" class="home-footer">
   <ion-row>
-    <ion-col>
-      <ion-icon name="home" class="click-footer" routerLink="/home"></ion-icon>
+    <ion-col routerLink="/home">
+      <ion-icon name="home"></ion-icon>
       <p class="click-footer">Home</p>
     </ion-col>
     <ion-col routerLink="/profile">

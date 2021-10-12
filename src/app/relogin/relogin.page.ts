@@ -22,7 +22,7 @@ udata:any;
     public events: EventsService,
     private menuCtrl : MenuController
   ) {
-    this.menuCtrl.enable(false);
+    //this.menuCtrl.enable(false);
    }
 
   ngOnInit() {

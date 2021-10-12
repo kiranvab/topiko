@@ -3,20 +3,20 @@
     <ion-buttons slot="start">
       <ion-back-button icon="chevron-back"></ion-back-button>
     </ion-buttons>
-    <ion-title>Product</ion-title>
+    <ion-title>Products</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-card *ngFor="let product of products; let i = index;">
-    <ion-row>
-      <div class="avatar">
+  <ion-card *ngFor="let product of products; let i = index;" (click)="productDetials(i)">
+    <ion-row >
+      <div class="avatar" >
         <ion-avatar>
           <img class="product-img" src="{{product.product_image}}">
         </ion-avatar>
       </div>
       <ion-col class="text-overflow">
-        <p class="user-name pclass">{{product.title}}</p>
+        <p class="user-name pclass" (click)="productDetials(i)">{{product.title}}</p>
         <p class="time pclass">{{product.created_date}}</p>
         <p class="price-div pclass">Price - <span class="price">{{product.discount_price}}</span> <span
             class="ori_price">{{product.mrp}}</span></p>

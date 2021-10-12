@@ -450,6 +450,10 @@ const routes: Routes = [
   {
     path: 'edit-business',
     loadChildren: () => import('./edit-business/edit-business.module').then( m => m.EditBusinessPageModule)
+  },
+  {
+    path: 'product-view',
+    loadChildren: () => import('./product-view/product-view.module').then( m => m.ProductViewPageModule)
   }
 ];
 

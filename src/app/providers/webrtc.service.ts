@@ -15,19 +15,25 @@ export class WebrtcService {
   stunServer: RTCIceServer = {
     urls: 'stun:' + this.stun,
   };
-
-  constructor() { 
+  nowstream: MediaStream;
+  constructor() {
     this.options = {  // not used, by default it'll use peerjs server
       key: 'cd1ft79ro8g833di',
       debug: 3
     };
-  }
-  getMedia() {
-    navigator.getUserMedia({ audio: true, video: true }, (stream) => {
+    
+   }
+   getMedia() {
+     navigator.mediaDevices.getUserMedia({ audio: true, video: true}).then((stream)=>{
       this.handleSuccess(stream);
+      this.nowstream = stream;
+     })
+   /* navigator.getUserMedia({ audio: true}, (stream) => {
+    this.handleSuccess(stream);
+      this.nowstream = stream;
     }, (error) => {
       this.handleError(error);
-    });
+    }); */
   }
 
   async init(userId: string, myEl: HTMLMediaElement, partnerEl: HTMLMediaElement) {
@@ -39,6 +45,7 @@ export class WebrtcService {
       this.handleError(e);
     }
     await this.createPeer(userId);
+    this.setupPAudioOutput(this.partnerEl);
   }
 
   async createPeer(userId: string) {
@@ -51,6 +58,7 @@ export class WebrtcService {
   call(partnerId: string) {
     const call = this.peer.call(partnerId, this.myStream);
     call.on('stream', (stream) => {
+      console.log(stream);
       this.partnerEl.srcObject = stream;
     });
   }
@@ -68,7 +76,15 @@ export class WebrtcService {
     this.myStream = stream;
     this.myEl.srcObject = stream;
   }
+  close() {
+    const stream = this.nowstream;
+  const tracks = stream.getTracks();
 
+  tracks.forEach(function(track) {
+    track.stop();
+  });
+   this.peer.destroy();
+  }
   handleError(error: any) {
     if (error.name === 'ConstraintNotSatisfiedError') {
       //const v = constraints.video;
@@ -88,5 +104,13 @@ export class WebrtcService {
     if (typeof error !== 'undefined') {
       console.error(error);
     }
+  }
+  async setupPAudioOutput(paudio){
+    const devices = await navigator.mediaDevices.enumerateDevices();
+    console.log(devices);
+const audioDevices = devices.filter(device => device.kind === 'audiooutput');
+
+await paudio.setSinkId(audioDevices[1].deviceId);
+
   }
 }

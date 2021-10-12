@@ -14,7 +14,7 @@
     <ion-row>
       <div class="avatar"  (click)="qrdetails(i)">
         <ion-avatar>
-          <img src="{{uimage}}" alt="" >
+          <img *ngIf="uimage"src="{{uimage}}" alt="" >
         </ion-avatar>
       </div>
       <ion-col  (click)="qrdetails(i)"> 
