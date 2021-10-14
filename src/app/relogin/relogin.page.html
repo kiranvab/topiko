@@ -4,25 +4,11 @@
     <img src="assets/logo.png" width="30%">
   </div>
 
-  <ion-row class="mt-4">
-    <ion-col size="4">
-      <ion-item class="select-margin">
-        <ion-select ok-text="OK" cancel-text="NO" value="ind">
-          <ion-select-option value="ind">+91</ion-select-option>
-          <ion-select-option value="lunix">+1</ion-select-option>
-          <ion-select-option value="mac7">+65</ion-select-option>
-          <ion-select-option value="mac8">+60</ion-select-option>
-          <ion-select-option value="win3.1">+92</ion-select-option>
-          <ion-select-option value="win95">+80</ion-select-option>
-          </ion-select>
-      </ion-item>
-    </ion-col>
-    <ion-col class="col-margin">
-      <ion-item>
-        <ion-input type="number" autocomplete="off" max="10" [(ngModel)]="mobile" id="phone" placeholder="Mobile Number"></ion-input>
-      </ion-item>
-    </ion-col>
-  </ion-row>
+
+  <ion-item class="ion-item-cust">
+    <!-- <ion-label position="floating">Password</ion-label> -->
+    <ion-input type="number" autocomplete="off" max="10" [(ngModel)]="mobile" id="phone" placeholder="Mobile Number"></ion-input>
+  </ion-item>
 
   <ion-item class="ion-item-cust">
     <!-- <ion-label position="floating">Password</ion-label> -->

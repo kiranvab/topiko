@@ -16,13 +16,14 @@ ion-title {
     line-height: 19px;
 }
 .dat ion-title {
-    font-size: 10px;
+    font-size: 10px !important;
     letter-spacing: 0px;
     color: #ffffff;
 }
 ion-header ion-icon {
     font-size: 20px;
     color: #ffffff;
+    padding: 6px !important;
 }
 
 ion-content {
@@ -107,12 +108,12 @@ ion-content {
 }
 
 .right-chat .subtitle {
-   color: #fff;
+    color: #fff;
 }
 
 .right-chat .time {
     color: #fff;
- }
+}
 
 .bottom {
     position: fixed;
@@ -129,6 +130,7 @@ ion-content {
     flex-direction: column;
     justify-content: center;
     width: -webkit-fill-available;
+    padding: 0px 12px;
 }
 .grid {
     padding: 1.5%;
@@ -179,8 +181,8 @@ ion-footer ion-toolbar {
     --background: #d6d6d6;
     --padding-bottom: 0.875em;
 }
-div.main{
+div.main {
     overflow-y: auto;
-    height:90% !important;
+    height: 90% !important;
     padding: 10px;
-  }
+}

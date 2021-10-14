@@ -1,10 +1,13 @@
 <ion-header>
   <ion-toolbar color="custom" class="toolbar">
     <ion-buttons slot="start">
-      <ion-back-button mode="md"></ion-back-button>
-      <ion-menu-button mode=ios></ion-menu-button>
+      <ion-back-button mode="md" icon="chevron-back" ></ion-back-button>
+      <!-- <ion-menu-button mode=ios></ion-menu-button> -->
     </ion-buttons>
     <ion-title>Edit QR Reach</ion-title>
+    <ion-buttons slot="end">
+      <ion-icon name="save-outline"  (click)="update()"></ion-icon>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
@@ -12,10 +15,11 @@
   <ion-card class="first">
     <ion-row class="row">
       <ion-col class="bg">
-        <ion-avatar>
-          <img
-            src="{{uimage}}"
-            alt="">
+        <ion-avatar *ngIf="uimage!=''">
+          <img src="{{uimage}}" alt="">
+        </ion-avatar>
+        <ion-avatar *ngIf="uimage==''">
+          <img src="assets/profile.png">
         </ion-avatar>
       </ion-col>
     </ion-row>
@@ -50,24 +54,24 @@
     </ion-row>
     <ion-row class="ans">
       <ion-item>
-      <ion-input value="{{name}}" [(ngModel)]="name"></ion-input>
-    </ion-item>
+        <ion-input value="{{name}}" [(ngModel)]="name"></ion-input>
+      </ion-item>
     </ion-row>
     <ion-row class="heading">
       <p>User Number</p>
     </ion-row>
     <ion-row class="ans">
       <ion-item>
-      <ion-input value="{{mobile}}" [(ngModel)]="mobile"></ion-input>
-    </ion-item>
+        <ion-input value="{{mobile}}" [(ngModel)]="mobile"></ion-input>
+      </ion-item>
     </ion-row>
     <ion-row class="heading">
       <p>User Mail ID</p>
     </ion-row>
     <ion-row class="ans">
       <ion-item>
-      <ion-input value="{{email}}" [(ngModel)]="email"></ion-input>
-    </ion-item>
+        <ion-input value="{{email}}" [(ngModel)]="email"></ion-input>
+      </ion-item>
     </ion-row>
     <ion-row class="heading">
       <p>Purpose (Vehicle)</p>
@@ -81,8 +85,8 @@
       </ion-col>
       <ion-col size="12">
         <ion-item>
-        <ion-input value="{{registration_number}}" [(ngModel)]="registration_number"></ion-input>
-      </ion-item>
+          <ion-input value="{{registration_number}}" [(ngModel)]="registration_number"></ion-input>
+        </ion-item>
       </ion-col>
     </ion-row>
 
@@ -91,36 +95,33 @@
     </ion-row>
     <ion-row class="ans">
       <ion-item>
-      <ion-input value="{{nominee_name}}" [(ngModel)]="nominee_name"></ion-input>
-    </ion-item>
+        <ion-input value="{{nominee_name}}" [(ngModel)]="nominee_name"></ion-input>
+      </ion-item>
     </ion-row>
     <ion-row class="heading">
       <p>Contact No</p>
     </ion-row>
     <ion-row class="ans">
       <ion-item>
-      <ion-input value="{{nominee_mobile}}" [(ngModel)]="nominee_mobile"></ion-input>
-    </ion-item>
+        <ion-input value="{{nominee_mobile}}" [(ngModel)]="nominee_mobile"></ion-input>
+      </ion-item>
     </ion-row>
   </ion-card>
 
-  
 
- 
+
+
 
   <ion-grid class="last-grid">
-    <ion-row>
+    <!-- <ion-row>
       <ion-col class="left">
         <p>Payment History</p>
       </ion-col>
       <ion-col class="right">
         <p routerLink="/choose">Choose</p>
       </ion-col>
-    </ion-row>
+    </ion-row> -->
     <ion-row class="button">
-      <ion-col class="lef">
-        <ion-button>Download</ion-button>
-      </ion-col>
       <ion-col class="righ">
         <ion-button (click)="update()">Update</ion-button>
       </ion-col>

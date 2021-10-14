@@ -169,7 +169,7 @@ PushNotifications.addListener('pushNotificationActionPerformed',
   CheckIncoming(){
     this.storage.get("userdetails").then((uval)=>{
       this.userDetails = uval;
-    this.user_mobile = this.userDetails[0].mobile;
+      this.user_mobile = this.userDetails[0].mobile;
     if(this.user_mobile){
       this.http.get(AppComponent.ApiUrl+"checkincomming.php?user_mobile="+this.user_mobile).subscribe((incoming)=>{
         this.incomming = incoming;

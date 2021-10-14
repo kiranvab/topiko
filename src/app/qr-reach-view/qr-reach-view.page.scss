@@ -10,13 +10,16 @@ ion-title {
     letter-spacing: 0.6px;
     text-align: left;
 }
+ion-content {
+    --padding-bottom: 60px;
+}
 
 // first-card
 .first {
     margin: 1em 1.125em;
 }
 .row {
-    height: 14.4em;
+    height: 15.4em;
 }
 ion-card {
     border: none;
@@ -121,7 +124,8 @@ h4 {
 //fourth-card
 ion-header ion-icon {
     color: #ffffff;
-    font-size: 21px;
+    font-size: 24px;
+    padding-right: 5px;
 }
 ion-title {
     font-size: 16px;

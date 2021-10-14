@@ -9,7 +9,11 @@
     <ion-input [(ngModel)]="name" id="name" placeholder="Name"></ion-input>
   </ion-item>
 
-  <ion-row class="mt-4">
+  <ion-item class="ion-item-cust">    
+    <ion-input type="number" maxlength="10" [(ngModel)]="phone" id="phone" placeholder="Phone no" (keyup)='onChange($event.target.value)'></ion-input>
+  </ion-item>
+
+  <!-- <ion-row class="mt-4">
     <ion-col size="4">
       <ion-item class="select-margin">
         <ion-select ok-text="OK" cancel-text="NO" value="ind">
@@ -21,14 +25,14 @@
           <ion-select-option value="win95">+80</ion-select-option>
           </ion-select>
       </ion-item>
-    </ion-col>
+    </ion-col> 
     <ion-col class="col-margin">
       <ion-item>
         <ion-input type="number" maxlength="10" [(ngModel)]="phone" id="phone" (keyup)='onChange($event.target.value)'></ion-input>
       </ion-item>
     </ion-col>
   </ion-row>
-  
+   -->
   <ion-row class="mtb-10">
     <ion-col class="text-center">
       <img src="assets/enter.svg" (click)="login()">

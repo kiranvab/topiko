@@ -1,12 +1,12 @@
 <ion-header>
   <ion-toolbar color="custom" class="toolbar">
     <ion-buttons slot="start">
-      <ion-back-button mode="md"></ion-back-button>
-      <ion-menu-button mode=ios></ion-menu-button>
+      <ion-back-button mode="md" icon="chevron-back"></ion-back-button>
+      <!-- <ion-menu-button mode=ios></ion-menu-button> -->
     </ion-buttons>
     <ion-title>Qr Reach View</ion-title>
     <ion-buttons slot="end" routerLink="/edit-qr-reach">
-      <ion-icon name="create-outline"></ion-icon>
+      <ion-icon name="create-outline" ></ion-icon>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
@@ -15,8 +15,11 @@
   <ion-card class="first">
     <ion-row class="row">
       <ion-col class="bg">
-        <ion-avatar>
+        <ion-avatar *ngIf="uimage!=''">
           <img src="{{uimage}}" alt="">
+        </ion-avatar>
+        <ion-avatar *ngIf="uimage==''">
+          <img src="assets/profile.png">
         </ion-avatar>
       </ion-col>
     </ion-row>
@@ -184,17 +187,37 @@
       </ion-col>
     </ion-row>
     <ion-row class="button">
-      <ion-col class="lef">
-        <ion-button>Download</ion-button>
-      </ion-col>
-      <ion-col class="righ">
-        <ion-button>Renewal</ion-button>
+      <ion-col style="text-align: center;">
+        <ion-button fill="outline">Download</ion-button>
       </ion-col>
     </ion-row>
   </ion-grid>
 </ion-content>
 
-
+<ion-footer mode="md" class="home-footer">
+  <ion-row>
+    <ion-col routerLink="/home">
+      <ion-icon name="home" class="click-footer"></ion-icon>
+      <p class="click-footer">Home</p>
+    </ion-col>
+    <ion-col routerLink="/profile">
+      <ion-icon name="person-outline"></ion-icon>
+      <p>Profile</p>
+    </ion-col>
+    <ion-col routerLink="/qr-scanner">
+      <ion-icon name="scan-outline"></ion-icon>
+      <p>Scan</p>
+    </ion-col>
+    <ion-col routerLink="/favourites">
+      <ion-icon name="heart-outline"></ion-icon>
+      <p>Favourites</p>
+    </ion-col>
+    <ion-col routerLink="/calls">
+      <ion-icon name="call-outline"></ion-icon>
+      <p>Call</p>
+    </ion-col>
+  </ion-row>
+</ion-footer>
 
 
 
@@ -261,3 +284,28 @@
   </ion-grid>
 
 </ion-content> -->
+
+<ion-footer mode="md" class="home-footer">
+  <ion-row>
+    <ion-col routerLink="/home">
+      <ion-icon name="home"></ion-icon>
+      <p>Home</p>
+    </ion-col>
+    <ion-col routerLink="/profile">
+      <ion-icon name="person-outline"></ion-icon>
+      <p>Profile</p>
+    </ion-col>
+    <ion-col routerLink="/qr-scanner">
+      <ion-icon name="scan-outline"></ion-icon>
+      <p>Scan</p>
+    </ion-col>
+    <ion-col routerLink="/favourites">
+      <ion-icon name="heart-outline"></ion-icon>
+      <p>Favourites</p>
+    </ion-col>
+    <ion-col routerLink="/calls">
+      <ion-icon name="call-outline"></ion-icon>
+      <p>Call</p>
+    </ion-col>
+  </ion-row>
+</ion-footer>

@@ -1,37 +1,41 @@
-<ion-header color="custom" mode="md">
+<ion-header color="custom">
   <ion-toolbar color="custom" class="toolbar">
+    <ion-back-button mode="md" icon="chevron-back" text=""></ion-back-button>
     <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
-      <ion-menu-button></ion-menu-button>
+      <ion-icon name="chevron-back" routerLink="/home"></ion-icon>
     </ion-buttons>
+   
     <ion-title>QR Reach</ion-title>
   </ion-toolbar>
+
 </ion-header>
 
 <ion-content>
 
   <ion-card *ngFor="let qr of myqr; let i = index;">
     <ion-row>
-      <div class="avatar"  (click)="qrdetails(i)">
+      <div class="avatar" (click)="qrdetails(i)">
         <ion-avatar>
-          <img *ngIf="uimage"src="{{uimage}}" alt="" >
+          <img *ngIf="uimage" src="{{uimage}}" alt="">
+
+          <img *ngIf="uimage == ''" src="assets/profile.png" alt="">
         </ion-avatar>
       </div>
-      <ion-col  (click)="qrdetails(i)"> 
+      <ion-col (click)="qrdetails(i)">
         <p class="user-name pclass">{{qr.name}}</p>
         <p class="time pclass">{{qr.purpose}}</p>
         <p class="time pclass">{{qr.registration_number}}</p>
       </ion-col>
       <ion-col size="1" class="ellipsis">
-        <ion-icon name="ellipsis-vertical"  (click)="openMenu(i)"></ion-icon>
+        <ion-icon name="ellipsis-vertical" (click)="openMenu(i)"></ion-icon>
       </ion-col>
     </ion-row>
-    <ion-row class="nominee">
+    <!-- <ion-row class="nominee">
       <p>Nominee</p>
     </ion-row>
     <div class="scroll">
       <p class="design">{{qr.nominee_name}}</p>
-    </div>
+    </div> -->
 
   </ion-card>
 
@@ -42,3 +46,28 @@
     </ion-fab-button>
   </ion-fab>
 </ion-content>
+
+<ion-footer mode="md" class="home-footer">
+  <ion-row>
+    <ion-col routerLink="/home">
+      <ion-icon name="home"></ion-icon>
+      <p>Home</p>
+    </ion-col>
+    <ion-col routerLink="/profile">
+      <ion-icon name="person-outline"></ion-icon>
+      <p>Profile</p>
+    </ion-col>
+    <ion-col routerLink="/qr-scanner">
+      <ion-icon name="scan-outline"></ion-icon>
+      <p>Scan</p>
+    </ion-col>
+    <ion-col routerLink="/favourites">
+      <ion-icon name="heart-outline"></ion-icon>
+      <p>Favourites</p>
+    </ion-col>
+    <ion-col routerLink="/calls">
+      <ion-icon name="call-outline"></ion-icon>
+      <p>Call</p>
+    </ion-col>
+  </ion-row>
+</ion-footer>

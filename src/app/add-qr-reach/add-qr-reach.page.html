@@ -1,8 +1,7 @@
 <ion-header color="custom">
   <ion-toolbar color="custom" class="toolbar">
     <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
-      <ion-menu-button></ion-menu-button>
+      <ion-back-button mode="md" icon="chevron-back" text=""></ion-back-button>
     </ion-buttons>
     <ion-title>Add QR Reach</ion-title>
   </ion-toolbar>
@@ -13,13 +12,13 @@
   <ion-card class="first">
     <ion-row class="row">
       <ion-col class="bg">
-        <ion-avatar *ngIf="uimg!=''" >
-          <img  src="{{uimg}}" alt="">
+        <ion-avatar *ngIf="uimg!=''">
+          <img src="{{uimg}}" alt="">
         </ion-avatar>
         <ion-avatar *ngIf="uimg==''">
           <img src="https://i.pinimg.com/474x/bc/d4/ac/bcd4ac32cc7d3f98b5e54bde37d6b09e.jpg">
         </ion-avatar>
-        <img  class="position-cam" src="assets/camera.svg" alt="">
+        <img class="position-cam" src="assets/camera.svg" alt="">
       </ion-col>
     </ion-row>
   </ion-card>
@@ -41,7 +40,7 @@
     </ion-row>
     <div class="scroll">
       <ion-card class="upload-card" (click)="image1()" *ngIf="img_img1">
-      <img src="{{image1_img}}" />
+        <img src="{{image1_img}}" />
       </ion-card>
       <ion-card class="upload-card" (click)="image1()" *ngIf="up_img1">
         <ion-icon name="cloud-upload-outline"></ion-icon>
@@ -50,7 +49,7 @@
 
       <ion-card class="upload-card" (click)="image1()" *ngIf="img_img2">
         <img src="{{image2_img}}" />
-        </ion-card>
+      </ion-card>
       <ion-card class="upload-card" (click)="image2()" *ngIf="up_img2">
         <ion-icon name="cloud-upload-outline"></ion-icon>
         <p>upload image</p>
@@ -58,7 +57,7 @@
 
       <ion-card class="upload-card" (click)="image3()" *ngIf="img_img3">
         <img src="{{image3_img}}" />
-        </ion-card>
+      </ion-card>
       <ion-card class="upload-card" (click)="image3()" *ngIf="up_img3">
         <ion-icon name="cloud-upload-outline"></ion-icon>
         <p>upload image</p>
@@ -66,7 +65,7 @@
 
       <ion-card class="upload-card" (click)="image3()" *ngIf="img_img3">
         <img src="{{image3_img}}" />
-        </ion-card>
+      </ion-card>
       <ion-card class="upload-card" (click)="image3()" *ngIf="up_img3">
         <ion-icon name="cloud-upload-outline"></ion-icon>
         <p>upload image</p>
@@ -74,34 +73,60 @@
 
       <ion-card class="upload-card" (click)="image4()" *ngIf="img_img4">
         <img src="{{image4_img}}" />
-        </ion-card>
+      </ion-card>
       <ion-card class="upload-card" (click)="image4()" *ngIf="up_img4">
         <ion-icon name="cloud-upload-outline"></ion-icon>
         <p>upload image</p>
       </ion-card>
-     
+
     </div>
   </ion-card>
 
   <ion-list>
     <ion-item>
-      <ion-input placeholder="User Name"  [(ngModel)]="name"></ion-input>
+      <ion-input placeholder="User Name" [(ngModel)]="name"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-input placeholder="User Number" [(ngModel)]="mobile" ></ion-input>
+      <ion-input placeholder="User Number" [(ngModel)]="mobile"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-input placeholder="User Mail ID" [(ngModel)]="email" ></ion-input>
+      <ion-input placeholder="User Mail ID" [(ngModel)]="email"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-select placeholder="Purpose (vehicle)" [(ngModel)]="vehicle">
-        <ion-select-option value="Bicycle">BiCycle </ion-select-option>
-        <ion-select-option value="2 Wheeler">2 Wheeler</ion-select-option>
-        <ion-select-option value="4 Wheeler">4 Wheeler</ion-select-option>
-        <ion-select-option value="more than 4 Wheeler">More than 4 Wheeler</ion-select-option>
+      <ion-select placeholder="Purpose (vehicle)" [(ngModel)]="vehicle" (ionChange)="purposechange()">
+        <ion-select-option value="vehicle">Vehicle</ion-select-option>
+        <ion-select-option value="home">Home</ion-select-option>
+        <ion-select-option value="pets">Pets</ion-select-option>
+        <ion-select-option value="luggage">Luggage</ion-select-option>
+        <ion-select-option value="other">other</ion-select-option>
       </ion-select>
     </ion-item>
-    
+
+    <ion-radio-group *ngIf="vehicle_radio">
+      <ion-row class="cycle">
+        <ion-row class="full">
+          <ion-col>
+            <ion-radio value="Bicycle" mode="md"></ion-radio>
+            <ion-label>By Cycle</ion-label>
+          </ion-col>
+          <ion-col>
+            <ion-radio value="4 Wheeler"  mode="md"></ion-radio>
+            <ion-label>Four Wheeler</ion-label>
+          </ion-col>
+        </ion-row>
+        <ion-row class="full">
+          <ion-col>
+            <ion-radio value="2 Wheeler"  mode="md"></ion-radio>
+            <ion-label>Two Wheeler</ion-label>
+          </ion-col>
+          <ion-col>
+            <ion-radio value="more than 4 Wheeler"  mode="md"></ion-radio>
+            <ion-label>More than 4</ion-label>
+          </ion-col>
+        </ion-row>
+      </ion-row>
+    </ion-radio-group>
+
     <textarea class="text" placeholder="Enter Reg No.(TN 22 DH 0000)" [(ngModel)]="reg_number"></textarea>
 
     <ion-row>

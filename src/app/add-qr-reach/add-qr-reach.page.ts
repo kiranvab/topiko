@@ -38,6 +38,8 @@ export class AddQrReachPage implements OnInit {
   up_img2 : any = true;
   up_img3 : any = true;
   up_img4 : any = true;
+
+  vehicle_radio:any = false;
   
   constructor(
     private route:Router,
@@ -131,6 +133,12 @@ image4(){
     this.img_img4 = true;
     this.up_img4 = false;
   });
+}
+
+purposechange(){
+  if(this.vehicle = "vehicle"){
+    this.vehicle_radio = true;
+  }
 }
 
  Submit(){

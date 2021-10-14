@@ -1,11 +1,11 @@
 <ion-header color="custom">
   <ion-toolbar color="custom" class="toolbar">
     <ion-buttons slot="start">
-      <ion-back-button icon="chevron-back"></ion-back-button>
+      <ion-back-button icon="chevron-back" mode="md" text=""></ion-back-button>
     </ion-buttons>
     <ion-title>Recently Viewed</ion-title>
     <ion-buttons slot="end">
-      <ion-icon class="search" name=search-outline></ion-icon>
+      <ion-icon style="padding-right: 8px; width: 24px;" class="search" name=search-outline></ion-icon>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
@@ -17,8 +17,34 @@
       <img *ngIf="rec.logo" src="{{rec.logo}}" class="icon-img-recent">
       <img *ngIf="rec.logo == ''" class="icon-img-recent" src="assets/logo-color.png"
         style="padding: 10px; background: #fafafa; border-radius: 3px;">
-      <div class="img-title center text-center p-0" text-center>{{rec.business_name}}</div>
+      <ion-row class="text-overflow">
+        <p class="img-title center text-center p-0" style="margin: 0%;" text-center>{{rec.business_name}}</p>
+      </ion-row>
     </ion-col>
   </ion-row>
 
 </ion-content>
+<ion-footer mode="md" class="home-footer">
+  <ion-row>
+    <ion-col routerLink="/home">
+      <ion-icon name="home-outline" class="click-footer"></ion-icon>
+      <p class="click-footer">Home</p>
+    </ion-col>
+    <ion-col routerLink="/profile">
+      <ion-icon name="person-outline"></ion-icon>
+      <p>Profile</p>
+    </ion-col>
+    <ion-col routerLink="/qr-scanner">
+      <ion-icon name="scan-outline"></ion-icon>
+      <p>Scan</p>
+    </ion-col>
+    <ion-col routerLink="/favourites">
+      <ion-icon name="heart-outline"></ion-icon>
+      <p>Favourites</p>
+    </ion-col>
+    <ion-col routerLink="/calls">
+      <ion-icon name="call-outline"></ion-icon>
+      <p>Call</p>
+    </ion-col>
+  </ion-row>
+</ion-footer>

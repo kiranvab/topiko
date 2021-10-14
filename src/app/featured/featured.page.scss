@@ -25,7 +25,6 @@ ion-content
     display: block;
     margin: 0 auto;
     width: 100%;
-    border: 1px solid #871178;
     padding: 5px;
     border-radius: 5px;
     background: #f1f1f1;
@@ -35,7 +34,11 @@ p
 {
     font-size: 12px;
     line-height: 1;
-    
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin:2px 0px;
+    text-align:center;
 }
 .img-title {
     font-size: 12px;
